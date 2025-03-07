@@ -1,15 +1,23 @@
 [
   {
-    "Name": "Module 01: Implementing identity services and Group Policy",
+    "Name": "Module 3: Implement Real-Time Intelligence with Microsoft Fabric",
     "Language": "English",
     "Files": [
        {
-        "RawFilePath": "https://raw.githubusercontent.com/CloudLabs-MOC/AZ-800-Administering-Windows-Server-Hybrid-Core-Infrastructure/prod/Instructions/Labs/Getting-started-V2.md",
+        "RawFilePath": "https://raw.githubusercontent.com/CloudLabs-MOC/DP-700-Microsoft-Fabric-Data-Engineer/refs/heads/Prod/Instructions/Labs/Getting-Started.md",
          "Order": 1
       },
       {
-        "RawFilePath": "https://raw.githubusercontent.com/CloudLabs-MOC/AZ-800-Administering-Windows-Server-Hybrid-Core-Infrastructure/prod/Instructions/Labs/LAB_AK_01_Implementing_identity_services_and_Group_Policy.md",
+        "RawFilePath": "https://raw.githubusercontent.com/CloudLabs-MOC/DP-700-Microsoft-Fabric-Data-Engineer/refs/heads/Prod/Instructions/Labs/Create-workspace-01.md",
         "Order": 2
+      },
+      {
+        "RawFilePath": "https://raw.githubusercontent.com/CloudLabs-MOC/DP-700-Microsoft-Fabric-Data-Engineer/refs/heads/Prod/Instructions/Labs/03b-medallion-lakehouse.md",
+        "Order": 3
+      },
+      {
+        "RawFilePath": "https://raw.githubusercontent.com/CloudLabs-MOC/DP-700-Microsoft-Fabric-Data-Engineer/refs/heads/Prod/Instructions/Labs/18-monitor-hub.md",
+        "Order": 4
       }
     ]
   }
