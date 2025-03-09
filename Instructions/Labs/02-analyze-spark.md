@@ -1,44 +1,48 @@
----
-lab:
-    title: 'Analyze data with Apache Spark'
-    module: 'Use Apache Spark to work with files in a lakehouse'
----
+# Lab 1 : Analyze data with Apache Spark in Fabric
 
-# Analyze data with Apache Spark in Fabric
+### Estimated Duration: 75 minutes
 
-In this lab you will ingest data into the Fabric lakehouse and use PySpark to read and analyze the data.
+In this lab you will ingest data into the Fabric lakehouse and use PySpark to read and analyze the data. Apache Spark is an open-source engine for distributed data processing and is widely used to explore, process, and analyze huge volumes of data in data lake storage. Spark is available as a processing option in many data platform products, including Azure HDInsight, Azure Databricks, Azure Synapse Analytics, and Microsoft Fabric. One of the benefits of Spark is support for a wide range of programming languages, including Java, Scala, Python, and SQL; making Spark a very flexible solution for data processing workloads including data cleansing and manipulation, statistical analysis and machine learning, and data analytics and visualization.
 
-This lab will take approximately 45 minutes to complete.
+## Lab objectives
 
-## Prerequisites
+In this lab, you will be able to complete the following tasks:
 
-* A [Microsoft Fabric trial](https://www.microsoft.com/microsoft-fabric/getting-started).
+- Task 1: Create a lakehouse and upload files
+- Task 2: Create a notebook
+- Task 3: Create a Dataframe
+- Task 4: Explore data in a dataframe
+- Task 5: Aggregate and group data in a dataframe
+- Task 6: Use Spark to transform data files
+- Task 7: Work with tables and SQL
+- Task 8: Visualize data with Spark
 
-## Create a workspace
+## Task 1: Create a lakehouse and upload files
 
-Before you can work with data in Fabric you need to create a workspace.
+In this task, you will create a lakehouse to organize and analyze your data files. After setting up your workspace, you'll switch to the *Data Engineering* experience in the portal to initiate the creation of the data lakehouse
 
-1. Navigate to the [Microsoft Fabric home page](https://app.fabric.microsoft.com/home?experience=fabric) at `https://app.fabric.microsoft.com/home?experience=fabric` in a browser, and sign in with your Fabric credentials.
-1. From the left menu bar, select **Workspaces** (🗇) and then **New workspace**.
-1. Give the new workspace a name and in the **Advanced** section, select the appropriate Licensing mode. If you have started a Microsoft Fabric trial, select Trial.
-1. Select **Apply** to create an empty workspace.
- 
-    ![Screen picture of a new Fabric workspace.](Images/new-workspace.jpg)
+1. Return to your workspace and click the **+ New item (1)** icon.  
 
-## Create a lakehouse and upload files
+2. On the **All items** page, scroll down to the **Store data** section and select **Lakehouse (2)**.  
 
-Now that you have a workspace, you can create a lakehouse to store your data files. From your new workspace, select **+ New item** and **Lakehouse**. Give the lakehouse a name, and then select **Create**. After a short delay, a new lakehouse is created.
+   ![Screenshot of uploaded files in a lakehouse.](./Images/md10.png)  
 
-You can now ingest data into the lakehouse. There are several ways to do this, but for now you’ll download a folder of text files to your local computer (or lab VM if applicable) and then upload them to your lakehouse.
+3. Provide the following details to create a **Lakehouse**:  
+   - **Name:** Enter **lakehouse<inject key="DeploymentID" enableCopy="false"/>**  
 
-1. Download the datafiles from `https://github.com/MicrosoftLearning/dp-data/raw/main/orders.zip`.
-1. Extract the zipped archive and verify that you have a folder named *orders* which contains three CSV files: 2019.csv, 2020.csv, and 2021.csv.
-1. Return to your new lakehouse. In the **Explorer** pane, next to the **Files** folder select the **…** menu, and select **Upload** and **Upload folder**. Navigate to the orders folder on your local computer (or lab VM if applicable) and select **Upload**.
-1. After the files have been uploaded, expand **Files** and select the **orders** folder. Check that the CSV files have been uploaded, as shown here:
+4. Click **Create** to proceed.  
 
-    ![Screen picture of CSV files uploaded to a new Fabric workspace.](Images/uploaded-files.jpg)
+5. Once inside the **Lakehouse**, navigate to the **Files** folder in the **Explorer** pane. Click the **ellipses (1)** menu, select **Upload (2)**, and then choose **Upload folder (3)**.  
 
-## Create a notebook
+   ![Screenshot of uploaded files in a lakehouse.](./Images/md11.png)  
+
+6. Upload the **orders** folder from **C:\LabFiles\Files\orders** to the **Lakehouse**.  
+
+7. After the upload is complete, expand the **Files** section, select the **orders (1)** folder, and verify that the **CSV files (2)** have been successfully uploaded, as shown below:  
+
+   ![Screen picture of CSV files uploaded to a new Fabric workspace.](Images/md12.jpg)  
+
+## Task 2: Create a notebook
 
 You can now create a Fabric notebook to work with your data. Notebooks provide an interactive environment where you can write and run code.
 
