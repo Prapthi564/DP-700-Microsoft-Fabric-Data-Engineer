@@ -44,11 +44,20 @@ In this task, you will create a lakehouse to organize and analyze your data file
 
 ## Task 2: Create a notebook
 
-You can now create a Fabric notebook to work with your data. Notebooks provide an interactive environment where you can write and run code.
+In this task, you will create a notebook to work with data in Apache Spark. Notebooks provide an interactive environment where you can write and run code in multiple languages, while also allowing you to add notes for documentation.
 
 1. Select your workspace, then select **+ New item** and **Notebook**. After a few seconds, a new notebook containing a single cell will open. Notebooks are made up of one or more cells that can contain code or markdown (formatted text).
+
+   ![Enter Your Username](./Images/md13.png)
+
 1. Fabric assigns a name to each notebook you create, such as Notebook 1, Notebook 2, etc. Click the name panel above the **Home** tab on the menu to change the name to something more descriptive.
+
 1. Select the first cell (which is currently a code cell), and then in the top-right tool bar, use the **M↓** button to convert it to a markdown cell. The text contained in the cell will then be displayed as formatted text.
+
+   ![Enter Your Username](./Images/md14.png)
+
+   ![Enter Your Username](./Images/md15.png)
+
 1. Use the 🖉 (Edit) button to switch the cell to editing mode, then modify the markdown as shown below.
 
     ```markdown
@@ -56,9 +65,9 @@ You can now create a Fabric notebook to work with your data. Notebooks provide a
    Use this notebook to explore sales order data
     ```
 
-    ![Screen picture of a Fabric notebook with a markdown cell.](Images/name-notebook-markdown.jpg)
+    ![Screen picture of a Fabric notebook with a markdown cell.](Images/md16.jpg)
 
-When you have finished, click anywhere in the notebook outside of the cell to stop editing it and see the rendered markdown.
+1. When you have finished, click anywhere in the notebook outside of the cell to stop editing it and see the rendered markdown.
 
 ## Create a DataFrame
 
