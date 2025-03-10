@@ -1,6 +1,6 @@
 # Lab 5: Ingest real-time data with Eventstream in Microsoft Fabric
 
-## Estimated Duration: 30 Minutes 
+## Estimated Duration: 60 Minutes 
 
 Eventstream is a feature in Microsoft Fabric that captures, transforms, and routes real-time events to various destinations. You can add event data sources, destinations, and transformations to the eventstream.
 
@@ -56,37 +56,52 @@ Now that you have a workspace, you can start creating the Fabric items you'll ne
 
 ## Add a destination
 
-1. Select the **Transform events or add destination** tile and search for **Eventhouse**.
+1. Select the **Transform events or add destination (1)** tile and search for **Eventhouse (2)**.
+
+   ![Review the eventstream canvas](./Images/md91.png)
+
 1. In the **Eventhouse** pane, configure the following setup options.
-   - **Data ingestion mode:**: Event processing before ingestion
-   - **Destination name:** `bikes-table`
-   - **Workspace:** *Select the workspace you created at the beginning of this exercise*
-   - **Eventhouse**: *Select your eventhouse*
-   - **KQL database:** *Select your KQL database*
-   - **Destination table:** Create a new table named `bikes`
-   - **Input data format:** JSON
 
-   ![Eventstream destination settings.](./Images/kql-database-event-processing-before-ingestion.png)
+   - **Data ingestion mode:**: Event processing before ingestion (1)
+   - **Destination name:** `bikes-table` (2)
+   - **Workspace:** fabric-<inject key="DeploymentID" enableCopy="false"/> (3)
+   - **Eventhouse**: BicycleEventhouse (4)
+   - **KQL database:** BicycleEventhouse (5)
+   - **Destination table:** Create a new table named `bikes` 
+   - **Input data format:** JSON (9)
 
-1. In the **Eventhouse** pane, select **Save**. 
+   ![Eventstream destination settings.](./Images/md93.png)
+
+   ![Eventstream destination settings.](./Images/md94.png)
+
+   ![Eventstream destination settings.](./Images/md92.png)
+
+1. In the **Eventhouse** pane, select **Save (10)**
+
 1. On the toolbar, select **Publish**.
+
+   ![Eventstream destination settings.](./Images/md95.png)
+
 1. Wait a minute or so for the data destination to become active. Then select the **bikes-table** node in the design canvas and view the **Data preview** pane underneath to see the latest data that has been ingested:
 
-   ![A destination table in an eventstream.](./Images/stream-data-preview.png)
+   ![Eventstream destination settings.](./Images/md96.png)
 
 1. Wait a few minutes and then use the **Refresh** button to refresh the **Data preview** pane. The stream is running perpetually, so new data may have been added to the table.
+
 1. Beneath the eventstream design canvas, view the **Data insights** tab to see details of the data events that have been captured.
 
 ## Query captured data
 
 The eventstream you have created takes data from the sample source of bicycle data and loads it into the database in your eventhouse. You can analyze the captured data by querying the table in the database.
 
-1. In the menu bar on the left, select your KQL database.
-1. On the **database** tab, in the toolbar for your KQL database, use the **Refresh** button to refresh the view until you see the **bikes** table under the database. Then select the **bikes** table.
+1. In the menu bar on the left, select your **BicycleEventhouse (1)** KQL database.
 
-   ![A table in a KQL database.](./Images/kql-table.png)
+1. On the **database** tab, in the toolbar for your KQL database, use the **Refresh** button to refresh the view until you see the **bikes** table (2) under the database. Then select the **bikes** table.
 
-1. In the **...** menu for the **bikes** table, select **Query table** > **Records ingested in the last 24 hours**.
+   ![A table in a KQL database.](./Images/md97.png)
+
+1. In the **...** (3) menu for the **bikes** table, select **Query with code (4)** > **Records ingested in the last 24 hours (5)**.
+
 1. In the query pane, note that the following query has been generated and run, with the results shown beneath:
 
     ```kql
@@ -97,52 +112,63 @@ The eventstream you have created takes data from the sample source of bicycle da
 
 1. Select the query code and run it to see 100 rows of data from the table.
 
-    ![Screenshot of a KQL query.](./Images/kql-query.png)
+    ![Screenshot of a KQL query.](./Images/md98.png)
 
 ## Transform event data
 
 The data you've captured is unaltered from the source. In many scenarios, you may want to transform the data in the event stream before loading it into a destination.
 
 1. In the menu bar on the left, select the **Bicycle-data** eventstream.
+
 1. On the toolbar, select **Edit** to edit the eventstream.
-1. In the **Transform events** menu, select **Group by** to add a new **Group by** node to the eventstream.
+
+1. In the **Transform events (1)** menu, select **Group by (2)** to add a new **Group by** node to the eventstream.
+
+    ![Screenshot of a KQL query.](./Images/md99.png)
+
 1. Drag a connection from the output of the **Bicycle-data** node to the input of the new **Group by** node Then use the *pencil* icon in the **Group by** node to edit it.
 
-   ![Add group by to the transformation event.](./Images/eventstream-add-aggregates.png)
+   ![Add group by to the transformation event.](./Images/md100.png)
 
 1. Configure out the properties of the **Group by** settings section:
-    - **Operation name:** GroupByStreet
-    - **Aggregate type:** *Select* Sum
-    - **Field:** *select* No_Bikes. *Then select **Add** to create the function* SUM of No_Bikes
-    - **Group aggregations by (optional):** Street
-    - **Time window**: Tumbling
-    - **Duration**: 5 seconds
-    - **Offset**: 0 seconds
+    - **Operation name:** GroupByStreet (1)
+    - **Aggregate type:** *Select* Sum (2)
+    - **Field:** *select* No_Bikes (3). *Then select **Add** to create the function* SUM of No_Bikes (4)
+    - **Group aggregations by (optional):** Street (5)
+    - **Time window**: Tumbling (6)
+    - **Duration**: 5 seconds (7)
+    - **Offset**: 0 seconds (8)
 
     > **Note**: This configuration will cause the eventstream to calculate the total number of bicycles in each street every 5 seconds.
+
+   ![Add group by to the transformation event.](./Images/md101.png)
+
+   ![Add group by to the transformation event.](./Images/md102.png)
       
-1. Save the configuration and return to the eventstream canvas, where an error is indicated (because you need to store the output from the transformation somewhere!).
+1. **Save** the configuration and return to the eventstream canvas, where an error is indicated (because you need to store the output from the transformation somewhere!).
 
 1. Use the **+** icon to the right of the **GroupByStreet** node to add a new **Eventhouse** node.
+
 1. Configure the new eventhouse node with the following options:
-   - **Data ingestion mode:**: Event processing before ingestion
-   - **Destination name:** `bikes-by-street-table`
-   - **Workspace:** *Select the workspace you created at the beginning of this exercise*
-   - **Eventhouse**: *Select your eventhouse*
-   - **KQL database:** *Select your KQL database*
-   - **Destination table:** Create a new table named `bikes-by-street`
-   - **Input data format:** JSON
 
-    ![Screenshot of a table for grouped data.](./Images/group-by-table.png)
+   - **Data ingestion mode:**: Event processing before ingestion (1)
+   - **Destination name:** `bikes-by-street-table` (2)
+   - **Workspace:** *fabric-<inject key="DeploymentID" enableCopy="false"/>* (3)
+   - **Eventhouse**: *BicycleEventhouse* (4)
+   - **KQL database:** *BicycleEventhouse* (5)
+   - **Destination table:** Create a new table named `bikes-by-street` (6)
+   - **Input data format:** JSON (7)
 
-1. In the **Eventhouse** pane, select **Save**. 
+    ![Screenshot of a table for grouped data.](./Images/md103.png)
+
+1. In the **Eventhouse** pane, select **Save (8)**. 
 1. On the toolbar, select **Publish**.
 1. Wait a minute or so for the changes to become active.
 1. In the design canvas, select the **bikes-by-street-table** node, and view the **data preview** pane beneath the canvas.
 
-    ![Screenshot of a table for grouped data.](./Images/stream-table-with-windows.png)
+    ![Screenshot of a table for grouped data.](./Images/md104.png)
 
-    Note that the trasformed data includes the grouping field you specified (**Street**), the aggregation you specified (**SUM_no_Bikes**), and a timestamp field indicating the end of the 5 second tumbling window in which the event occurred (**Window_End_Time**).
+    **Note**: The trasformed data includes the grouping field you specified (**Street**), the aggregation you specified (**SUM_no_Bikes**), and a timestamp field indicating the end of the 5 second tumbling window in which the event occurred (**Window_End_Time**).
 
 ## Query the transformed data
 
@@ -150,7 +176,11 @@ Now you can query the bicycle data that has been transformed and loaded into a t
 
 1. In the menu bar on the left, select your KQL database.
 1. 1. On the **database** tab, in the toolbar for your KQL database, use the **Refresh** button to refresh the view until you see the **bikes-by-street** table under the database.
-1. In the **...** menu for the **bikes-by-street** table, select **Query data** > **Show any 100 records**.
+
+1. In the **... (1)** menu for the **bikes-by-street** table, select **Query with code (2)** > **Show any 100 records (3)**.
+
+    ![Screenshot of a table for grouped data.](./Images/md105.png)
+
 1. In the query pane, note that the following query is generated and run:
 
     ```kql
@@ -170,7 +200,7 @@ Now you can query the bicycle data that has been transformed and loaded into a t
 
     The results show the number of bikes observed in each street within each 5 second time period.
 
-    ![Screenshot of a query returning grouped data.](./Images/kql-group-query.png)
+    ![Screenshot of a query returning grouped data.](./Images/md106.png)
 
 
 
