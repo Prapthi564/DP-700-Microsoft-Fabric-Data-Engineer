@@ -34,7 +34,6 @@ A simple way to ingest data is to use a **Copy Data** activity in a pipeline to 
 
 3. In the **Copy Data** wizard, on the **Choose data source** page, enter **HTTP (1)** in the search bar and then select **HTTP (2)** in the **New sources** section.
 
-
     ![Screenshot of the Choose data source page.](./Images/md35.png)
 
 4. In the **Connect to data source** pane, enter the following settings for the connection to your data source:
@@ -121,7 +120,7 @@ A simple way to ingest data is to use a **Copy Data** activity in a pipeline to 
 
 5. Verify that your notebooks looks similar to this, and then use the **&#9655; Run all** button on the toolbar to run all of the cells it contains.
 
-    ![Screenshot of a notebook with a parameters cell and code to transform data.](./Images/md28.png)
+    ![Screenshot of a notebook with a parameters cell and code to transform data.](./Images/md38.png)
 
     > **Note**: Since this is the first time you've run any Spark code in this session, the Spark pool must be started. This means that the first cell can take a minute or so to complete.
 
