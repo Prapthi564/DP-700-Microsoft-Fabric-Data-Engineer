@@ -28,6 +28,7 @@ In this task, you will create a lakehouse to organize and analyze your data file
    ![Screenshot of uploaded files in a lakehouse.](./Images/md10.png)  
 
 3. Provide the following details to create a **Lakehouse**:  
+
    - **Name:** Enter **lakehouse<inject key="DeploymentID" enableCopy="false"/>**  
 
 4. Click **Create** to proceed.  
@@ -40,7 +41,7 @@ In this task, you will create a lakehouse to organize and analyze your data file
 
 7. After the upload is complete, expand the **Files** section, select the **orders (1)** folder, and verify that the **CSV files (2)** have been successfully uploaded, as shown below:  
 
-   ![Screen picture of CSV files uploaded to a new Fabric workspace.](Images/md12.jpg)  
+   ![Screen picture of CSV files uploaded to a new Fabric workspace.](Images/md12.png)  
 
 ## Task 2: Create a notebook
 
