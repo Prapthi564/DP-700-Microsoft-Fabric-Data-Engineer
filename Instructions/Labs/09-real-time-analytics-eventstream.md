@@ -1,9 +1,4 @@
----
-lab:
-    title: 'Ingest real-time data with Eventstream in Microsoft Fabric'
-    module: 'Ingest real-time data with Eventstream in Microsoft Fabric'
----
-# Ingest real-time data with Eventstream in Microsoft Fabric
+# Lab 5: Ingest real-time data with Eventstream in Microsoft Fabric
 
 Eventstream is a feature in Microsoft Fabric that captures, transforms, and routes real-time events to various destinations. You can add event data sources, destinations, and transformations to the eventstream.
 
