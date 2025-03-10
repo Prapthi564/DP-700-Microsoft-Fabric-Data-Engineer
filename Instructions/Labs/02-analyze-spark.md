@@ -210,7 +210,7 @@ The DataFrame object provides additional functionality such as the ability to fi
 
     ![Screen picture showing auto generated code and data.](Images/md22.png)
 
-### Aggregate and group data in a DataFrame
+## Task 5: Aggregate and group data in a DataFrame
 
 1. Add a code cell, and enter the following code:
 
@@ -242,7 +242,7 @@ The DataFrame object provides additional functionality such as the ability to fi
 
     ![Screen picture showing the results of aggregating and grouping data in a DataFrame.](./Images/md23.png)
 
-## Use Spark to transform data files
+## Task 6: Use Spark to transform data files
 
 A common task for data engineers and data scientists is to transform data for further downstream processing or analysis.
 
@@ -334,7 +334,7 @@ When dealing with large volumes of data, partitioning can significantly improve 
 
 4. Run the cell and verify that the results show the order data for sales in 2021. Notice that the partitioning columns specified in the path (Year and Month) are not included in the DataFrame.
 
-## Work with tables and SQL
+## Task 7: Work with tables and SQL
 
 You’ve now seen how the native methods of the DataFrame object enable you to query and analyze data from a file. However, you may be more comfortable working with tables using SQL syntax. Spark provides a metastore in which you can define relational tables. 
 
@@ -354,8 +354,7 @@ Tables in a Spark metastore are relational abstractions over files in the data l
     spark.sql("DESCRIBE EXTENDED salesorders").show(truncate=False)
     ```
 
->[!NOTE]
-> In this example, no explicit path is provided, so the files for the table will be managed by the metastore. Also, the table is saved in delta format which adds relational database capabilities to tables. This includes support for transactions, row versioning, and other useful features. Creating tables in delta format is preferred for data lakehouses in Fabric.
+    >**Note**: In this example, no explicit path is provided, so the files for the table will be managed by the metastore. Also, the table is saved in delta format which adds relational database capabilities to tables. This includes support for transactions, row versioning, and other useful features. Creating tables in delta format is preferred for data lakehouses in Fabric.
 
 2. Run the code cell and review the output, which describes the definition of the new table.
 
@@ -397,7 +396,7 @@ While it’s useful to be able to embed SQL statements into a cell containing Py
 >[!NOTE]
 > For more information about Spark SQL and dataframes, see the [Apache Spark SQL](https://spark.apache.org/sql/) documentation.
 
-## Visualize data with Spark
+## Task 8: Visualize data with Spark
 
 Charts help you to see patterns and trends faster than would be possible by scanning thousands of rows of data. Fabric notebooks include a built-in chart view but it is not designed for complex charts. For more control over how charts are created from data in DataFrames, use Python graphics libraries like *matplotlib* or *seaborn*.
 
