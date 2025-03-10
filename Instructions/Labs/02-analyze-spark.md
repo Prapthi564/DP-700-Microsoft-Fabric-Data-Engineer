@@ -66,7 +66,7 @@ In this task, you will create a notebook to work with data in Apache Spark. Note
    Use this notebook to explore sales order data
     ```
 
-    ![Screen picture of a Fabric notebook with a markdown cell.](Images/md16.jpg)
+    ![Screen picture of a Fabric notebook with a markdown cell.](Images/md16.png)
 
 1. When you have finished, click anywhere in the notebook outside of the cell to stop editing it and see the rendered markdown.
 
@@ -549,8 +549,7 @@ Charts help you to see patterns and trends faster than would be possible by scan
 
 10. Re-run the code cell and view the results. 
 
->[!NOTE] 
-> To learn more about plotting with matplotlib, see the [matplotlib](https://matplotlib.org/) documentation.
+    >**Note**: To learn more about plotting with matplotlib, see the [matplotlib](https://matplotlib.org/) documentation.
 
 ### Use the seaborn library
 
