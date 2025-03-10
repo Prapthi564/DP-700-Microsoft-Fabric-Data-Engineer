@@ -141,7 +141,7 @@ Now that you have created a workspace, a lakehouse, and a notebook you are ready
 
     ![Screen picture of code with schema defined and data.](./Images/md21.png)
 
-11.	This DataFrame includes only the data from the 2019.csv file. Modify the code so that the file path uses a * wildcard to read all the files in the orders folder:
+11. This DataFrame includes only the data from the 2019.csv file. Modify the code so that the file path uses a * wildcard to read all the files in the orders folder:
 
     ```python
     from pyspark.sql.types import *
@@ -163,9 +163,9 @@ Now that you have created a workspace, a lakehouse, and a notebook you are ready
     display(df)
     ```
 
-12.	When you run the modified code, you should see sales for 2019, 2020, and 2021. Only a subset of the rows is displayed, so you may not see rows for every year.
+12. When you run the modified code, you should see sales for 2019, 2020, and 2021. Only a subset of the rows is displayed, so you may not see rows for every year.
 
-      >**Note**: You can hide or show the output of a cell by selecting **…** next to the result. This makes it easier to work in a notebook.
+    >**Note**: You can hide or show the output of a cell by selecting **…** next to the result. This makes it easier to work in a notebook.
 
 ## Task 4: Explore data in a DataFrame
 
@@ -307,7 +307,7 @@ At this point you might want to save the transformed data so that it can be used
 
 4. Run the cell. A new DataFrame is created from the parquet files in the *transformed_data/orders* folder. Verify that the results show the order data that has been loaded from the parquet files.
 
-    ![Screen picture showing auto generated code and data.](Images/md25.png)
+    ![Screen picture showing auto generated code and data.](./Images/md25.png)
 
 ### Save data in partitioned files
 
@@ -323,7 +323,7 @@ When dealing with large volumes of data, partitioning can significantly improve 
 
 2.	Run the cell and wait for the message that the data has been saved. Then, in the Lakehouses pane on the left, in the … menu for the Files node, select **Refresh** and expand the partitioned_data folder to verify that it contains a hierarchy of folders named *Year=xxxx*, each containing folders named *Month=xxxx*. Each month folder contains a parquet file with the orders for that month.
 
-    ![Screen picture showing auto generated code and data.](Images/md26.png)
+   ![Screen picture.](./Images/md26.png)
 
 3. Add a new cell with the following code to load a new DataFrame from the orders.parquet file:
 
@@ -347,14 +347,13 @@ Tables in a Spark metastore are relational abstractions over files in the data l
 
 1.	Add a code cell to the notebook and enter the following code, which saves the DataFrame of sales order data as a table named *salesorders*:
 
-    ```python
+   ```python
     # Create a new table
     df.write.format("delta").saveAsTable("salesorders")
 
     # Get the table description
     spark.sql("DESCRIBE EXTENDED salesorders").show(truncate=False)
-    ```
-
+   ```
     >**Note**: In this example, no explicit path is provided, so the files for the table will be managed by the metastore. Also, the table is saved in delta format which adds relational database capabilities to tables. This includes support for transactions, row versioning, and other useful features. Creating tables in delta format is preferred for data lakehouses in Fabric.
 
 2. Run the code cell and review the output, which describes the definition of the new table.
@@ -592,7 +591,7 @@ While *matplotlib* enables you to create different chart types, it can require s
 
 5.	Modify the code again as follows:
 
-    ```python
+   ```python
     import seaborn as sns
 
     # Clear the plot area
@@ -602,7 +601,7 @@ While *matplotlib* enables you to create different chart types, it can require s
     ax = sns.lineplot(x="OrderYear", y="GrossRevenue", data=df_sales)
 
     plt.show()
-    ```
+   ```
 
 6.	Run the modified code to view the yearly revenue as a line chart.
 
