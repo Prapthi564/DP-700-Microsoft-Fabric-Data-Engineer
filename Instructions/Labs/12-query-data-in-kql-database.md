@@ -1,10 +1,6 @@
----
-lab:
-    title: 'Work with data in a Microsoft Fabric eventhouse'
-    module: 'Work with data in a Microsoft Fabric eventhouse'
----
+# Lab 6: Work with data in a Microsoft Fabric eventhouse
 
-# Work with data in a Microsoft Fabric eventhouse
+## Estimated Duration: 30 minutes
 
 In Microsoft Fabric, an *eventhouse* is used to store real-time data related to events; often captured from a streaming data source by an *eventstream*.
 
@@ -12,29 +8,24 @@ Within an eventhouse, the data is stored in one or more KQL databases, each of w
 
 In this exercise, you'll create and populate an eventhouse with some sample data related to taxi rides, and then query the data using KQL and SQL.
 
-This exercise takes approximately **25** minutes to complete.
-
-## Create a workspace
-
-Before working with data in Fabric, create a workspace with the Fabric capacity enabled.
-
-1. Navigate to the [Microsoft Fabric home page](https://app.fabric.microsoft.com/home?experience=fabric) at `https://app.fabric.microsoft.com/home?experience=fabric` in a browser and sign in with your Fabric credentials.
-1. In the menu bar on the left, select **Workspaces** (the icon looks similar to &#128455;).
-1. Create a new workspace with a name of your choice, selecting a licensing mode that includes Fabric capacity (*Trial*, *Premium*, or *Fabric*).
-1. When your new workspace opens, it should be empty.
-
-    ![Screenshot of an empty workspace in Fabric.](./Images/new-workspace.png)
-
 ## Create an Eventhouse
 
 Now that you have a workspace with support for a Fabric capacity, you can create an eventhouse in it.
 
 1. In the menu bar on the left, select **Workloads**. Then, select the **Real-Time Intelligence** tile.
-1. On the **Real-Time Intelligence** home page, select the **Explore Real-Time Intelligence Sample** tile. It will automatically create an eventhouse called **RTISample**:
 
-   ![Screenshot of a new eventhouse with sample data.](./Images/create-eventhouse-sample.png)
+   ![Screenshot of a table for grouped data.](./Images/md107.png)
+
+   ![Screenshot of a table for grouped data.](./Images/md108.png)
+
+1. On the **Real-Time Intelligence** home page, select the **Explore Real-Time Intelligence Sample** tile and click on **Open** It will automatically create an eventhouse called **RTISample**:
+
+   ![Screenshot of a new eventhouse with sample data.](./Images/md109.png)
+
+   ![Screenshot of a new eventhouse with sample data.](./Images/md110.png)
 
 1. In the pane on the left, note that your eventhouse contains a KQL database with the same name as the eventhouse.
+
 1. Verify that a **Bikestream** table has also been created.
 
 ## Query data by using KQL
@@ -56,7 +47,7 @@ Kusto Query Language (KQL) is an intuitive, comprehensive language that you can 
 
 1. Select the query code and run it to return 100 rows from the table.
 
-   ![Screenshot of the KQL query editor.](./Images/kql-take-100-query.png)
+   ![Screenshot of the KQL query editor.](./Images/md111.png)
 
     You can be more precise by adding specific attributes you want to query using the `project` keyword and then using the `take` keyword to tell the engine how many records to return.
 
@@ -245,13 +236,3 @@ KQL Database doesn't support Transact-SQL natively, but it provides a T-SQL endp
     HAVING Neighbourhood = 'Chelsea'
     ORDER BY Neighbourhood ASC;
     ```
-
-## Clean up resources
-
-In this exercise, you have created an eventhouse and queried data using KQL and SQL.
-
-When you've finished exploring your KQL database, you can delete the workspace you created for this exercise.
-
-1. In the bar on the left, select the icon for your workspace.
-2. In the toolbar, select **Workspace settings**.
-3. In the **General** section, select **Remove this workspace**.
