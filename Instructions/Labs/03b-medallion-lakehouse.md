@@ -1,48 +1,32 @@
----
-lab:
-    title: 'Create a medallion architecture in a Microsoft Fabric lakehouse'
-    module: 'Organize a Fabric lakehouse using medallion architecture design'
----
+# Lab 3: Create a medallion architecture in a Microsoft Fabric lakehouse
 
-# Create a medallion architecture in a Microsoft Fabric lakehouse
+## Estimated Duration: 60 minutes
 
 In this exercise you will build out a medallion architecture in a Fabric lakehouse using notebooks. You will create a workspace, create a lakehouse, upload data to the bronze layer, transform the data and load it to the silver Delta table, transform the data further and load it to the gold Delta tables, and then explore the semantic model and create relationships.
 
-This exercise should take approximately **45** minutes to complete
+## Verify Workspace settings
 
-> **Note**: You need a [Microsoft Fabric trial](https://learn.microsoft.com/fabric/get-started/fabric-trial) to complete this exercise.
+1. In the menu bar on the left, select **fabric-<inject key="DeploymentID" enableCopy="false"/>** workspace.
 
-## Create a workspace
+1. Navigate to the workspace settings and enable the **Data model settings** preview feature.(Ignore if already enabled) This will enable you to create relationships between tables in your lakehouse using a Power BI semantic model.
 
-Before working with data in Fabric, create a workspace with the Fabric trial enabled.
+    ![Screenshot of the workspace settings page in Fabric.](./Images/md2-32.png)
 
-1. Navigate to the [Microsoft Fabric home page](https://app.fabric.microsoft.com/home?experience=fabric) at `https://app.fabric.microsoft.com/home?experience=fabric` in a browser, and sign in with your Fabric credentials.
-1. In the menu bar on the left, select **Workspaces** (the icon looks similar to &#128455;).
-1. Create a new workspace with a name of your choice, selecting a licensing mode that includes Fabric capacity (*Trial*, *Premium*, or *Fabric*).
-1. When your new workspace opens, it should be empty.
-1. Navigate to the workspace settings and enable the **Data model editing** preview feature. This will enable you to create relationships between tables in your lakehouse using a Power BI semantic model.
-
-    ![Screenshot of the workspace settings page in Fabric.](./Images/workspace-settings.png)
-
-    > **Note**: You may need to refresh the browser tab after enabling the preview feature.
+    >**Note**: You may need to refresh the browser tab after enabling the preview feature.
 
 ## Create a lakehouse and upload data to bronze layer
 
 Now that you have a workspace, it's time to create a data lakehouse for the data you're going to analyze.
 
-1. In the workspace you just created, create a new **Lakehouse** named **Sales** by clicking the **+ New item** button.
-
-    After a minute or so, a new empty lakehouse will be created. Next, you'll ingest some data into the data lakehouse for analysis. There are multiple ways to do this, but in this exercise you'll simply download a text file to your local computer (or lab VM if applicable) and then upload it to your lakehouse.
-
-1. Download the data file for this exercise from `https://github.com/MicrosoftLearning/dp-data/blob/main/orders.zip`. Extract the files and save them with their original names on your local computer (or lab VM if applicable). There should be 3 files containing sales data for 3 years: 2019.csv, 2020.csv, and 2021.csv.
+1. Within the workspace, create a new **Lakehouse** named **Sales** by clicking the **+ New item** button.
 
 1. Return to the web browser tab containing your lakehouse, and in the **...** menu for the **Files** folder in the **Explorer** pane, select **New subfolder** and create a folder named **bronze**.
 
-1. In the **...** menu for the **bronze** folder, select **Upload** and **Upload files**, and then upload the 3 files (2019.csv, 2020.csv, and 2021.csv) from your local computer (or lab VM if applicable) to the lakehouse. Use the shift key to upload all 3 files at once.
+1. In the **...** menu for the **bronze** folder, select **Upload** and **Upload files**, and then upload the 3 files (2019.csv, 2020.csv, and 2021.csv) (C:\LabFiles\Files\orders\) file located in the Lab VM to the lakehouse. Use the shift key to upload all 3 files at once.
 
 1. After the files have been uploaded, select the **bronze** folder; and verify that the files have been uploaded, as shown here:
 
-    ![Screenshot of uploaded products.csv file in a lakehouse.](./Images/bronze-files.png)
+   ![Screenshot of uploaded products.csv file in a lakehouse.](./Images/md2-33.png)
 
 ## Transform data and load to silver Delta table
 
@@ -50,11 +34,13 @@ Now that you have some data in the bronze layer of your lakehouse, you can use a
 
 1. On the **Home** page while viewing the contents of the **bronze** folder in your data lake, in the **Open notebook** menu, select **New notebook**.
 
-    After a few seconds, a new notebook containing a single *cell* will open. Notebooks are made up of one or more cells that can contain *code* or *markdown* (formatted text).
+   ![Screenshot of uploaded products.csv file in a lakehouse.](./Images/md2-34.png)
+
+   >**Note**: After a few seconds, a new notebook containing a single *cell* will open. Notebooks are made up of one or more cells that can contain *code* or *markdown* (formatted text).
 
 2. When the notebook opens, rename it to **Transform data for Silver** by selecting the **Notebook xxxx** text at the top left of the notebook and entering the new name.
 
-    ![Screenshot of a new notebook named Transform data for silver.](./Images/sales-notebook-rename.png)
+   ![Screenshot of a new notebook named Transform data for silver.](./Images/md2-35.png)
 
 3. Select the existing cell in the notebook, which contains some simple commented-out code. Highlight and delete these two lines - you will not need this code.
 
@@ -205,7 +191,7 @@ Now that you have data in your silver layer, you can use the SQL analytics endpo
 
 1. Navigate back to your workspace and notice that you now have several items listed. Select the **Sales SQL analytics endpoint** to open your lakehouse in the SQL analytics endpoint view.
 
-    ![Screenshot of the SQL endpoint in a lakehouse.](./Images/sql-endpoint-item.png)
+    ![Screenshot of the SQL endpoint in a lakehouse.](./Images/md2-36.png)
 
 2. Select **New SQL query** from the ribbon, which will open a SQL query editor. Note that you can rename your query using the **...** menu item next to the existing query name in the lakehouse explorer pane.
 
@@ -223,7 +209,7 @@ Now that you have data in your silver layer, you can use the SQL analytics endpo
 
     This query calculates the total sales for each year in the sales_silver table. Your results should look like this:
 
-    ![Screenshot of the results of a SQL query in a lakehouse.](./Images/total-sales-sql.png)
+    ![Screenshot of the results of a SQL query in a lakehouse.](./Images/md2-37.png)
 
 4. Next you'll review which customers are purchasing the most (in terms of quantity). Paste the following query into the query editor and select **Run**:
 
@@ -585,26 +571,20 @@ In your workspace, you can now use the gold layer to create a report and analyze
 Note that you can't use the **default semantic model** that is automatically created when you create a lakehouse. You must create a new semantic model that includes the gold tables you created in this exercise, from the lakehouse explorer.
 
 1. In your workspace, navigate to your **Sales** lakehouse.
-2. Select **New semantic model** from the ribbon of the lakehouse explorer view.
-3. Assign the name **Sales_Gold** to your new semantic model.
-4. Select your transformed gold tables to include in your semantic model and select **Confirm**.
+
+2. Select **New semantic model (1)** from the ribbon of the lakehouse explorer view.
+
+3. Assign the name **Sales_Gold (2)** to your new semantic model.
+
+4. Select your transformed gold tables to include in your semantic model and select **Confirm (5)**.
+
    - dimdate_gold
    - dimcustomer_gold
    - dimproduct_gold
    - factsales_gold
 
-    This will open the semantic model in Fabric where you can create relationships and measures, as shown here:
+    >**Note**: This will open the semantic model in Fabric where you can create relationships and measures, as shown here:
 
-    ![Screenshot of a semantic model in Fabric.](./Images/dataset-relationships.png)
+    ![Screenshot of a semantic model in Fabric.](./Images/md2-38.png)
 
 From here, you or other members of your data team can create reports and dashboards based on the data in your lakehouse. These reports will be connected directly to the gold layer of your lakehouse, so they'll always reflect the latest data.
-
-## Clean up resources
-
-In this exercise, you've learned how to create a medallion architecture in a Microsoft Fabric lakehouse.
-
-If you've finished exploring your lakehouse, you can delete the workspace you created for this exercise.
-
-1. In the bar on the left, select the icon for your workspace to view all of the items it contains.
-2. In the **...** menu on the toolbar, select **Workspace settings**.
-3. In the **General** section, select **Remove this workspace**.
