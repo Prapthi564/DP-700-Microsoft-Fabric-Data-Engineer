@@ -1,49 +1,32 @@
----
-lab:
-    title: 'Use delta tables in Apache Spark'
-    module: 'Work with Delta Lake tables in Microsoft Fabric'
----
+# Lab 2: Use Delta Tables in Apache Spark
 
-# Use Delta Tables in Apache Spark
+## Estimated Duration: 75 minutes
 
 Tables in a Microsoft Fabric Lakehouse are based on the open-source Delta Lake format. Delta Lake adds support for relational semantics for both batch and streaming data. In this exercise you will create Delta tables and explore the data using SQL queries.
-
-This exercise should take approximately **45** minutes to complete
-
-> [!NOTE]
-> You need a [Microsoft Fabric](/fabric/get-started/fabric-trial) trial to complete this exercise.
-
-## Create a workspace
-
-First, create a workspace with the *Fabric trial* enabled.
-
-1. Navigate to the [Microsoft Fabric home page](https://app.fabric.microsoft.com/home?experience=fabric) at `https://app.fabric.microsoft.com/home?experience=fabric` in a browser, and sign in with your Fabric credentials.
-1. In the menu bar on the left, select **Workspaces** (🗇).
-1. Create a **new workspace** with a name of your choice, selecting a licensing mode that includes Fabric capacity (Trial, Premium, or Fabric).
-1. When your new workspace opens, it should be empty.
-
-    ![Screen picture of an empty Fabric workspace.](Images/workspace-empty.jpg)
 
 ## Create a lakehouse and upload data
 
 Now that you have a workspace, it’s time to create a lakehouse and upload some data.
 
-1. On the menu bar on the left, select **Create**. In the *New* page, under the *Data Engineering* section, select **Lakehouse**. Give it a unique name of your choice.
+1. Return to the web browser tab containing your lakehouse, and in the Explorer pane, next to the **Files** folder, select the **… (1)** menu. Create a **New subfolder** called *products (3)*.
 
-    >**Note**: If the **Create** option is not pinned to the sidebar, you need to select the ellipsis (**...**) option first.
+   ![Screenshot of uploaded files in a lakehouse.](./Images/md2-2.png)
 
-1. There are various ways to ingest data, but in this exercise you’ll download a text file to your local computer (or lab VM if applicable) and then upload it to your lakehouse. Download the [data file](https://github.com/MicrosoftLearning/dp-data/raw/main/products.csv) from `https://github.com/MicrosoftLearning/dp-data/raw/main/products.csv`, saving it as *products.csv*.
-1.	Return to the web browser tab containing your lakehouse, and in the Explorer pane, next to the **Files** folder, select the … menu.  Create a **New subfolder** called *products*.
-1.	In the … menu for the products folder, **upload** the *products.csv* file from your local computer (or lab VM if applicable).
+   ![Screen picture of products.csv uploaded to the lakehouse.](Images/md2-26.png)
+
+1.	In the … menu for the products folder, **upload** the *products.csv*(C:\LabFiles\Files\) file located in the Lab VM.
+
 1.	After the file has been uploaded, select the **products** folder to verify that the file has been uploaded, as shown here:
 
-    ![Screen picture of products.csv uploaded to the lakehouse.](Images/upload-products.jpg)
+   ![Screen picture of products.csv uploaded to the lakehouse.](Images/md2-27.png)
   
 ## Explore data in a DataFrame
 
-1.	Create a **New notebook**. After a few seconds, a new notebook containing a single cell will open. Notebooks are made up of one or more cells that can contain code or markdown (formatted text).
-2.	Select the first cell (which is currently a code cell), and then in the top-right tool bar, use the **M↓** button to convert it to a markdown cell. The text contained in the cell will then be displayed as formatted text. Use markdown cells to provide explanatory information about your code.
-3.	Use the 🖉 (Edit) button to switch the cell to editing mode, then modify the markdown as follows:
+1. Create a **New notebook**. After a few seconds, a new notebook containing a single cell will open. Notebooks are made up of one or more cells that can contain code or markdown (formatted text).
+
+2. Select the first cell (which is currently a code cell), and then in the top-right tool bar, use the **M↓** button to convert it to a markdown cell. The text contained in the cell will then be displayed as formatted text. Use markdown cells to provide explanatory information about your code.
+
+3. Use the 🖉 (Edit) button to switch the cell to editing mode, then modify the markdown as follows:
 
     ```markdown
     # Delta Lake tables 
@@ -51,6 +34,7 @@ Now that you have a workspace, it’s time to create a lakehouse and upload some
     ```
 
 4. Click anywhere in the notebook outside of the cell to stop editing it and see the rendered markdown.
+
 5. Add a new code cell, and add the following code to read the products data into a DataFrame using a defined schema:
 
     ```python
@@ -68,23 +52,22 @@ Now that you have a workspace, it’s time to create a lakehouse and upload some
     display(df)
     ```
 
-> [!TIP]
-> Hide or display the explorer panes by using the chevron « icon. This enables you to either focus on the notebook, or your files.
+   >**Tip**: Hide or display the explorer panes by using the chevron « icon. This enables you to either focus on the notebook, or your files.
 
 7. Use the **Run cell** (▷) button on the left of the cell to run it.
 
-> [!NOTE]
-> Since this is the first time you’ve run any code in this notebook, a Spark session must be started. This means that the first run can take a minute or so to complete. Subsequent runs will be quicker.
+  >**Note**: Since this is the first time you’ve run any code in this notebook, a Spark session must be started. This means that the first run can take a minute or so to complete. Subsequent runs will be quicker.
 
 8. When the cell code has completed, review the output below the cell, which should look similar to this:
 
-    ![Screen picture of products.csv data.](Images/products-schema.jpg)
+    ![Screen picture of products.csv data.](Images/md2-28.png)
  
 ## Create Delta tables
 
 You can save the DataFrame as a Delta table by using the *saveAsTable* method. Delta Lake supports the creation of both managed and external tables:
 
    * **Managed** Delta tables benefit from higher performance, as Fabric manages both the schema metadata and the data files.
+
    * **External** tables allow you to store data externally, with the metadata managed by Fabric.
 
 ### Create a managed table
@@ -93,8 +76,7 @@ The data files are created in the **Tables** folder.
 
 1. Under the results returned by the first code cell, use the + Code icon to add a new code cell.
 
-> [!TIP]
-> To see the + Code icon, move the mouse to just below and to the left of the output from the current cell. Alternatively, in the menu bar, on the Edit tab, select **+ Add code cell**.
+   >**Tip**: To see the + Code icon, move the mouse to just below and to the left of the output from the current cell. Alternatively, in the menu bar, on the Edit tab, select **+ Add code cell**.
 
 2. To create a managed Delta table, add a new cell, enter the following code and then run the cell:
 
@@ -102,10 +84,9 @@ The data files are created in the **Tables** folder.
     df.write.format("delta").saveAsTable("managed_products")
     ```
 
-3.	In the Lakehouse explorer pane, **Refresh** the Tables folder and expand the Tables node to verify that the **managed_products** table has been created.
+3. In the Lakehouse explorer pane, **Refresh** the Tables folder and expand the Tables node to verify that the **managed_products** table has been created.
 
->[!NOTE]
-> The triangle icon next to the file name indicates a Delta table.
+   >**Note**: The triangle icon next to the file name indicates a Delta table.
 
 The files for managed tables are stored in the **Tables** folder in the lakehouse. A folder named *managed_products* has been created which stores the Parquet files and delta_log folder for the table.
 
@@ -113,9 +94,11 @@ The files for managed tables are stored in the **Tables** folder in the lakehous
 
 You can also create external tables, which may be stored somewhere other than the lakehouse, with the schema metadata stored in the lakehouse.
 
-1.	In the Lakehouse explorer pane, in the … menu for the **Files** folder, select **Copy ABFS path**. The ABFS path is the fully qualified path to the lakehouse Files folder.
+1. In the Lakehouse explorer pane, in the … menu for the **Files** folder, select **Copy ABFS path**. The ABFS path is the fully qualified path to the lakehouse Files folder.
 
-2.	In a new code cell, paste the ABFS path. Add the following code, using cut and paste to insert the abfs_path into the correct place in the code:
+   ![Screenshot of uploaded files in a lakehouse.](./Images/md2-29.png)
+
+2. In a new code cell, paste the ABFS path. Add the following code, using cut and paste to insert the abfs_path into the correct place in the code:
 
     ```python
     df.write.format("delta").saveAsTable("external_products", path="abfs_path/external_products")
@@ -127,11 +110,13 @@ You can also create external tables, which may be stored somewhere other than th
     abfss://workspace@tenant-onelake.dfs.fabric.microsoft.com/lakehousename.Lakehouse/Files/external_products
     ```
 
-4. **Run** the cell to save the DataFrame as an external table in the Files/external_products folder.
+4. **Run (2)** the cell to save the DataFrame as an external table in the Files/external_products folder.
 
-5.	In the Lakehouse explorer pane, **Refresh** the Tables folder and expand the Tables node and verify that the external_products table has been created containing the schema metadata.
+   ![Screenshot of uploaded files in a lakehouse.](./Images/md2-30.png)
 
-6.	In the Lakehouse explorer pane, in the … menu for the Files folder, select **Refresh**. Then expand the Files node and verify that the external_products folder has been created for the table’s data files.
+5. In the Lakehouse explorer pane, **Refresh** the Tables folder and expand the Tables node and verify that the **external_products (3)** table has been created containing the schema metadata.
+
+6. In the Lakehouse explorer pane, in the … menu for the Files folder, select **Refresh**. Then expand the Files node and verify that the external_products folder has been created for the table’s data files.
 
 ### Compare managed and external tables
 
@@ -259,7 +244,7 @@ Using the SQL magic command you can use SQL syntax instead of Pyspark. Here you 
 
 3. When the data is returned, select the **Chart** view to display a bar chart.
 
-    ![Screen picture of SQL select statement and results.](Images/sql-select.jpg)
+    ![Screen picture of SQL select statement and results.](Images/md2-31.jpg)
 
 Alternatively, you can run a SQL query using PySpark.
 
@@ -364,13 +349,3 @@ This code queries the IotDeviceData table again, which should now include the ad
     ```python
     deltastream.stop()
     ```
-
-## Clean up resources
-
-In this exercise, you’ve learned how to work with Delta tables in Microsoft Fabric.
-
-If you’ve finished exploring your lakehouse, you can delete the workspace you created for this exercise.
-
-1. In the bar on the left, select the icon for your workspace to view all of the items it contains.
-2. In the … menu on the toolbar, select **Workspace settings**.
-3. In the General section, select **Remove this workspace**.
