@@ -18,7 +18,12 @@
       {
         "RawFilePath": "https://raw.githubusercontent.com/CloudLabs-MOC/DP-700-Microsoft-Fabric-Data-Engineer/refs/heads/Prod/Instructions/Labs/03-delta-lake.md",
         "Order": 4
+      },
+      {
+        "RawFilePath": "https://raw.githubusercontent.com/CloudLabs-MOC/DP-700-Microsoft-Fabric-Data-Engineer/refs/heads/Prod/Instructions/Labs/03b-medallion-lakehouse.md",
+        "Order": 5
       }
+
     ]
   }
 ]
