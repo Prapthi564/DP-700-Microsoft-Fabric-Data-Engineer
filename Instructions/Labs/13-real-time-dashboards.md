@@ -10,7 +10,7 @@ Now that you have a workspace, you can start creating the Fabric items you'll ne
 
 1. In the workspace, select **+ New item (1)**. In the *New item* pane, select **Eventhouse (2)**.
 
-    ![Screenshot of alert settings.](./Images/md83.png)
+   ![Screenshot of alert settings.](./Images/md83.png)
 
 1. Enter **BicycleEventhouse (1)** in the name field and select **Create (2)**
 
