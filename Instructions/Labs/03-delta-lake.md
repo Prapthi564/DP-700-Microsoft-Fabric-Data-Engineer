@@ -4,7 +4,7 @@
 
 Tables in a Microsoft Fabric Lakehouse are based on the open-source Delta Lake format. Delta Lake adds support for relational semantics for both batch and streaming data. In this exercise you will create Delta tables and explore the data using SQL queries.
 
-## Create a lakehouse and upload data
+## Upload data to the Lakehouse
 
 Now that you have a workspace, it’s time to create a lakehouse and upload some data.
 
