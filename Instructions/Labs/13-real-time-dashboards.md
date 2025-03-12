@@ -289,7 +289,7 @@ Your dashboard currently consists of a single page. You can add more pages to pr
 
 1. Apply the changes. Then resize the tile to fill the height of the dashboard.
 
-   ![Screenshot of a dashboard with two pages](./Images/md2-52.png)
+   ![img](./Images/md2-52.png)
 
 ## Configure auto refresh
 
