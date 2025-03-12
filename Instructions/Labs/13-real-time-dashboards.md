@@ -1,78 +1,90 @@
----
-lab:
-    title: 'Get started with Real-time Dashboards in Microsoft Fabric'
-    module: 'Get started with Real-Time Dashboards in Microsoft Fabric'
----
+# Lab 1: Get started with Real-Time Dashboards in Microsoft Fabric
 
-# Get started with Real-Time Dashboards in Microsoft Fabric
+## Estimated Duration: 45 minutes
 
 Real-time dashboards in Microsoft Fabric enable you to visualize and explore streaming data using the Kusto Query Language (KQL).  In this exercise, you'll explore how to create and use a real-time dashboard based on a real-time data source.
-
-This lab takes approximately **25** minutes to complete.
-
-> **Note**: You need a [Microsoft Fabric tenant](https://learn.microsoft.com/fabric/get-started/fabric-trial) to complete this exercise.
-
-## Create a workspace
-
-Before working with data in Fabric, you need to create a workspace with the Fabric capacity enabled.
-
-1. Navigate to the [Microsoft Fabric home page](https://app.fabric.microsoft.com/home?experience=fabric) at `https://app.fabric.microsoft.com/home?experience=fabric` in a browser and sign in with your Fabric credentials.
-1. In the menu bar on the left, select **Workspaces** (the icon looks similar to &#128455;).
-1. Create a new workspace with a name of your choice, selecting a licensing mode that includes Fabric capacity (*Trial*, *Premium*, or *Fabric*).
-1. When your new workspace opens, it should be empty.
-
-    ![Screenshot of an empty workspace in Fabric.](./Images/new-workspace.png)
 
 ## Create an eventhouse
 
 Now that you have a workspace, you can start creating the Fabric items you'll need for your real-time intelligence solution. we'll start by creating an eventhouse.
 
-1. On the menu bar on the left, select **Create**. In the *New* page, under the *Real-Time Inteligence* section, select **Eventhouse**. Give it a unique name of your choice.
+1. In the workspace, select **+ New item (1)**. In the *New item* pane, select **Eventhouse (2)**.
 
-    >**Note**: If the **Create** option is not pinned to the sidebar, you need to select the ellipsis (**...**) option first.
+    ![Screenshot of alert settings.](./Images/md83.png)
+
+1. Enter **BicycleEventhouse (1)** in the name field and select **Create (2)**
+
+    ![Screenshot of alert settings.](./Images/md84.png)
 
 1. Close any tips or prompts that are displayed until you see your new empty eventhouse.
 
-    ![Screenshot of a new eventhouse](./Images/create-eventhouse.png)
-
 1. In the pane on the left, note that your eventhouse contains a KQL database with the same name as the eventhouse.
+
 1. Select the KQL database to view it.
+
+    ![Screenshot of alert settings.](./Images/md85.png)
+
+    >**Note**: Currently there are no tables in the database. In the rest of this exercise you'll use an eventstream to load data from a real-time source into a table.
 
 ## Create an eventstream
 
 Currently there are no tables in the database. We'll use an eventstream to load data from a real-time source into a table.
 
-1. In the main page of your KQL database, select **Get data**.
-2. For the data source, select **Eventstream** > **New eventstream**. Name the eventstream `Bicycle-data`.
+1. In the main page of your **KQL database (1)**, select **Get data (2)**.
 
-    ![Screenshot of a new eventstream.](./Images/empty-eventstream.png)
+2. For the data source, select **Eventstream (3)** > **New eventstream (4)**. Name the Eventstream `Bicycle-data` (5) and click on **Create (6)**.
 
-    The creation of your new event stream in the workspace will be completed in just a few moments. Once established, you will be automatically redirected to select a data source for your eventstream.
+   >**Note**: The creation of your new event stream in the workspace will be completed in just a few moments. Once established, you will be automatically redirected to the primary editor, ready to begin integrating sources into your event stream.
 
-1. Select **Use sample data**.
-1. Name the source name `Bicycles`, and select the **Bicycles** sample data.
+    ![Screenshot of alert settings.](./Images/md86.png)
 
-    Your stream will be mapped and you will be automatically displayed on the **eventstream canvas**.
+    ![Screenshot of alert settings.](./Images/md87.png)
 
-   ![Review the eventstream canvas](./Images/real-time-intelligence-eventstream-sourced.png)
+    ![Screenshot of a new eventstream.](./Images/md88.png)
 
-1. In the **Add destination** drop-down list, select **Eventhouse**.
+## Add a source
+
+1. In the Eventstream canvas, select **Use sample data**.
+
+2. Name the source `Bicycles` (1), and select the **Bicycles (2)** sample data and select **Add (3)**
+
+    ![Screenshot of a new eventstream.](./Images/md89.png)
+
+   >**Note**: Your stream will be mapped and you will be automatically displayed on the **eventstream canvas**.
+
+   ![Review the eventstream canvas](./Images/md90.png)
+
+## Add a destination
+
+1. Select the **Transform events or add destination (1)** tile and search for **Eventhouse (2)**.
+
+   ![Review the eventstream canvas](./Images/md91.png)
+
 1. In the **Eventhouse** pane, configure the following setup options.
-   - **Data ingestion mode:**: Event processing before ingestion
-   - **Destination name:** `bikes-table`
-   - **Workspace:** *Select the workspace you created at the beginning of this exercise*
-   - **Eventhouse**: *Select your eventhouse*
-   - **KQL database:** *Select your KQL database*
-   - **Destination table:** Create a new table named `bikes`
-   - **Input data format:** JSON
 
-   ![Eventstream destination settings.](./Images/kql-database-event-processing-before-ingestion.png)
+   - **Data ingestion mode:**: Event processing before ingestion (1)
+   - **Destination name:** `bikes-table` (2)
+   - **Workspace:** fabric-<inject key="DeploymentID" enableCopy="false"/> (3)
+   - **Eventhouse**: BicycleEventhouse (4)
+   - **KQL database:** BicycleEventhouse (5)
+   - **Destination table:** Create a new table named `bikes` 
+   - **Input data format:** JSON (9)
 
-1. In the **Eventhouse** pane, select **Save**. 
-1. Connect the **Bicycles-data** node's output to the **bikes-table** node, then select **Publish**.
+   ![Eventstream destination settings.](./Images/md93.png)
+
+   ![Eventstream destination settings.](./Images/md94.png)
+
+   ![Eventstream destination settings.](./Images/md92.png)
+
+1. In the **Eventhouse** pane, select **Save (10)**
+
+1. On the toolbar, select **Publish**.
+
+   ![Eventstream destination settings.](./Images/md95.png)
+
 1. Wait a minute or so for the data destination to become active. Then select the **bikes-table** node in the design canvas and view the **Data preview** pane underneath to see the latest data that has been ingested:
 
-   ![A screenshot of a destination table in an eventstream.](./Images/stream-data-preview.png)
+   ![Eventstream destination settings.](./Images/md96.png)
 
 1. Wait a few minutes and then use the **Refresh** button to refresh the **Data preview** pane. The stream is running perpetually, so new data may have been added to the table.
 
