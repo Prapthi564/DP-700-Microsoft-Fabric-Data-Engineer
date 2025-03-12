@@ -1,78 +1,90 @@
----
-lab:
-    title: 'Get started with Real-time Dashboards in Microsoft Fabric'
-    module: 'Get started with Real-Time Dashboards in Microsoft Fabric'
----
+# Lab 1: Get started with Real-Time Dashboards in Microsoft Fabric
 
-# Get started with Real-Time Dashboards in Microsoft Fabric
+## Estimated Duration: 60 minutes
 
 Real-time dashboards in Microsoft Fabric enable you to visualize and explore streaming data using the Kusto Query Language (KQL).  In this exercise, you'll explore how to create and use a real-time dashboard based on a real-time data source.
-
-This lab takes approximately **25** minutes to complete.
-
-> **Note**: You need a [Microsoft Fabric tenant](https://learn.microsoft.com/fabric/get-started/fabric-trial) to complete this exercise.
-
-## Create a workspace
-
-Before working with data in Fabric, you need to create a workspace with the Fabric capacity enabled.
-
-1. Navigate to the [Microsoft Fabric home page](https://app.fabric.microsoft.com/home?experience=fabric) at `https://app.fabric.microsoft.com/home?experience=fabric` in a browser and sign in with your Fabric credentials.
-1. In the menu bar on the left, select **Workspaces** (the icon looks similar to &#128455;).
-1. Create a new workspace with a name of your choice, selecting a licensing mode that includes Fabric capacity (*Trial*, *Premium*, or *Fabric*).
-1. When your new workspace opens, it should be empty.
-
-    ![Screenshot of an empty workspace in Fabric.](./Images/new-workspace.png)
 
 ## Create an eventhouse
 
 Now that you have a workspace, you can start creating the Fabric items you'll need for your real-time intelligence solution. we'll start by creating an eventhouse.
 
-1. On the menu bar on the left, select **Create**. In the *New* page, under the *Real-Time Inteligence* section, select **Eventhouse**. Give it a unique name of your choice.
+1. In the workspace, select **+ New item (1)**. In the *New item* pane, select **Eventhouse (2)**.
 
-    >**Note**: If the **Create** option is not pinned to the sidebar, you need to select the ellipsis (**...**) option first.
+   ![Screenshot of alert settings.](./Images/md83.png)
+
+1. Enter **BicycleEventhouse (1)** in the name field and select **Create (2)**
+
+    ![Screenshot of alert settings.](./Images/md84.png)
 
 1. Close any tips or prompts that are displayed until you see your new empty eventhouse.
 
-    ![Screenshot of a new eventhouse](./Images/create-eventhouse.png)
-
 1. In the pane on the left, note that your eventhouse contains a KQL database with the same name as the eventhouse.
+
 1. Select the KQL database to view it.
+
+    ![Screenshot of alert settings.](./Images/md85.png)
+
+    >**Note**: Currently there are no tables in the database. In the rest of this exercise you'll use an eventstream to load data from a real-time source into a table.
 
 ## Create an eventstream
 
 Currently there are no tables in the database. We'll use an eventstream to load data from a real-time source into a table.
 
-1. In the main page of your KQL database, select **Get data**.
-2. For the data source, select **Eventstream** > **New eventstream**. Name the eventstream `Bicycle-data`.
+1. In the main page of your **KQL database (1)**, select **Get data (2)**.
 
-    ![Screenshot of a new eventstream.](./Images/empty-eventstream.png)
+2. For the data source, select **Eventstream (3)** > **New eventstream (4)**. Name the Eventstream `Bicycle-data` (5) and click on **Create (6)**.
 
-    The creation of your new event stream in the workspace will be completed in just a few moments. Once established, you will be automatically redirected to select a data source for your eventstream.
+   >**Note**: The creation of your new event stream in the workspace will be completed in just a few moments. Once established, you will be automatically redirected to the primary editor, ready to begin integrating sources into your event stream.
 
-1. Select **Use sample data**.
-1. Name the source name `Bicycles`, and select the **Bicycles** sample data.
+    ![Screenshot of alert settings.](./Images/md86.png)
 
-    Your stream will be mapped and you will be automatically displayed on the **eventstream canvas**.
+    ![Screenshot of alert settings.](./Images/md87.png)
 
-   ![Review the eventstream canvas](./Images/real-time-intelligence-eventstream-sourced.png)
+    ![Screenshot of a new eventstream.](./Images/md88.png)
 
-1. In the **Add destination** drop-down list, select **Eventhouse**.
+## Add a source
+
+1. In the Eventstream canvas, select **Use sample data**.
+
+2. Name the source `Bicycles` (1), and select the **Bicycles (2)** sample data and select **Add (3)**
+
+    ![Screenshot of a new eventstream.](./Images/md89.png)
+
+   >**Note**: Your stream will be mapped and you will be automatically displayed on the **eventstream canvas**.
+
+   ![Review the eventstream canvas](./Images/md90.png)
+
+## Add a destination
+
+1. Select the **Transform events or add destination (1)** tile and search for **Eventhouse (2)**.
+
+   ![Review the eventstream canvas](./Images/md91.png)
+
 1. In the **Eventhouse** pane, configure the following setup options.
-   - **Data ingestion mode:**: Event processing before ingestion
-   - **Destination name:** `bikes-table`
-   - **Workspace:** *Select the workspace you created at the beginning of this exercise*
-   - **Eventhouse**: *Select your eventhouse*
-   - **KQL database:** *Select your KQL database*
-   - **Destination table:** Create a new table named `bikes`
-   - **Input data format:** JSON
 
-   ![Eventstream destination settings.](./Images/kql-database-event-processing-before-ingestion.png)
+   - **Data ingestion mode:**: Event processing before ingestion (1)
+   - **Destination name:** `bikes-table` (2)
+   - **Workspace:** fabric-<inject key="DeploymentID" enableCopy="false"/> (3)
+   - **Eventhouse**: BicycleEventhouse (4)
+   - **KQL database:** BicycleEventhouse (5)
+   - **Destination table:** Create a new table named `bikes` 
+   - **Input data format:** JSON (9)
 
-1. In the **Eventhouse** pane, select **Save**. 
-1. Connect the **Bicycles-data** node's output to the **bikes-table** node, then select **Publish**.
+   ![Eventstream destination settings.](./Images/md93.png)
+
+   ![Eventstream destination settings.](./Images/md94.png)
+
+   ![Eventstream destination settings.](./Images/md92.png)
+
+1. In the **Eventhouse** pane, select **Save (10)**
+
+1. On the toolbar, select **Publish**.
+
+   ![Eventstream destination settings.](./Images/md95.png)
+
 1. Wait a minute or so for the data destination to become active. Then select the **bikes-table** node in the design canvas and view the **Data preview** pane underneath to see the latest data that has been ingested:
 
-   ![A screenshot of a destination table in an eventstream.](./Images/stream-data-preview.png)
+   ![Eventstream destination settings.](./Images/md96.png)
 
 1. Wait a few minutes and then use the **Refresh** button to refresh the **Data preview** pane. The stream is running perpetually, so new data may have been added to the table.
 
@@ -80,20 +92,31 @@ Currently there are no tables in the database. We'll use an eventstream to load 
 
 Now that you have a stream of real-time data being loaded into a table in the eventhouse, you can visualize it with a real-time dashboard.
 
-1. In the menu bar on the left, select the **Home** hub. Then on the home page, create a new **Real-Time Dashboard** named `bikes-dashboard`.
+1. In the menu bar on the left, select **+ create** to create a new **Real-Time Dashboard** named `bikes-dashboard`.
 
-    A new empty dashboard is created.
+    ![A screenshot of a new dashboard.](./Images/md2-39.png)
 
+    ![A screenshot of a new dashboard.](./Images/md2-40.png)
 
-    ![A screenshot of a new dashboard.](./Images/new-dashboard.png)
+   >**Note**: A new empty dashboard is created.
 
-1. In the toolbar, select **New data source** and add a new **One lake data hub** data source. Then select your eventhouse and create a new data source with the following settings:
-    - **Display name**: `Bike Rental Data`
-    - **Database**: *The default database in your eventhouse*.
+1. In the toolbar, select **New data source (1)** and select **Eventhouse/KQL Database (2)** data source. Then select **BicycleEventhouse (3)** and click on **Connect (4)**
+
+    ![A screenshot of a new dashboard.](./Images/md2-41.png)
+
+    ![A screenshot of a new dashboard.](./Images/md2-42.png)
+
+ 1. Create a new data source with the following settings and click on **Add (4)**
+
+    - **Display name**: `Bike Rental Data` (1)
+    - **Database**: *BicycleEventhose (2)*.
     - **Passthrough identity**: *Selected*
 
+    ![A screenshot of a new dashboard.](./Images/md2-43.png)
+
 1. Close the **Data sources** pane, and then on the dashboard design canvas, select **Add tile**.
-1. In the query editor, ensure that the **Bike Rental Data** source is selected and enter the following KQL code:
+
+1. In the query editor, ensure that the **Bike Rental Data (2)** source is selected and enter the following KQL code:
 
     ```kql
     bikes
@@ -103,10 +126,13 @@ Now that you have a stream of real-time data being loaded into a table in the ev
         | order by Neighbourhood asc
     ```
 
-1. Run the query, which shows the number of bikes and empty bike docks observed in each neighbourhood in the last 30 minutes.
-1. Apply the changes to see the data shown in a table in the tile on the dashboard.
+1. **Run (3)** the query, which shows the number of bikes and empty bike docks observed in each neighbourhood in the last 30 minutes.
 
-   ![A screenshot of a dashboard with a tile containing a table.](./Images/tile-table.png)
+1. **Apply changes (5)** to see the data shown in a table in the tile on the dashboard.
+
+   ![A screenshot of a dashboard with a tile containing a table.](./Images/md2-44.png)
+
+   ![A screenshot of a dashboard with a tile containing a table.](./Images/md2-45.png)
 
 1. On the tile, select the **Edit** icon (which looks like a pencil). Then in the **Visual Formatting** pane, set the following properties:
     - **Tile name**: Bikes and Docks
@@ -117,13 +143,16 @@ Now that you have a stream of real-time data being loaded into a table in the ev
     - **Series columns**: infer
     - **Legend location**: Bottom
 
-    Your edited time should look like this:
+    ![A screenshot of a dashboard with a tile containing a table.](./Images/md2-46.png)
 
-   ![A screenshot of a tile being edited to include a bar chart.](./Images/tile-bar-chart.png)
+    ![A screenshot of a dashboard with a tile containing a table.](./Images/md2-47.png)
 
 1. Apply the changes and then resize the tile to take up the full height of the left side of the dashboard.
 
+    ![A screenshot of a dashboard with a tile containing a table.](./Images/md2-48.png)
+
 1. In the toolbar, select **New tile**
+
 1. In the query editor, ensure that the **Bike Rental Data** source is selected and enter the following KQL code:
 
     ```kql
@@ -135,7 +164,9 @@ Now that you have a stream of real-time data being loaded into a table in the ev
     ```
 
 1. Run the query, which shows the location and number of bikes observed in each neighbourhood in the last 30 minutes.
+
 1. Apply the changes to see the data shown in a table in the tile on the dashboard.
+
 1. On the tile, select the **Edit** icon (which looks like a pencil). Then in the **Visual Formatting** pane, set the following properties:
     - **Tile name**: Bike Locations
     - **Visual type**: Map
@@ -148,25 +179,27 @@ Now that you have a stream of real-time data being loaded into a table in the ev
 
 1. Apply the changes, and then resize the map tile to fill the right side of the available space on the dashboard:
 
-   ![A screenshot of a dashboard with a chart and a map.](./Images/dashboard-chart-map.png)
+   ![A screenshot of a dashboard with a chart and a map.](./Images/md2-49.png)
 
 ## Create a base query
 
 Your dashboard contains two visuals that are based on similar queries. To avoid duplication and make your dashboard more maintainable, you can consolidate the common data into a single *base query*.
 
 1. On the dashboard toolbar, select **Base queries**. Then select **+Add**.
-1. In the base query editor, set the **Variable name** to `base_bike_data` and ensure that the **Bike Rental Data** source is selected. Then enter the following query:
+
+1. In the base query editor, set the **Variable name** to `base_bike_data` (1) and ensure that the **Bike Rental Data (2)** source is selected. Then enter the following query (3):
 
     ```kql
     bikes
         | where ingestion_time() between (ago(30min) .. now())
         | summarize latest_observation = arg_max(ingestion_time(), *) by Neighbourhood
     ```
-1. Run the query and verify that it returns all of the columns needed for both visuals in the dashboard (and some others).
+1. **Run (4)** the query and verify that it returns all of the columns needed for both visuals in the dashboard (and some others).
 
-   ![A screenshot of a base query.](./Images/dashboard-base-query.png)
+   ![A screenshot of a base query.](./Images/md2-50.png)
 
 1. Select **Done** and then close the **Base queries** pane.
+
 1. Edit the **Bikes and Docks** bar chart visual, and change the query to the following code:
 
     ```kql
@@ -235,7 +268,7 @@ Your dashboard currently shows the latest bike, dock, and location data for all 
 
 1. In the dashboard, use the **Neighbourhood** parameter to filter the data based on the neighborhoods you select.
 
-   ![A screenshot of a dashboard with parameters selected.](./Images/dashboard-parameters.png)
+   ![A screenshot of a dashboard with parameters selected.](./Images/md2-51.png)
 
 1. Select **Reset** to remove the selected parameter filters.
 
@@ -256,17 +289,20 @@ Your dashboard currently consists of a single page. You can add more pages to pr
 
 1. Apply the changes. Then resize the tile to fill the height of the dashboard.
 
-   ![Screenshot of a dashboard with two pages](./Images/dashboard-page-2.png)
+   ![img](./Images/md2-52.png)
 
 ## Configure auto refresh
 
 Users can manually refresh the dashboard, but it may be useful to have it automatically refresh the data at a set interval.
 
 1. On the dashboard toolbar, on the **Manage** tabe, select **Auto refresh**.
+
 1. In the **Auto refresh** pane, configure the following settings:
+
     - **Enabled**: *Selected*
     - **Minimum time interval**: Allow all refresh intervals
     - **Default refresh rate**: 30 minutes
+
 1. Apply the auto refresh settings.
 
 ## Save and share the dashboard
@@ -274,15 +310,11 @@ Users can manually refresh the dashboard, but it may be useful to have it automa
 Now you have a useful dashboard, you can save it and share it with other users.
 
 1. On the dashboard toolbar, select **Save**.
+
 1. When the dashboard is saved, select **Share**.
+
 1. On the **Share** dialog box, select **Copy link** and copy the link to the dashboard to the clipboard.
-1. Open a new browser tab and paste the copied link to navigate to the shared dashboard. Sign in again with your Fabric credentials if prompted.
+
+1. Open a new browser tab and paste the copied link to navigate to the shared dashboard. Sign in again with your credentials if prompted.
+
 1. Explore the dashboard, using it to see the latest information about bikes and empty bike docks across the city.
-
-## Clean up resources
-
-When you've finished exploring your dashboard, you can delete the workspace you created for this exercise.
-
-1. In the bar on the left, select the **icon** for your workspace.
-2. In the the toolbar, select **Workspace settings**.
-3. In the **General** section, select **Remove this workspace**.
