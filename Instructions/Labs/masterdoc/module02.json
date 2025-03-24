@@ -3,27 +3,22 @@
     "Name": "Module 02: Implement a Lakehouse with Microsoft Fabric",
     "Language": "English",
     "Files": [
-       {
-        "RawFilePath": "https://raw.githubusercontent.com/CloudLabs-MOC/DP-700-Microsoft-Fabric-Data-Engineer/refs/heads/Prod/Instructions/Labs/Getting-Started.md",
-         "Order": 1
-      },
       {
         "RawFilePath": "https://raw.githubusercontent.com/CloudLabs-MOC/DP-700-Microsoft-Fabric-Data-Engineer/refs/heads/Prod/Instructions/Labs/Create-workspace-01.md",
-        "Order": 2
+        "Order": 1
       },
       {
         "RawFilePath": "https://raw.githubusercontent.com/CloudLabs-MOC/DP-700-Microsoft-Fabric-Data-Engineer/refs/heads/Prod/Instructions/Labs/01-lakehouse.md",
-        "Order": 3
+        "Order": 2
       },
       {
         "RawFilePath": "https://raw.githubusercontent.com/CloudLabs-MOC/DP-700-Microsoft-Fabric-Data-Engineer/refs/heads/Prod/Instructions/Labs/03-delta-lake.md",
-        "Order": 4
+        "Order": 3
       },
       {
         "RawFilePath": "https://raw.githubusercontent.com/CloudLabs-MOC/DP-700-Microsoft-Fabric-Data-Engineer/refs/heads/Prod/Instructions/Labs/03b-medallion-lakehouse.md",
-        "Order": 5
+        "Order": 4
       }
-
     ]
   }
 ]
