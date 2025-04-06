@@ -10,11 +10,15 @@ Now that you have a workspace, it's time to create a data warehouse. The Synapse
 
 1. On the menu bar on the left, select **Create**. In the *New* page, under the *Data Warehouse* section, select **Warehouse**. Give it a unique name of your choice.
 
+    ![Screenshot of a new warehouse.](./Images/mod6-1.png)
+
+    ![Screenshot of a new warehouse.](./Images/mod6-2.png)
+
     >**Note**: If the **Create** option is not pinned to the sidebar, you need to select the ellipsis (**...**) option first.
 
     After a minute or so, a new warehouse will be created:
 
-    ![Screenshot of a new warehouse.](./Images/new-data-warehouse2.png)
+    ![Screenshot of a new warehouse.](./Images/mod6-3.png)
 
 ## Create tables and insert data
 
@@ -66,7 +70,7 @@ A relational data warehouse typically consists of *fact* and *dimension* tables.
 1. In the toolbar, select the **Model layouts** button.
 2. In the model pane, rearrange the tables in your data warehouse so that the **FactSalesOrder** table is in the middle, like this:
 
-    ![Screenshot of the data warehouse model page.](./Images/model-dw.png)
+    ![Screenshot of the data warehouse model page.](./Images/mod6-5.png)
 
 > **Note**: The views **frequently_run_queries**, **long_running_queries**, **exec_sessions_history**, and **exec_requests_history** are part of the **queryinsights** schema automatically created by Fabric. It is a feature that provides a holistic view of historical query activity on the SQL analytics endpoint. Since this feature is out of the scope of this exercise, those views should be ignored for now.
 
@@ -86,7 +90,7 @@ A relational data warehouse typically consists of *fact* and *dimension* tables.
 
     When all of the relationships have been defined, the model should look like this:
 
-    ![Screenshot of the model with relationships.](./Images/dw-relationships.png)
+    ![Screenshot of the model with relationships.](./Images/mod6-4.png)
 
 ## Query data warehouse tables
 
@@ -167,14 +171,15 @@ Instead of writing SQL code, you can use the graphical query designer to query t
 
 1. Drag **DimProduct** onto the **canvas**. We now have two tables in our query.
 
-2. Use the **(+)** button on the **FactSalesOrder** table on the canvas to **Merge queries**.
-![Screenshot of the canvas with the FactSalesOrder table selected.](./Images/visual-query-merge.png)
+1. Use the **(+)** button on the **FactSalesOrder** table on the canvas to **Merge queries (2)**.
+
+   ![Screenshot of the canvas with the FactSalesOrder table selected.](./Images/mod6-6.png)
 
 1. In the **Merge queries** window, select **DimProduct** as the right table for merge. Select **ProductKey** in both queries, leave the default **Left outer** join type, and click **OK**.
 
-2. In the **Preview**, note that the new **DimProduct** column has been added to the FactSalesOrder table. Expand the column by clicking the arrow to the right of the column name. Select **ProductName** and click **OK**.
+2. In the **Preview**, note that the new **DimProduct** column has been added to the FactSalesOrder table. Expand the column by clicking the arrow to the right of the column name. Select **ProductName (1)** and click **OK (2)**.
 
-    ![Screenshot of the preview pane with the DimProduct column expanded, with ProductName selected.](./Images/visual-query-preview.png)
+    ![Screenshot of the preview pane with the DimProduct column expanded, with ProductName selected.](./Images/mod6-7.png)
 
 1. If you're interested in looking at data for a single product, per a manager request, you can now use the **ProductName** column to filter the data in the query. Filter the **ProductName** column to look at **Cable Lock** data only.
 
@@ -209,7 +214,7 @@ You can easily visualize the data in either a single query, or in your data ware
 1. Ensure that the column chart on the canvas is active (with a gray border and handles), and then select **Category** from the **DimProduct** table to add a category to your column chart.
 1. In the **Visualizations** pane, change the chart type from a column chart to a **clustered bar chart**. Then resize the chart as necessary to ensure that the categories are readable.
 
-    ![Screenshot of the Visualizations pane with the bar chart selected.](./Images/visualizations-pane.png)
+    ![Screenshot of the Visualizations pane with the bar chart selected.](./Images/mod6-8.png)
 
 1. In the **Visualizations** pane, select the **Format your visual** tab and in the **General** sub-tab, in the **Title** section, change the **Text** to **Total Sales by Category**.
 
@@ -217,14 +222,4 @@ You can easily visualize the data in either a single query, or in your data ware
 
 1. In the menu hub on the left, navigate back to the workspace. Notice that you now have three items saved in your workspace: your data warehouse, its default semantic model, and the report you created.
 
-    ![Screenshot of the workspace with the three items listed.](./Images/workspace-items.png)
-
-## Clean up resources
-
-In this exercise, you have created a data warehouse that contains multiple tables. You used SQL to insert data into the tables and query them. and also used the visual query tool. Finally, you enhanced the data model for the data warehouse's default dataset and used it as the source for a report.
-
-If you've finished exploring your data warehouse, you can delete the workspace you created for this exercise.
-
-1. In the bar on the left, select the icon for your workspace to view all of the items it contains.
-2. In the **...** menu on the toolbar, select **Workspace settings**.
-3. In the **General** section, select **Remove this workspace**.
+    ![Screenshot of the workspace with the three items listed.](./Images/mod6-9.png)
