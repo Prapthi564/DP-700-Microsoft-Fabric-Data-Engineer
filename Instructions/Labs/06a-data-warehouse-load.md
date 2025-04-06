@@ -1,43 +1,58 @@
----
-lab:
-    title: 'Load data into a warehouse using T-SQL'
-    module: 'Load data into a warehouse in Microsoft Fabric'
----
-
 # Load data into a warehouse using T-SQL
 
 In Microsoft Fabric, a data warehouse provides a relational database for large-scale analytics. Unlike the default read-only SQL endpoint for tables defined in a lakehouse, a data warehouse provides full SQL semantics; including the ability to insert, update, and delete data in the tables.
 
 This lab will take approximately **30** minutes to complete.
 
-> **Note**: You need a [Microsoft Fabric trial](https://learn.microsoft.com/fabric/get-started/fabric-trial) to complete this exercise.
 
-## Create a workspace
+## Create a lakehouse
 
-Before working with data in Fabric, create a workspace with the Fabric trial enabled.
+Now that you have a workspace, it's time to create a data lakehouse for your data files.
 
-1. Navigate to the [Microsoft Fabric home page](https://app.fabric.microsoft.com/home?experience=fabric) at `https://app.fabric.microsoft.com/home?experience=fabric` in a browser, and sign in with your Fabric credentials.
-1. In the menu bar on the left, select **Workspaces** (the icon looks similar to &#128455;).
-1. Create a new workspace with a name of your choice, selecting a licensing mode that includes Fabric capacity (*Trial*, *Premium*, or *Fabric*).
-1. When your new workspace opens, it should be empty.
+1. Return to your workspace and click the **+ New item (1)** icon.  
 
-    ![Screenshot of an empty workspace in Fabric.](./Images/new-workspace.png)
+2. On the **All items** page, scroll down to the **Store data** section and select **Lakehouse (2)**.  
 
-## Create a lakehouse and upload files
+   ![Screenshot of uploaded files in a lakehouse.](./Images/md10.png)  
 
-In our scenario, since we don't have any available data, we must ingest data to be used for loading the warehouse. You'll create a data lakehouse for the data files you're going to use to load the warehouse.
+3. Provide the following details to create a **Lakehouse**:  
 
-1. Select **+ New item** and create a new **Lakehouse** with a name of your choice.
+   - **Name:** Enter **lakehouse<inject key="DeploymentID" enableCopy="false"/>**  
 
-    After a minute or so, a new empty lakehouse will be created. You need to ingest some data into the data lakehouse for analysis. There are multiple ways to do this, but in this exercise you'll download a CSV file to your local computer (or lab VM if applicable) and then upload it to your lakehouse.
+4. Click **Create** to proceed.  
 
-1. Download the file for this exercise from `https://github.com/MicrosoftLearning/dp-data/raw/main/sales.csv`.
+5. View the new lakehouse, and note that the **Lakehouse explorer** pane on the left enables you to browse tables and files in the lakehouse:
 
-1. Return to the web browser tab containing your lakehouse, and in the **...** menu for the **Files** folder in the **Explorer** pane, select **Upload** and **Upload files**, and then upload the **sales.csv** file from your local computer (or lab VM if applicable) to the lakehouse.
+    - The **Tables** folder contains tables that you can query using SQL semantics. Tables in a Microsoft Fabric lakehouse are based on the open source *Delta Lake* file format, commonly used in Apache Spark.
 
-1. After the files have been uploaded, select **Files**. Verify that the CSV file has been uploaded, as shown here:
+    - The **Files** folder contains data files in the OneLake storage for the lakehouse that aren't associated with managed delta tables. You can also create *shortcuts* in this folder to reference data that is stored externally.
 
-    ![Screenshot of uploaded file in a lakehouse.](./Images/sales-file-upload.png)
+   ![Screenshot of uploaded files in a lakehouse.](./Images/mod2-1.png)
+
+   >**Note**: Currently, there are no tables or files in the lakehouse.
+
+## Upload a file
+
+Fabric provides multiple ways to load data into the lakehouse, including built-in support for pipelines that copy data from external sources and data flows (Gen 2) that you can define using visual tools based on Power Query. However one of the simplest ways to ingest small amounts of data is to upload files or folders from your local computer (or lab VM if applicable).
+
+1. Return to the web browser tab containing your lakehouse, and in the **... (1)** menu for the **Files** folder in the **Lakehouse explorer** pane, select **New subfolder (2)**, and create a subfolder named **data (3)**.
+
+   ![Screenshot of uploaded files in a lakehouse.](./Images/md2-2.png)
+
+   ![Screenshot of uploaded files in a lakehouse.](./Images/md2-3.png)
+
+3. In the **... (1)** menu for the new **data** folder, select **Upload (2)** and **Upload files (3)**, and then upload the **sales.csv** (C:\LabFiles\Files\) file located in the Lab VM.
+
+   ![Screenshot of uploaded files in a lakehouse.](./Images/md2-4.png) 
+
+   ![Screenshot of uploaded files in a lakehouse.](./Images/md2-5.png) 
+
+4. After the file has been uploaded, select the **Files/data** folder and verify that the **sales.csv** file has been uploaded, as shown here:
+
+5. Select the **sales.csv** file to see a preview of its contents.
+
+    ![Screenshot of uploaded sales.csv file in a lakehouse.](./Images/md2-6.png)
+
 
 ## Create a table in the lakehouse
 
@@ -244,11 +259,3 @@ Let's run some analytical queries to validate the data in the warehouse.
     > The category information was extracted from the `ItemName` column using string manipulation, as there is no separate category column in the dimension table. This approach assumes that the item names follow a consistent naming convention. If the item names do not follow a consistent naming convention, the results may not accurately reflect the true category of each item.
 
 In this exercise, you have created a lakehouse and a data warehouse with multiple tables. You have ingested data and used cross-database queries to load data from the lakehouse to the warehouse. Additionally, you have used the query tool to perform analytical queries.
-
-## Clean up resources
-
-If you've finished exploring your data warehouse, you can delete the workspace you created for this exercise.
-
-1. In the bar on the left, select the icon for your workspace to view all of the items it contains.
-1. Select **Workspace settings** and in the **General** section, scroll down and select **Remove this workspace**.
-1. Select **Delete** to delete the workspace.
