@@ -1,4 +1,4 @@
-# Exercise 1: Create a Fabric workspace
+# Lab: pre-requiste: Create a Fabric workspace
 
 ### Estimated Duration: 15 minutes
 
