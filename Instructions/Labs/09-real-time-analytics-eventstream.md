@@ -18,7 +18,7 @@ In this lab, you will be able to complete the following tasks:
 
 ### Task 1: Create an eventhouse
 
-Now that you have a workspace, you can start creating the Fabric items you'll need for your real-time intelligence solution. we'll start by creating an eventhouse.
+In this task, you will create an eventhouse in your Fabric workspace to store real-time event data.
 
 1. In the workspace, select **+ New item (1)**. In the *New item* pane, select **Eventhouse (2)**.
 
@@ -40,6 +40,8 @@ Now that you have a workspace, you can start creating the Fabric items you'll ne
 
 ### Task 2: Create an Eventstream
 
+In this task, you will create a new Eventstream in Microsoft Fabric to start capturing real-time data. The Eventstream acts as a pipeline that ingests and processes streaming data from various sources.
+
 1. In the main page of your **KQL database (1)**, select **Get data (2)**.
 
 2. For the data source, select **Eventstream (3)** > **New eventstream (4)**. Name the Eventstream `Bicycle-data` (5) and click on **Create (6)**.
@@ -54,6 +56,8 @@ Now that you have a workspace, you can start creating the Fabric items you'll ne
 
 ### Task 3: Add a source
 
+In this task, you will add a real-time data source to your Eventstream. You'll use sample data related to bicycle collection points in a city’s bike-share system. This allows you to simulate a real-world streaming scenario without needing an external data feed. 
+
 1. In the Eventstream canvas, select **Use sample data**.
 
 2. Name the source `Bicycles` (1), and select the **Bicycles (2)** sample data and select **Add (3)**
@@ -65,6 +69,8 @@ Now that you have a workspace, you can start creating the Fabric items you'll ne
    ![Review the eventstream canvas](./Images/md90.png)
 
 ### Task 4: Add a destination
+
+In this task, you'll route the incoming bicycle stream data to an Eventhouse so that it can be stored for analysis.
 
 1. Select the **Transform events or add destination (1)** tile and search for **Eventhouse (2)**.
 
@@ -102,7 +108,7 @@ Now that you have a workspace, you can start creating the Fabric items you'll ne
 
 ### Task 5: Query captured data
 
-The eventstream you have created takes data from the sample source of bicycle data and loads it into the database in your eventhouse. You can analyze the captured data by querying the table in the database.
+In this task, you will query the data stored in the eventhouse to analyze real-time observations from the bike-share system. Using KQL (Kusto Query Language), you can explore the contents of the bikes table, review the structure of the ingested data, and verify that data is being correctly captured from the stream. 
 
 1. In the menu bar on the left, select your **BicycleEventhouse (1)** KQL database.
 
@@ -126,7 +132,7 @@ The eventstream you have created takes data from the sample source of bicycle da
 
 ### Task 6: Transform event data
 
-The data you've captured is unaltered from the source. In many scenarios, you may want to transform the data in the event stream before loading it into a destination.
+In this task, you will apply a transformation to the incoming event data within the eventstream before it reaches the destination. This allows you to clean, shape, or enrich the data in real time. 
 
 1. In the menu bar on the left, select the **Bicycle-data** eventstream.
 
@@ -182,10 +188,10 @@ The data you've captured is unaltered from the source. In many scenarios, you ma
 
 ### Task 7: Query the transformed data
 
-Now you can query the bicycle data that has been transformed and loaded into a table by your eventstream
+In this task, you'll query the transformed bicycle data that has been ingested into your eventhouse table through the eventstream. Using KQL (Kusto Query Language), you can explore the structured data to gain insights, verify your transformations, and begin your real-time analysis.
 
 1. In the menu bar on the left, select your KQL database.
-1. 1. On the **database** tab, in the toolbar for your KQL database, use the **Refresh** button to refresh the view until you see the **bikes-by-street** table under the database.
+1. On the **database** tab, in the toolbar for your KQL database, use the **Refresh** button to refresh the view until you see the **bikes-by-street** table under the database.
 
 1. In the **... (1)** menu for the **bikes-by-street** table, select **Query with code (2)** > **Show any 100 records (3)**.
 
