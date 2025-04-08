@@ -48,7 +48,7 @@ In this hands-on lab, the architecture flow includes several essential component
 
 ## Architecture Diagram
 
- ![](../Images/dp900m1arc.jpg)
+ ![](../Images/dp900m1arc.png)
 
 ## Explanation of Components
 
