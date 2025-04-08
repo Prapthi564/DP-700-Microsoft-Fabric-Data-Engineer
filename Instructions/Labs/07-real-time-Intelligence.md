@@ -15,7 +15,7 @@ In this lab, you will be able to complete the following tasks:
 - Task 5: Create an alert
 
 
-### Task1: Create an eventstream
+### Task 1: Create an eventstream
 
 In this task, you will create an eventstream in Microsoft Fabric using the Real-Time Hub. This will allow you to connect to a real-time stock market data source and stream the incoming events through a visual canvas. 
 
