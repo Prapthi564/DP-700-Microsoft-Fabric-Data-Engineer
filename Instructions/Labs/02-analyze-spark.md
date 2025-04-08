@@ -617,7 +617,7 @@ While *matplotlib* enables you to create different chart types, it can require s
 
 In this lab, you worked through the end-to-end process of analyzing data with Apache Spark in Microsoft Fabric. You created a lakehouse, built a notebook, and used PySpark to load, explore, transform, and visualize data. You also practiced using both DataFrame methods and SQL for flexible data analysis.
 
-In this Module, you have completed the following tasks:
+In this lab, you have completed the following tasks:
 
 - Created a lakehouse and upload files
 - Created a notebook
