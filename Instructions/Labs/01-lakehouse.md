@@ -2,13 +2,23 @@
 
 ## Estimated Duration: 30 minutes
 
-Large-scale data analytics solutions have traditionally been built around a *data warehouse*, in which data is stored in relational tables and queried using SQL. The growth in "big data" (characterized by high *volumes*, *variety*, and *velocity* of new data assets) together with the availability of low-cost storage and cloud-scale distributed compute technologies has led to an alternative approach to analytical data storage; the *data lake*. In a data lake, data is stored as files without imposing a fixed schema for storage. Increasingly, data engineers and analysts seek to benefit from the best features of both of these approaches by combining them in a *data lakehouse*; in which data is stored in files in a data lake and a relational schema is applied to them as a metadata layer so that they can be queried using traditional SQL semantics.
+In this lab, you will explore how to build and work with a lakehouse in Microsoft Fabric. You will begin by creating a Fabric lakehouse that leverages OneLake as its storage layer and supports Delta Lake tables for structured querying. You'll learn how to use Apache Spark to process and analyze data stored in the lakehouse, and how to implement a medallion architecture that organizes data into bronze, silver, and gold layers for improved clarity, performance, and insight.
 
-In Microsoft Fabric, a lakehouse provides highly scalable file storage in a *OneLake* store (built on Azure Data Lake Store Gen2) with a metastore for relational objects such as tables and views based on the open source *Delta Lake* table format. Delta Lake enables you to define a schema of tables in your lakehouse that you can query using SQL.
+## Lab Objectives
 
-## Create a lakehouse
+In this lab, you will be able to complete the following tasks:
 
-Now that you have a workspace, it's time to create a data lakehouse for your data files.
+- Task 1: Create a lakehouse
+- Task 2: Upload a file
+- Task 3: Explore shortcuts
+- Task 4: Load file data into a table
+- Task 5: Use SQL to query tables
+- Task 6: Create a visual query
+- Task 7: Create a report
+
+### Task 1: Create a lakehouse
+
+In this task, you will create a lakehouse in your Microsoft Fabric workspace. 
 
 1. Return to your workspace and click the **+ New item (1)** icon.  
 
@@ -32,9 +42,9 @@ Now that you have a workspace, it's time to create a data lakehouse for your dat
 
    >**Note**: Currently, there are no tables or files in the lakehouse.
 
-## Upload a file
+### Task 2: Upload a file
 
-Fabric provides multiple ways to load data into the lakehouse, including built-in support for pipelines that copy data from external sources and data flows (Gen 2) that you can define using visual tools based on Power Query. However one of the simplest ways to ingest small amounts of data is to upload files or folders from your local computer (or lab VM if applicable).
+In this task, you will upload a data file into your newly created lakehouse. Microsoft Fabric supports various methods for ingesting data, but to get started quickly, you'll use the built-in file upload feature to bring in a local file.
 
 1. Return to the web browser tab containing your lakehouse, and in the **... (1)** menu for the **Files** folder in the **Lakehouse explorer** pane, select **New subfolder (2)**, and create a subfolder named **data (3)**.
 
@@ -54,9 +64,9 @@ Fabric provides multiple ways to load data into the lakehouse, including built-i
 
     ![Screenshot of uploaded sales.csv file in a lakehouse.](./Images/md2-6.png)
 
-## Explore shortcuts
+### Task 3: Explore shortcuts
 
-In many scenarios, the data you need to work with in your lakehouse may be stored in some other location. While there are many ways to ingest data into the OneLake storage for your lakehouse, another option is to instead create a *shortcut*. Shortcuts enable you to include externally sourced data in your analytics solution without the overhead and risk of data inconsistency associated with copying it.
+In this task, you'll explore how to use shortcuts in Microsoft Fabric lakehouses. Shortcuts allow you to reference external data sources directly in your lakehouse without physically copying the data. This approach reduces storage duplication and maintains a single source of truth, which is especially useful when working with large or frequently updated datasets.
 
 1. In the **... (1)** menu for the **Files** folder, select **New shortcut (2)**.
 
@@ -64,9 +74,9 @@ In many scenarios, the data you need to work with in your lakehouse may be store
 
 2. View the available data source types for shortcuts. Then close the **New shortcut** dialog box without creating a shortcut.
 
-## Load file data into a table
+### Task 4: Load file data into a table
 
-The sales data you uploaded is in a file, which data analysts and engineers can work with directly by using Apache Spark code. However, in many scenarios you may want to load the data from the file into a table so that you can query it using SQL.
+In this task, you’ll learn how to convert raw file data into a structured table within your lakehouse. While data in files can be directly accessed using Apache Spark, loading it into a table makes it easier to analyze using SQL and integrate with other structured data assets.
 
 1. On the **Home** page, select the **Files/Data** folder so you can see the **sales.csv** file it contains.
 
@@ -90,9 +100,9 @@ The sales data you uploaded is in a file, which data analysts and engineers can 
 
     >**Note**: Files for a delta table are stored in *Parquet* format, and include a subfolder named **_delta_log** in which details of transactions applied to the table are logged.
 
-## Use SQL to query tables
+### Task 5: Use SQL to query tables
 
-When you create a lakehouse and define tables in it, a SQL endpoint is automatically created through which the tables can be queried using SQL `SELECT` statements.
+In this task, you’ll learn how to analyze your lakehouse tables using familiar SQL syntax. Microsoft Fabric automatically creates a SQL analytics endpoint for each lakehouse, allowing you to run queries without needing to write Spark code.
 
 1. At the top-right of the Lakehouse page, switch from **Lakehouse** to **SQL analytics endpoint**. Then wait a short time until the SQL analytics endpoint for your lakehouse opens in a visual interface from which you can query its tables.
 
@@ -112,9 +122,9 @@ When you create a lakehouse and define tables in it, a SQL endpoint is automatic
 
 3. Use the **&#9655; Run (2)** button to run the query and view the **Results (3)**, which should show the total revenue for each product.
 
-## Create a visual query
+### Task 6: Create a visual query
 
-While many data professionals are familiar with SQL, data analysts with Power BI experience can apply their Power Query skills to create visual queries.
+In this task, you’ll explore how to perform data transformation and analysis using a no-code, visual experience through Power Query in Microsoft Fabric. This method is especially useful for users who are comfortable with tools like Power BI but may not be fluent in SQL.
 
 1. On the toolbar, expand the **New SQL query (1)** option and select **New visual query (2)**.
 
@@ -139,9 +149,9 @@ While many data professionals are familiar with SQL, data analysts with Power BI
 
     >**Note**: When you're done, the results pane under the visual query shows the number of line items for each sales order.
 
-## Create a report
+### Task 7: Create a report
 
-The tables in your lakehouse are automatically added to a default semantic model for reporting with Power BI.
+In this task, you’ll build a simple Power BI report directly within Microsoft Fabric using the data from your lakehouse. When tables are created in a lakehouse, they’re automatically added to a semantic model that enables reporting and visualization without needing additional configuration.
 
 1. In the toolbar, select **Model layouts (1)**. The data model schema for the semantic model is shown.
 
@@ -178,3 +188,21 @@ The tables in your lakehouse are automatically added to a default semantic model
     - The **Item Sales Report** report.
 
     ![Screenshot of a Choose columns dialog box.](./Images/md2-25.png)
+
+
+## Review
+
+In this lab, you explored the core features of Microsoft Fabric's Lakehouse architecture. You learned how to create a lakehouse and upload data files, then explored how to use shortcuts to connect external data sources without duplication. You transformed raw data into structured tables and queried it using both SQL and visual tools. Finally, you created an interactive report using Power BI capabilities integrated within Fabric.
+
+In this lab, you have completed the following tasks:
+
+- Create a lakehouse
+- Uploaded a file
+- Explored shortcuts
+- Loaded file data into a table
+- Used SQL to query tables
+- Created a visual query
+- Created a report
+
+
+## Now, click on Next from the lower right corner to move on to the next lab.

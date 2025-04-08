@@ -2,67 +2,51 @@
 
 Welcome to your DP-700: Microsoft-Fabric-Data-Engineer Workshop! We've prepared a seamless environment for you to explore and learn Azure Services. Let's begin by making the most of this experience.
 
-### Overall Estimated timing: 4 hrs
+### Overall Estimated timing: 3 hrs
 
-In this hands-on lab, you'll gain practical experience working with Microsoft Fabric to analyze, process, and visualize data across various services. You will learn how to create a Fabric workspace, ingest and transform data using pipelines and Dataflows Gen2, and analyze it with Apache Spark. You'll also explore real-time data processing by creating Eventstreams and interacting with eventhouse for real-time insights. By the end of this lab, you'll be equipped with the skills to build end-to-end data workflows and real-time analytics solutions in Microsoft Fabric.
+In this hands-on lab, you’ll explore foundational and advanced data engineering concepts using Microsoft Fabric Lakehouse. You will start by creating a lakehouse and understanding its role in modern data architecture. Then, you'll dive into working with Delta Tables using Apache Spark to enable reliable and scalable data processing. Finally, you’ll build a medallion architecture—organizing data into bronze, silver, and gold layers—to streamline data transformation and analytics. By the end, you'll gain practical skills to manage and analyze data using lakehouse architecture in Microsoft Fabric.
 
 ## Objectives
 
-By the end of this lab, you will be able to create a Microsoft Fabric workspace, ingest and transform data using pipelines and Dataflows Gen2, analyze data with Apache Spark, and implement real-time analytics using Eventstreams and eventhouse.
+By the end of this lab series, you will be able to create and manage a Microsoft Fabric lakehouse, work with Delta Tables using Apache Spark, and design a medallion architecture with bronze, silver, and gold layers for structured data processing.
 
-1. **Analyze data with Apache Spark in Fabric**: **Analyze data with Apache Spark in Fabric**: You will learn how to use Apache Spark within Microsoft Fabric to explore and analyze large datasets. This task will guide you through creating Spark notebooks, running distributed data processing tasks, and performing data transformations to gain meaningful insights.
+1. **Create a Microsoft Fabric Lakehouse**: You will learn how to create a lakehouse in Microsoft Fabric that combines the flexibility of a data lake with the structured querying capabilities of a data warehouse. This task will walk you through creating a workspace, setting up the lakehouse, and understanding how data is stored and organized using tables backed by files.
 
-1. **Ingest data with a pipeline in Microsoft Fabric**: You will learn how to build data pipelines to ingest data from external sources into a lakehouse in Microsoft Fabric. This includes using Apache Spark to apply custom transformations before loading the data for analysis.
+1. **Use Delta Tables in Apache Spark**: You will explore how Delta Lake technology enhances data reliability and performance within a Fabric lakehouse. This task guides you through creating Delta tables using Apache Spark, performing SQL queries, and understanding how Delta Lake supports ACID transactions and time travel features for efficient data analytics.
 
-1. **Create and use Dataflows (Gen2) in Microsoft Fabric**: You will learn how to create and configure Dataflows (Gen2) to connect to data sources and perform transformations using Power Query Online. This task introduces the core features of Dataflows and demonstrates how they can be used in pipelines or Power BI datasets.
-
-1. **Get started with Real-Time Intelligence in Microsoft Fabric**: You will learn how to use Real-Time Intelligence features in Microsoft Fabric to ingest, analyze, and visualize streaming data. This task focuses on building a real-time analytics solution using a live stream of stock market data.
-
-1. **Ingest real-time data with Eventstream in Microsoft Fabric**: You will learn how to use Eventstream in Microsoft Fabric to capture, transform, and route real-time event data. This task involves ingesting live data from a bike-share system and configuring the stream to send processed events to various destinations.
-
-1. **Work with data in a Microsoft Fabric eventhouse**: You will learn how to create and use an eventhouse in Microsoft Fabric to store and query real-time event data. This task involves populating the eventhouse with sample taxi ride data and using KQL and SQL to analyze the information.
+1. **Create a medallion architecture in a Microsoft Fabric lakehouse**: You will learn to implement the medallion architecture pattern, which structures data in layered stages: bronze (raw), silver (cleaned), and gold (aggregated). This task involves transforming data across these layers using notebooks and Apache Spark, helping ensure organized, scalable, and insightful data processing in Microsoft Fabric.
 
 ## Pre-requisites
 
-- Basic familiarity with Apache Spark and notebooks (e.g., using PySpark)
-- Understanding of ETL/ELT processes and data transformation concepts
-- Familiarity with real-time data concepts and streaming sources
-- Basic knowledge of configuring Eventstreams with inputs, transformations, and outputs
-- Understanding of Kusto Query Language (KQL) and basic SQL for querying event data
+- Familiarity with data concepts such as tables, data transformation, and querying.
+- Some experience with Apache Spark and data processing using notebooks (Python or SQL).
+- Ability to read and write simple Python or SQL queries for data manipulation and analysis.
+- Familiarity with concepts like data lakes, Delta tables, and medallion architecture will be helpful.
 
 ## Architecture
 
 In this hands-on lab, the architecture flow includes several essential components.
 
-1. **Analyze data with Apache Spark in Fabric**: Learning how to use Apache Spark within Microsoft Fabric to explore and analyze large-scale datasets. This includes creating notebooks, executing distributed data operations, and performing transformations to uncover insights.
+1. **Create a Microsoft Fabric Lakehouse**: Learning how to create a lakehouse in Microsoft Fabric to unify the capabilities of a data lake and data warehouse. This includes setting up a centralized storage location for structured and unstructured data and preparing it for large-scale analytics and processing tasks.
 
-1. **Ingest data with a pipeline in Microsoft Fabric**: Building and configuring data pipelines to ingest data from external sources into a Fabric lakehouse. This process includes applying transformations using Apache Spark and automating data loading for analysis.
+1. **Use Delta Tables in Apache Spark**:
+Exploring how to use Delta Tables within Microsoft Fabric to manage large datasets with ACID compliance and schema enforcement. This task involves creating Delta tables using Spark, querying them with SQL, and understanding how they support both batch and streaming data operations efficiently.
 
-1. **Create and use Dataflows (Gen2) in Microsoft Fabric**: Understanding how to use Power Query Online to build Dataflows (Gen2), which connect to data sources, perform transformations, and feed downstream components like pipelines or Power BI reports.pipelines or Power BI datasets.
+1. **Create a medallion architecture in a Microsoft Fabric lakehouse**:
+Implementing the medallion architecture model (bronze, silver, and gold layers) to organize data workflows in a Fabric lakehouse. This includes using Spark notebooks to transform raw data through each layer, enhancing data quality, optimizing performance, and making it ready for analytics and reporting.
 
-1. **Get started with Real-Time Intelligence in Microsoft Fabric**: Setting up a real-time analytics solution using Fabric’s Real-Time Intelligence capabilities. This involves ingesting and visualizing live data streams, such as stock market feeds, for instant insights.
-
-1. **Ingest real-time data with Eventstream in Microsoft Fabric**: Capturing and transforming real-time event data using Eventstream. You’ll configure event sources, apply stream transformations, and route output to destinations like a lakehouse or eventhouse.
-
-1. **Work with data in a Microsoft Fabric eventhouse**: Creating and querying an eventhouse, a storage solution optimized for real-time data. You'll load sample event data (e.g., taxi rides) and use Kusto Query Language (KQL) and SQL to perform analysis.
 
 ## Architecture Diagram
 
- ![](../Images/dp900m1arc.png)
+ ![](../Images/dp900m2arc.png)
 
 ## Explanation of Components
 
-1. **Apache Spark:** Apache Spark is the core, open-source, distributed computing engine powering data engineering and data science workloads, enabling users to analyze and process data at scale within a Lakehouse environment. 
+1. **Fabric Lakehouse**: A Fabric Lakehouse is a data architecture in Microsoft Fabric that combines the features of a data lake and a data warehouse into a unified platform. It enables organizations to store, manage, and analyze structured, semi-structured, and unstructured data at scale using familiar tools and languages like SQL, Apache Spark, and Python.
 
-1. **Pipeline:** A pipeline is a logical grouping of activities that orchestrate data ingestion and transformation tasks, allowing users to create and manage complex data workflows through a graphical user interface.
+1. **Apache Spark**: It is an open-source, distributed computing engine designed for fast and large-scale data processing. It’s widely used in big data environments for tasks such as data transformation, machine learning, and real-time analytics. 
 
-1. **Dataflows (Gen2)**: Its a new generation of dataflows that allow you to connect to various data sources, perform transformations using Power Query Online, and then load the transformed data into various destinations like Lakehouses, Warehouses, or Azure SQL Databases, offering a low-code, cloud-based data preparation experience. 
-
-1. **Real-time Intelligence:** It is an end-to-end solution for event-driven scenarios, streaming data, and data logs.
-
-1. **Eventstreams**: The eventstreams feature in Microsoft Fabric gives you a centralized place in the Fabric platform to capture, transform, and route real-time events to various destinations with a no-code experience.
-
-1. **Eventhouse**: An eventhouse is a workspace of databases, which might be shared across a certain project.
+1. **Medallion architecture**: It is a design pattern that organizes data into three layers (Bronze, Silver, and Gold) to improve data quality and structure as it progresses through each stage, facilitating optimized analytics. 
 
 
 # Getting Started with lab
