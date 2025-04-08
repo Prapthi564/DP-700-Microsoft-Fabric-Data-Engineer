@@ -34,13 +34,35 @@ By the end of this lab, you will be able to create a Microsoft Fabric workspace,
 
 In this hands-on lab, the architecture flow includes several essential components.
 
+1. **Analyze data with Apache Spark in Fabric**: Learning how to use Apache Spark within Microsoft Fabric to explore and analyze large-scale datasets. This includes creating notebooks, executing distributed data operations, and performing transformations to uncover insights.
 
+1. **Ingest data with a pipeline in Microsoft Fabric**: Building and configuring data pipelines to ingest data from external sources into a Fabric lakehouse. This process includes applying transformations using Apache Spark and automating data loading for analysis.
+
+1. **Create and use Dataflows (Gen2) in Microsoft Fabric**: Understanding how to use Power Query Online to build Dataflows (Gen2), which connect to data sources, perform transformations, and feed downstream components like pipelines or Power BI reports.pipelines or Power BI datasets.
+
+1. **Get started with Real-Time Intelligence in Microsoft Fabric**: Setting up a real-time analytics solution using Fabric’s Real-Time Intelligence capabilities. This involves ingesting and visualizing live data streams, such as stock market feeds, for instant insights.
+
+1. **Ingest real-time data with Eventstream in Microsoft Fabric**: Capturing and transforming real-time event data using Eventstream. You’ll configure event sources, apply stream transformations, and route output to destinations like a lakehouse or eventhouse.
+
+1. **Work with data in a Microsoft Fabric eventhouse**: Creating and querying an eventhouse, a storage solution optimized for real-time data. You'll load sample event data (e.g., taxi rides) and use Kusto Query Language (KQL) and SQL to perform analysis.
 
 ## Architecture Diagram
 
- ![](../media/lab01-arch.jpg)
+ ![](../Images/dp900m1arc.jpg)
 
 ## Explanation of Components
+
+1. **Apache Spark:** Apache Spark is the core, open-source, distributed computing engine powering data engineering and data science workloads, enabling users to analyze and process data at scale within a Lakehouse environment. 
+
+1. **Pipeline:** A pipeline is a logical grouping of activities that orchestrate data ingestion and transformation tasks, allowing users to create and manage complex data workflows through a graphical user interface.
+
+1. **Dataflows (Gen2)**: Its a new generation of dataflows that allow you to connect to various data sources, perform transformations using Power Query Online, and then load the transformed data into various destinations like Lakehouses, Warehouses, or Azure SQL Databases, offering a low-code, cloud-based data preparation experience. 
+
+1. **Real-time Intelligence:** It is an end-to-end solution for event-driven scenarios, streaming data, and data logs.
+
+1. **Eventstreams**: The eventstreams feature in Microsoft Fabric gives you a centralized place in the Fabric platform to capture, transform, and route real-time events to various destinations with a no-code experience.
+
+1. **Eventhouse**: An eventhouse is a workspace of databases, which might be shared across a certain project.
 
 
 # Getting Started with lab
