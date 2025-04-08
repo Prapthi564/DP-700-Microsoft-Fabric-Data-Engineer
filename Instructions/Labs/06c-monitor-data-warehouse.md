@@ -1,39 +1,8 @@
----
-lab:
-    title: 'Monitor a data warehouse in Microsoft Fabric'
-    module: 'Monitor a data warehouse in Microsoft Fabric'
----
-
 # Monitor a data warehouse in Microsoft Fabric
 
 In Microsoft Fabric, a data warehouse provides a relational database for large-scale analytics. Data warehouses in Microsoft Fabric include dynamic management views that you can use to monitor activity and queries.
 
 This lab will take approximately **30** minutes to complete.
-
-> **Note**: You need a [Microsoft Fabric trial](https://learn.microsoft.com/fabric/get-started/fabric-trial) to complete this exercise.
-
-## Create a workspace
-
-Before working with data in Fabric, create a workspace with the Fabric trial enabled.
-
-1. Navigate to the [Microsoft Fabric home page](https://app.fabric.microsoft.com/home?experience=fabric) at `https://app.fabric.microsoft.com/home?experience=fabric` in a browser, and sign in with your Fabric credentials.
-1. In the menu bar on the left, select **Workspaces** (the icon looks similar to &#128455;).
-1. Create a new workspace with a name of your choice, selecting a licensing mode that includes Fabric capacity (*Trial*, *Premium*, or *Fabric*).
-1. When your new workspace opens, it should be empty.
-
-    ![Screenshot of an empty workspace in Fabric.](./Images/new-workspace.png)
-
-## Create a sample data warehouse
-
-Now that you have a workspace, it's time to create a data warehouse.
-
-1. On the menu bar on the left, select **Create**. In the *New* page, under the *Data Warehouse* section, select **Sample warehouse** and create a new data warehouse named **sample-dw**.
-
-    >**Note**: If the **Create** option is not pinned to the sidebar, you need to select the ellipsis (**...**) option first.
-
-    After a minute or so, a new warehouse will be created and populated with sample data for a taxi ride analysis scenario.
-
-    ![Screenshot of a new warehouse.](./Images/sample-data-warehouse.png)
 
 ## Explore dynamic management views
 
@@ -121,14 +90,3 @@ Microsoft Fabric data warehouses provide *query insights* - a special set of vie
 1. Run the modified query and view the results, which show details of all queries and their durations.
 
 > **Further Information**: See [Query insights in Fabric data warehousing](https://learn.microsoft.com/fabric/data-warehouse/query-insights) in the Microsoft Fabric documentation for more information about using query insights.
-
-
-## Clean up resources
-
-In this exercise, you have used dynamic management views and query insights to monitor activity in a Microsoft Fabric data warehouse.
-
-If you've finished exploring your data warehouse, you can delete the workspace you created for this exercise.
-
-1. In the bar on the left, select the icon for your workspace to view all of the items it contains.
-1. Select **Workspace settings** and in the **General** section, scroll down and select **Remove this workspace**.
-1. Select **Delete** to delete the workspace.
