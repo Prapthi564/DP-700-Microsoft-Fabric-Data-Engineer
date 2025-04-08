@@ -1,9 +1,3 @@
----
-lab:
-    title: 'Secure a Microsoft Fabric data warehouse'
-    module: 'Secure a Microsoft Fabric data warehouse'
----
-
 # Secure a Microsoft Fabric data warehouse
 
 Microsoft Fabric permissions and granular SQL permissions work together to govern Warehouse access and user permissions. In this exercise, you'll secure data using granular permissions, column-level security, row-level security, and dynamic data masking.
@@ -13,15 +7,6 @@ Microsoft Fabric permissions and granular SQL permissions work together to gover
 This lab takes approximately **45** minutes to complete.
 
 ## Create a workspace
-
-Before working with data in Fabric, create a workspace with the Fabric trial enabled.
-
-1. Navigate to the [Microsoft Fabric home page](https://app.fabric.microsoft.com/home?experience=fabric) at `https://app.fabric.microsoft.com/home?experience=fabric` in a browser, and sign in with your Fabric credentials.
-1. In the menu bar on the left, select **Workspaces** (the icon looks similar to &#128455;).
-1. Create a new workspace with a name of your choice, selecting a licensing mode that includes Fabric capacity (*Trial*, *Premium*, or *Fabric*).
-1. When your new workspace opens, it should be empty.
-
-    ![Screenshot of an empty workspace in Fabric.](./Images/new-empty-workspace.png)
 
 > **Note**: When you create a workspace, you automatically become a member of the Workspace Admin role. You can add a second user from your environment to the Workspace Viewer role to test functionality configured in these exercises. This can be done by selecting **Manage Access** within the workspace, then **Add people or groups**. This will allow the second user to view the workspace content.
 
