@@ -1,43 +1,34 @@
----
-lab:
-    title: 'Monitor Fabric activity in the monitoring hub'
-    module: 'Monitoring Fabric'
----
-
 # Monitor Fabric activity in the monitoring hub
 
 The *monitoring hub* in Microsoft Fabric provides a central place where you can monitor activity. You can use the monitoring hub to review events related to items you have permission to view.
 
 This lab takes approximately **30** minutes to complete.
 
-> **Note**: You need access to a [Microsoft Fabric tenant](https://learn.microsoft.com/fabric/get-started/fabric-trial) to complete this exercise.
-
-## Create a workspace
-
-Before working with data in Fabric, create a workspace in a tenant with the Fabric capacity enabled.
-
-1. Navigate to the [Microsoft Fabric home page](https://app.fabric.microsoft.com/home?experience=fabric) at `https://app.fabric.microsoft.com/home?experience=fabric` in a browser and sign in with your Fabric credentials.
-1. In the menu bar on the left, select **Workspaces** (the icon looks similar to &#128455;).
-1. Create a new workspace with a name of your choice, selecting a licensing mode in the **Advanced** section that includes Fabric capacity (*Trial*, *Premium*, or *Fabric*).
-1. When your new workspace opens, it should be empty.
-
-    ![Screenshot of an empty workspace in Fabric.](./Images/new-workspace.png)
-
 ## Create a lakehouse
 
-Now that you have a workspace, it's time to create a data lakehouse for your data.
+In this task, you will create a lakehouse in your Microsoft Fabric workspace. 
 
-1. On the menu bar on the left, select **Create**. In the *New* page, under the *Data Engineering* section, select **Lakehouse**. Give it a unique name of your choice.
+1. Return to your workspace and click the **+ New item (1)** icon.  
 
-    >**Note**: If the **Create** option is not pinned to the sidebar, you need to select the ellipsis (**...**) option first.
+2. On the **All items** page, scroll down to the **Store data** section and select **Lakehouse (2)**.  
 
-    After a minute or so, a new lakehouse will be created:
+   ![Screenshot of uploaded files in a lakehouse.](./Images/md10.png)  
 
-    ![Screenshot of a new lakehouse.](./Images/new-lakehouse.png)
+3. Provide the following details to create a **Lakehouse**:  
 
-1. View the new lakehouse, and note that the **Lakehouse explorer** pane on the left enables you to browse tables and files in the lakehouse:
+   - **Name:** Enter **lakehouse<inject key="DeploymentID" enableCopy="false"/>**  
 
-    Currently, there are no tables or files in the lakehouse.
+4. Click **Create** to proceed.  
+
+5. View the new lakehouse, and note that the **Lakehouse explorer** pane on the left enables you to browse tables and files in the lakehouse:
+
+    - The **Tables** folder contains tables that you can query using SQL semantics. Tables in a Microsoft Fabric lakehouse are based on the open source *Delta Lake* file format, commonly used in Apache Spark.
+
+    - The **Files** folder contains data files in the OneLake storage for the lakehouse that aren't associated with managed delta tables. You can also create *shortcuts* in this folder to reference data that is stored externally.
+
+   ![Screenshot of uploaded files in a lakehouse.](./Images/mod2-1.png)
+
+   >**Note**: Currently, there are no tables or files in the lakehouse.
 
 ## Create and monitor a Dataflow
 
@@ -45,61 +36,80 @@ In Microsoft Fabric, you can use a Dataflow (Gen2) to ingest data from a wide ra
 
 1. On the **Home** page for your lakehouse, in the **Get data** menu, select **New Dataflow Gen2**.
 
-   A new dataflow named **Dataflow 1** is created and opened.
+1. A new dataflow named **Dataflow 1** is created and opened.
 
-    ![Screenshot of a new dataflow.](./Images/new-data-flow.png)
+    ![Screenshot of a new dataflow.](./Images/lab5u1.png)
 
 1. At the top left of the dataflow page, select **Dataflow 1** to see its details and rename the dataflow to **Get Product Data**.
-1. In the dataflow designer, select **Import from a Text/CSV file**. Then complete the Get Data wizard to create a data connection by linking to `https://raw.githubusercontent.com/MicrosoftLearning/dp-data/main/products.csv` using anonymous authentication. When you have completed the wizard, a preview of the data will be shown in the dataflow designer like this:
+|
+1. In the dataflow designer, select **Import from a Text/CSV file**. Then complete the Get Data wizard to create a data connection by linking to `https://raw.githubusercontent.com/MicrosoftLearning/dp-data/main/products.csv (1)` using anonymous authentication. 
 
-    ![Screenshot of a dataflow query.](./Images/data-flow-query.png)
+    ![Screenshot of a new dataflow.](./Images/lab5u2.png)
 
-1. Publish the dataflow.
+1. Click on **Next (2)**
+
+1. When you have completed the wizard, a preview of the data will be shown in the dataflow designer like below and click on **Create**
+
+    ![Screenshot of a new dataflow.](./Images/lab5u3.png)
+
+1. **Publish** the dataflow.
+
+    ![Screenshot of a new dataflow.](./Images/lab5u4.png)
+
 1. In the navigation bar on the left, select **Monitor** to view the monitoring hub and observe that your dataflow is in-progress (if not, refresh the view until you see it).
 
-    ![Screenshot of the monitoring hub with a dataflow in-progress.](./Images/monitor-dataflow.png)
+    ![Screenshot of the monitoring hub with a dataflow in-progress.](./Images/lab5u5.png)
 
 1. Wait for a few seconds, and then refresh the page until the status of the dataflow is **Succeeded**.
+
 1. In the navigation pane, select your lakehouse. Then expand the **Tables** folder to verify that a table named **products** has been created and loaded by the dataflow (you may need to refresh the **Tables** folder).
 
-    ![Screenshot of the products table in the lakehouse page.](./Images/products-table.png)
+    ![Screenshot of the products table in the lakehouse page.](./Images/lab5u6.png)
 
 ## Create and monitor a Spark notebook
 
 In Microsoft Fabric, you can use notebooks to run Spark code.
 
-1. In the navigation hub, select **Home**. The  on the Data Engineering home page, create a new **Notebook**.
+1. In the lakehouse interface, Select **Open notebook (1)**, then choose **New notebook (2)** to create a new one.
 
-    A new notebook named **Notebook 1** is created and opened.
+    ![Screenshot of the products table in the lakehouse page.](./Images/lab5u7.png)
 
-    ![Screenshot of a new notebook.](./Images/new-notebook.png)
+1. A new notebook named **Notebook 1** is created and opened.
 
 1. At the top left of the notebook, select **Notebook 1** to view its details, and change its name to **Query Products**.
-1. In the notebook editor, in the **Explorer** pane, select **Lakehouses** and add the lakehouse you created previously.
+
+1. In the notebook editor, in the **Explorer** pane, select **lakehouse<inject key="DeploymentID" enableCopy="false"/>**
+
 1. In the **...** menu for the **Products** table, select **Load data** > **Spark**. This adds a new code cell to the notebook as shown here:
 
-    ![Screenshot of a notebook with code to query a table.](./Images/load-spark.png)
+    ![Screenshot of a notebook with code to query a table.](./Images/lab5u8.png)
 
 1. Use the **&#9655; Run all** button to run all cells in the notebook. It will take a moment or so to start the Spark session, and then the results of the query will be shown under the code cell.
 
-    ![Screenshot of a notebook with query results.](./Images/notebook-output.png)
+    ![Screenshot of a notebook with query results.](./Images/lab5u9.png)
 
 1. On the toolbar, use the **&#9723;** (*Stop session*) button to stop the Spark session.
+
 1. In the navigation bar, select **Monitor** to view the monitoring hub, and note that the notebook activity is listed.
 
-    ![Screenshot of the monitoring hub with a notebook activity.](./Images/monitor-notebook.png)
+    ![Screenshot of the monitoring hub with a notebook activity.](./Images/lab5u10.png)
 
 ## Monitor history for an item
 
 Some items in a workspace might be run multiple times. You can use the monitoring hub to view their run history.
 
 1. In the navigation bar, return to the page for your workspace. Then use the **&#8635;** (*Refresh now*) button for your **Get Product Data** dataflow to re-run it.
+
+    ![Screenshot of the monitoring hub with a notebook activity.](./Images/lab5u11.png)
+
 1. In the navigation pane, select the **Monitor** page to view the monitoring hub and verify that the dataflow is in-progress.
+
+    ![Screenshot of the monitoring hub historical runs view.](./Images/lab5u12.png)
+
 1. In the **...** menu for the **Get Product Data** dataflow, select **Historical runs** to view the run history for the dataflow:
 
-    ![Screenshot of the monitoring hub historical runs view.](./Images/historical-runs.png)
-
 1. In the **...** menu for any of the historical runs select **View detail** to see details of the run.
+
 1. Close the **Details** pane and use the **Back to main view** button to return to the main monitoring hub page.
 
 ## Customize monitoring hub views
@@ -127,14 +137,3 @@ In this exercise you've only run a few activities, so it should be fairly easy t
 
     You may need to scroll horizontally to see all of the columns:
 
-    ![Screenshot of the monitoring hub with custom columns.](./Images/monitor-columns.png)
-
-## Clean up resources
-
-In this exercise, you have created a lakehouse, a dataflow, and a Spark notebook; and you've used the monitoring hub to view item activity.
-
-If you've finished exploring your lakehouse, you can delete the workspace you created for this exercise.
-
-1. In the bar on the left, select the icon for your workspace to view all of the items it contains.
-2. In the **...** menu on the toolbar, select **Workspace settings**.
-3. In the **General** section, select **Remove this workspace**.
