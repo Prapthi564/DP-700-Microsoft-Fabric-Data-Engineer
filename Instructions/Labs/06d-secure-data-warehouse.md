@@ -6,21 +6,21 @@ Microsoft Fabric permissions and granular SQL permissions work together to gover
 
 This lab takes approximately **45** minutes to complete.
 
-## Create a workspace
+## Add a User to the Workspace Viewer Role in Fabric
 
-> **Note**: When you create a workspace, you automatically become a member of the Workspace Admin role. You can add a second user from your environment to the Workspace Viewer role to test functionality configured in these exercises. This can be done by selecting **Manage Access** within the workspace, then **Add people or groups**. This will allow the second user to view the workspace content.
+1. Open the **fabric-<inject key="DeploymentID" enableCopy="false"/>** workspace you just created.
 
-## Create a data warehouse
+1. From the top menu, select **Manage Access**.
 
-Next, create a data warehouse in the workspace you created:
+1. Click on Add people or groups.
 
-1. On the menu bar on the left, select **Create**. In the *New* page, under the *Data Warehouse* section, select **Warehouse**. Give it a unique name of your choice.
+1. Enter the name or email address of the second user you want to add from your environment.
 
-    >**Note**: If the **Create** option is not pinned to the sidebar, you need to select the ellipsis (**...**) option first.
+1. In the role selection dropdown, choose **Viewer**.
 
-    After a minute or so, a new warehouse will be created:
+1. Click **Add** to confirm the user assignment.
 
-    ![Screenshot of a new warehouse.](./Images/new-empty-data-warehouse.png)
+> **Note**: When you create a workspace, you automatically become a member of the Workspace Admin role. 
 
 ## Apply dynamic data masking rules to columns in a table
 
@@ -239,11 +239,3 @@ Fabric has a permissions model that allows you to control access to data at the 
    
    SELECT * FROM dbo.Parts;
      ```
-
-## Clean up resources
-
-In this exercise, you applied dynamic data masking rules to columns in a table, applied row-level security, implemented column-level security and, configured SQL granular permissions using T-SQL.
-
-1. In the left navigation bar, select the icon for your workspace to view all of the items it contains.
-2. In the menu on the top toolbar, select **Workspace settings**.
-3. In the **General** section, select **Remove this workspace**.
