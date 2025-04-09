@@ -2,15 +2,19 @@
 
 ## Estimated Duration: 30 minutes
 
-In Microsoft Fabric, an *eventhouse* is used to store real-time data related to events; often captured from a streaming data source by an *eventstream*.
+In this lab, you will create and populate an eventhouse in Microsoft Fabric using sample data related to taxi rides. You will configure an eventstream to ingest real-time data into your eventhouse and then explore the captured data using both Kusto Query Language (KQL) and SQL. This lab will help you understand how to manage and analyze real-time event data in a structured, queryable format.
 
-Within an eventhouse, the data is stored in one or more KQL databases, each of which contains tables and other objects that you can query by using Kusto Query Language (KQL) or a subset of Structured Query Language (SQL).
+## Lab Objectives
 
-In this exercise, you'll create and populate an eventhouse with some sample data related to taxi rides, and then query the data using KQL and SQL.
+In this lab, you will be able to complete the following tasks:
 
-## Create an Eventhouse
+- Task 1: Create an Eventhouse
+- Task 2: Query data by using KQL
+- Task 3: Create a DataframeQuery data by using Transact-SQL
 
-Now that you have a workspace with support for a Fabric capacity, you can create an eventhouse in it.
+### Task 1: Create an Eventhouse
+
+In this task, you will create an eventhouse in your Fabric workspace. The eventhouse will serve as the storage location for real-time data captured from streaming sources.
 
 1. In the menu bar on the left, select **Workloads**. Then, select the **Real-Time Intelligence** tile.
 
@@ -28,9 +32,9 @@ Now that you have a workspace with support for a Fabric capacity, you can create
 
 1. Verify that a **Bikestream** table has also been created.
 
-## Query data by using KQL
+### Task 2: Query data by using KQL
 
-Kusto Query Language (KQL) is an intuitive, comprehensive language that you can use to query a KQL database.
+In this task, you will use Kusto Query Language (KQL) to explore and analyze data stored in your eventhouse. KQL is a powerful query language optimized for time-series and event data, making it ideal for analyzing the real-time taxi ride data you've ingested.
 
 ### Retrieve data from a table with KQL
 
@@ -142,9 +146,10 @@ In KQL, the *where* clause is used to filter data. You can combine conditions in
     | sort by Neighbourhood asc
     ```
 
-## Query data by using Transact-SQL
+### Task 3: Query data by using Transact-SQL
 
-KQL Database doesn't support Transact-SQL natively, but it provides a T-SQL endpoint that emulates Microsoft SQL Server and allows you to run T-SQL queries on your data. The T-SQL endpoint has some limitations and differences from the native SQL Server. For example, it doesn't support creating, altering, or dropping tables, or inserting, updating, or deleting data. It also doesn't support some T-SQL functions and syntax that aren't compatible with KQL. It was created to allow systems that didn't support KQL to use T-SQL to query the data within a KQL Database. So, it's recommended to use KQL as the primary query language for KQL Database, as it offers more capabilities and performance than T-SQL. You can also use some SQL functions that are supported by KQL, such as count, sum, avg, min, max, and so on.
+In this task, you used Transact-SQL (T-SQL) to query data stored in a KQL database through the provided T-SQL endpoint. While the support is limited compared to native SQL Server, it enables integration with tools and systems that rely on T-SQL, offering basic querying capabilities like aggregations and filtering. However, for full functionality and better performance, KQL remains the recommended language for working with eventhouse data.
+
 
 ### Retrieve data from a table by using Transact-SQL
 
@@ -236,3 +241,19 @@ KQL Database doesn't support Transact-SQL natively, but it provides a T-SQL endp
     HAVING Neighbourhood = 'Chelsea'
     ORDER BY Neighbourhood ASC;
     ```
+
+
+## Review
+
+In this lab, you worked with real-time data using an eventhouse in Microsoft Fabric. You created an eventhouse, queried the ingested data using Kusto Query Language (KQL), and explored the use of the Transact-SQL (T-SQL) endpoint to run SQL-based queries. This exercise helped reinforce how to store, access, and analyze streaming data in a flexible and powerful way.
+
+In this lab, you have completed the following tasks:
+
+- Created an Eventhouse
+- Queried data by using KQL
+- Created a DataframeQuery data by using Transact-SQL
+
+### You have successfully completed the lab
+
+
+

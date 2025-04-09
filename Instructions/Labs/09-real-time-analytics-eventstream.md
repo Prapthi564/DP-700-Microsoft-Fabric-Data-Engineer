@@ -2,13 +2,23 @@
 
 ## Estimated Duration: 60 Minutes 
 
-Eventstream is a feature in Microsoft Fabric that captures, transforms, and routes real-time events to various destinations. You can add event data sources, destinations, and transformations to the eventstream.
+In this lab, you will use Microsoft Fabric's Eventstream feature to ingest and process real-time data related to a city bike-share system. You'll connect to a sample streaming data source that emits events about bicycle collection points, apply transformations, and route the processed data to various destinations. This lab demonstrates how Eventstream enables real-time analytics by capturing and handling live event data efficiently within Microsoft Fabric.
 
-In this exercise, you'll ingest data from a sample data source that emits a stream of events related to observations of bicycle collection points in a bike-share system in which people can rent bikes within a city.
+## Lab Objectives
 
-## Create an eventhouse
+In this lab, you will be able to complete the following tasks:
 
-Now that you have a workspace, you can start creating the Fabric items you'll need for your real-time intelligence solution. we'll start by creating an eventhouse.
+- Task 1: Create an eventhouse
+- Task 2: Create an Eventstream
+- Task 3: Add a source
+- Task 4: Add a destination
+- Task 5: Query captured data
+- Task 6: Transform event data
+- Task 7: Query the transformed data
+
+### Task 1: Create an eventhouse
+
+In this task, you will create an eventhouse in your Fabric workspace to store real-time event data.
 
 1. In the workspace, select **+ New item (1)**. In the *New item* pane, select **Eventhouse (2)**.
 
@@ -28,7 +38,9 @@ Now that you have a workspace, you can start creating the Fabric items you'll ne
 
     >**Note**: Currently there are no tables in the database. In the rest of this exercise you'll use an eventstream to load data from a real-time source into a table.
 
-## Create an Eventstream
+### Task 2: Create an Eventstream
+
+In this task, you will create a new Eventstream in Microsoft Fabric to start capturing real-time data. The Eventstream acts as a pipeline that ingests and processes streaming data from various sources.
 
 1. In the main page of your **KQL database (1)**, select **Get data (2)**.
 
@@ -42,7 +54,9 @@ Now that you have a workspace, you can start creating the Fabric items you'll ne
 
     ![Screenshot of a new eventstream.](./Images/md88.png)
 
-## Add a source
+### Task 3: Add a source
+
+In this task, you will add a real-time data source to your Eventstream. You'll use sample data related to bicycle collection points in a city’s bike-share system. This allows you to simulate a real-world streaming scenario without needing an external data feed. 
 
 1. In the Eventstream canvas, select **Use sample data**.
 
@@ -54,7 +68,9 @@ Now that you have a workspace, you can start creating the Fabric items you'll ne
 
    ![Review the eventstream canvas](./Images/md90.png)
 
-## Add a destination
+### Task 4: Add a destination
+
+In this task, you'll route the incoming bicycle stream data to an Eventhouse so that it can be stored for analysis.
 
 1. Select the **Transform events or add destination (1)** tile and search for **Eventhouse (2)**.
 
@@ -90,9 +106,9 @@ Now that you have a workspace, you can start creating the Fabric items you'll ne
 
 1. Beneath the eventstream design canvas, view the **Data insights** tab to see details of the data events that have been captured.
 
-## Query captured data
+### Task 5: Query captured data
 
-The eventstream you have created takes data from the sample source of bicycle data and loads it into the database in your eventhouse. You can analyze the captured data by querying the table in the database.
+In this task, you will query the data stored in the eventhouse to analyze real-time observations from the bike-share system. Using KQL (Kusto Query Language), you can explore the contents of the bikes table, review the structure of the ingested data, and verify that data is being correctly captured from the stream. 
 
 1. In the menu bar on the left, select your **BicycleEventhouse (1)** KQL database.
 
@@ -114,9 +130,9 @@ The eventstream you have created takes data from the sample source of bicycle da
 
     ![Screenshot of a KQL query.](./Images/md98.png)
 
-## Transform event data
+### Task 6: Transform event data
 
-The data you've captured is unaltered from the source. In many scenarios, you may want to transform the data in the event stream before loading it into a destination.
+In this task, you will apply a transformation to the incoming event data within the eventstream before it reaches the destination. This allows you to clean, shape, or enrich the data in real time. 
 
 1. In the menu bar on the left, select the **Bicycle-data** eventstream.
 
@@ -170,12 +186,12 @@ The data you've captured is unaltered from the source. In many scenarios, you ma
 
     **Note**: The trasformed data includes the grouping field you specified (**Street**), the aggregation you specified (**SUM_no_Bikes**), and a timestamp field indicating the end of the 5 second tumbling window in which the event occurred (**Window_End_Time**).
 
-## Query the transformed data
+### Task 7: Query the transformed data
 
-Now you can query the bicycle data that has been transformed and loaded into a table by your eventstream
+In this task, you'll query the transformed bicycle data that has been ingested into your eventhouse table through the eventstream. Using KQL (Kusto Query Language), you can explore the structured data to gain insights, verify your transformations, and begin your real-time analysis.
 
 1. In the menu bar on the left, select your KQL database.
-1. 1. On the **database** tab, in the toolbar for your KQL database, use the **Refresh** button to refresh the view until you see the **bikes-by-street** table under the database.
+1. On the **database** tab, in the toolbar for your KQL database, use the **Refresh** button to refresh the view until you see the **bikes-by-street** table under the database.
 
 1. In the **... (1)** menu for the **bikes-by-street** table, select **Query with code (2)** > **Show any 100 records (3)**.
 
@@ -202,5 +218,20 @@ Now you can query the bicycle data that has been transformed and loaded into a t
 
     ![Screenshot of a query returning grouped data.](./Images/md106.png)
 
+## Review
+
+In this lab, you worked through the end-to-end process of capturing and analyzing real-time data using Eventstream in Microsoft Fabric. You created an eventhouse, configured sources and destinations, and applied transformations to event data. You also queried both raw and transformed data, gaining practical experience in building a real-time analytics pipeline.
+
+In this lab, you have completed the following tasks:
+
+- Created an eventhouse
+- Created an Eventstream
+- Added a source
+- Added a destination
+- Queried captured data
+- Transformed event data
+- Queried the transformed data
+
+## Now, click on Next from the lower right corner to move on to the next lab.
 
 

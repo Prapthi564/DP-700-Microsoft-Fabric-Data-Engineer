@@ -4,7 +4,7 @@
 
 In this lab you will ingest data into the Fabric lakehouse and use PySpark to read and analyze the data. Apache Spark is an open-source engine for distributed data processing and is widely used to explore, process, and analyze huge volumes of data in data lake storage. Spark is available as a processing option in many data platform products, including Azure HDInsight, Azure Databricks, Azure Synapse Analytics, and Microsoft Fabric. One of the benefits of Spark is support for a wide range of programming languages, including Java, Scala, Python, and SQL; making Spark a very flexible solution for data processing workloads including data cleansing and manipulation, statistical analysis and machine learning, and data analytics and visualization.
 
-## Lab objectives
+## Lab Objectives
 
 In this lab, you will be able to complete the following tasks:
 
@@ -72,7 +72,7 @@ In this task, you will create a notebook to work with data in Apache Spark. Note
 
 ## Task 3: Create a DataFrame
 
-Now that you have created a workspace, a lakehouse, and a notebook you are ready to work with your data. You will use PySpark, which is the default language for Fabric notebooks, and the version of Python that is optimized for Spark.
+In this task, you will create a DataFrame using PySpark to begin working with your uploaded data. DataFrames are a fundamental data structure in Spark, allowing you to efficiently load, process, and analyze large datasets in a distributed environment.
 
 >[!NOTE]
 > Fabric notebooks support multiple programming languages including Scala, R, and Spark SQL.
@@ -169,6 +169,8 @@ Now that you have created a workspace, a lakehouse, and a notebook you are ready
 
 ## Task 4: Explore data in a DataFrame
 
+In this task, you will explore the contents of a DataFrame using PySpark. The DataFrame object provides powerful functionality, allowing you to filter, group, and manipulate data to better understand its structure and prepare it for analysis.
+
 The DataFrame object provides additional functionality such as the ability to filter, group, and manipulate data.
 
 ### Filter a DataFrame
@@ -213,6 +215,8 @@ The DataFrame object provides additional functionality such as the ability to fi
 
 ## Task 5: Aggregate and group data in a DataFrame
 
+In this task, you will learn how to aggregate and group data in a DataFrame using PySpark. By grouping records based on specific columns and applying functions like sum() and count(), you can uncover trends and summaries within your dataset, such as total sales by product or order counts by year.
+
 1. Add a code cell, and enter the following code:
 
     ```python
@@ -244,6 +248,8 @@ The DataFrame object provides additional functionality such as the ability to fi
     ![Screen picture showing the results of aggregating and grouping data in a DataFrame.](./Images/md23.png)
 
 ## Task 6: Use Spark to transform data files
+
+In this task, you will use PySpark to transform data files for further analysis or processing. This includes applying operations such as selecting specific columns, renaming fields, and deriving new values—key steps in preparing data for analytics or machine learning workflows.
 
 A common task for data engineers and data scientists is to transform data for further downstream processing or analysis.
 
@@ -337,7 +343,7 @@ When dealing with large volumes of data, partitioning can significantly improve 
 
 ## Task 7: Work with tables and SQL
 
-You’ve now seen how the native methods of the DataFrame object enable you to query and analyze data from a file. However, you may be more comfortable working with tables using SQL syntax. Spark provides a metastore in which you can define relational tables. 
+In this task, you will learn how to create and query tables using SQL in Spark. While PySpark DataFrame methods are powerful, using SQL syntax can be more intuitive for those with a background in relational databases. You will register DataFrames as temporary views and use Spark’s metastore to define and interact with tables using standard SQL queries.
 
 The Spark SQL library supports the use of SQL statements to query tables in the metastore. This provides the flexibility of a data lake with the structured data schema and SQL-based queries of a relational data warehouse - hence the term “data lakehouse”.
 
@@ -354,7 +360,7 @@ Tables in a Spark metastore are relational abstractions over files in the data l
     # Get the table description
     spark.sql("DESCRIBE EXTENDED salesorders").show(truncate=False)
    ```
-    >**Note**: In this example, no explicit path is provided, so the files for the table will be managed by the metastore. Also, the table is saved in delta format which adds relational database capabilities to tables. This includes support for transactions, row versioning, and other useful features. Creating tables in delta format is preferred for data lakehouses in Fabric.
+   >**Note**: In this example, no explicit path is provided, so the files for the table will be managed by the metastore. Also, the table is saved in delta format which adds relational database capabilities to tables. This includes support for transactions, row versioning, and other useful features. Creating tables in delta format is preferred for data lakehouses in Fabric.
 
 2. Run the code cell and review the output, which describes the definition of the new table.
 
@@ -398,7 +404,7 @@ While it’s useful to be able to embed SQL statements into a cell containing Py
 
 ## Task 8: Visualize data with Spark
 
-Charts help you to see patterns and trends faster than would be possible by scanning thousands of rows of data. Fabric notebooks include a built-in chart view but it is not designed for complex charts. For more control over how charts are created from data in DataFrames, use Python graphics libraries like *matplotlib* or *seaborn*.
+In this task, you will visualize data from a DataFrame to identify patterns and trends more easily. While Fabric notebooks offer a basic built-in chart view, you’ll use Python libraries such as matplotlib and seaborn for greater flexibility and control in creating detailed, customized visualizations.
 
 ### View results as a chart
 
@@ -607,4 +613,19 @@ While *matplotlib* enables you to create different chart types, it can require s
 
   >**Note**: To learn more about plotting with seaborn, see the [seaborn](https://seaborn.pydata.org/index.html) documentation.
 
+### Review
 
+In this lab, you worked through the end-to-end process of analyzing data with Apache Spark in Microsoft Fabric. You created a lakehouse, built a notebook, and used PySpark to load, explore, transform, and visualize data. You also practiced using both DataFrame methods and SQL for flexible data analysis.
+
+In this lab, you have completed the following tasks:
+
+- Created a lakehouse and upload files
+- Created a notebook
+- Created a Dataframe
+- Explored data in a dataframe
+- Aggregated and grouped data in a dataframe
+- Used Spark to transform data files
+- Worked with tables and SQL
+- Visualized data with Spark
+
+## Now, click on Next from the lower right corner to move on to the next lab.

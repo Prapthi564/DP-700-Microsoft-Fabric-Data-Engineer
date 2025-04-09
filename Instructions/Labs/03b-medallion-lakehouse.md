@@ -2,9 +2,22 @@
 
 ## Estimated Duration: 60 minutes
 
-In this exercise you will build out a medallion architecture in a Fabric lakehouse using notebooks. You will create a workspace, create a lakehouse, upload data to the bronze layer, transform the data and load it to the silver Delta table, transform the data further and load it to the gold Delta tables, and then explore the semantic model and create relationships.
+In this lab you will build out a medallion architecture in a Fabric lakehouse using notebooks. You will create a workspace, create a lakehouse, upload data to the bronze layer, transform the data and load it to the silver Delta table, transform the data further and load it to the gold Delta tables, and then explore the semantic model and create relationships.
 
-## Verify Workspace settings
+## Lab Objectives
+
+In this lab, you will be able to complete the following tasks:
+
+- Task 1: Verify Workspace settings
+- Task 2: Create a lakehouse and upload data to bronze layer
+- Task 3: Transform data and load to silver Delta table
+- Task 4: Explore data in the silver layer using the SQL endpoint
+- Task 5: Transform data for gold layer
+- Task 6: Create a semantic model
+
+### Task 1: Verify Workspace settings
+
+In this task, you verify the workspace settings to ensure that the Data model settings preview feature is enabled. 
 
 1. In the menu bar on the left, select **fabric-<inject key="DeploymentID" enableCopy="false"/>** workspace.
 
@@ -14,9 +27,9 @@ In this exercise you will build out a medallion architecture in a Fabric lakehou
 
     >**Note**: You may need to refresh the browser tab after enabling the preview feature.
 
-## Create a lakehouse and upload data to bronze layer
+### Task 2: Create a lakehouse and upload data to bronze layer
 
-Now that you have a workspace, it's time to create a data lakehouse for the data you're going to analyze.
+In this task, you’ll create a new lakehouse named Sales within your workspace to serve as the foundation for data analysis. You'll then organize and upload raw data files into a subfolder named bronze, establishing the initial layer in a medallion architecture. 
 
 1. Within the workspace, create a new **Lakehouse** named **Sales** by clicking the **+ New item** button.
 
@@ -28,9 +41,9 @@ Now that you have a workspace, it's time to create a data lakehouse for the data
 
    ![Screenshot of uploaded products.csv file in a lakehouse.](./Images/md2-33.png)
 
-## Transform data and load to silver Delta table
+### Task 3: Transform data and load to silver Delta table
 
-Now that you have some data in the bronze layer of your lakehouse, you can use a notebook to transform the data and load it to a delta table in the silver layer.
+In this task, you'll use a notebook to clean and transform the raw data uploaded to the bronze layer. After applying the necessary transformations, you will write the processed data into a new Delta table within the silver layer of your lakehouse. This step helps structure and optimize the data for efficient querying and analysis.
 
 1. On the **Home** page while viewing the contents of the **bronze** folder in your data lake, in the **Open notebook** menu, select **New notebook**.
 
@@ -185,9 +198,9 @@ Now that you have some data in the bronze layer of your lakehouse, you can use a
 
 You now have data in your silver delta table that is ready for further transformation and modeling.
 
-## Explore data in the silver layer using the SQL endpoint
+### Task 4: Explore data in the silver layer using the SQL endpoint
 
-Now that you have data in your silver layer, you can use the SQL analytics endpoint to explore the data and perform some basic analysis. This is useful if you're familiar with SQL and want to do some basic exploration of your data. In this exercise we're using the SQL endpoint view in Fabric, but you can use other tools like SQL Server Management Studio (SSMS) and Azure Data Explorer.
+In this task, you’ll explore the transformed data stored in the silver layer using the SQL analytics endpoint in Microsoft Fabric. This allows you to run familiar SQL queries directly against your Delta tables, helping you validate the data and perform basic analysis. Whether you're using the built-in SQL interface or connecting via external tools like SSMS or Azure Data Explorer, this approach is great for quick insights and data verification.
 
 1. Navigate back to your workspace and notice that you now have several items listed. Select the **Sales SQL analytics endpoint** to open your lakehouse in the SQL analytics endpoint view.
 
@@ -224,11 +237,9 @@ Now that you have data in your silver layer, you can use the SQL analytics endpo
 
 Data exploration at the silver layer is useful for basic analysis, but you'll need to transform the data further and model it into a star schema to enable more advanced analysis and reporting. You'll do that in the next section.
 
-## Transform data for gold layer
+### Task 5: Transform data for gold layer
 
-You have successfully taken data from your bronze layer, transformed it, and loaded it into a silver Delta table. Now you'll use a new notebook to transform the data further, model it into a star schema, and load it into gold Delta tables.
-
-You could have done all of this in a single notebook, but for this exercise you're using separate notebooks to demonstrate the process of transforming data from bronze to silver and then from silver to gold. This can help with debugging, troubleshooting, and reuse.
+In this task, you’ll take the cleaned and structured data from the silver layer and further refine it into a star schema for analytics, loading it into gold Delta tables. Using a separate notebook for this step highlights the modularity and clarity of a multi-layered architecture. This separation of transformation stages also simplifies debugging and enhances reusability for future workflows or reporting needs.
 
 1. Return to the workspace home page and create a new notebook called **Transform data for Gold**.
 
@@ -564,7 +575,7 @@ You could have done all of this in a single notebook, but for this exercise you'
 
 You now have a curated, modeled **gold** layer that can be used for reporting and analysis.
 
-## Create a semantic model
+### Task 6: Create a semantic model
 
 In your workspace, you can now use the gold layer to create a report and analyze the data. You can access the semantic model directly in your workspace to create relationships and measures for reporting.
 
@@ -588,3 +599,19 @@ Note that you can't use the **default semantic model** that is automatically cre
     ![Screenshot of a semantic model in Fabric.](./Images/md2-38.png)
 
 From here, you or other members of your data team can create reports and dashboards based on the data in your lakehouse. These reports will be connected directly to the gold layer of your lakehouse, so they'll always reflect the latest data.
+
+## Review
+
+In this lab, you explored building a lakehouse by uploading raw data to the bronze layer, transforming it into silver and gold Delta tables, and analyzing it using SQL. You also created a semantic model to enable reporting and visualization.
+
+In this lab, you have completed the following tasks:
+
+- Verified Workspace settings
+- Created a lakehouse and upload data to bronze layer
+- Transformed data and loaded to silver Delta table
+- Explored data in the silver layer using the SQL endpoint
+- Transformed data for gold layer
+- Created a semantic model
+
+
+## Now, click on Next from the lower right corner to move on to the next lab.

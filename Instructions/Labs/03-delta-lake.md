@@ -2,11 +2,27 @@
 
 ## Estimated Duration: 75 minutes
 
-Tables in a Microsoft Fabric Lakehouse are based on the open-source Delta Lake format. Delta Lake adds support for relational semantics for both batch and streaming data. In this exercise you will create Delta tables and explore the data using SQL queries.
+In this lab, you will learn how to use Delta Tables in Microsoft Fabric Lakehouse for managing batch and streaming data. You’ll work with Apache Spark to create and query Delta Tables using SQL. The lab highlights key Delta Lake features like schema enforcement and ACID transactions. By the end, you’ll understand how to use Delta Tables for reliable, scalable data processing in a lakehouse environment.
 
-## Upload data to the Lakehouse
+## Lab Objectives
 
-Now that you have a workspace, it’s time to create a lakehouse and upload some data.
+In this lab, you will be able to complete the following tasks:
+
+- Task 1: Upload data to the Lakehouse
+- Task 2: Explore data in a DataFrame
+- Task 3: Create Delta tables
+- Task 4: Create a managed table
+- Task 5: Create an external table
+- Task 6: Compare managed and external tables
+- Task 7: Use SQL to create a Delta table
+- Task 8: Explore table versioning
+- Task 9: Analyze Delta table data with SQL queries
+- Task 10: Use Delta tables for streaming data
+
+
+### Task 1: Upload data to the Lakehouse
+
+In this task, you will create a new lakehouse within your Microsoft Fabric workspace and upload sample data files into it. 
 
 1. Return to the web browser tab containing your lakehouse, and in the Explorer pane, next to the **Files** folder, select the **… (1)** menu. Create a **New subfolder** called *products (3)*.
 
@@ -20,7 +36,9 @@ Now that you have a workspace, it’s time to create a lakehouse and upload some
 
    ![Screen picture of products.csv uploaded to the lakehouse.](Images/md2-27.png)
   
-## Explore data in a DataFrame
+### Task 2: Explore data in a DataFrame
+
+In this task, you'll begin working with a notebook in Microsoft Fabric to explore Delta Lake functionality using Apache Spark. You’ll first add explanatory markdown text to describe your notebook, then use PySpark to define a schema and read CSV data into a DataFrame. 
 
 1. Create a **New notebook**. After a few seconds, a new notebook containing a single cell will open. Notebooks are made up of one or more cells that can contain code or markdown (formatted text).
 
@@ -62,15 +80,17 @@ Now that you have a workspace, it’s time to create a lakehouse and upload some
 
     ![Screen picture of products.csv data.](Images/md2-28.png)
  
-## Create Delta tables
+### Task 3: Create Delta tables
 
-You can save the DataFrame as a Delta table by using the *saveAsTable* method. Delta Lake supports the creation of both managed and external tables:
+In this task, you’ll learn how to persist DataFrames as Delta tables using the saveAsTable method in Apache Spark. Delta Lake supports the creation of both managed and external tables:
 
    * **Managed** Delta tables benefit from higher performance, as Fabric manages both the schema metadata and the data files.
 
    * **External** tables allow you to store data externally, with the metadata managed by Fabric.
 
-### Create a managed table
+### Task 4: Create a managed table
+
+In this task, you'll create a managed Delta table by writing the DataFrame to your lakehouse using the saveAsTable method. 
 
 The data files are created in the **Tables** folder.
 
@@ -90,9 +110,9 @@ The data files are created in the **Tables** folder.
 
 The files for managed tables are stored in the **Tables** folder in the lakehouse. A folder named *managed_products* has been created which stores the Parquet files and delta_log folder for the table.
 
-### Create an external table
+### Task 5: Create an external table
 
-You can also create external tables, which may be stored somewhere other than the lakehouse, with the schema metadata stored in the lakehouse.
+In this task, you'll create an external Delta table, where the data files are stored in a specified location (such as a folder in your lakehouse), while the table schema is maintained by Microsoft Fabric.
 
 1. In the Lakehouse explorer pane, in the … menu for the **Files** folder, select **Copy ABFS path**. The ABFS path is the fully qualified path to the lakehouse Files folder.
 
@@ -118,9 +138,9 @@ You can also create external tables, which may be stored somewhere other than th
 
 6. In the Lakehouse explorer pane, in the … menu for the Files folder, select **Refresh**. Then expand the Files node and verify that the external_products folder has been created for the table’s data files.
 
-### Compare managed and external tables
+### Task 6: Compare managed and external tables
 
-Let’s explore the differences between managed and external tables using the %%sql magic command.
+In this task, you will use the %%sql magic command to query both managed and external Delta tables and observe the differences between them. 
 
 1. In a new code cell and run the following code:
 
@@ -153,9 +173,9 @@ Let’s explore the differences between managed and external tables using the %%
 
 The metadata for the external table was deleted, but not the data file.
 
-## Use SQL to create a Delta table
+### Task 7: Use SQL to create a Delta table
 
-You will now create a Delta table, using the %%sql magic command. 
+In this task, you'll create a Delta table using SQL within a notebook cell by leveraging the %%sql magic command. 
 
 1. Add another code cell and run the following code:
 
@@ -175,7 +195,9 @@ You will now create a Delta table, using the %%sql magic command.
     SELECT * FROM products;
     ```
 
-## Explore table versioning
+### Task 8: Explore table versioning
+
+In this task, you will examine the version history of a Delta table by using the DESCRIBE HISTORY command in a notebook. 
 
 Transaction history for Delta tables is stored in JSON files in the delta_log folder. You can use this transaction log to manage data versioning.
 
@@ -212,7 +234,9 @@ The results show the history of transactions recorded for the table.
 
 Two result sets are returned - one containing the data after the price reduction, and the other showing the original version of the data.
 
-## Analyze Delta table data with SQL queries
+### Task 9: Analyze Delta table data with SQL queries
+
+In this task, you will analyze the data stored in your Delta table by writing SQL queries using the %%sql magic command in your notebook. This allows you to interact with the Delta table using familiar SQL syntax, making it easy to perform data exploration and analysis. You will create a temporary view from the managed_products table and run queries to filter, aggregate, and sort data, helping you uncover meaningful insights from the dataset.
 
 Using the SQL magic command you can use SQL syntax instead of Pyspark. Here you will create a temporary view from the products table using a `SELECT` statement.
 
@@ -257,7 +281,9 @@ Alternatively, you can run a SQL query using PySpark.
     display(df_products.limit(6))
     ```
 
-## Use Delta tables for streaming data
+### Task 10: Use Delta tables for streaming data
+
+In this task, you'll explore how Delta tables can be used to handle streaming data using Spark's Structured Streaming API.
 
 Delta Lake supports streaming data. Delta tables can be a sink or a source for data streams created using the Spark Structured Streaming API. In this example, you’ll use a Delta table as a sink for some streaming data in a simulated internet of things (IoT) scenario.
 
@@ -349,3 +375,24 @@ This code queries the IotDeviceData table again, which should now include the ad
     ```python
     deltastream.stop()
     ```
+
+
+## Review
+
+In this lab, you learned how to work with Delta tables in Microsoft Fabric using Apache Spark. You created managed and external Delta tables, queried them using SQL, and explored features like versioning and streaming. This hands-on experience demonstrated how Delta Lake brings ACID transactions and reliability to big data analytics in a Lakehouse environment.
+
+In this lab, you have completed the following tasks:
+
+
+- Task 1: Upload data to the Lakehouse
+- Task 2: Explore data in a DataFrame
+- Task 3: Create Delta tables
+- Task 4: Create a managed table
+- Task 5: Create an external table
+- Task 6: Compare managed and external tables
+- Task 7: Use SQL to create a Delta table
+- Task 8: Explore table versioning
+- Task 9: Analyze Delta table data with SQL queries
+- Task 10: Use Delta tables for streaming data
+
+## Now, click on Next from the lower right corner to move on to the next lab.

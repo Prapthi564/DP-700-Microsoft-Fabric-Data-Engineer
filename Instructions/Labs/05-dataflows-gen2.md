@@ -2,13 +2,21 @@
 
 ## Estimated Duration: 30 minutes
 
-In Microsoft Fabric, Dataflows (Gen2) connect to various data sources and perform transformations in Power Query Online. They can then be used in Data Pipelines to ingest data into a lakehouse or other analytical store, or to define a dataset for a Power BI report.
+In this lab, you will learn how to create and use Dataflows (Gen2) in Microsoft Fabric to connect to various data sources and perform data transformations using Power Query Online. You will also see how Dataflows (Gen2) can be used in Data Pipelines to ingest data into a lakehouse or define datasets for Power BI reports. 
 
 This lab is designed to introduce the different elements of Dataflows (Gen2), and not create a complex solution that may exist in an enterprise.
 
-## Create a Dataflow (Gen2) to ingest data
+## Lab Objectives
 
-Now that you have a lakehouse, you need to ingest some data into it. One way to do this is to define a dataflow that encapsulates an *extract, transform, and load* (ETL) process.
+In this lab, you will be able to complete the following tasks:
+
+- Task 1: Create a Dataflow (Gen2) to ingest data
+- Task 2: Add data destination for Dataflow
+- Task 3: Add a dataflow to a pipeline
+
+### Task 1: Create a Dataflow (Gen2) to ingest data
+
+In this task, you will create a Dataflow (Gen2) in Microsoft Fabric to ingest data into your lakehouse. You'll define an extract, transform, and load (ETL) process using Power Query Online, enabling you to connect to a source dataset, apply data transformations, and load the clean data into your analytical storage for further use.
 
 1. In the home page for your workspace, select **New item (1)** > **Dataflow Gen2 (2)**. After a few seconds, the Power Query editor for your new dataflow opens as shown here.
 
@@ -48,7 +56,9 @@ Now that you have a lakehouse, you need to ingest some data into it. One way to 
 
 7. Check and confirm that the data type for the **OrderDate** column is set to **Date** and the data type for the  newly created column **MonthNo** is set to **Whole Number**.
 
-## Add data destination for Dataflow
+### Task 2: Add data destination for Dataflow
+
+In this task, you will configure the destination for your Dataflow (Gen2) so the transformed data is loaded into your Microsoft Fabric lakehouse. You'll connect the dataflow to your lakehouse, define a new table named orders, and adjust destination settings to ensure the data is appended appropriately.
 
 1. On the toolbar ribbon, select the **Home (1)** tab. Then in the **Add data destination (2)** drop-down menu, select **Lakehouse (3)**.
 
@@ -76,9 +86,9 @@ Now that you have a lakehouse, you need to ingest some data into it. One way to 
 
 6. Select **Publish (2)** to publish the dataflow. Then wait for the **Dataflow 1** dataflow to be created in your workspace.
 
-## Add a dataflow to a pipeline
+### Task 3: Add a dataflow to a pipeline
 
-You can include a dataflow as an activity in a pipeline. Pipelines are used to orchestrate data ingestion and processing activities, enabling you to combine dataflows with other kinds of operation in a single, scheduled process. Pipelines can be created in a few different experiences, including Data Factory experience.
+In this task, you will add your Dataflow (Gen2) as an activity within a pipeline. This allows you to orchestrate the dataflow alongside other data operations in a unified and repeatable workflow using the Data Factory experience in Microsoft Fabric.
 
 1. From your Fabric-enabled workspace, make sure you're still in the **Data Engineering** experience. Select **+ New item** > **Data pipeline**, then when prompted, create a new pipeline named **Load data** and the pipeline editor open up
 
@@ -110,6 +120,16 @@ You can include a dataflow as an activity in a pipeline. Pipelines are used to o
 
 > **Tip**: In Power BI Desktop, you can connect directly to the data transformations done with your dataflow by using the *Power BI dataflows (Legacy)* connector.
 > **Note**: You can also make additional transformations, publish as a new dataset, and distribute with intended audience for specialized datasets.
+
+## Review
+This lab provided a hands-on introduction to working with Dataflows (Gen2) in Microsoft Fabric. You learned how to create a dataflow to ingest data, configure a lakehouse as the destination, and integrate the dataflow into a pipeline for orchestration. These foundational tasks demonstrate how to build scalable and repeatable data ingestion processes within the Fabric ecosystem.
+
+In this lab, you have completed the following tasks:
+- Created a Dataflow (Gen2) to ingest data
+- Added data destination for Dataflow
+- Added a dataflow to a pipeline 
+
+## Now, click on Next from the lower right corner to move on to the next lab.
 
 
 

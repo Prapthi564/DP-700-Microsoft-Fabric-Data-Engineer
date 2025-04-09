@@ -3,14 +3,23 @@
 
 ## Estimated duration: 75 minutes
 
-A data lakehouse is a common analytical data store for cloud-scale analytics solutions. One of the core tasks of a data engineer is to implement and manage the ingestion of data from multiple operational data sources into the lakehouse. In Microsoft Fabric, you can implement *extract, transform, and load* (ETL) or *extract, load, and transform* (ELT) solutions for data ingestion through the creation of *pipelines*.
+In this lab, you will learn how to ingest data into a Microsoft Fabric lakehouse using pipelines—an essential skill for building cloud-scale analytics solutions. A data lakehouse is a common analytical data store, and one of the core responsibilities of a data engineer is to manage the ingestion of data from multiple operational sources into this environment. You will implement *extract, transform, and load* (ETL) or *extract, load, and transform* (ELT) solutions by creating pipelines in Fabric.
 
-Fabric also supports Apache Spark, enabling you to write and run code to process data at scale. By combining the pipeline and Spark capabilities in Fabric, you can implement complex data ingestion logic that copies data from external sources into the OneLake storage on which the lakehouse is based, and then uses Spark code to perform custom data transformations before loading it into tables for analysis.
+Microsoft Fabric also supports Apache Spark, enabling scalable data processing. By combining pipeline and Spark capabilities, you will design a workflow that copies data from external sources into OneLake storage and uses Spark code to transform the data before loading it into tables for analysis.
+
+## Lab Objectives
+
+In this lab, you will be able to complete the following tasks:
+
+- Task 1: Create a Subfolder in lakehouse
+- Task 2: Create a pipeline
+- Task 3: Create a notebook
+- Task 4: Modify the pipeline
 
 
-## Create a Subfolder in lakehouse
+### Task 1: Create a Subfolder in lakehouse
 
-In this task, you will create subfolder in the existing lakehouse
+In this task, you will create subfolder in the existing lakehouse.
 
 1. On the menu bar on the left, select the **Lakehouse** created earlier.
 
@@ -20,9 +29,9 @@ In this task, you will create subfolder in the existing lakehouse
 
    ![Screen picture showing auto generated code and data.](./Images/md32.png)
 
-## Create a pipeline
+### Task 2: Create a pipeline
 
-A simple way to ingest data is to use a **Copy Data** activity in a pipeline to extract the data from a source and copy it to a file in the lakehouse.
+In this task, you will create a pipeline in Microsoft Fabric to ingest data into your lakehouse. You will use the Copy Data activity to extract data from a source and copy it into a subfolder within the lakehouse, forming the foundation for an ETL or ELT process.
 
 1. On the **Home** page for your lakehouse, select **Get data (1)** and then select **New data pipeline (2)**, and create a new data pipeline named **Ingest Sales Data (3)**.
 
@@ -81,7 +90,9 @@ A simple way to ingest data is to use a **Copy Data** activity in a pipeline to 
 
     ![Screenshot of a pipeline with a Copy Data activity.](./Images/md37.png)
 
-## Create a notebook
+### Task 3: Create a notebook
+
+In this task, you will create a notebook in Microsoft Fabric to begin processing your ingested data using PySpark. You’ll write code to load sales data, apply transformations, and save the results as a table in the lakehouse—enabling further analysis or reporting through SQL or visualization tools.
 
 1. On the **Home** page for your lakehouse, in the **Open notebook** menu, select **New notebook**.
 
@@ -129,9 +140,9 @@ A simple way to ingest data is to use a **Copy Data** activity in a pipeline to 
 8. In the hub menu bar on the left, select your lakehouse.
 9. In the **Explorer** pane, refresh the view. Then expand **Tables**, and select the **sales** table to see a preview of the data it contains.
 
-## Modify the pipeline
+### Task 4: Modify the pipeline
 
-Now that you've implemented a notebook to transform data and load it into a table, you can incorporate the notebook into a pipeline to create a reusable ETL process.
+In this task, you will modify your existing pipeline to include the notebook you created for data transformation. By integrating the notebook into the pipeline, you’ll build a reusable and automated ETL process that extracts data, runs Spark-based transformations, and loads the results into a lakehouse table.
 
 1. In the hub menu bar on the left select the **Ingest Sales Data** pipeline you created previously.
 
@@ -186,5 +197,15 @@ Now that you've implemented a notebook to transform data and load it into a tabl
 
     ![Screenshot of a pipeline with a Dataflow activity.](./Images/md43.png)
 
-In this exercise, you implemented a data ingestion solution that uses a pipeline to copy data to your lakehouse from an external source, and then uses a Spark notebook to transform the data and load it into a table.
+### Review    
 
+In this lab, you implemented a data ingestion solution that uses a pipeline to copy data to your lakehouse from an external source, and then uses a Spark notebook to transform the data and load it into a table.
+
+In this lab, you have completed the following tasks:
+
+- Created a Subfolder in lakehouse
+- Created a pipeline
+- Created a notebook
+- Modified the pipeline
+
+## Now, click on Next from the lower right corner to move on to the next lab.
