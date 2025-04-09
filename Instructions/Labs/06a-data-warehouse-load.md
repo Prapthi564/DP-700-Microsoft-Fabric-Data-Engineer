@@ -73,9 +73,7 @@ Now that you have a workspace, a lakehouse, and the sales table with the data yo
 
     >**Note**: If the **Create** option is not pinned to the sidebar, you need to select the ellipsis (**...**) option first.
 
-    After a minute or so, a new warehouse will be created:
-
-    ![Screenshot of a new warehouse.](./Images/new-data-warehouse.png)
+1. After a minute or so, a new warehouse will be created:
 
 ## Create fact table, dimensions and view
 
