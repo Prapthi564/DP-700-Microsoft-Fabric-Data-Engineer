@@ -1,27 +1,8 @@
----
-lab:
-    title: 'Secure data access in Microsoft Fabric'
-    module: 'Secure data access in Microsoft Fabric'
----
-
 # Secure data access in Microsoft Fabric
 
 Microsoft Fabric has a multi-layer security model for managing data access. Security can be set for an entire workspace, for individual items, or through granular permissions in each Fabric engine. In this exercise, you secure data using workspace, and item access controls and OneLake data access roles.
 
 This lab takes approximately **45** minutes to complete.
-
-## Create a workspace
-
-Before working with data in Fabric, create a workspace with the Fabric trial enabled.
-
-1. Navigate to the [Microsoft Fabric home page](https://app.fabric.microsoft.com/home?experience=fabric) at `https://app.fabric.microsoft.com/home?experience=fabric` in a browser and sign in with your Fabric credentials.
-1. In the menu bar on the left, select **Workspaces** (the icon looks similar to &#128455;).
-1. Create a new workspace with a name of your choice, selecting a licensing mode that includes Fabric capacity (*Trial*, *Premium*, or *Fabric*).
-1. When your new workspace opens, it should be empty.
-
-    ![Screenshot of an empty workspace in Fabric.](./Images/new-empty-workspace.png)
-
-> **Note**: When you create a workspace, you automatically become a member of the Workspace Admin role. 
 
 ## Create a data warehouse
 
@@ -158,11 +139,3 @@ In this exercise, you assign an item permission and create a OneLake data access
 18. Select the **publicholidays** table and wait for the data to load. Only the data in the publicholidays table is accessible to the user because the user was assigned to the custom OneLake data access role. The role permits them to see only the data in the publicholidays table, not data in any of the other tables, files, or folders.
 
        ![Screenshot of the what the OneLake data access role allows the user to see.](./Images/custom-role-view.png)
-
-## Clean up resources
-
-In this exercise, you secured data using workspace access controls, item access controls and, OneLake data access roles.
-
-1. In the left navigation bar, select the icon for your workspace to view all of the items it contains.
-2. In the menu on the top toolbar, select **Workspace settings**.
-3. In the **General** section, select **Remove this workspace**.
