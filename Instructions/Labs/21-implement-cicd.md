@@ -21,12 +21,14 @@ Next, create a deployment pipeline.
 
 1. In the menu bar on the left, select **Workspaces**.
 2. Select **Deployment Pipelines**, then **New pipeline**.
-3. In the **Add a new deployment pipeline** window, give the pipeline a unique name.
+3. In the **Add a new deployment pipeline** window, enter **pipeline<inject key="DeploymentID" enableCopy="false"/> (1)** as the pipeline name, then click **Next (2)** to continue.
+
+   ![Screenshot of pipeline stages.](./Images/lab5u18.png)
 4. Accept the defaults on the **Customize your stages** window.  
 
-   ![Screenshot of pipeline stages.](./Images/customize-stages.png)
+   ![Screenshot of pipeline stages.](./Images/lab5u19.png)
 
-5. Select **Create**.
+5. Select **Create and Continue**.
 
 ## Assign workspaces to stages of a deployment pipeline
 
@@ -47,20 +49,20 @@ Fabric items haven't been created in your workspaces yet. Next, create a lakehou
 3. Select **New Item**
 4. In the window that appears, select **Lakehouse** and in the **New lakehouse window**, name the lakehouse, **LabLakehouse**.
 5. Select **Create**.
-6. In the Lakehouse Explorer window, select **Start with sample data** to populate the new lakehouse with data.
+6. Select the **Start with sample data** tile, then on the **Use a Sample** page, choose the **Public holidays** tile to populate the workspace with sample data.
 
-  ![Screenshot of Lakehouse Explorer.](./Images/lakehouse-explorer.png)
+    ![Screenshot of a new lakehouse in Fabric.](./Images/lab5u14.png)
 
-7. In the menu bar on the left, select the pipeline you created.
+7. In the menu bar on the left, select the pipeline you created, then **toggle off (1)** New Deployment Pipelines to disable the feature.
 8. In the **Development** stage, select the **>** until you see **Lakehouses**. The lakehouse shows up as new content in the Development stage. Between the **Development** and **Test** stages, there's an orange **X** within a circle. The orange **X** indicates that the Development and Test stages aren't synchronized.
-9. Select the downward arrow below the orange **X** to compare the content in the Development and Test environments. Select **Compare**.The LabLakehouse only exists in the Development stage.  
+9. Select the downward arrow below the orange **X** to compare the content in the Development and Test environments. Select **Compare (1)**.The LabLakehouse only exists in the Development stage.  
 
-  ![Screenshot the deployment pipeline showing content mismatches between stages.](./Images/lab-pipeline-compare.png)
+  ![Screenshot the deployment pipeline showing content mismatches between stages.](./Images/lab5u20.png)
 
 ## Deploy content between stages
 
 Deploy the lakehouse from the **Development** stage to the **Test** and **Production** stages.
-1. Select the **Deploy** button in the **Development** stage of the pipeline to copy the lakehouse in its current state to the text stage. 
+1. Select the **Deploy (2)** button in the **Development** stage of the pipeline to copy the lakehouse in its current state to the text stage. 
 2. In the **Deploy to next stage** window, select **Deploy**.
 3. There is an orange X between the Test and Production stages. Select the downward facing arrow below the orange X. The lakehouse exists in the Development and Test stages but not yet in the Production stage.
 4. In the **Test** stage, select **Deploy**.
