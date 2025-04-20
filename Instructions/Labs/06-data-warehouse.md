@@ -8,7 +8,7 @@ In this hands-on lab, you will learn how to create a data warehouse in Microsoft
 
 ## Lab Objectives
 
-In this lab, you will be able to complete the following tasks:
+In this lab, you will complete the following tasks:
 
 - Task 1: Create a data warehouse
 - Task 2: Create tables and insert data
