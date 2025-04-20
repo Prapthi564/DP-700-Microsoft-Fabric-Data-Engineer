@@ -1,12 +1,28 @@
-# Secure a Microsoft Fabric data warehouse
+# Lab 5: Secure a Microsoft Fabric data warehouse
+
+## Estimated duration : 45 minutes
 
 Microsoft Fabric permissions and granular SQL permissions work together to govern Warehouse access and user permissions. In this exercise, you'll secure data using granular permissions, column-level security, row-level security, and dynamic data masking.
 
-> **Note**: To complete the exercises in this lab, you'll need two users: one user should be assigned the Workspace Admin role, and the other should have the Workspace Viewer role. To assign roles to workspaces see [Give access to your workspace](https://learn.microsoft.com/fabric/get-started/give-access-workspaces).
+In this hands-on lab, you will learn how to implement comprehensive security strategies in a Microsoft Fabric data warehouse. You'll configure dynamic data masking, row-level security, and column-level security to protect sensitive information. You will also practice applying granular SQL permissions to control access at the object level, ensuring that users have the appropriate level of access to the data they need.
 
-This lab takes approximately **45** minutes to complete.
+## Lab Objectives
 
-## Add a User to the Workspace Viewer Role in Fabric
+In this lab, you will complete the following tasks:
+
+- Task 1: Add a user to the workspace Viewer role
+
+- Task 2: Apply dynamic data masking rules to columns in a table
+
+- Task 3: Apply row-level security
+
+- Task 4: Implement column-level security
+
+- Task 5: Configure SQL granular permissions using T-SQL
+
+### Task 1: Add a User to the Workspace Viewer Role in Fabric
+
+In this task, you will add a user to the Viewer role within a Microsoft Fabric workspace. Assigning workspace roles ensures that users have appropriate permissions before you apply further database-level security. Viewers can explore data but cannot modify content, providing a foundation for later security configurations.
 
 1. Open the **fabric-<inject key="DeploymentID" enableCopy="false"/>** workspace you just created.
 
@@ -22,9 +38,11 @@ This lab takes approximately **45** minutes to complete.
 
 > **Note**: When you create a workspace, you automatically become a member of the Workspace Admin role. 
 
-## Apply dynamic data masking rules to columns in a table
+### Task 2: Apply dynamic data masking rules to columns in a table
 
 Dynamic data masking rules are applied on individual columns at the table level so all queries are affected by the masking. Users who do not have explicit permissions to view confidential data see masked values in query results while users with explicit permission to view the data see it unobscured. There are four types of masks: default, email, random and custom string. In this exercise, you will apply a default mask, an email mask, and a custom string mask.
+
+In this task, you will configure dynamic data masking on specific table columns in your data warehouse. Dynamic data masking helps protect sensitive information by obscuring it at query time, ensuring that users can access necessary data without exposing confidential details such as email addresses or credit card numbers.
 
 1. In your warehouse, select the **T-SQL** tile, and use the following T-SQL statements to create a table and to insert and view data.  
 
@@ -74,9 +92,11 @@ Dynamic data masking rules are applied on individual columns at the table level 
 
     The data is returned unmasked because the test user has been granted the `UNMASK` permission.
 
-## Apply row-level security
+### Task 3: Apply row-level security
 
 Row-level security (RLS) can be used to limit access to rows based on the identity, or role of the user executing a query. In this exercise, you restrict access to rows by creating a security policy and a security predicate defined as an inline table-valued function.
+
+In this task, you will define and enforce row-level security (RLS) policies within the data warehouse. Row-level security restricts access to specific records based on the user's identity or role, ensuring that users see only the data relevant to them, even when they query the same table.
 
 1. In the warehouse you created in the last exercise, select the **New SQL Query** dropdown and select **New SQL Query**.
 
@@ -149,9 +169,11 @@ Row-level security (RLS) can be used to limit access to rows based on the identi
    SELECT * FROM dbo.Sales;
     ```
 
-## Implement column-level security
+### Task 4: Implement column-level security
 
 Column-level security allows you to designate which users can access specific columns in a table. It's implemented by issuing a `GRANT` or `DENY` statement on a table specifying a list of columns and the user or role that can or cannot read them. To streamline access management, assign permissions to roles in lieu of individual users. In this exercise, you will create a table, grant access to a subset of columns on the table, and test that restricted columns aren't viewable by a user other than yourself.
+
+In this task, you will implement column-level security (CLS) by controlling access to specific columns within a table. You will define permissions that allow or deny access at the column level, which is useful for protecting highly sensitive fields without restricting access to the entire dataset.
 
 1. In the warehouse you created in the earlier exercise, select the **New SQL Query** dropdown, then select **New SQL Query**.  
 
@@ -191,9 +213,11 @@ Column-level security allows you to designate which users can access specific co
    SELECT OrderID, CustomerID from dbo.Orders
     ```
 
-## Configure SQL granular permissions using T-SQL
+### Task 5: Configure SQL granular permissions using T-SQL
 
 Fabric has a permissions model that allows you to control access to data at the workspace level, and at the item level. When you need more granular control of what users can do with securables in a Fabric warehouse, you can use the standard SQL data control language (DCL) commands `GRANT`,`DENY` and, `REVOKE`. In this exercise, you will create objects, secure them using `GRANT`, and `DENY`, and then run queries to view the effect of applying granular permissions.
+
+In this task, you will apply granular SQL permissions on tables and stored procedures by using T-SQL commands such as GRANT and DENY. SQL granular permissions allow fine-tuned control over who can read, modify, or execute specific objects, adding another critical layer of security on top of workspace and database permissions.
 
 1. In the warehouse you created in the earlier exercise, select the **New SQL Query** dropdown. Under the header **Blank**, select **New SQL Query**.  
 
@@ -239,3 +263,12 @@ Fabric has a permissions model that allows you to control access to data at the 
    
    SELECT * FROM dbo.Parts;
      ```
+### Review
+
+In this lab, you learned how to:
+
+- Assign workspace Viewer roles to users.
+- Apply dynamic data masking (DDM) to protect sensitive columns.
+- Configure row-level security (RLS) to restrict data access.
+- Implement column-level security (CLS) for granular control.
+- Grant and manage SQL granular permissions using T-SQL.
