@@ -1,10 +1,27 @@
-# Monitor Fabric activity in the monitoring hub
+# Lab 1: Monitor Fabric activity in the monitoring hub
+
+## Estimated Duration : 30 minutes
 
 The *monitoring hub* in Microsoft Fabric provides a central place where you can monitor activity. You can use the monitoring hub to review events related to items you have permission to view.
 
-This lab takes approximately **30** minutes to complete.
+In this hands-on lab, you will explore how to monitor activities in Microsoft Fabric using the monitoring hub. You will create and run different Fabric artifacts like lakehouses, dataflows, and notebooks, and learn how to track and review their execution history. Additionally, you will practice customizing views in the monitoring hub to effectively manage large volumes of activity logs.
 
-## Create a lakehouse
+## Lab Objectives
+
+In this lab, you will complete the following tasks:
+
+- Task 1: Create a lakehouse
+
+- Task 2: Create and monitor a Dataflow
+
+- Task 3: Create and monitor a Spark notebook
+
+- Task 4: Monitor history for an item
+
+- Task 5: Customize monitoring hub views
+
+
+### Task 1: Create a lakehouse
 
 In this task, you will create a lakehouse in your Microsoft Fabric workspace. 
 
@@ -30,9 +47,11 @@ In this task, you will create a lakehouse in your Microsoft Fabric workspace.
 
    >**Note**: Currently, there are no tables or files in the lakehouse.
 
-## Create and monitor a Dataflow
+### Task 2: Create and monitor a Dataflow
 
 In Microsoft Fabric, you can use a Dataflow (Gen2) to ingest data from a wide range of sources. In this exercise, you'll use a dataflow to get data from a CSV file and load it into a table in your lakehouse.
+
+In this task, you will create a Dataflow Gen2 to ingest data from a CSV file into the lakehouse. You will publish the dataflow and monitor its execution status using the monitoring hub.
 
 1. On the **Home** page for your lakehouse, in the **Get data** menu, select **New Dataflow Gen2**.
 
@@ -41,7 +60,7 @@ In Microsoft Fabric, you can use a Dataflow (Gen2) to ingest data from a wide ra
     ![Screenshot of a new dataflow.](./Images/lab5u1.png)
 
 1. At the top left of the dataflow page, select **Dataflow 1** to see its details and rename the dataflow to **Get Product Data**.
-|
+
 1. In the dataflow designer, select **Import from a Text/CSV file**. Then complete the Get Data wizard to create a data connection by linking to `https://raw.githubusercontent.com/MicrosoftLearning/dp-data/main/products.csv (1)` using anonymous authentication. 
 
     ![Screenshot of a new dataflow.](./Images/lab5u2.png)
@@ -66,9 +85,9 @@ In Microsoft Fabric, you can use a Dataflow (Gen2) to ingest data from a wide ra
 
     ![Screenshot of the products table in the lakehouse page.](./Images/lab5u6.png)
 
-## Create and monitor a Spark notebook
+### Task 3: Create and monitor a Spark notebook
 
-In Microsoft Fabric, you can use notebooks to run Spark code.
+In this task, you will use a Spark notebook to query the ingested data from the lakehouse. You will run Spark code, stop the session, and monitor the notebook’s execution through the monitoring hub.
 
 1. In the lakehouse interface, Select **Open notebook (1)**, then choose **New notebook (2)** to create a new one.
 
@@ -94,9 +113,11 @@ In Microsoft Fabric, you can use notebooks to run Spark code.
 
     ![Screenshot of the monitoring hub with a notebook activity.](./Images/lab5u10.png)
 
-## Monitor history for an item
+### Task 4: Monitor history for an item
 
 Some items in a workspace might be run multiple times. You can use the monitoring hub to view their run history.
+
+In this task, you will rerun the dataflow and view the historical run history in the monitoring hub. You will also explore detailed run information for each execution instance.
 
 1. In the navigation bar, return to the page for your workspace. Then use the **&#8635;** (*Refresh now*) button for your **Get Product Data** dataflow to re-run it.
 
@@ -112,9 +133,9 @@ Some items in a workspace might be run multiple times. You can use the monitorin
 
 1. Close the **Details** pane and use the **Back to main view** button to return to the main monitoring hub page.
 
-## Customize monitoring hub views
+### Task 5: Customize monitoring hub views
 
-In this exercise you've only run a few activities, so it should be fairly easy to find events in the monitoring hub. However, in a real environment you may need to search through a large number of events. Using filters and other view customizations can make this easier.
+In this task, you will learn how to apply filters and adjust columns to customize your monitoring hub view, making it easier to locate and analyze specific activities in environments with a large number of events.
 
 1. In the monitoring hub, use the **Filter** button to apply the following filter:
     - **Status**: Succeeeded
@@ -136,4 +157,20 @@ In this exercise you've only run a few activities, so it should be fairly easy t
     - Refresh type
 
     You may need to scroll horizontally to see all of the columns:
+
+## Review
+
+In this lab, you learned how to:
+
+- Create and manage a lakehouse in Microsoft Fabric.
+
+- Ingest data into a lakehouse using a Dataflow Gen2.
+
+- Query lakehouse data using a Spark notebook.
+
+- Monitor and track activity execution history through the monitoring hub.
+
+- Apply filters and customize columns to optimize the monitoring experience.
+
+## Now, click on Next from the lower right corner to move on to the next lab.
 
