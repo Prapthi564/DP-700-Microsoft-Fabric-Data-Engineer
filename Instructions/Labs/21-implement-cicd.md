@@ -1,12 +1,28 @@
 # Implement deployment pipelines in Microsoft Fabric
 
+## Estimated Duration : 30 minutes
+
 Deployment pipelines in Microsoft Fabric let you automate the process of copying   changes made to the content in Fabric items between environments like development, test, and production. You can use deployment pipelines to develop and test content before it reaches end users. In this exercise, you create a deployment pipeline, and assign stages to the pipeline. Then you create some content in a development workspace and use deployment pipelines to deploy it between the Development, Test and Production pipeline stages.
 
-This lab takes approximately **20** minutes to complete.
+In this hands-on lab, you will implement deployment pipelines in Microsoft Fabric to automate the promotion of content across different environments such as Development, Test, and Production. You will create workspaces, configure a deployment pipeline, generate content in the Development workspace, and use deployment pipelines to deploy the content across stages. This exercise demonstrates how to streamline content management and validation before it reaches end users.
 
-## Create workspaces
+## Lab Objectives
 
-Create three workspaces with the Fabric trial enabled.
+In this lab, you will complete the following tasks:
+
+- Task 1: Create a data warehouse
+
+- Task 2: Create a lakehouse
+
+- Task 3: Apply workspace access controls
+
+- Task 4: Apply item access control
+
+- Task 5: Apply OneLake data access roles in a Lakehouse
+
+### Task 1: Create workspaces
+
+In this task, you will create three workspaces in Microsoft Fabric — Development, Test, and Production — with Fabric capacity enabled.
 
 1. In the menu bar on the left, select **Workspaces** (the icon looks similar to &#128455;).
 1. Create a new workspace named Development, selecting a licensing mode that includes Fabric capacity (*Trial*, *Premium*, or *Fabric*).
@@ -15,9 +31,9 @@ Create three workspaces with the Fabric trial enabled.
 
    > **Note**: If you are prompted to enter a unique name for the workspaces, append one or more random numbers to the words: Development, Test, or Production.
 
-## Create a deployment pipeline
+### Task 2: Create a deployment pipeline
 
-Next, create a deployment pipeline.
+In this task, you will create a new deployment pipeline that will manage the movement of content across the Development, Test, and Production stages.
 
 1. In the menu bar on the left, select **Workspaces**.
 2. Select **Deployment Pipelines**, then **New pipeline**.
@@ -30,9 +46,9 @@ Next, create a deployment pipeline.
 
 5. Select **Create and Continue**.
 
-## Assign workspaces to stages of a deployment pipeline
+### Task 3: Assign workspaces to stages of a deployment pipeline
 
-Assign workspaces to the stages of the deployment pipeline.
+In this task, you will assign the previously created workspaces to their respective stages in the deployment pipeline.
 
 1. On the left menu bar, select the pipeline you created. 
 2. In the window that appears, select on the word **Select** under each deployment stage and select the name of the workspace that matches the name of the stage.
@@ -40,9 +56,9 @@ Assign workspaces to the stages of the deployment pipeline.
 
   ![Screenshot of deployment pipeline.](./Images/deployment-pipeline.png)
 
-## Create content
+### Task 4: Create content
 
-Fabric items haven't been created in your workspaces yet. Next, create a lakehouse in the development workspace.
+In this task, you will create a lakehouse named LabLakehouse in the Development workspace and populate it with sample data.
 
 1. In the menu bar on the left, select **Workspaces**.
 2. Select the **Development** workspace.
@@ -59,7 +75,9 @@ Fabric items haven't been created in your workspaces yet. Next, create a lakehou
 
   ![Screenshot the deployment pipeline showing content mismatches between stages.](./Images/lab5u20.png)
 
-## Deploy content between stages
+### Task 5: Deploy content between stages
+
+In this task, you will use the deployment pipeline to move the lakehouse content from Development to Test, and then to Production, verifying the synchronization at each stage.
 
 Deploy the lakehouse from the **Development** stage to the **Test** and **Production** stages.
 1. Select the **Deploy (2)** button in the **Development** stage of the pipeline to copy the lakehouse in its current state to the text stage. 
@@ -71,3 +89,17 @@ Deploy the lakehouse from the **Development** stage to the **Test** and **Produc
 7. In the menu bar on the left, select **Workspaces**.
 8. Select the **Test** workspace. The lakehouse was copied there.
 9. Open the **Production** workspace from the **Workspaces** icon on the left menu. The lakehouse was copied to the Production workspace too.
+
+## Review
+
+In this lab, you learned how to:
+
+- Create and manage a data warehouse in Microsoft Fabric.
+
+- Create and manage a lakehouse in Microsoft Fabric.
+
+- Apply workspace access controls to manage user permissions.
+
+- Apply item-level access controls for finer security management.
+
+- Apply OneLake data access roles to secure data within a lakehouse.
