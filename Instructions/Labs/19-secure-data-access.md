@@ -1,10 +1,28 @@
-# Secure data access in Microsoft Fabric
+# Lab 2: Secure data access in Microsoft Fabric
 
-Microsoft Fabric has a multi-layer security model for managing data access. Security can be set for an entire workspace, for individual items, or through granular permissions in each Fabric engine. In this exercise, you secure data using workspace, and item access controls and OneLake data access roles.
+## Estimated Duration : 30 minutes
 
-This lab takes approximately **45** minutes to complete.
+Microsoft Fabric has a multi-layer security model for managing data access. Security can be set for an entire workspace, for individual items, or through granular permissions in each Fabric engine. In this exercise, you secure data using workspace, and item access controls and OneLake data access roles
 
-## Create a data warehouse
+In this hands-on lab, you will learn how to secure data access within Microsoft Fabric by applying workspace access controls, item-level permissions, and OneLake data access roles. You'll experience how different levels of access impact the ability to view and interact with data in Data Warehouses and Lakehouses. By the end of this lab, you’ll understand how to configure and validate security settings at multiple layers to protect sensitive information in Microsoft Fabric.
+
+## Lab Objectives
+
+In this lab, you will complete the following tasks:
+
+- Task 1: Create a data warehouse
+
+- Task 2: Create a lakehouse
+
+- Task 3: Apply workspace access controls
+
+- Task 4: Apply item access control
+
+- Task 5: Apply OneLake data access roles in a Lakehouse
+
+### Task 1: Create a data warehouse
+
+In this task, you will create a sample data warehouse named sample-dw prepopulated with taxi ride analysis data
 
 1. On the menu bar on the left, select **Create**. In the *New* page, under the *Data Warehouse* section, select **Sample warehouse** and create a new data warehouse named **sample-dw**.
 
@@ -14,7 +32,9 @@ This lab takes approximately **45** minutes to complete.
 
     ![Screenshot of a new warehouse.](./Images/sample-data-warehouse.png)
 
-## Create a lakehouse
+### Task 2: Create a lakehouse
+
+In this task, you will create a new Lakehouse, populate it with sample data, and prepare it for access control exercises.
 
 1. In the menu bar on the left, select **Workspaces** (the icon looks similar to 🗇).
 1. Select the workspace you created.
@@ -27,11 +47,11 @@ This lab takes approximately **45** minutes to complete.
 
     ![Screenshot of a new lakehouse in Fabric.](./Images/lab5u14.png)
 
-## Apply workspace access controls
+### Task 3: Apply workspace access controls
 
 Workspace roles are used to control access to workspaces and the content within them. Workspace roles can be assigned when users need to see all items in a workspace, when they need to manage workspace access, or create new Fabric items, or when they need specific permissions to view, modify or share content in the workspace.  
 
-In this exercise, you add a user to a workspace role, apply permissions and, see what is viewable when each set of permissions is applied. You open two browsers and sign-in as different users. In one browser, you'll be a **Workspace Admin** and in the other, you'll sign-in as a second, less privileged user. In one browser, the Workspace Admin changes permissions for the second user and in the second browser, you're able to see the effects of changing permissions.  
+In this task, you add a user to a workspace role, apply permissions and, see what is viewable when each set of permissions is applied. You open two browsers and sign-in as different users. In one browser, you'll be a **Workspace Admin** and in the other, you'll sign-in as a second, less privileged user. In one browser, the Workspace Admin changes permissions for the second user and in the second browser, you're able to see the effects of changing permissions.  
 
 1. In the menu bar on the left, select **Workspaces** (the icon looks similar to &#128455;).
 1. Next select the workspace you created.
@@ -75,9 +95,11 @@ In this exercise, you add a user to a workspace role, apply permissions and, see
 1. When the lakehouse opens, click on the dropdown box at the top right corner of the screen that says **Lakehouse** and select **SQL analytics endpoint**.
 1. Select the **publicholidays** table and wait for the data to be displayed. Data in the lakehouse table is readable from the SQL analytics endpoint because the user is a member of the Workspace Viewer role that grants read permissions on the SQL analytics endpoint.
 
-## Apply item access control
+### Task 4: Apply item access control
 
 Item permissions control access to individual Fabric items within a workspace, like warehouses, lakehouses and semantic models. In this exercise, you remove the **Workspace Viewer** permissions applied in the previous exercise and then apply item level permissions on the warehouse so a less privileged user can only view the warehouse data, not the lakehouse data.
+
+In this task, you will configure item-level permissions by granting access to specific Fabric items like warehouses, limiting user visibility to only assigned resources.
 
 1. Return to the browser window where you're logged in as the Workspace Admin. Select **Workspaces** from the left navigation pane. 
 2. Select the workspace that you created to open it.
@@ -100,11 +122,11 @@ Item permissions control access to individual Fabric items within a workspace, l
 
 13. When the warehouse view appears, select the **Date** table to view table data. The rows are viewable because the user still has read access to the warehouse because ReadData permissions were applied by using item permissions on the warehouse.
 
-## Apply OneLake data access roles in a Lakehouse
+### Task 5: Apply OneLake data access roles in a Lakehouse
 
 OneLake data access roles let you create custom roles within a Lakehouse and grant read permissions to folders you specify. OneLake data access roles is currently a Preview feature.
 
-In this exercise, you assign an item permission and create a OneLake data access role and experiment with how they work together to restrict access to data in a Lakehouse.  
+In this task, you assign an item permission and create a OneLake data access role and experiment with how they work together to restrict access to data in a Lakehouse.  
 
 1. Stay in the browser where you're logged in as the second user.  
 2. Select **OneLake** on the left navigation bar. The second user doesn't see the lakehouse.  
@@ -128,3 +150,19 @@ In this exercise, you assign an item permission and create a OneLake data access
 20. When the role finishes creating, select **Assign role** and assign the role to your second user, select **Add** and, select **Save**.
 21. Return to the browser where you're logged in as the second user. Ensure you're still on the page where the lakehouse is open. Refresh the browser.  
 22. Select the **publicholidays** table and wait for the data to load. Only the data in the publicholidays table is accessible to the user because the user was assigned to the custom OneLake data access role. The role permits them to see only the data in the publicholidays table, not data in any of the other tables, files, or folders.
+
+## Review
+
+In this lab, you learned how to:
+
+- Create and manage a lakehouse in Microsoft Fabric.
+
+- Ingest data into a lakehouse using a Dataflow Gen2.
+
+- Query lakehouse data using a Spark notebook.
+
+- Monitor and track activity execution history through the monitoring hub.
+
+- Apply filters and customize columns to optimize the monitoring experience.
+
+## Now, click on Next from the lower right corner to move on to the next lab.
