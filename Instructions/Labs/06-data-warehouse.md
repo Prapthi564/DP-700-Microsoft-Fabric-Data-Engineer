@@ -1,12 +1,26 @@
 # Lab 1:  Analyze data in a data warehouse
 
+## Estimated duration: 30 minutes
+
 In Microsoft Fabric, a data warehouse provides a relational database for large-scale analytics. Unlike the default read-only SQL endpoint for tables defined in a lakehouse, a data warehouse provides full SQL semantics; including the ability to insert, update, and delete data in the tables.
 
-This lab will take approximately **30** minutes to complete.
+In this hands-on lab, you will learn how to create a data warehouse in Microsoft Fabric, define tables, build a relational data model, query data, and visualize results through reports. You will experience how a fully functional data warehouse enables large-scale analytics by offering full SQL semantics for inserting, updating, and deleting data.
+
+## Lab Objectives
+
+In this lab, you will be able to complete the following tasks:
+
+- Task 1: Create a data warehouse
+- Task 2: Create tables and insert data
+- Task 3: Define a data model
+- Task 4: Query data warehouse tables
+- Task 5: Create a view
+- Task 6: Create a visual query
+- Task 7: Visualize your data
 
 ### Task 1: Create a data warehouse
 
-Now that you have a workspace, it's time to create a data warehouse. The Synapse Data Warehouse home page includes a shortcut to create a new warehouse:
+In this task, you will create a new data warehouse in your Microsoft Fabric workspace. This will serve as the foundation for your analytics solution.
 
 1. On the menu bar on the left, select **Create**. In the *New* page, under the *Data Warehouse* section, select **Warehouse**. Give it a unique name of your choice.
 
@@ -22,7 +36,7 @@ Now that you have a workspace, it's time to create a data warehouse. The Synapse
 
 ### Task 2: Create tables and insert data
 
-A warehouse is a relational database in which you can define tables and other objects.
+In this task, you will create tables inside your data warehouse and populate them with sample data.
 
 1. In your new warehouse, select the **T-SQL** tile, and use the following CREATE TABLE statement:
 
@@ -67,6 +81,8 @@ A warehouse is a relational database in which you can define tables and other ob
 
 A relational data warehouse typically consists of *fact* and *dimension* tables. The fact tables contain numeric measures you can aggregate to analyze business performance (for example, sales revenue), and the dimension tables contain attributes of the entities by which you can aggregate the data (for example, product, customer, or time). In a Microsoft Fabric data warehouse, you can use these keys to define a data model that encapsulates the relationships between the tables.
 
+In this task, you will establish relationships between tables to create a star schema data model, improving query efficiency and enabling meaningful insights.
+
 1. In the toolbar, select the **Model layouts** button.
 2. In the model pane, rearrange the tables in your data warehouse so that the **FactSalesOrder** table is in the middle, like this:
 
@@ -94,9 +110,9 @@ A relational data warehouse typically consists of *fact* and *dimension* tables.
 
 ### Task 4: Query data warehouse tables
 
-Since the data warehouse is a relational database, you can use SQL to query its tables.
+In this task, you will write and execute SQL queries to retrieve and aggregate data from the data warehouse.
 
-### Query fact and dimension tables
+#### Query fact and dimension tables
 
 Most queries in a relational data warehouse involve aggregating and grouping data (using aggregate functions and GROUP BY clauses) across related tables (using JOIN clauses).
 
@@ -136,6 +152,8 @@ Most queries in a relational data warehouse involve aggregating and grouping dat
 
 A data warehouse in Microsoft Fabric has many of the same capabilities you may be used to in relational databases. For example, you can create database objects like *views* and *stored procedures* to encapsulate SQL logic.
 
+In this task, you will encapsulate your SQL logic into a view, simplifying future querying.
+
 1. Modify the query you created previously as follows to create a view (note that you need to remove the ORDER BY clause to create a view).
 
     ```sql
@@ -165,6 +183,8 @@ A data warehouse in Microsoft Fabric has many of the same capabilities you may b
 
 Instead of writing SQL code, you can use the graphical query designer to query the tables in your data warehouse. This experience is similar to Power Query online, where you can create data transformation steps with no code. For more complex tasks, you can use Power Query's M (Mashup) language.
 
+In this task, you will use the visual query designer to build queries graphically, without writing SQL code.
+
 1. On the **Home** menu, expand the options under **New SQL query** and select **New visual query**.
 
 1. Drag **FactSalesOrder** onto the **canvas**. Notice that a preview of the table is displayed in the **Preview** pane below.
@@ -188,6 +208,8 @@ Instead of writing SQL code, you can use the graphical query designer to query t
 ### Task 7: Visualize your data
 
 You can easily visualize the data in either a single query, or in your data warehouse. Before you visualize, hide columns and/or tables that aren't friendly to report designers.
+
+In this task, you will build a Power BI report based on the data warehouse you created.
 
 1. Select the **Model layouts** button. 
 
@@ -223,3 +245,16 @@ You can easily visualize the data in either a single query, or in your data ware
 1. In the menu hub on the left, navigate back to the workspace. Notice that you now have three items saved in your workspace: your data warehouse, its default semantic model, and the report you created.
 
     ![Screenshot of the workspace with the three items listed.](./Images/mod6-9.png)
+
+### Review    
+
+In this lab, you learned how to:
+
+- Create and configure a Microsoft Fabric data warehouse.
+- Define relational tables and load data using SQL.
+- Build a semantic model with relationships.
+- Query and aggregate data using SQL and visual interfaces.
+- Create views to encapsulate queries.
+- Visualize data and build reports for analytical insights.
+
+## Now, click on Next from the lower right corner to move on to the next lab.
