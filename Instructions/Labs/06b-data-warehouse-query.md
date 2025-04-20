@@ -1,24 +1,37 @@
-# Query a data warehouse in Microsoft Fabric
+# Lab 3: Query a data warehouse in Microsoft Fabric
+
+## Estimated duration: 30 minutes
 
 In Microsoft Fabric, a data warehouse provides a relational database for large-scale analytics. The rich set of experiences built into Microsoft Fabric workspace enables customers to reduce their time to insights by having an easily consumable, always connected semantic model that is integrated with Power BI in DirectLake mode. 
 
-This lab will take approximately **30** minutes to complete.
+In this hands-on lab, you will learn how to create a sample data warehouse in Microsoft Fabric, explore the data using T-SQL queries, verify the consistency of the data, and create a filtered view for reporting purposes. You will experience how the built-in SQL query editor in Microsoft Fabric can accelerate the time to insights through a connected, high-performing data environment.
 
-## Create a sample data warehouse
+## Lab Objectives
 
-Now that you have a workspace, it's time to create a data warehouse.
+In this lab, you will complete the following tasks:
+
+- Task 1: Create a sample data warehouse  
+- Task 2: Query the data warehouse  
+- Task 3: Verify data consistency  
+- Task 4: Save a query as a view
+
+### Task 1: Create a sample data warehouse
+
+In this task, you will create a new sample data warehouse named sample-dw within your Fabric workspace, which will be populated with sample taxi ride data.
 
 1. On the menu bar on the left, select **Create**. In the *New* page, under the *Data Warehouse* section, select **Sample warehouse** and create a new data warehouse named **sample-dw**.
 
     >**Note**: If the **Create** option is not pinned to the sidebar, you need to select the ellipsis (**...**) option first.
 
-    After a minute or so, a new warehouse will be created and populated with sample data for a taxi ride analysis scenario.
+1. After a minute or so, a new warehouse will be created and populated with sample data for a taxi ride analysis scenario.
 
     ![Screenshot of a new warehouse.](./Images/sample-data-warehouse.png)
 
-## Query the data warehouse
+### Task 2: Query the data warehouse
 
 The SQL query editor provides support for IntelliSense, code completion, syntax highlighting, client-side parsing, and validation. You can run Data Definition Language (DDL), Data Manipulation Language (DML) and Data Control Language (DCL) statements.
+
+In this task, you will write and run SQL queries to analyze trip trends based on month, day, and geography, gaining insights from the warehouse data.
 
 1. In the **sample-dw** data warehouse page, in the **New SQL query** drop-down list, select **New SQL query**.
 
@@ -78,9 +91,11 @@ The SQL query editor provides support for IntelliSense, code completion, syntax 
 
 1. Close all query tabs.
 
-## Verify data consistency
+### Task 3: Verify data consistency
 
 Verifying data consistency is important to ensure that the data is accurate and reliable for analysis and decision-making. Inconsistent data can lead to incorrect analysis and misleading results. 
+
+In this task, you will validate the data quality by identifying and handling trips with unusual or incorrect values, ensuring that the data is reliable for reporting.
 
 Let's query your data warehouse to check for consistency.
 
@@ -113,9 +128,9 @@ Let's query your data warehouse to check for consistency.
 
 1. Close all query tabs.
 
-## Save as view
+### Task 4: Save as view
 
-Suppose that you need to filter certain trips for a group of users who will use the data to generate reports.
+In this task, you will create a view based on filtered trip data for January, making it easier for users to generate targeted reports without needing to recreate the query logic.
 
 Let's create a view based on the query we used earlier, and add a filter to it.
 
@@ -157,3 +172,19 @@ Let's create a view based on the query we used earlier, and add a filter to it.
 1. Close all query tabs.
 
 > **Further Information**: See [Query using the SQL query editor](https://learn.microsoft.com/fabric/data-warehouse/sql-query-editor) in the Microsoft Fabric documentation for more information about querying a data warehouse.
+
+## Review
+
+In this lab, you have:
+
+- Created a sample data warehouse in Microsoft Fabric.
+
+- Queried the data warehouse using T-SQL to extract meaningful insights.
+
+- Verified data consistency and corrected inaccurate records.
+
+- Created a filtered view to simplify data access for reporting.
+
+- Strengthened your understanding of querying, validating, and managing warehouse data using Microsoft Fabric.
+
+## Now, click on Next from the lower right corner to move on to the next lab.
