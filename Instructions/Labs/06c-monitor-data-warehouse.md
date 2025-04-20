@@ -1,12 +1,23 @@
-# Monitor a data warehouse in Microsoft Fabric
+# Lab 4: Monitor a data warehouse in Microsoft Fabric
+
+## Estimated duration: 30 minutes
 
 In Microsoft Fabric, a data warehouse provides a relational database for large-scale analytics. Data warehouses in Microsoft Fabric include dynamic management views that you can use to monitor activity and queries.
 
-This lab will take approximately **30** minutes to complete.
+In this hands-on lab, you will explore how to monitor a data warehouse in Microsoft Fabric. You will use dynamic management views (DMVs) to monitor current activity, running sessions, and queries. Additionally, you will use query insights to analyze historical query performance and trends within the data warehouse.
 
-## Explore dynamic management views
+## Lab Objectives
+
+In this lab, you will complete the following tasks:
+
+- Task 1: Explore dynamic management views
+- Task 2: Explore query insights
+
+## Task 1: Explore dynamic management views
 
 Microsoft Fabric data warehouses include dynamic management views (DMVs), which you can use to identify current activity in the data warehouse instance.
+
+In this task, you will query dynamic management views such as `sys.dm_exec_connections`, `sys.dm_exec_sessions`, and `sys.dm_exec_requests` to monitor active sessions, connections, and running queries. You will also simulate a long-running query and observe it through the DMVs.
 
 1. In the **sample-dw** data warehouse page, in the **New SQL query** drop-down list, select **New SQL query**.
 1. In the new blank query pane, enter the following Transact-SQL code to query the **sys.dm_exec_connections** DMV:
@@ -62,9 +73,11 @@ Microsoft Fabric data warehouses include dynamic management views (DMVs), which 
 
 > **Further Information**: See [Monitor connections, sessions, and requests using DMVs](https://learn.microsoft.com/fabric/data-warehouse/monitor-using-dmv) in the Microsoft Fabric documentation for more information about using DMVs.
 
-## Explore query insights
+## Task 2: Explore query insights
 
 Microsoft Fabric data warehouses provide *query insights* - a special set of views that provide details about the queries being run in your data warehouse.
+
+In this task, you will explore the `queryinsights` schema views such as `exec_requests_history`, `frequently_run_queries`, and `long_running_queries` to analyze historical query executions and performance statistics.
 
 1. In the **sample-dw** data warehouse page, in the **New SQL query** drop-down list, select **New SQL query**.
 1. In the new blank query pane, enter the following Transact-SQL code to query the **exec_requests_history** view:
@@ -90,3 +103,13 @@ Microsoft Fabric data warehouses provide *query insights* - a special set of vie
 1. Run the modified query and view the results, which show details of all queries and their durations.
 
 > **Further Information**: See [Query insights in Fabric data warehousing](https://learn.microsoft.com/fabric/data-warehouse/query-insights) in the Microsoft Fabric documentation for more information about using query insights.
+
+## Review
+
+In this lab, you learned:
+
+- Exploring dynamic management views.
+- Exploring query insights.
+
+## Now, click on Next from the lower right corner to move on to the next lab.
+
