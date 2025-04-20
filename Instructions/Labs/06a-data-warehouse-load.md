@@ -1,13 +1,26 @@
-# Load data into a warehouse using T-SQL
+# Lab 2: Load data into a warehouse using T-SQL
+
+## Estimated duration: 30 minutes
 
 In Microsoft Fabric, a data warehouse provides a relational database for large-scale analytics. Unlike the default read-only SQL endpoint for tables defined in a lakehouse, a data warehouse provides full SQL semantics; including the ability to insert, update, and delete data in the tables.
 
-This lab will take approximately **30** minutes to complete.
+In this hands-on lab, you will learn how to load data into a Microsoft Fabric data warehouse using T-SQL. You will first create a lakehouse, upload files, and create tables in the lakehouse. Then, you will create a data warehouse, define fact and dimension tables, and load data into the warehouse using T-SQL stored procedures. Finally, you will perform analytical queries to validate the data.
 
+## Lab Objectives
 
-## Create a lakehouse
+In this lab, you will complete the following tasks:
 
-Now that you have a workspace, it's time to create a data lakehouse for your data files.
+- Task 1: Create a lakehouse
+- Task 2: Upload a file
+- Task 3: Create a table in the lakehouse
+- Task 4: Create a warehouse
+- Task 5: Create fact table, dimensions and view
+- Task 6: Load data to the warehouse
+- Task 7: Run analytical queries
+
+### Task 1: Create a lakehouse
+
+In this task, you will create a data lakehouse in Microsoft Fabric for storing and managing your data files.
 
 1. Return to your workspace and click the **+ New item (1)** icon.  
 
@@ -31,9 +44,11 @@ Now that you have a workspace, it's time to create a data lakehouse for your dat
 
    >**Note**: Currently, there are no tables or files in the lakehouse.
 
-## Upload a file
+### Task 2: Upload a file
 
-Fabric provides multiple ways to load data into the lakehouse, including built-in support for pipelines that copy data from external sources and data flows (Gen 2) that you can define using visual tools based on Power Query. However one of the simplest ways to ingest small amounts of data is to upload files or folders from your local computer (or lab VM if applicable).
+Fabric provides multiple ways to load data into the lakehouse, including built-in support for pipelines that copy data from external sources and data flows (Gen 2) that you can define using visual tools based on Power Query. However one of the simplest ways to ingest small amounts of data is to upload files or folders from your local computer.
+
+In this task, you will upload a CSV file to the lakehouse for use in the warehouse.
 
 1. Return to the web browser tab containing your lakehouse, and in the **... (1)** menu for the **Files** folder in the **Lakehouse explorer** pane, select **New subfolder (2)**, and create a subfolder named **data (3)**.
 
@@ -54,7 +69,9 @@ Fabric provides multiple ways to load data into the lakehouse, including built-i
     ![Screenshot of uploaded sales.csv file in a lakehouse.](./Images/md2-6.png)
 
 
-## Create a table in the lakehouse
+### Task 3: Create a table in the lakehouse
+
+In this task, you will create a table in the lakehouse using the uploaded file.
 
 1. In the **...** menu for the **sales.csv** file in the **Explorer** pane, select **Load to tables**, and then **New table**.
 
@@ -65,19 +82,21 @@ Fabric provides multiple ways to load data into the lakehouse, including built-i
 
 1. Select **Load**.
 
-## Create a warehouse
+### Task 4: Create a warehouse
 
-Now that you have a workspace, a lakehouse, and the sales table with the data you need, it's time to create a data warehouse.
+In this task, you will create a data warehouse where you will store the fact and dimension tables.
 
 1. On the menu bar on the left, select **Create**. In the *New* page, under the *Data Warehouse* section, select **Warehouse**. Give it a unique name of your choice.
 
-    >**Note**: If the **Create** option is not pinned to the sidebar, you need to select the ellipsis (**...**) option first.
+   >**Note**: If the **Create** option is not pinned to the sidebar, you need to select the ellipsis (**...**) option first.
 
 1. After a minute or so, a new warehouse will be created:
 
-## Create fact table, dimensions and view
+### Task 5: Create fact table, dimensions and view
 
 Let's create the fact tables and dimensions for the Sales data. You'll also create a view pointing to a lakehouse, this simplifies the code in the stored procedure we'll use to load.
+
+In this task, you will define fact tables, dimension tables, and a view to streamline the data loading process.
 
 1. From your workspace, select the warehouse you created.
 
@@ -133,9 +152,11 @@ Let's create the fact tables and dimensions for the Sales data. You'll also crea
 
 1. In the **Explorer**, navigate to **Schemas >> Sales >> Views**. Note the *Staging_Sales* view you created.
 
-## Load data to the warehouse
+### Task 6: Load data to the warehouse
 
 Now that the fact and dimensions tables are created, let's create a stored procedure to load the data from our lakehouse into the warehouse. Because of the automatic SQL endpoint created when we create the lakehouse, you can directly access the data in your lakehouse from the warehouse using T-SQL and cross-database queries.
+
+In this task, you will load data from the lakehouse into the warehouse by creating a stored procedure.
 
 For the sake of simplicity in this case study, you'll use the customer name and item name as the primary keys.
 
@@ -183,9 +204,9 @@ For the sake of simplicity in this case study, you'll use the customer name and 
 
     > **Note:** In this case, we are only loading data from the year 2021. However, you have the option to modify it to load data from previous years.
 
-## Run analytical queries
+### Task 7: Run analytical queries
 
-Let's run some analytical queries to validate the data in the warehouse.
+In this task, you will run analytical queries to validate the data loaded into the warehouse.
 
 1. On the top menu, select **New SQL query**, then copy and run the following query.
 
@@ -256,4 +277,22 @@ Let's run some analytical queries to validate the data in the warehouse.
     >
     > The category information was extracted from the `ItemName` column using string manipulation, as there is no separate category column in the dimension table. This approach assumes that the item names follow a consistent naming convention. If the item names do not follow a consistent naming convention, the results may not accurately reflect the true category of each item.
 
+### Review  
+
 In this exercise, you have created a lakehouse and a data warehouse with multiple tables. You have ingested data and used cross-database queries to load data from the lakehouse to the warehouse. Additionally, you have used the query tool to perform analytical queries.
+
+In this lab, you learned how to:
+
+- Loaded data into a Microsoft Fabric data warehouse using T-SQL.
+
+- Created a Lakehouse to store raw data.
+
+- Uploaded and converted a CSV file into a Lakehouse table.
+
+- Built a warehouse schema with fact and dimension tables.
+
+- Developed a stored procedure to automate the data loading process.
+
+- Ran analytical queries to verify the sales data and gain insights.
+
+## Now, click on Next from the lower right corner to move on to the next lab.
