@@ -1,6 +1,6 @@
 # Lab 1: Get started with Real-Time Dashboards in Microsoft Fabric
 
-## Estimated Duration: 60 minutes
+## Estimated Duration: 75 minutes
 
 Real-time dashboards in Microsoft Fabric enable you to visualize and explore streaming data using the Kusto Query Language (KQL).   
                          
