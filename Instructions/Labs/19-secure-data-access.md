@@ -67,9 +67,9 @@ In this task, you add a user to a workspace role, apply permissions and, see wha
 
 1. Enter *https://app.fabric.microsoft.com* and sign-in as the second user with the below credentials:
 
-   - Email :
+   - Email : <inject key="testuser" enableCopy="true"/>
 
-   - Password : 
+   - Password : <inject key="test user Password" enableCopy="true"/>
   
 1. On the bottom left corner of your screen, select **Microsoft Fabric** and then select **Data Warehouse**. Next select **Workspaces** (the icon looks similar to &#128455;).  
 
