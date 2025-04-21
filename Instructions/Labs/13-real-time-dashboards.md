@@ -2,11 +2,28 @@
 
 ## Estimated Duration: 60 minutes
 
-Real-time dashboards in Microsoft Fabric enable you to visualize and explore streaming data using the Kusto Query Language (KQL).  In this exercise, you'll explore how to create and use a real-time dashboard based on a real-time data source.
+Real-time dashboards in Microsoft Fabric enable you to visualize and explore streaming data using the Kusto Query Language (KQL).   
+                         
+In this hands-on lab, you will build an end-to-end real-time data streaming solution. You will start by creating an eventhouse and an eventstream to manage and process incoming data. You will then add a data source and configure a destination to route the processed data appropriately. After setting up the streaming infrastructure, you will create a real-time dashboard to visualize the data, including building a base query, adding parameters for dynamic insights, and customizing the dashboard with additional pages. Finally, you will configure auto-refresh settings to keep the data current and learn how to save and share the dashboard for collaboration.
 
-## Create an eventhouse
+## Lab Objectives
 
-Now that you have a workspace, you can start creating the Fabric items you'll need for your real-time intelligence solution. we'll start by creating an eventhouse.
+In this lab, you will complete the following tasks:
+
+- Task 1: Create an eventhouse
+- Task 2: Create an eventstream
+- Task 3: Add a source
+- Task 4: Add a destination
+- Task 5: Create a real-time dashboard
+- Task 6: Create a base query
+- Task 7: Add a parameter
+- Task 8: Add a page
+- Task 9: Configure auto refresh
+- Task 10: Save and share the dashboard
+
+## Task 1: Create an eventhouse
+
+In this task, you will create an eventhouse, which serves as the foundation for organizing and storing your streaming data.
 
 1. In the workspace, select **+ New item (1)**. In the *New item* pane, select **Eventhouse (2)**.
 
@@ -26,9 +43,9 @@ Now that you have a workspace, you can start creating the Fabric items you'll ne
 
     >**Note**: Currently there are no tables in the database. In the rest of this exercise you'll use an eventstream to load data from a real-time source into a table.
 
-## Create an eventstream
+## Task 2: Create an eventstream
 
-Currently there are no tables in the database. We'll use an eventstream to load data from a real-time source into a table.
+In this task, you will set up an eventstream within the eventhouse to define how incoming events are processed and managed.
 
 1. In the main page of your **KQL database (1)**, select **Get data (2)**.
 
@@ -42,7 +59,9 @@ Currently there are no tables in the database. We'll use an eventstream to load 
 
     ![Screenshot of a new eventstream.](./Images/md88.png)
 
-## Add a source
+### Task 3: Add a source
+
+In this task, you will configure a data source for your eventstream to ingest real-time data from an external system.
 
 1. In the Eventstream canvas, select **Use sample data**.
 
@@ -54,7 +73,9 @@ Currently there are no tables in the database. We'll use an eventstream to load 
 
    ![Review the eventstream canvas](./Images/md90.png)
 
-## Add a destination
+### Task 4: Add a destination
+
+In this task, you will set up a destination that will receive the processed data from the eventstream for storage, analysis, or further processing.
 
 1. Select the **Transform events or add destination (1)** tile and search for **Eventhouse (2)**.
 
@@ -88,9 +109,9 @@ Currently there are no tables in the database. We'll use an eventstream to load 
 
 1. Wait a few minutes and then use the **Refresh** button to refresh the **Data preview** pane. The stream is running perpetually, so new data may have been added to the table.
 
-## Create a real-time dashboard
+### Task 5: Create a real-time dashboard
 
-Now that you have a stream of real-time data being loaded into a table in the eventhouse, you can visualize it with a real-time dashboard.
+In this task, you will create a real-time dashboard to visualize and monitor the data flowing through your eventstream.
 
 1. In the menu bar on the left, select **+ create** to create a new **Real-Time Dashboard** named `bikes-dashboard`.
 
@@ -181,9 +202,11 @@ Now that you have a stream of real-time data being loaded into a table in the ev
 
    ![A screenshot of a dashboard with a chart and a map.](./Images/md2-49.png)
 
-## Create a base query
+### Task 6: Create a base query
 
 Your dashboard contains two visuals that are based on similar queries. To avoid duplication and make your dashboard more maintainable, you can consolidate the common data into a single *base query*.
+
+In this task, you will design a base query to retrieve and structure the data that will populate the visualizations on your dashboard.
 
 1. On the dashboard toolbar, select **Base queries**. Then select **+Add**.
 
@@ -220,9 +243,11 @@ Your dashboard contains two visuals that are based on similar queries. To avoid 
 
 1. Apply the changes and verify that the map still displays data for all neighborhoods.
 
-## Add a parameter
+### Task 7: Add a parameter
 
 Your dashboard currently shows the latest bike, dock, and location data for all neighborhoods. Now lets add a parameter so you can select a specific neighborhood.
+
+In this task, you will add a parameter to your base query to enable dynamic filtering and interactivity within the dashboard.
 
 1. On the dashboard toolbar, on the **Manage** tab, select **Parameters**.
 1. Note any existing parameters that have been automatically created (for example a *Time range* parameter). Then **Delete** them.
@@ -272,9 +297,11 @@ Your dashboard currently shows the latest bike, dock, and location data for all 
 
 1. Select **Reset** to remove the selected parameter filters.
 
-## Add a page
+### Task 8: Add a page
 
 Your dashboard currently consists of a single page. You can add more pages to provide more data.
+
+In this task, you will add an additional page to your dashboard to organize different visualizations and enhance usability.
 
 1. On the left side of the dashboard, expand the **Pages** pane; and select **+ Add page**.
 1. Name the new page **Page 2**. Then select it.
@@ -291,9 +318,11 @@ Your dashboard currently consists of a single page. You can add more pages to pr
 
    ![img](./Images/md2-52.png)
 
-## Configure auto refresh
+### Task 9: Configure auto refresh
 
 Users can manually refresh the dashboard, but it may be useful to have it automatically refresh the data at a set interval.
+
+In this task, you will configure the dashboard’s auto-refresh settings to ensure that the data visualizations are updated in real time.
 
 1. On the dashboard toolbar, on the **Manage** tabe, select **Auto refresh**.
 
@@ -305,9 +334,11 @@ Users can manually refresh the dashboard, but it may be useful to have it automa
 
 1. Apply the auto refresh settings.
 
-## Save and share the dashboard
+### Task 10: Save and share the dashboard
 
 Now you have a useful dashboard, you can save it and share it with other users.
+
+In this task, you will save your dashboard and configure sharing settings to collaborate with others and allow broader access to real-time insights.
 
 1. On the dashboard toolbar, select **Save**.
 
@@ -318,3 +349,19 @@ Now you have a useful dashboard, you can save it and share it with other users.
 1. Open a new browser tab and paste the copied link to navigate to the shared dashboard. Sign in again with your credentials if prompted.
 
 1. Explore the dashboard, using it to see the latest information about bikes and empty bike docks across the city.
+
+### Review    
+
+In this lab, you learned how to:
+
+- Create and configure an eventhouse for managing real-time event data.
+- Set up an eventstream to process and organize incoming events.
+- Add a source to ingest real-time data into the eventstream.
+- Add a destination to route processed data for storage or further analysis.
+- Create a real-time dashboard to visualize streaming data.
+- Build a base query to retrieve and structure dashboard data.
+- Add parameters to make dashboard queries dynamic and interactive.
+- Add additional pages to the dashboard for better organization.
+- Configure auto-refresh to keep dashboard visualizations updated in real time.
+- Save and share the dashboard to collaborate and provide real-time insights to others.
+
