@@ -365,3 +365,4 @@ In this lab, you learned how to:
 - Configure auto-refresh to keep dashboard visualizations updated in real time.
 - Save and share the dashboard to collaborate and provide real-time insights to others.
 
+## You have successfully completed the lab
