@@ -282,3 +282,5 @@ In this lab, you learned how to:
 - Configure row-level security (RLS) to restrict data access.
 - Implement column-level security (CLS) for granular control.
 - Grant and manage SQL granular permissions using T-SQL.
+
+## You have successfully completed the lab
