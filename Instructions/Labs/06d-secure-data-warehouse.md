@@ -32,6 +32,8 @@ In this task, you will add a user to the Viewer role within a Microsoft Fabric w
 
 1. Enter the name or email address of the second user you want to add from your environment.
 
+   - Email : <inject key="testuser" enableCopy="true"/>
+
 1. In the role selection dropdown, choose **Viewer**.
 
 1. Click **Add** to confirm the user assignment.
@@ -70,7 +72,15 @@ In this task, you will configure dynamic data masking on specific table columns 
 
 3. Then, in the **Explorer** pane, expand **Schemas** > **dbo** > **Tables** and verify that the **Customers** table has been created. The `SELECT` statement returns unmasked data for you because as the workspace creator, you're a member of the Workspace Admin role which can see unmasked data.
 
-4. Connect as a test user that's a member of the **Viewer** workspace role and run the following T-SQL statement.
+4. Connect using the following credentials as a test user who is a member of the Viewer workspace role.
+
+5. Enter *https://app.fabric.microsoft.com* and sign-in as the test user with the below credentials:
+
+   - Email : <inject key="testuser" enableCopy="true"/>
+
+   - Password : <inject key="test user Password" enableCopy="true"/>
+
+6. Run the following statement
 
     ```T-SQL
     SELECT * FROM dbo.Customers;
