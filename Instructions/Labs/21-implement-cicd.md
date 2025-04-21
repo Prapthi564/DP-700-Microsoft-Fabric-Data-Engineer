@@ -103,3 +103,5 @@ In this lab, you learned how to:
 - Apply item-level access controls for finer security management.
 
 - Apply OneLake data access roles to secure data within a lakehouse.
+
+## You have successfully completed the lab
