@@ -2,13 +2,14 @@
 
 Welcome to your DP-700: Microsoft-Fabric-Data-Engineer Workshop! We've prepared a seamless environment for you to explore and learn Azure Services. Let's begin by making the most of this experience.
 
-### Overall Estimated timing: 3 hrs
+### Overall Estimated timing: 4 hrs
 
-In this hands-on lab, you’ll explore foundational and advanced data engineering concepts using Microsoft Fabric Lakehouse. You will start by creating a lakehouse and understanding its role in modern data architecture. Then, you'll dive into working with Delta Tables using Apache Spark to enable reliable and scalable data processing. Finally, you’ll build a medallion architecture—organizing data into bronze, silver, and gold layers—to streamline data transformation and analytics. By the end, you'll gain practical skills to manage and analyze data using lakehouse architecture in Microsoft Fabric.
+In this hands-on lab, you'll explore core and advanced concepts of data warehousing using Microsoft Fabric. You'll begin by creating and loading data into a Fabric data warehouse using T-SQL, and then query and analyze the data using built-in SQL tools. You'll also monitor performance using dynamic management views and query insights. Finally, you'll implement security measures like dynamic data masking, row-level, and column-level security to protect sensitive information and manage access effectively. By the end, you'll have practical experience building, managing, and securing a modern data warehouse in Microsoft Fabric.
+
 
 ## Objectives
 
-By the end of this lab series, you will be able to create and manage a Microsoft Fabric lakehouse, work with Delta Tables using Apache Spark, and design a medallion architecture with bronze, silver, and gold layers for structured data processing.
+By the end of this lab series, you will be able to create, manage, and secure a Microsoft Fabric data warehouse, load and query data using T-SQL, monitor performance, and implement advanced security for enterprise-scale analytics.
 
 1. **Create a Microsoft Fabric Lakehouse**: You will learn how to create a lakehouse in Microsoft Fabric that combines the flexibility of a data lake with the structured querying capabilities of a data warehouse. This task will walk you through creating a workspace, setting up the lakehouse, and understanding how data is stored and organized using tables backed by files.
 
