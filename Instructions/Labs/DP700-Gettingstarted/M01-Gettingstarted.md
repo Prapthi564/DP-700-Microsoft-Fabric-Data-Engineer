@@ -67,7 +67,7 @@ In this hands-on lab, the architecture flow includes several essential component
 
 # Getting Started with lab
  
-Welcome to your AI-900: Microsoft Azure AI Fundamentals workshop! We've prepared a seamless environment for you to explore and learn about machine learning and AI concepts and related Microsoft Azure services. Let's begin by making the most of this experience:
+Welcome to your DP-700: Microsoft Fabric Data Engineer Workshop! We've prepared a seamless environment for you to explore and learn about data engineering concepts and related Microsoft Fabric services. Let's begin by making the most of this experience:
  
 ## Accessing Your Lab Environment
  
