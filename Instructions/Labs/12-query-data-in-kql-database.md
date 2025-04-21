@@ -253,7 +253,7 @@ In this lab, you have completed the following tasks:
 - Queried data by using KQL
 - Created a DataframeQuery data by using Transact-SQL
 
-### You have successfully completed the lab
+## You have successfully completed the lab
 
 
 
