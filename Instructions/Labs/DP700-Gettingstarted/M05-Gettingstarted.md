@@ -2,31 +2,28 @@
 
 Welcome to your DP-700: Microsoft-Fabric-Data-Engineer Workshop! We've prepared a seamless environment for you to explore and learn Azure Services. Let's begin by making the most of this experience.
 
-### Overall Estimated timing: 4 hrs
+### Overall Estimated timing: 2 hr 30 minutes
 
-In this hands-on lab, you'll explore core and advanced concepts of data warehousing using Microsoft Fabric. You'll begin by creating and loading data into a Fabric data warehouse using T-SQL, and then query and analyze the data using built-in SQL tools. You'll also monitor performance using dynamic management views and query insights. Finally, you'll implement security measures like dynamic data masking, row-level, and column-level security to protect sensitive information and manage access effectively. By the end, you'll have practical experience building, managing, and securing a modern data warehouse in Microsoft Fabric.
+In this hands-on lab, you'll explore key administrative and operational features of Microsoft Fabric. You'll begin by monitoring activities across various Fabric artifacts—such as lakehouses, dataflows, and notebooks—using the centralized monitoring hub. Then, you'll learn how to secure data access at multiple levels using workspace permissions, item-level controls, and OneLake data access roles. Finally, you'll implement deployment pipelines to automate and manage content promotion across Development, Test, and Production environments. By the end, you'll gain practical experience in monitoring, securing, and operationalizing solutions in Microsoft Fabric.
 
 
 ## Objectives
 
-By the end of this lab series, you will be able to create, manage, and secure a Microsoft Fabric data warehouse, load and query data using T-SQL, monitor performance, and implement advanced security for enterprise-scale analytics.
+By the end of this lab series, you will be able to monitor activity in Microsoft Fabric using the monitoring hub, secure data access with multi-layer permissions, and implement deployment pipelines to manage content across development, test, and production environments.
 
-1. **Analyze data in a data warehouse**: You will learn how to create a data warehouse in Microsoft Fabric that supports large-scale analytics with full SQL capabilities. This lab will guide you through defining tables, building a relational model, running queries, and visualizing results through integrated reports.
+1. **Monitor Fabric activity in the monitoring hub**: You will learn how to monitor activities in Microsoft Fabric using the monitoring hub, track execution history of artifacts like lakehouses, dataflows, and notebooks, and customize views to manage large volumes of activity logs effectively.
 
-1. **Load data into a warehouse using T-SQL**: You will learn how to load data into a Microsoft Fabric data warehouse using T-SQL for scalable analytics. This lab walks you through creating a lakehouse, defining tables, and using stored procedures to populate and validate a structured data warehouse.
+1. **Secure data access in Microsoft Fabric**: You will learn how to secure data access in Microsoft Fabric by applying workspace access controls, item-level permissions, and OneLake data access roles. This lab will guide you through configuring security at multiple levels to protect sensitive data and control access within Data Warehouses and Lakehouses.
 
-1. **Query a data warehouse in Microsoft Fabric**: You will learn how to query a data warehouse in Microsoft Fabric using T-SQL to explore and validate data. This lab guides you through creating a warehouse, running analytical queries, and building filtered views for reporting in a high-performance environment.
-
-1. **Monitor a data warehouse in Microsoft Fabric**: You will learn how to monitor a data warehouse in Microsoft Fabric using dynamic management views (DMVs) and query insights. This lab will guide you through tracking current activity and analyzing historical performance to ensure efficient query execution and system health.
-
-1. **Secure a Microsoft Fabric data warehouse**: You will learn how to secure a Microsoft Fabric data warehouse by implementing dynamic data masking, row-level and column-level security, and granular SQL permissions. This lab will help you protect sensitive data and manage user access effectively within your data environment.
+1. **Implement deployment pipelines in Microsoft Fabric**: You will learn how to implement deployment pipelines in Microsoft Fabric to automate the promotion of content across different environments like Development, Test, and Production. This lab will guide you through creating workspaces, configuring deployment pipelines, and managing content across stages for streamlined content validation and deployment.
 
 
 ## Pre-requisites
 
-- Basic understanding of data warehousing concepts and relational database design
-- Familiarity with writing and executing T-SQL queries
-- General knowledge of data loading, transformation, and reporting workflows
+- Basic understanding of Microsoft Fabric architecture and core components like lakehouses, dataflows, and notebooks
+- Familiarity with workspace and item-level access controls in cloud-based data platforms
+- General knowledge of CI/CD concepts and deployment workflows
+
 
 ## Architecture
 
@@ -186,6 +183,6 @@ Learner Support Contacts:
 
 Click on **Next** from the lower right corner to move on to the next page.
 
-   ![Start Your Azure Journey](../Images/dpn2.png)
+   ![Start Your Azure Journey](../Images/dpn3.png)
 
 ## Happy Learning !!
