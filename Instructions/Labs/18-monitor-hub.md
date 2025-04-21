@@ -1,6 +1,6 @@
 # Lab 1: Monitor Fabric activity in the monitoring hub
 
-## Estimated Duration : 30 minutes
+## Estimated Duration : 45 minutes
 
 The *monitoring hub* in Microsoft Fabric provides a central place where you can monitor activity. You can use the monitoring hub to review events related to items you have permission to view.
 
