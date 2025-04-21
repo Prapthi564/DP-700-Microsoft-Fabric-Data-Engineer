@@ -26,15 +26,15 @@ In this task, you will create a new lakehouse within your Microsoft Fabric works
 
 1. Return to the web browser tab containing your lakehouse, and in the Explorer pane, next to the **Files** folder, select the **… (1)** menu. Create a **New subfolder** called *products (3)*.
 
-   ![Screenshot of uploaded files in a lakehouse.](./Images/md2-2.png)
+    ![Screenshot of uploaded files in a lakehouse.](./Images/md2-2.png)
 
-   ![Screen picture of products.csv uploaded to the lakehouse.](Images/md2-26.png)
+    ![Screen picture of products.csv uploaded to the lakehouse.](Images/md2-26.png)
 
 1.	In the … menu for the products folder, **upload** the *products.csv*(C:\LabFiles\Files\) file located in the Lab VM.
 
 1.	After the file has been uploaded, select the **products** folder to verify that the file has been uploaded, as shown here:
 
-   ![Screen picture of products.csv uploaded to the lakehouse.](Images/md2-27.png)
+    ![Screen picture of products.csv uploaded to the lakehouse.](Images/md2-27.png)
   
 ### Task 2: Explore data in a DataFrame
 
@@ -72,11 +72,11 @@ In this task, you'll begin working with a notebook in Microsoft Fabric to explor
 
    >**Tip**: Hide or display the explorer panes by using the chevron « icon. This enables you to either focus on the notebook, or your files.
 
-7. Use the **Run cell** (▷) button on the left of the cell to run it.
+6. Use the **Run cell** (▷) button on the left of the cell to run it.
 
-  >**Note**: Since this is the first time you’ve run any code in this notebook, a Spark session must be started. This means that the first run can take a minute or so to complete. Subsequent runs will be quicker.
+   >**Note**: Since this is the first time you’ve run any code in this notebook, a Spark session must be started. This means that the first run can take a minute or so to complete. Subsequent runs will be quicker.
 
-8. When the cell code has completed, review the output below the cell, which should look similar to this:
+7. When the cell code has completed, review the output below the cell, which should look similar to this:
 
     ![Screen picture of products.csv data.](Images/md2-28.png)
  
