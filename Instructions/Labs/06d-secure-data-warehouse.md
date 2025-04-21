@@ -1,6 +1,6 @@
 # Lab 5: Secure a Microsoft Fabric data warehouse
 
-## Estimated duration : 45 minutes
+## Estimated duration : 60 minutes
 
 Microsoft Fabric permissions and granular SQL permissions work together to govern Warehouse access and user permissions. In this exercise, you'll secure data using granular permissions, column-level security, row-level security, and dynamic data masking.
 
