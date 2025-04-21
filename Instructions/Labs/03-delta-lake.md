@@ -268,7 +268,7 @@ Using the SQL magic command you can use SQL syntax instead of Pyspark. Here you 
 
 3. When the data is returned, select the **Chart** view to display a bar chart.
 
-    ![Screen picture of SQL select statement and results.](./Images/md2-31.jpg)
+    ![Screen picture of SQL select statement and results.](./Images/md2-31.png)
 
 Alternatively, you can run a SQL query using PySpark.
 
