@@ -329,7 +329,7 @@ When dealing with large volumes of data, partitioning can significantly improve 
 
 2.	Run the cell and wait for the message that the data has been saved. Then, in the Lakehouses pane on the left, in the … menu for the Files node, select **Refresh** and expand the partitioned_data folder to verify that it contains a hierarchy of folders named *Year=xxxx*, each containing folders named *Month=xxxx*. Each month folder contains a parquet file with the orders for that month.
 
-   ![Screen picture.](./Images/md26.png)
+    ![Screen picture.](./Images/md26.png)
 
 3. Add a new cell with the following code to load a new DataFrame from the orders.parquet file:
 
@@ -541,10 +541,9 @@ In this task, you will visualize data from a DataFrame to identify patterns and 
     ax[0].set_title('Revenue by Year')
 
     # Create a pie chart of yearly order counts on the second axis
-    yearly_counts = df_sales['OrderYear'].value_counts()
-    ax[1].pie(yearly_counts)
+    ax[1].pie(df_sales['YearlyCounts'])
     ax[1].set_title('Orders per Year')
-    ax[1].legend(yearly_counts.keys().tolist())
+    ax[1].legend(df_sales['OrderYear'])
 
     # Add a title to the Figure
     fig.suptitle('Sales Data')
