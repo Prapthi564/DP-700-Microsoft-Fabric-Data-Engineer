@@ -613,5 +613,4 @@ In this lab, you have completed the following tasks:
 - Transformed data for gold layer
 - Created a semantic model
 
-
-## Now, click on Next from the lower right corner to move on to the next lab.
+## You have successfully completed the lab
