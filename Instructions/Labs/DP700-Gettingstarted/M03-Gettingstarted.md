@@ -43,14 +43,39 @@ By the end of this lab series, you will be able to create and manage a Microsoft
 
 In this hands-on lab, the architecture flow includes several essential components.
 
+1. **Create an Eventhouse in Microsoft Fabric**: Learning how to create an eventhouse in Microsoft Fabric to establish a centralized and scalable foundation for capturing and storing streaming data. This involves setting up a workspace, creating the eventhouse, and understanding how real-time events are persisted and organized for downstream analytics.
 
+1. **Create an Eventstream in Microsoft Fabric**: Setting up an eventstream in Microsoft Fabric to enable real-time data ingestion from external systems. This includes connecting sources such as Azure Event Hub, IoT Hub, or other streaming services to start capturing and processing live event data.
 
+1. **Add a Source to an Eventstream in Microsoft Fabric**: Learning how to integrate a streaming data source with your eventstream to begin ingesting real-time data from services like Event Hub or IoT Hub. This enables your eventstream to continuously capture event data for processing and analysis.
+
+1. **Add a Destination to an Eventstream in Microsoft Fabric**: Understanding how to configure a destination for your eventstream to route processed streaming data to storage or analytics tools such as a lakehouse or KQL database, enabling real-time insights and integration with downstream systems.
+
+1. **Create a Real-Time Dashboard in Microsoft Fabric**: Developing a real-time dashboard to visualize and monitor live data from an eventstream. This task helps in creating responsive dashboards for instant insights and better decision-making based on streaming data.
+
+1. **Create a Base Query in Microsoft Fabric**: Learning how to design a base query for your dashboard to centralize common logic and streamline visualizations. This approach enhances efficiency, consistency, and maintainability of your data-driven reports.
+
+1. **Add a Parameter to a Microsoft Fabric Dashboard**: Adding interactive parameters to your dashboard to allow filtering and customizing the displayed data. This enables users to explore specific segments, such as filtering by region or time range, for more focused insights.
+
+1. **Add a Page to a Microsoft Fabric Dashboard**: Expanding your dashboard by adding multiple pages to organize and present different data views. This allows for better structure and improved navigation across diverse insights within a single dashboard experience.
+
+1. **Configure Auto Refresh in Microsoft Fabric Dashboards**: Enabling auto-refresh in your dashboards to keep visualizations current with the latest data. This ensures that users are always viewing up-to-date information without manual updates.
+
+1. **Save and Share a Microsoft Fabric Dashboard**: Learning how to save your dashboard and share it with stakeholders for collaborative analysis. This includes managing permissions and ensuring real-time insights are accessible to relevant users and teams.
 
 ## Architecture Diagram
 
  ![](../Images/dparc3.png)
 
 ## Explanation of Components
+
+1. **Eventhouse**: A centralized storage layer in Microsoft Fabric designed to capture and persist real-time event data at scale for downstream analytics.
+
+1. **Eventstream**: A data pipeline in Microsoft Fabric that ingests, processes, and routes streaming data from sources like Event Hub or IoT Hub.
+
+1. **Real-Time Dashboard**: A dynamic visualization tool that displays live data from eventstreams, enabling instant monitoring and insights.
+
+1. **Base Query**: A reusable query that centralizes logic for dashboard visuals, improving consistency and simplifying maintenance.
 
 # Getting Started with lab
  
