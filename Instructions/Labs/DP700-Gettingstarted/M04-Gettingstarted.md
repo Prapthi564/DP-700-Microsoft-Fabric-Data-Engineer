@@ -2,27 +2,31 @@
 
 Welcome to your DP-700: Microsoft-Fabric-Data-Engineer Workshop! We've prepared a seamless environment for you to explore and learn Azure Services. Let's begin by making the most of this experience.
 
-### Overall Estimated timing: 3 hrs
+### Overall Estimated timing: 4 hrs
 
-In this hands-on lab, you’ll explore foundational and advanced data engineering concepts using Microsoft Fabric Lakehouse. You will start by creating a lakehouse and understanding its role in modern data architecture. Then, you'll dive into working with Delta Tables using Apache Spark to enable reliable and scalable data processing. Finally, you’ll build a medallion architecture—organizing data into bronze, silver, and gold layers—to streamline data transformation and analytics. By the end, you'll gain practical skills to manage and analyze data using lakehouse architecture in Microsoft Fabric.
+In this hands-on lab, you'll explore core and advanced concepts of data warehousing using Microsoft Fabric. You'll begin by creating and loading data into a Fabric data warehouse using T-SQL, and then query and analyze the data using built-in SQL tools. You'll also monitor performance using dynamic management views and query insights. Finally, you'll implement security measures like dynamic data masking, row-level, and column-level security to protect sensitive information and manage access effectively. By the end, you'll have practical experience building, managing, and securing a modern data warehouse in Microsoft Fabric.
+
 
 ## Objectives
 
-By the end of this lab series, you will be able to create and manage a Microsoft Fabric lakehouse, work with Delta Tables using Apache Spark, and design a medallion architecture with bronze, silver, and gold layers for structured data processing.
+By the end of this lab series, you will be able to create, manage, and secure a Microsoft Fabric data warehouse, load and query data using T-SQL, monitor performance, and implement advanced security for enterprise-scale analytics.
 
-1. **Create a Microsoft Fabric Lakehouse**: You will learn how to create a lakehouse in Microsoft Fabric that combines the flexibility of a data lake with the structured querying capabilities of a data warehouse. This task will walk you through creating a workspace, setting up the lakehouse, and understanding how data is stored and organized using tables backed by files.
+1. **Analyze data in a data warehouse**: You will learn how to create a data warehouse in Microsoft Fabric that supports large-scale analytics with full SQL capabilities. This lab will guide you through defining tables, building a relational model, running queries, and visualizing results through integrated reports.
 
-1. **Use Delta Tables in Apache Spark**: You will explore how Delta Lake technology enhances data reliability and performance within a Fabric lakehouse. This task guides you through creating Delta tables using Apache Spark, performing SQL queries, and understanding how Delta Lake supports ACID transactions and time travel features for efficient data analytics.
+1. **Load data into a warehouse using T-SQL**: You will learn how to load data into a Microsoft Fabric data warehouse using T-SQL for scalable analytics. This lab walks you through creating a lakehouse, defining tables, and using stored procedures to populate and validate a structured data warehouse.
 
-1. **Create a medallion architecture in a Microsoft Fabric lakehouse**: You will learn to implement the medallion architecture pattern, which structures data in layered stages: bronze (raw), silver (cleaned), and gold (aggregated). This task involves transforming data across these layers using notebooks and Apache Spark, helping ensure organized, scalable, and insightful data processing in Microsoft Fabric.
+1. **Query a data warehouse in Microsoft Fabric**: You will learn how to query a data warehouse in Microsoft Fabric using T-SQL to explore and validate data. This lab guides you through creating a warehouse, running analytical queries, and building filtered views for reporting in a high-performance environment.
+
+1. **Monitor a data warehouse in Microsoft Fabric**: You will learn how to monitor a data warehouse in Microsoft Fabric using dynamic management views (DMVs) and query insights. This lab will guide you through tracking current activity and analyzing historical performance to ensure efficient query execution and system health.
+
+1. **Secure a Microsoft Fabric data warehouse**: You will learn how to secure a Microsoft Fabric data warehouse by implementing dynamic data masking, row-level and column-level security, and granular SQL permissions. This lab will help you protect sensitive data and manage user access effectively within your data environment.
 
 
 ## Pre-requisites
 
-- Familiarity with data concepts such as tables, data transformation, and querying.
-- Some experience with Apache Spark and data processing using notebooks (Python or SQL).
-- Ability to read and write simple Python or SQL queries for data manipulation and analysis.
-- Familiarity with concepts like data lakes, Delta tables, and medallion architecture will be helpful.
+- Basic understanding of data warehousing concepts and relational database design
+- Familiarity with writing and executing T-SQL queries
+- General knowledge of data loading, transformation, and reporting workflows
 
 ## Architecture
 
@@ -182,6 +186,6 @@ Learner Support Contacts:
 
 Click on **Next** from the lower right corner to move on to the next page.
 
-   ![Start Your Azure Journey](../Images/dpg15.png)
+   ![Start Your Azure Journey](../Images/dpn2.png)
 
 ## Happy Learning !!

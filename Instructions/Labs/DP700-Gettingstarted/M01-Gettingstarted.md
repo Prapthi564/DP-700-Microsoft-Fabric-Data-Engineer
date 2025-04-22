@@ -10,7 +10,7 @@ In this hands-on lab, you'll gain practical experience working with Microsoft Fa
 
 By the end of this lab, you will be able to create a Microsoft Fabric workspace, ingest and transform data using pipelines and Dataflows Gen2, analyze data with Apache Spark, and implement real-time analytics using Eventstreams and eventhouse.
 
-1. **Analyze data with Apache Spark in Fabric**: **Analyze data with Apache Spark in Fabric**: You will learn how to use Apache Spark within Microsoft Fabric to explore and analyze large datasets. This task will guide you through creating Spark notebooks, running distributed data processing tasks, and performing data transformations to gain meaningful insights.
+1. **Analyze data with Apache Spark in Fabric**: You will learn how to use Apache Spark within Microsoft Fabric to explore and analyze large datasets. This task will guide you through creating Spark notebooks, running distributed data processing tasks, and performing data transformations to gain meaningful insights.
 
 1. **Ingest data with a pipeline in Microsoft Fabric**: You will learn how to build data pipelines to ingest data from external sources into a lakehouse in Microsoft Fabric. This includes using Apache Spark to apply custom transformations before loading the data for analysis.
 
@@ -67,7 +67,7 @@ In this hands-on lab, the architecture flow includes several essential component
 
 # Getting Started with lab
  
-Welcome to your AI-900: Microsoft Azure AI Fundamentals workshop! We've prepared a seamless environment for you to explore and learn about machine learning and AI concepts and related Microsoft Azure services. Let's begin by making the most of this experience:
+Welcome to your DP-700: Microsoft Fabric Data Engineer Workshop! We've prepared a seamless environment for you to explore and learn about data engineering concepts and related Microsoft Fabric services. Let's begin by making the most of this experience:
  
 ## Accessing Your Lab Environment
  

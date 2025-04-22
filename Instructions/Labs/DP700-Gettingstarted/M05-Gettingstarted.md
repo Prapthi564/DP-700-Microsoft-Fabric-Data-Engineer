@@ -2,27 +2,28 @@
 
 Welcome to your DP-700: Microsoft-Fabric-Data-Engineer Workshop! We've prepared a seamless environment for you to explore and learn Azure Services. Let's begin by making the most of this experience.
 
-### Overall Estimated timing: 3 hrs
+### Overall Estimated timing: 2 hr 30 minutes
 
-In this hands-on lab, you’ll explore foundational and advanced data engineering concepts using Microsoft Fabric Lakehouse. You will start by creating a lakehouse and understanding its role in modern data architecture. Then, you'll dive into working with Delta Tables using Apache Spark to enable reliable and scalable data processing. Finally, you’ll build a medallion architecture—organizing data into bronze, silver, and gold layers—to streamline data transformation and analytics. By the end, you'll gain practical skills to manage and analyze data using lakehouse architecture in Microsoft Fabric.
+In this hands-on lab, you'll explore key administrative and operational features of Microsoft Fabric. You'll begin by monitoring activities across various Fabric artifacts—such as lakehouses, dataflows, and notebooks—using the centralized monitoring hub. Then, you'll learn how to secure data access at multiple levels using workspace permissions, item-level controls, and OneLake data access roles. Finally, you'll implement deployment pipelines to automate and manage content promotion across Development, Test, and Production environments. By the end, you'll gain practical experience in monitoring, securing, and operationalizing solutions in Microsoft Fabric.
+
 
 ## Objectives
 
-By the end of this lab series, you will be able to create and manage a Microsoft Fabric lakehouse, work with Delta Tables using Apache Spark, and design a medallion architecture with bronze, silver, and gold layers for structured data processing.
+By the end of this lab series, you will be able to monitor activity in Microsoft Fabric using the monitoring hub, secure data access with multi-layer permissions, and implement deployment pipelines to manage content across development, test, and production environments.
 
-1. **Create a Microsoft Fabric Lakehouse**: You will learn how to create a lakehouse in Microsoft Fabric that combines the flexibility of a data lake with the structured querying capabilities of a data warehouse. This task will walk you through creating a workspace, setting up the lakehouse, and understanding how data is stored and organized using tables backed by files.
+1. **Monitor Fabric activity in the monitoring hub**: You will learn how to monitor activities in Microsoft Fabric using the monitoring hub, track execution history of artifacts like lakehouses, dataflows, and notebooks, and customize views to manage large volumes of activity logs effectively.
 
-1. **Use Delta Tables in Apache Spark**: You will explore how Delta Lake technology enhances data reliability and performance within a Fabric lakehouse. This task guides you through creating Delta tables using Apache Spark, performing SQL queries, and understanding how Delta Lake supports ACID transactions and time travel features for efficient data analytics.
+1. **Secure data access in Microsoft Fabric**: You will learn how to secure data access in Microsoft Fabric by applying workspace access controls, item-level permissions, and OneLake data access roles. This lab will guide you through configuring security at multiple levels to protect sensitive data and control access within Data Warehouses and Lakehouses.
 
-1. **Create a medallion architecture in a Microsoft Fabric lakehouse**: You will learn to implement the medallion architecture pattern, which structures data in layered stages: bronze (raw), silver (cleaned), and gold (aggregated). This task involves transforming data across these layers using notebooks and Apache Spark, helping ensure organized, scalable, and insightful data processing in Microsoft Fabric.
+1. **Implement deployment pipelines in Microsoft Fabric**: You will learn how to implement deployment pipelines in Microsoft Fabric to automate the promotion of content across different environments like Development, Test, and Production. This lab will guide you through creating workspaces, configuring deployment pipelines, and managing content across stages for streamlined content validation and deployment.
 
 
 ## Pre-requisites
 
-- Familiarity with data concepts such as tables, data transformation, and querying.
-- Some experience with Apache Spark and data processing using notebooks (Python or SQL).
-- Ability to read and write simple Python or SQL queries for data manipulation and analysis.
-- Familiarity with concepts like data lakes, Delta tables, and medallion architecture will be helpful.
+- Basic understanding of Microsoft Fabric architecture and core components like lakehouses, dataflows, and notebooks
+- Familiarity with workspace and item-level access controls in cloud-based data platforms
+- General knowledge of CI/CD concepts and deployment workflows
+
 
 ## Architecture
 
@@ -182,6 +183,6 @@ Learner Support Contacts:
 
 Click on **Next** from the lower right corner to move on to the next page.
 
-   ![Start Your Azure Journey](../Images/dpg15.png)
+   ![Start Your Azure Journey](../Images/dpn3.png)
 
 ## Happy Learning !!
