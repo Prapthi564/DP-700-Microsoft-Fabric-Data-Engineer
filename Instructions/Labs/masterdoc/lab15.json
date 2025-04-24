@@ -1,0 +1,21 @@
+[
+    {
+      "Name": "Module 01: Get started with Real-Time Dashboards in Microsoft Fabric",
+      "Language": "English",
+      "Files": [
+        {
+          "RawFilePath": "https://raw.githubusercontent.com/CloudLabs-MOC/DP-700-Microsoft-Fabric-Data-Engineer/refs/heads/guidedlabs/Instructions/Labs/DP700-Gettingstarted/M01-Gettingstarted.md",
+          "Order": 1
+        },      
+        {
+          "RawFilePath": "https://raw.githubusercontent.com/CloudLabs-MOC/DP-700-Microsoft-Fabric-Data-Engineer/refs/heads/guidedlabs/Instructions/Labs/Create-workspace-01.md",
+          "Order": 2
+        },
+        {
+          "RawFilePath": "https://raw.githubusercontent.com/CloudLabs-MOC/DP-700-Microsoft-Fabric-Data-Engineer/refs/heads/guidedlabs/Instructions/Labs/13-real-time-dashboards.md",
+          "Order": 3
+        }
+      ]
+    }
+  ]
+  

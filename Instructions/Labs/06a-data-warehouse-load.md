@@ -1,4 +1,4 @@
-# Lab 2: Load data into a warehouse using T-SQL
+# Lab 1: Load data into a warehouse using T-SQL
 
 ## Estimated duration: 45 minutes
 

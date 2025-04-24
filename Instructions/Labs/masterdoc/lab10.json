@@ -1,0 +1,21 @@
+[
+    {
+      "Name": "Module 01: Monitor a data warehouse in Microsoft Fabric",
+      "Language": "English",
+      "Files": [
+        {
+          "RawFilePath": "https://raw.githubusercontent.com/CloudLabs-MOC/DP-700-Microsoft-Fabric-Data-Engineer/refs/heads/guidedlabs/Instructions/Labs/DP700-Gettingstarted/M01-Gettingstarted.md",
+          "Order": 1
+        },      
+        {
+          "RawFilePath": "https://raw.githubusercontent.com/CloudLabs-MOC/DP-700-Microsoft-Fabric-Data-Engineer/refs/heads/guidedlabs/Instructions/Labs/Create-workspace-01.md",
+          "Order": 2
+        },
+        {
+          "RawFilePath": "https://raw.githubusercontent.com/CloudLabs-MOC/DP-700-Microsoft-Fabric-Data-Engineer/refs/heads/guidedlabs/Instructions/Labs/06c-monitor-data-warehouse.md",
+          "Order": 3
+        }
+      ]
+    }
+  ]
+  

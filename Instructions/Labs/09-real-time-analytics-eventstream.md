@@ -1,4 +1,4 @@
-# Lab 5: Ingest real-time data with Eventstream in Microsoft Fabric
+# Lab 1: Ingest real-time data with Eventstream in Microsoft Fabric
 
 ## Estimated Duration: 60 Minutes 
 

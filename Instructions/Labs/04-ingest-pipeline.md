@@ -1,5 +1,5 @@
 
-# Lab 2: Ingest data with a pipeline in Microsoft Fabric
+# Lab 1: Ingest data with a pipeline in Microsoft Fabric
 
 ## Estimated duration: 75 minutes
 

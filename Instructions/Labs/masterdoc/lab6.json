@@ -1,0 +1,21 @@
+[
+    {
+      "Name": "Module 01: Create and use Dataflows (Gen2) in Microsoft Fabric",
+      "Language": "English",
+      "Files": [
+        {
+          "RawFilePath": "https://raw.githubusercontent.com/CloudLabs-MOC/DP-700-Microsoft-Fabric-Data-Engineer/refs/heads/guidedlabs/Instructions/Labs/DP700-Gettingstarted/M01-Gettingstarted.md",
+          "Order": 1
+        },      
+        {
+          "RawFilePath": "https://raw.githubusercontent.com/CloudLabs-MOC/DP-700-Microsoft-Fabric-Data-Engineer/refs/heads/guidedlabs/Instructions/Labs/Create-workspace-01.md",
+          "Order": 2
+        },
+        {
+          "RawFilePath": "https://raw.githubusercontent.com/CloudLabs-MOC/DP-700-Microsoft-Fabric-Data-Engineer/refs/heads/guidedlabs/Instructions/Labs/05-dataflows-gen2.md",
+          "Order": 3
+        }
+      ]
+    }
+  ]
+  

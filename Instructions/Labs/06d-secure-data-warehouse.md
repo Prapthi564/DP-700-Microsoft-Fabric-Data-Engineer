@@ -1,4 +1,4 @@
-# Lab 5: Secure a Microsoft Fabric data warehouse
+# Lab 1: Secure a Microsoft Fabric data warehouse
 
 ## Estimated duration : 60 minutes
 

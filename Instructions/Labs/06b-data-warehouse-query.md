@@ -1,4 +1,4 @@
-# Lab 3: Query a data warehouse in Microsoft Fabric
+# Lab 1: Query a data warehouse in Microsoft Fabric
 
 ## Estimated duration: 45 minutes
 
