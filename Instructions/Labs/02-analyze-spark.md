@@ -351,11 +351,11 @@ Tables in a Spark metastore are relational abstractions over files in the data l
 1.	Add a code cell to the notebook and enter the following code, which saves the DataFrame of sales order data as a table named *salesorders*:
 
    ```python
-    # Create a new table
-    df.write.format("delta").saveAsTable("salesorders")
+   # Create a new table
+   df.write.format("delta").saveAsTable("salesorders")
 
-    # Get the table description
-    spark.sql("DESCRIBE EXTENDED salesorders").show(truncate=False)
+   # Get the table description
+   spark.sql("DESCRIBE EXTENDED salesorders").show(truncate=False)
    ```
    >**Note**: In this example, no explicit path is provided, so the files for the table will be managed by the metastore. Also, the table is saved in delta format which adds relational database capabilities to tables. This includes support for transactions, row versioning, and other useful features. Creating tables in delta format is preferred for data lakehouses in Fabric.
 
