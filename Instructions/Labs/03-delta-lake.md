@@ -199,7 +199,7 @@ In this task, you will examine the version history of a Delta table by using the
 
 Transaction history for Delta tables is stored in JSON files in the delta_log folder. You can use this transaction log to manage data versioning.
 
-1.	Add a new code cell to the notebook and run the following code which implements a 10% reduction in the price for mountain bikes:
+1. Add a new code cell to the notebook and run the following code, which implements a 10% reduction in the price for mountain bikes:
 
     ```python
     %%sql
