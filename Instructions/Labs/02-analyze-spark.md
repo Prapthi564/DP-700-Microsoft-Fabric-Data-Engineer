@@ -493,7 +493,6 @@ In this task, you will visualize data from a DataFrame to identify patterns and 
     # Show the figure
     plt.show()
     ```
-
 6. Re-run the code cell and view the results. The chart is now easier to understand.
 7. A plot is contained with a Figure. In the previous examples, the figure was created implicitly but it can be created explicitly. Modify the code to plot the chart as follows:
 
@@ -594,15 +593,15 @@ While *matplotlib* enables you to create different chart types, it can require s
 5.	Modify the code again as follows:
 
    ```python
-    import seaborn as sns
+   import seaborn as sns
 
-    # Clear the plot area
-    plt.clf()
+   # Clear the plot area
+   plt.clf()
 
-    # Create a line chart
-    ax = sns.lineplot(x="OrderYear", y="GrossRevenue", data=df_sales)
+   # Create a line chart
+   ax = sns.lineplot(x="OrderYear", y="GrossRevenue", data=df_sales)
 
-    plt.show()
+   plt.show()
    ```
 
 6.	Run the modified code to view the yearly revenue as a line chart.
