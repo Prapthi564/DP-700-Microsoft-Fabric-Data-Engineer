@@ -478,7 +478,7 @@ In this task, you will visualize data from a DataFrame to identify patterns and 
 
 5.	Modify the code to plot the chart as follows:
 
-    ```python
+    ```
     from matplotlib import pyplot as plt
 
     # Clear the plot area
