@@ -245,7 +245,7 @@ In this task, you’ll take the cleaned and structured data from the silver laye
 
 1. Under **Explorer** select **Add data item (1)** and then select **Existing data sources (2)**.
 
-    ![10](./Images/01/dp6-9.png)
+    ![10](./Images/01/lab3e1.png)
 
 1. On the **Discover data from your org and beyond and use it to create reports** page ,select **Sales** Lakehouse then click **Connect (2)**.
 
