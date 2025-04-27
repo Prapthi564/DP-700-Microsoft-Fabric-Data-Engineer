@@ -179,9 +179,8 @@ The DataFrame object provides additional functionality such as the ability to fi
 
 1.	Add the following code which filters the data so that only two columns are returned. It also uses *count* and *distinct* to summarize the number of records:
 
-    ```
+    ```python
     customers = df['CustomerName', 'Email']
-   
     print(customers.count())
     print(customers.distinct().count())
    
