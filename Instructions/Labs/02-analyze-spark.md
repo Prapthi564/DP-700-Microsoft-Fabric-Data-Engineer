@@ -37,7 +37,7 @@ In this task, you will create a lakehouse to organize and analyze your data file
 
    ![Screenshot of uploaded files in a lakehouse.](./Images/md11.png)  
 
-6. Upload the **orders** folder from **C:\LabFiles\Files\orders** to the **Lakehouse**.  
+6. Upload the **orders** folder from **C:\LabFiles\files\** to the **Lakehouse**.  
 
 7. After the upload is complete, expand the **Files** section, select the **orders (1)** folder, and verify that the **CSV files (2)** have been successfully uploaded, as shown below:  
 
