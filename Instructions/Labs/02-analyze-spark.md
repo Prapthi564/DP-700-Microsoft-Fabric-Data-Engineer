@@ -328,8 +328,6 @@ When dealing with large volumes of data, partitioning can significantly improve 
 
 1.	Run the cell and wait for the message that the data has been saved. Then, in the Lakehouses pane on the left, in the … menu for the Files node, select **Refresh** and expand the partitioned_data folder to verify that it contains a hierarchy of folders named *Year=xxxx*, each containing folders named *Month=xxxx*. Each month folder contains a parquet file with the orders for that month.
 
-     ![Sc](./Images/md26.png)
-
 1. Add a new cell with the following code to load a new DataFrame from the orders.parquet file:
 
     ```python
