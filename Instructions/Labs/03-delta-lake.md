@@ -34,7 +34,7 @@ In this task, you will create a new lakehouse within your Microsoft Fabric works
 
 1.	After the file has been uploaded, select the **products** folder to verify that the file has been uploaded, as shown here:
 
-    ![Screen picture of products.csv uploaded to the lakehouse.](Images/md2-27.png)
+     ![S](Images/md2-27.png)
   
 ### Task 2: Explore data in a DataFrame
 
