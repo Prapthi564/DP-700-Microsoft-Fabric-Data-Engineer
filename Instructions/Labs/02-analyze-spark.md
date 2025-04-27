@@ -179,14 +179,14 @@ The DataFrame object provides additional functionality such as the ability to fi
 
 2.	Add the following code which filters the data so that only two columns are returned. It also uses *count* and *distinct* to summarize the number of records:
 
-    ```python
-    customers = df['CustomerName', 'Email']
+   ```
+   customers = df['CustomerName', 'Email']
 
-    print(customers.count())
-    print(customers.distinct().count())
+   print(customers.count())
+   print(customers.distinct().count())
 
-    display(customers.distinct())
-    ```
+   display(customers.distinct())
+   ```
 
 3. Run the code, and examine the output:
 
@@ -329,7 +329,7 @@ When dealing with large volumes of data, partitioning can significantly improve 
 
 2.	Run the cell and wait for the message that the data has been saved. Then, in the Lakehouses pane on the left, in the … menu for the Files node, select **Refresh** and expand the partitioned_data folder to verify that it contains a hierarchy of folders named *Year=xxxx*, each containing folders named *Month=xxxx*. Each month folder contains a parquet file with the orders for that month.
 
-    ![Screen picture.](./Images/md26.png)
+     ![Screen picture.](./Images/md26.png)
 
 3. Add a new cell with the following code to load a new DataFrame from the orders.parquet file:
 
