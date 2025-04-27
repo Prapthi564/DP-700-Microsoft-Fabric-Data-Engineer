@@ -192,6 +192,7 @@ The DataFrame object provides additional functionality such as the ability to fi
     # Display the distinct records
     display(customers.distinct())
     ```
+
 1. Run the code, and examine the output:
 
     * The code creates a new DataFrame called **customers** which contains a subset of columns from the original **df** DataFrame. When performing a DataFrame transformation you do not modify the original DataFrame, but return a new one.
