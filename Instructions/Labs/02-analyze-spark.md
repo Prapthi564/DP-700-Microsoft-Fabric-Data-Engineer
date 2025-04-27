@@ -177,18 +177,18 @@ The DataFrame object provides additional functionality such as the ability to fi
 
 1. Add a code cell by selecting **+ Code** which appears when you hover the mouse above or below the current cell or its output. Alternatively, from the ribbon menu select **Edit** and **+ Add code cell below**.
 
-2.	Add the following code which filters the data so that only two columns are returned. It also uses *count* and *distinct* to summarize the number of records:
+1.	Add the following code which filters the data so that only two columns are returned. It also uses *count* and *distinct* to summarize the number of records:
 
-   ```
-   customers = df['CustomerName', 'Email']
+    ```
+    customers = df['CustomerName', 'Email']
+   
+    print(customers.count())
+    print(customers.distinct().count())
+   
+    display(customers.distinct())
+    ```
 
-   print(customers.count())
-   print(customers.distinct().count())
-
-   display(customers.distinct())
-   ```
-
-3. Run the code, and examine the output:
+1. Run the code, and examine the output:
 
     * The code creates a new DataFrame called **customers** which contains a subset of columns from the original **df** DataFrame. When performing a DataFrame transformation you do not modify the original DataFrame, but return a new one.
     * Another way of achieving the same result is to use the select method:
@@ -327,11 +327,11 @@ When dealing with large volumes of data, partitioning can significantly improve 
     print ("Transformed data saved!")
     ```
 
-2.	Run the cell and wait for the message that the data has been saved. Then, in the Lakehouses pane on the left, in the … menu for the Files node, select **Refresh** and expand the partitioned_data folder to verify that it contains a hierarchy of folders named *Year=xxxx*, each containing folders named *Month=xxxx*. Each month folder contains a parquet file with the orders for that month.
+1.	Run the cell and wait for the message that the data has been saved. Then, in the Lakehouses pane on the left, in the … menu for the Files node, select **Refresh** and expand the partitioned_data folder to verify that it contains a hierarchy of folders named *Year=xxxx*, each containing folders named *Month=xxxx*. Each month folder contains a parquet file with the orders for that month.
 
-     ![Screen picture.](./Images/md26.png)
+     ![Sc](./Images/md26.png)
 
-3. Add a new cell with the following code to load a new DataFrame from the orders.parquet file:
+1. Add a new cell with the following code to load a new DataFrame from the orders.parquet file:
 
     ```python
     orders_2021_df = spark.read.format("parquet").load("Files/partitioned_data/Year=2021/Month=*")
@@ -339,7 +339,7 @@ When dealing with large volumes of data, partitioning can significantly improve 
     display(orders_2021_df)
     ```
 
-4. Run the cell and verify that the results show the order data for sales in 2021. Notice that the partitioning columns specified in the path (Year and Month) are not included in the DataFrame.
+1. Run the cell and verify that the results show the order data for sales in 2021. Notice that the partitioning columns specified in the path (Year and Month) are not included in the DataFrame.
 
 ## Task 7: Work with tables and SQL
 
@@ -423,12 +423,12 @@ In this task, you will visualize data from a DataFrame to identify patterns and 
 
 3.	Use the **Customize chart (1)** button at the top right of the chart to set the following options:
 
-    * Chart type: Bar chart (2)
-    * Key: Item (3)
-    * Values: Quantity (4)
-    * Series Group: leave blank
-    * Aggregation: Sum (5)
-    * Stacked: Unselected (6)
+    - Chart type: Bar chart (2)
+    - Key: Item (3)
+    - Values: Quantity (4)
+    - Series Group: leave blank
+    - Aggregation: Sum (5)
+    - Stacked: Unselected (6)
 
 4. When you have finished, select **Apply (7)**.
 
@@ -478,9 +478,8 @@ In this task, you will visualize data from a DataFrame to identify patterns and 
 
 5.	Modify the code to plot the chart as follows:
 
-    ```
+    ```python
     from matplotlib import pyplot as plt
-
     # Clear the plot area
     plt.clf()
 
