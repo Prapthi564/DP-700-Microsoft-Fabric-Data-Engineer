@@ -217,7 +217,7 @@ Transaction history for Delta tables is stored in JSON files in the delta_log fo
 
 The results show the history of transactions recorded for the table.
 
-3.	Add another code cell and run the following code:
+3. Add another code cell and run the following code:
 
     ```python
     delta_table_path = 'Files/external_products'
