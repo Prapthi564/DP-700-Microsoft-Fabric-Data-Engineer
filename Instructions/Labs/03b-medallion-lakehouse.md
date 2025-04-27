@@ -243,7 +243,7 @@ In this task, you’ll take the cleaned and structured data from the silver laye
 
 1. Return to the workspace home page and create a new notebook called **Transform data for Gold**.
 
-1. In the Explorer panel, click on Data items (1), then select Add data item (1), and choose Existing data sources (3)1. Under **Explorer** select **Data items (1)** select**Add data item (1)** and then select **Existing data sources (3)**.
+1. In the Explorer panel, click on **Data items (1)**, then select **Add data item (2)**, and choose **Existing data sources (3)**
 
     ![10](./Images/lab3e1.png)
 
