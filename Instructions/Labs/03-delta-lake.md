@@ -32,9 +32,7 @@ In this task, you will create a new lakehouse within your Microsoft Fabric works
 
 1.	In the … menu for the products folder, **upload** the *products.csv*(C:\LabFiles\Files\) file located in the Lab VM.
 
-1.	After the file has been uploaded, select the **products** folder to verify that the file has been uploaded, as shown here:
-
-     ![S](Images/md2-27.png)
+1.	After the file has been uploaded, select the **products** folder to verify that the file has been uploaded.
   
 ### Task 2: Explore data in a DataFrame
 
