@@ -261,7 +261,7 @@ In this task, you will add a parameter to your base query to enable dynamic filt
     - **Show on pages**: Select all
     - **Source**: Query
     - **Data source**: Bike Rental Data
-    - **Edit query**:
+    - **Edit query**: Add the below query and **Run** and select **Done**
 
         ```kql
         bikes
