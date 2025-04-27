@@ -243,23 +243,22 @@ In this task, you’ll take the cleaned and structured data from the silver laye
 
 1. Return to the workspace home page and create a new notebook called **Transform data for Gold**.
 
-1. Under **Explorer** select **Add data item (1)** and then select **Existing data sources (2)**.
+1. In the Explorer panel, click on Data items (1), then select Add data item (1), and choose Existing data sources (3)1. Under **Explorer** select **Data items (1)** select**Add data item (1)** and then select **Existing data sources (3)**.
 
-    ![10](./Images/01/lab3e1.png)
+    ![10](./Images/lab3e1.png)
 
 1. On the **Discover data from your org and beyond and use it to create reports** page ,select **Sales** Lakehouse then click **Connect (2)**.
 
-    ![10](./Images/01/lab3r5.png)
+    ![10](./Images/lab3r5.png)
 
-
-3. In the existing code block, remove the commented text and **add the following code** to load data to your dataframe and start building your star schema, then run it:
+1. In the existing code block, remove the commented text and **add the following code** to load data to your dataframe and start building your star schema, then run it:
 
    ```python
     # Load data to the dataframe as a starting point to create the gold layer
     df = spark.read.table("Sales.sales_silver")
     ```
 
-4. **Add a new code block** and paste the following code to create your date dimension table and run it:
+1. **Add a new code block** and paste the following code to create your date dimension table and run it:
 
     ```python
     from pyspark.sql.types import *
@@ -279,7 +278,7 @@ In this task, you’ll take the cleaned and structured data from the silver laye
 
     > **Note**: You can run the `display(df)` command at any time to check the progress of your work. In this case, you'd run 'display(dfdimDate_gold)' to see the contents of the dimDate_gold dataframe.
 
-5. In a new code block, **add and run the following code** to create a dataframe for your date dimension, **dimdate_gold**:
+1. In a new code block, **add and run the following code** to create a dataframe for your date dimension, **dimdate_gold**:
 
     ```python
     from pyspark.sql.functions import col, dayofmonth, month, year, date_format
@@ -299,7 +298,7 @@ In this task, you’ll take the cleaned and structured data from the silver laye
     display(dfdimDate_gold.head(10))
     ```
 
-6. You're separating the code out into new code blocks so that you can understand and watch what's happening in the notebook as you transform the data. In another new code block, **add and run the following code** to update the date dimension as new data comes in:
+1. You're separating the code out into new code blocks so that you can understand and watch what's happening in the notebook as you transform the data. In another new code block, **add and run the following code** to update the date dimension as new data comes in:
 
     ```python
     from delta.tables import *
@@ -332,7 +331,7 @@ In this task, you’ll take the cleaned and structured data from the silver laye
     ```
 
     The date dimension is now set up. Now you'll create your customer dimension.
-7. To build out the customer dimension table, **add a new code block**, paste and run the following code:
+1. To build out the customer dimension table, **add a new code block**, paste and run the following code:
 
     ```python
     from pyspark.sql.types import *
@@ -349,7 +348,7 @@ In this task, you’ll take the cleaned and structured data from the silver laye
         .execute()
     ```
 
-8. In a new code block, **add and run the following code** to drop duplicate customers, select specific columns, and split the "CustomerName" column to create "First" and "Last" name columns:
+1. In a new code block, **add and run the following code** to drop duplicate customers, select specific columns, and split the "CustomerName" column to create "First" and "Last" name columns:
 
     ```python
     from pyspark.sql.functions import col, split
@@ -367,7 +366,7 @@ In this task, you’ll take the cleaned and structured data from the silver laye
 
      Here you have created a new DataFrame dfdimCustomer_silver by performing various transformations such as dropping duplicates, selecting specific columns, and splitting the "CustomerName" column to create "First" and "Last" name columns. The result is a DataFrame with cleaned and structured customer data, including separate "First" and "Last" name columns extracted from the "CustomerName" column.
 
-9. Next we'll **create the ID column for our customers**. In a new code block, paste and run the following:
+1. Next we'll **create the ID column for our customers**. In a new code block, paste and run the following:
 
     ```python
     from pyspark.sql.functions import monotonically_increasing_id, col, when, coalesce, max, lit
@@ -387,7 +386,7 @@ In this task, you’ll take the cleaned and structured data from the silver laye
 
     Here you're cleaning and transforming customer data (dfdimCustomer_silver) by performing a left anti join to exclude duplicates that already exist in the dimCustomer_gold table, and then generating unique CustomerID values using the monotonically_increasing_id() function.
 
-10. Now you'll ensure that your customer table remains up-to-date as new data comes in. **In a new code block**, paste and run the following:
+1. Now you'll ensure that your customer table remains up-to-date as new data comes in. **In a new code block**, paste and run the following:
 
     ```python
     from delta.tables import *
@@ -418,7 +417,7 @@ In this task, you’ll take the cleaned and structured data from the silver laye
       .execute()
     ```
 
-11. Now you'll **repeat those steps to create your product dimension**. In a new code block, paste and run the following:
+1. Now you'll **repeat those steps to create your product dimension**. In a new code block, paste and run the following:
 
     ```python
     from pyspark.sql.types import *
@@ -432,7 +431,7 @@ In this task, you’ll take the cleaned and structured data from the silver laye
         .execute()
     ```
 
-12. **Add another code block** to create the **product_silver** dataframe.
+1. **Add another code block** to create the **product_silver** dataframe.
   
     ```python
     from pyspark.sql.functions import col, split, lit, when
@@ -448,7 +447,7 @@ In this task, you’ll take the cleaned and structured data from the silver laye
     display(dfdimProduct_silver.head(10))
        ```
 
-13. Now you'll create IDs for your **dimProduct_gold table**. Add the following syntax to a new code block and run it:
+1. Now you'll create IDs for your **dimProduct_gold table**. Add the following syntax to a new code block and run it:
 
     ```python
     from pyspark.sql.functions import monotonically_increasing_id, col, lit, max, coalesce
@@ -469,7 +468,7 @@ In this task, you’ll take the cleaned and structured data from the silver laye
 
       This calculates the next available product ID based on the current data in the table, assigns these new IDs to the products, and then displays the updated product information.
 
-14. Similar to what you've done with your other dimensions, you need to ensure that your product table remains up-to-date as new data comes in. **In a new code block**, paste and run the following:
+1. Similar to what you've done with your other dimensions, you need to ensure that your product table remains up-to-date as new data comes in. **In a new code block**, paste and run the following:
 
     ```python
     from delta.tables import *
@@ -500,7 +499,7 @@ In this task, you’ll take the cleaned and structured data from the silver laye
 
       **Now that you have your dimensions built out, the final step is to create the fact table.**
 
-15. **In a new code block**, paste and run the following code to create the **fact table**:
+1. **In a new code block**, paste and run the following code to create the **fact table**:
 
     ```python
     from pyspark.sql.types import *
@@ -517,7 +516,7 @@ In this task, you’ll take the cleaned and structured data from the silver laye
         .execute()
     ```
 
-16. **In a new code block**, paste and run the following code to create a **new dataframe** to combine sales data with customer and product information include customer ID, item ID, order date, quantity, unit price, and tax:
+1. **In a new code block**, paste and run the following code to create a **new dataframe** to combine sales data with customer and product information include customer ID, item ID, order date, quantity, unit price, and tax:
 
     ```python
     from pyspark.sql.functions import col
@@ -546,7 +545,7 @@ In this task, you’ll take the cleaned and structured data from the silver laye
     display(dffactSales_gold.head(10))
     ```
 
-17. Now you'll ensure that sales data remains up-to-date by running the following code in a **new code block**:
+1. Now you'll ensure that sales data remains up-to-date by running the following code in a **new code block**:
 
     ```python
     from delta.tables import *
