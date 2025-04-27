@@ -285,7 +285,7 @@ In this task, you'll explore how Delta tables can be used to handle streaming da
 
 Delta Lake supports streaming data. Delta tables can be a sink or a source for data streams created using the Spark Structured Streaming API. In this example, you’ll use a Delta table as a sink for some streaming data in a simulated internet of things (IoT) scenario.
 
-1.	Add a new code cell and add the following code and run it:
+1. Add a new code cell and add the following code and run it:
 
     ```python
     from notebookutils import mssparkutils
@@ -319,7 +319,7 @@ Delta Lake supports streaming data. Delta tables can be a sink or a source for d
     print("Source stream created...")
     ```
 
-Ensure the message *Source stream created…* is displayed. The code you just ran has created a streaming data source based on a folder to which some data has been saved, representing readings from hypothetical IoT devices.
+    > **Note**: Ensure the message *Source stream created…* is displayed. The code you just ran has created a streaming data source based on a folder to which some data has been saved, representing readings from hypothetical IoT devices.
 
 2. In a new code cell, add and run the following code:
 
