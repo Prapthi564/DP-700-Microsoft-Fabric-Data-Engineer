@@ -179,14 +179,19 @@ The DataFrame object provides additional functionality such as the ability to fi
 
 1.	Add the following code which filters the data so that only two columns are returned. It also uses *count* and *distinct* to summarize the number of records:
 
-    ```python
-    customers = df['CustomerName', 'Email']
-    print(customers.count())
-    print(customers.distinct().count())
+   ```python
+   # Select only 'CustomerName' and 'Email' columns
+   customers = df.select('CustomerName', 'Email')
    
-    display(customers.distinct())
-    ```
-
+   # Display the total number of records
+   print(customers.count())
+   
+   # Display the number of distinct records
+   print(customers.distinct().count())
+   
+   # Display the distinct records
+   display(customers.distinct())
+   ```
 1. Run the code, and examine the output:
 
     * The code creates a new DataFrame called **customers** which contains a subset of columns from the original **df** DataFrame. When performing a DataFrame transformation you do not modify the original DataFrame, but return a new one.
@@ -348,16 +353,17 @@ The Spark SQL library supports the use of SQL statements to query tables in the 
 
 Tables in a Spark metastore are relational abstractions over files in the data lake. Tables can be *managed* by the metastore, or *external* and managed independently of the metastore.
 
-1.	Add a code cell to the notebook and enter the following code, which saves the DataFrame of sales order data as a table named *salesorders*:
+1. Add a code cell to the notebook and enter the following code, which saves the DataFrame of sales order data as a table named *salesorders*:
 
-   ```python
-   # Create a new table
-   df.write.format("delta").saveAsTable("salesorders")
+    ```python
+    # Create a new table
+    df.write.format("delta").saveAsTable("salesorders")
 
-   # Get the table description
-   spark.sql("DESCRIBE EXTENDED salesorders").show(truncate=False)
-   ```
-   >**Note**: In this example, no explicit path is provided, so the files for the table will be managed by the metastore. Also, the table is saved in delta format which adds relational database capabilities to tables. This includes support for transactions, row versioning, and other useful features. Creating tables in delta format is preferred for data lakehouses in Fabric.
+    # Get the table description
+    spark.sql("DESCRIBE EXTENDED salesorders").show(truncate=False)
+    ```
+
+    > **Note**: In this example, no explicit path is provided, so the files for the table will be managed by the metastore. Also, the table is saved in Delta format, which adds relational database capabilities to tables. This includes support for transactions, row versioning, and other useful features. Creating tables in Delta format is preferred for data lakehouses in Fabric.
 
 2. Run the code cell and review the output, which describes the definition of the new table.
 
@@ -473,10 +479,11 @@ In this task, you will visualize data from a DataFrame to identify patterns and 
     * At the core of the matplotlib library is the *pyplot* object. This is the foundation for most plotting functionality.
     * The default settings result in a usable chart, but there’s considerable scope to customize it.
 
-5.	Modify the code to plot the chart as follows:
+5. Modify the code to plot the chart as follows:
 
     ```python
     from matplotlib import pyplot as plt
+
     # Clear the plot area
     plt.clf()
 
@@ -493,6 +500,7 @@ In this task, you will visualize data from a DataFrame to identify patterns and 
     # Show the figure
     plt.show()
     ```
+
 6. Re-run the code cell and view the results. The chart is now easier to understand.
 7. A plot is contained with a Figure. In the previous examples, the figure was created implicitly but it can be created explicitly. Modify the code to plot the chart as follows:
 
