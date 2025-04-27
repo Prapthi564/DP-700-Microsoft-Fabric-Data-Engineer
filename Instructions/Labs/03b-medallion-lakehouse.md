@@ -243,7 +243,14 @@ In this task, you’ll take the cleaned and structured data from the silver laye
 
 1. Return to the workspace home page and create a new notebook called **Transform data for Gold**.
 
-2. In the lakehouse explorer pane, add your **Sales** lakehouse by selecting **Add** and then selecting the **Sales** lakehouse you created earlier. In the **Add Lakehouse** window, select **Existing Lakehouse without Schema**. You should see the **sales_silver** table listed in the **Tables** section of the explorer pane.
+1. Under **Explorer** select **Add data item (1)** and then select **Existing data sources (2)**.
+
+    ![10](./Images/01/dp6-9.png)
+
+1. On the **Discover data from your org and beyond and use it to create reports** page ,select **Sales** Lakehouse then click **Connect (2)**.
+
+    ![10](./Images/01/lab3r5.png)
+
 
 3. In the existing code block, remove the commented text and **add the following code** to load data to your dataframe and start building your star schema, then run it:
 
