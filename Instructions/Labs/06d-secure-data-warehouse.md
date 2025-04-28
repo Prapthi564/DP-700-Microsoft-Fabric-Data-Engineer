@@ -193,6 +193,7 @@ In this task, you will define and enforce row-level security (RLS) policies with
     ```T-SQL
    SELECT * FROM dbo.Sales;
     ```
+   ![Screenshot of uploaded files in a lakehouse.](./Images/modf571.png)  
 
 ### Task 4: Implement column-level security
 
@@ -223,6 +224,7 @@ In this task, you will implement column-level security (CLS) by controlling acce
      ```T-SQL
    DENY SELECT ON dbo.Orders (CreditCard) TO [<username>@<your_domain>.com];
      ```
+   ![Screenshot of uploaded files in a lakehouse.](./Images/modf572.png)  
 
 4. Switch to the private browser window, test column-level security by logging in to Fabric as the user you denied select permissions to.
 
@@ -231,12 +233,14 @@ In this task, you will implement column-level security (CLS) by controlling acce
     ```T-SQL
    SELECT * FROM dbo.Orders;
     ```
-
-    You'll receive an error because access to the CreditCard column has been restricted.  Try selecting only the OrderID and CustomerID fields and the query will succeed.
+   ![Screenshot of uploaded files in a lakehouse.](./Images/modf573.png)  
+   
+   >**Note**: You'll receive an error because access to the CreditCard column has been restricted.  Try selecting only the OrderID and CustomerID fields and the query will succeed.
 
     ```T-SQL
    SELECT OrderID, CustomerID from dbo.Orders
     ```
+   ![Screenshot of uploaded files in a lakehouse.](./Images/modf574.png) 
 
 ### Task 5: Configure SQL granular permissions using T-SQL
 
@@ -272,7 +276,7 @@ In this task, you will apply granular SQL permissions on tables and stored proce
    SELECT * FROM dbo.Parts
      ```
 
-3. Next `DENY SELECT` permissions on the table to a user who is a member of the **Workspace Viewer** role and `GRANT EXECUTE` on the procedure to the same user. Replace `<username>@<your_domain>.com` with a user name from your environment that is a member of the **Workspace Viewer** role.
+3. Next `DENY SELECT` permissions on the table to a user who is a member of the **Workspace Viewer** role and `GRANT EXECUTE` on the procedure to the same user. Replace `<username>@<your_domain>.com` with **<inject key="testuser" enableCopy="true"/>**  user name from your environment that is a member of the **Workspace Viewer** role.
 
      ```T-SQL
    DENY SELECT on dbo.Parts to [<username>@<your_domain>.com];
