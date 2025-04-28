@@ -76,11 +76,13 @@ In this task, you will create a table in the lakehouse using the uploaded file.
 1. In the **...** menu for the **sales.csv** file in the **Explorer** pane, select **Load to tables**, and then **New table**.
 
 1. Provide the following information in the **Load file to new table** dialog.
-    - **New table name:** staging_sales
-    - **Use header for columns names:** Selected
-    - **Separator:** ,
+    - **New table name:** staging_sales (1)
+    - **Use header for columns names:** Selected (2)
+    - **Separator:** , (3)
 
-1. Select **Load**.
+1. Select **Load (4)**.
+
+    ![Screenshot of uploaded sales.csv file in a lakehouse.](./Images/mod613.png)
 
 ### Task 4: Create a warehouse
 
@@ -142,13 +144,15 @@ In this task, you will define fact tables, dimension tables, and a view to strea
 
 1. In the **Explorer**, navigate to **Schemas >> Sales >> Tables**. Note the *Fact_Sales*, *Dim_Customer*, and *Dim_Item* tables you just created.
 
-1. Open a new **New SQL query** editor, then copy and run the following query. Update *<your lakehouse name>* with the lakehouse you created.
+1. Open a new **New SQL query** editor, then copy and run the following query after Updating **<your lakehouse name>** with the lakehouse you created.
 
     ```sql
     CREATE VIEW Sales.Staging_Sales
     AS
 	SELECT * FROM [<your lakehouse name>].[dbo].[staging_sales];
     ```
+
+    ![Screenshot of uploaded sales.csv file in a lakehouse.](./Images/mod614n.png)
 
 1. In the **Explorer**, navigate to **Schemas >> Sales >> Views**. Note the *Staging_Sales* view you created.
 
