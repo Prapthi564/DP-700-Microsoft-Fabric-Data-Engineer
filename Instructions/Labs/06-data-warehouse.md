@@ -22,7 +22,7 @@ In this lab, you will complete the following tasks:
 
 In this task, you will create a new data warehouse in your Microsoft Fabric workspace. This will serve as the foundation for your analytics solution.
 
-1. On the menu bar on the left, select **Create**. In the *New* page, under the *Data Warehouse* section, select **Warehouse**. Give it a unique name of your choice.
+1. On the menu bar on the left, select **Create**. In the *New* page, under the *Data Warehouse* section, select **Warehouse**. Enter **Warehouse1** as the name, and then click **Create**.
 
     ![Screenshot of a new warehouse.](./Images/mod6-1.png)
 
