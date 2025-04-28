@@ -65,7 +65,7 @@ In this task, you add a user to a workspace role, apply permissions and, see wha
 
 1. Next, you'll see what a user without permissions on the workspace can view. In your browser, open an InPrivate window. In the Microsoft Edge browser, select the ellipse at the top right corner and select **New InPrivate Window**.
 
-1. Enter *https://app.fabric.microsoft.com* and sign-in as the second user with the below credentials:
+1. Enter *https://www.microsoft.com/en-in/microsoft-fabric/getting-started* and sign-in as the second user with the below credentials:
 
    - Email : <inject key="testuser" enableCopy="true"/>
 
