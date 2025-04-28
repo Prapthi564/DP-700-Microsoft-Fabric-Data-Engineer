@@ -10,26 +10,30 @@ In this hands-on lab, you will learn how to secure data access within Microsoft 
 
 In this lab, you will complete the following tasks:
 
-- Task 1: Create a data warehouse
+- **Task 1**: Create a data warehouse
 
-- Task 2: Create a lakehouse
+- **Task 2**: Create a lakehouse
 
-- Task 3: Apply workspace access controls
+- **Task 3**: Apply workspace access controls
 
-- Task 4: Apply item access control
+- **Task 4**: Apply item access control
 
-- Task 5: Apply OneLake data access roles in a Lakehouse
+- **Task 5**: Apply OneLake data access roles in a Lakehouse
 
 ### Task 1: Create a data warehouse
 
 In this task, you will create a sample data warehouse named sample-dw prepopulated with taxi ride analysis data
 
-1. On the menu bar on the left, select **Create**. In the *New* page, under the *Data Warehouse* section, select **Sample warehouse** and create a new data warehouse named **sample-dw**.
+1. On the menu bar on the left, select **Create**. In the *New* page, under the ***Data Warehouse*** section, select **Sample warehouse** and create a new data warehouse named **sample-dw**.
 
     >**Note**: If the **Create** option is not pinned to the sidebar, you need to select the ellipsis (**...**) option first.
 
     After a minute or so, a new warehouse will be created and populated with sample data for a taxi ride analysis scenario.
 
+    ![](./Images/sample-data-warehouse1.png)
+   
+    ![](./Images/sample-data-warehouse2.png)
+   
     ![Screenshot of a new warehouse.](./Images/sample-data-warehouse.png)
 
 ### Task 2: Create a lakehouse
@@ -37,14 +41,17 @@ In this task, you will create a sample data warehouse named sample-dw prepopulat
 In this task, you will create a new Lakehouse, populate it with sample data, and prepare it for access control exercises.
 
 1. In the menu bar on the left, select **Workspaces** (the icon looks similar to 🗇).
-1. Select the workspace you created.
-1. In the workspace, select the **+ New Item** button and then select **Lakehouse**. Create a new Lakehouse with the name **lakehouse2**.
-1. After a minute or so, a new Lakehouse will be created:
 
-    ![Screenshot of a new lakehouse in Fabric.](./Images/lab5u13.png)
+1. Select the workspace you created.
+
+1. In the workspace, select the **+ New Item** button and then select **Lakehouse**. Create a new Lakehouse with the name **lakehouse2**.
+
+1. After a minute or so, a new Lakehouse will be created.
 
 1. Select the **Start with sample data** tile, then on the **Use a Sample** page, choose the **Public holidays** tile to populate the workspace with sample data.
 
+    ![Screenshot of a new lakehouse in Fabric.](./Images/lab5u13.png)
+   
     ![Screenshot of a new lakehouse in Fabric.](./Images/lab5u14.png)
 
 ### Task 3: Apply workspace access controls
