@@ -46,6 +46,12 @@ Dynamic data masking rules are applied on individual columns at the table level 
 
 In this task, you will configure dynamic data masking on specific table columns in your data warehouse. Dynamic data masking helps protect sensitive information by obscuring it at query time, ensuring that users can access necessary data without exposing confidential details such as email addresses or credit card numbers.
 
+1. In the left-hand menu, select **Create**. On the New page, under the Data Warehouse section, choose **Warehouse**. Enter **Warehouse3** as the name, and then click **Create**.
+
+   >**Note**: If the **Create** option is not pinned to the sidebar, you need to select the ellipsis (**...**) option first.
+
+1. After a minute or so, a new warehouse will be created:
+
 1. In your warehouse, select the **T-SQL** tile, and use the following T-SQL statements to create a table and to insert and view data.  
 
     ```T-SQL
@@ -74,31 +80,37 @@ In this task, you will configure dynamic data masking on specific table columns 
 
 4. Connect using the following credentials as a test user who is a member of the Viewer workspace role.
 
-5. Enter *https://app.fabric.microsoft.com* and sign-in as the test user with the below credentials:
+5. Open a Private window and navigate to *https://www.microsoft.com/en-in/microsoft-fabric/getting-started* and sign-in as the test user with the below credentials:
 
    - Email : <inject key="testuser" enableCopy="true"/>
 
    - Password : <inject key="test user Password" enableCopy="true"/>
 
-6. Run the following statement
+6. Navigate to the fabric workspace and select **warehouse3** from the list and open a **New SQL Query**
+
+7. Run the following statement
 
     ```T-SQL
     SELECT * FROM dbo.Customers;
     ```
+   ![Screenshot of uploaded files in a lakehouse.](./Images/modf569.png)  
     
-    The test user hasn't been granted UNMASK permission so data returned for the FirstName, Phone, and Email columns is masked because those columns were defined with a mask in the `CREATE TABLE` statement.
+   >**Note**: The test user hasn't been granted UNMASK permission so data returned for the FirstName, Phone, and Email columns is masked because those columns were defined with a mask in the `CREATE TABLE` statement.
 
-5. Reconnect as yourself, the Workspace Admin, and run the following T-SQL to unmask data for the test user. Replace `<username>@<your_domain>.com` with the name of the user you're testing with who is a member of the **Viewer** workspace role. 
+8. Switch back to the main browser window where you are logged in as the ODL user (Workspace Admin), and run the following T-SQL script to unmask data for the test user. Replace '<username>@<your_domain>.com' with this email address <inject key="testuser" enableCopy="true"/>, who is assigned to the Viewer workspace role.
 
     ```T-SQL
     GRANT UNMASK ON dbo.Customers TO [<username>@<your_domain>.com];
     ```
 
-6. Connect as the test user again and run the following T-SQL statement.
+   ![Screenshot of uploaded files in a lakehouse.](./Images/modf567.png)  
+
+9. Switch back to the Private browser window, where you are logged in as the test user, and run the following T-SQL statement.
 
     ```T-SQL
     SELECT * FROM dbo.Customers;
     ```
+   ![Screenshot of uploaded files in a lakehouse.](./Images/modf568.png)  
 
     The data is returned unmasked because the test user has been granted the `UNMASK` permission.
 
@@ -108,9 +120,9 @@ Row-level security (RLS) can be used to limit access to rows based on the identi
 
 In this task, you will define and enforce row-level security (RLS) policies within the data warehouse. Row-level security restricts access to specific records based on the user's identity or role, ensuring that users see only the data relevant to them, even when they query the same table.
 
-1. In the warehouse you created in the last exercise, select the **New SQL Query** dropdown and select **New SQL Query**.
+1. In the main browser window, navigate to **warehouse3**, click the **New SQL Query** dropdown, and then select **New SQL Query**.
 
-2. Create a table and insert data into it. So that you can test row-level security in a later step, replace `username1@your_domain.com` with a user name from your environment and replace `username2@your_domain.com` with your user name.
+2. Create a table and insert data into it. So that you can test row-level security in a later step, replace `username1@your_domain.com` with <inject key="testuser" enableCopy="true"/> and replace `username2@your_domain.com` with <inject key="AzureAdUserEmail"></inject>.
 
     ```T-SQL
    CREATE TABLE dbo.Sales  
@@ -132,6 +144,8 @@ In this task, you will define and enforce row-level security (RLS) policies with
     
    SELECT * FROM dbo.Sales;  
     ```
+
+   ![Screenshot of uploaded files in a lakehouse.](./Images/modf570.png)  
 
 3. Use the **&#9655; Run** button to run the SQL script, which creates a new table named **Sales** in the **dbo** schema of the data warehouse.
 
@@ -167,7 +181,8 @@ In this task, you will define and enforce row-level security (RLS) policies with
 
 6. Use the **&#9655; Run** button to run the SQL script
 7. Then, in the **Explorer** pane, expand **Schemas** > **rls** > **Functions**, and verify that the function has been created.
-8. Log in to Fabric as the user you replaced `<username1>@<your_domain>.com` with, in the Sales table `INSERT`statement. Confirm that you're logged in as that user by running the following T-SQL.
+
+8. Navigate to the Private browser window, where you already logged in as the user you replaced `<username1>@<your_domain>.com` (testuser) with, in the Sales table `INSERT`statement. Confirm that you're logged in as that user by running the following T-SQL.
 
     ```T-SQL
    SELECT USER_NAME();
@@ -185,7 +200,7 @@ Column-level security allows you to designate which users can access specific co
 
 In this task, you will implement column-level security (CLS) by controlling access to specific columns within a table. You will define permissions that allow or deny access at the column level, which is useful for protecting highly sensitive fields without restricting access to the entire dataset.
 
-1. In the warehouse you created in the earlier exercise, select the **New SQL Query** dropdown, then select **New SQL Query**.  
+1. In the main browser window, navigate to **warehouse3**, click the **New SQL Query** dropdown, and then select **New SQL Query**.
 
 2. Create a table and insert data into the table.
 
@@ -203,13 +218,13 @@ In this task, you will implement column-level security (CLS) by controlling acce
    SELECT * FROM dbo.Orders;
      ```
 
-3. Deny permission to view a column in the table. The T-SQL statement prevents `<username>@<your_domain>.com` from seeing the CreditCard column in the Orders table. In the `DENY` statement, replace `<username>@<your_domain>.com` with a user name in your system who has **Viewer** permissions on the workspace.
+3. Deny permission to view a column in the table. The T-SQL statement prevents `<username>@<your_domain>.com` from seeing the CreditCard column in the Orders table. In the `DENY` statement, replace `<username>@<your_domain>.com` with a <inject key="testuser" enableCopy="true"/> user name in your system who has **Viewer** permissions on the workspace.
 
      ```T-SQL
    DENY SELECT ON dbo.Orders (CreditCard) TO [<username>@<your_domain>.com];
      ```
 
-4. Test column-level security by logging in to Fabric as the user you denied select permissions to.
+4. Switch to the private browser window, test column-level security by logging in to Fabric as the user you denied select permissions to.
 
 5. Query the Orders table to confirm that column-level security works as expected. The following query will return only the OrderID and CustomerID columns, not the CreditCard column.  
 
@@ -229,7 +244,7 @@ Fabric has a permissions model that allows you to control access to data at the 
 
 In this task, you will apply granular SQL permissions on tables and stored procedures by using T-SQL commands such as GRANT and DENY. SQL granular permissions allow fine-tuned control over who can read, modify, or execute specific objects, adding another critical layer of security on top of workspace and database permissions.
 
-1. In the warehouse you created in the earlier exercise, select the **New SQL Query** dropdown. Under the header **Blank**, select **New SQL Query**.  
+1. In the main browser window, navigate to **warehouse3**, click the **New SQL Query** dropdown, and then select **New SQL Query**.
 
 2. Create a stored procedure and a table. Then execute the procedure and query the table.
 
