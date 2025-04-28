@@ -147,7 +147,7 @@ In this task, you will learn how to apply filters and adjust columns to customiz
 
     With the filter applied, only successful runs of dataflows are listed.
 
-    ![Screenshot of the monitoring hub with a filter applied.](./Images/monitor-filter.png)
+    ![Screenshot of the monitoring hub with a filter applied.](./Images/monitor-filter1.png)
 
 1. Use the **Column Options** button to include the following columns in the view (use the **Apply** button to apply the changes):
     - Activity name
