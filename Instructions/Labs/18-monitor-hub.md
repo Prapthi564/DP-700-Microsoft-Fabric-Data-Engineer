@@ -10,15 +10,15 @@ In this hands-on lab, you will explore how to monitor activities in Microsoft Fa
 
 In this lab, you will complete the following tasks:
 
-- Task 1: Create a lakehouse
+- **Task 1**: Create a lakehouse
 
-- Task 2: Create and monitor a Dataflow
+- **Task 2**: Create and monitor a Dataflow
 
-- Task 3: Create and monitor a Spark notebook
+- **Task 3**: Create and monitor a Spark notebook
 
-- Task 4: Monitor history for an item
+- **Task 4**: Monitor history for an item
 
-- Task 5: Customize monitoring hub views
+- **Task 5**: Customize monitoring hub views
 
 
 ### Task 1: Create a lakehouse
@@ -53,13 +53,15 @@ In Microsoft Fabric, you can use a Dataflow (Gen2) to ingest data from a wide ra
 
 In this task, you will create a Dataflow Gen2 to ingest data from a CSV file into the lakehouse. You will publish the dataflow and monitor its execution status using the monitoring hub.
 
-1. On the **Home** page for your lakehouse, in the **Get data** menu, select **New Dataflow Gen2**.
+1. On the **Home** page for your lakehouse, in the **Get data in your lakehouse** menu, select **New Dataflow Gen2**.
 
 1. A new dataflow named **Dataflow 1** is created and opened.
 
     ![Screenshot of a new dataflow.](./Images/lab5u1.png)
 
-1. At the top left of the dataflow page, select **Dataflow 1** to see its details and rename the dataflow to **Get Product Data**.
+1. At the top left of the dataflow page, select **Dataflow 1 (1)** to see its details and rename the dataflow to **Get Product Data (2)**.
+
+   ![Screenshot of a new dataflow.](./Images/lab5u02.png)
 
 1. In the dataflow designer, select **Import from a Text/CSV file**. Then complete the Get Data wizard to create a data connection by linking to `https://raw.githubusercontent.com/MicrosoftLearning/dp-data/main/products.csv (1)` using anonymous authentication. 
 
@@ -81,7 +83,7 @@ In this task, you will create a Dataflow Gen2 to ingest data from a CSV file int
 
 1. Wait for a few seconds, and then refresh the page until the status of the dataflow is **Succeeded**.
 
-1. In the navigation pane, select your lakehouse. Then expand the **Tables** folder to verify that a table named **products** has been created and loaded by the dataflow (you may need to refresh the **Tables** folder).
+1. In the navigation pane, select your **lakehouse**. Then expand the **Tables** folder to verify that a table named **products** has been created and loaded by the dataflow (you may need to refresh the **Tables** folder).
 
     ![Screenshot of the products table in the lakehouse page.](./Images/lab5u6.png)
 
@@ -95,7 +97,9 @@ In this task, you will use a Spark notebook to query the ingested data from the 
 
 1. A new notebook named **Notebook 1** is created and opened.
 
-1. At the top left of the notebook, select **Notebook 1** to view its details, and change its name to **Query Products**.
+1. At the top left of the notebook, select **Notebook 1 (1)** to view its details, and change its name to **Query Products (2)**.
+
+   ![](./Images/lab5u07.png)
 
 1. In the notebook editor, in the **Explorer** pane, select **lakehouse<inject key="DeploymentID" enableCopy="false"/>**
 
@@ -155,8 +159,10 @@ In this task, you will learn how to apply filters and adjust columns to customiz
     - End time
     - Duration
     - Refresh type
+  
+   ![](./Images/monitor-filter01.png)
 
-    You may need to scroll horizontally to see all of the columns:
+    **You may need to scroll horizontally to see all of the columns**
 
 ## Review
 
@@ -172,5 +178,5 @@ In this lab, you learned how to:
 
 - Apply filters and customize columns to optimize the monitoring experience.
 
-## Now, click on Next from the lower right corner to move on to the next lab.
+## You have successfully completed the lab. Click on Next >> to procced with next Lab.
 
