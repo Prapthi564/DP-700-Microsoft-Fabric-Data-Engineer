@@ -86,7 +86,8 @@ In this task, you add a user to a workspace role, apply permissions and, see wha
   
 1. Return to the browser window where you're logged in as the Workspace Admin. Ensure you're still on the page that shows the workspace you created. It should have your new workspace items, and the sample warehouse and lakehouse, listed at the bottom of the page.
 1. Select **Manage access** at the top right of the screen.
-1. Select **Add people or groups**. Enter the email of the second user you're testing with. Select **Add** to assign the user to the workspace **Viewer** role. 
+1. Select **Add people or groups**. Enter the email of the second user - <inject key="testuser" enableCopy="true"/>.
+ . Select **Add** to assign the user to the workspace **Viewer** role. 
 
     ![Screenshot of a new lakehouse in Fabric.](./Images/lab5u17.png)
 
@@ -116,7 +117,8 @@ In this task, you will configure item-level permissions by granting access to sp
 5. Close the **Manage access** section.
 6. In the workspace, hover over the name of your warehouse and an ellipse (**...**) will appear. Select the ellipse and select **Manage permissions**
 
-7. Select **Add user** and enter the name of the second user. 
+7. Select **Add user** and enter the email of the second user - <inject key="testuser" enableCopy="true"/>.
+ 
 8. In the box that appears, under **Additional permissions** check **Read all data using SQL (ReadData)** and uncheck all other boxes.
 
 9. Select **Grant**
@@ -135,7 +137,8 @@ OneLake data access roles let you create custom roles within a Lakehouse and gra
 
 In this task, you assign an item permission and create a OneLake data access role and experiment with how they work together to restrict access to data in a Lakehouse.  
 
-1. Stay in the browser where you're logged in as the second user.  
+1. Stay in the browser where you're logged in as the second user - <inject key="testuser" enableCopy="true"/>.
+ .  
 2. Select **OneLake** on the left navigation bar. The second user doesn't see the lakehouse.  
 3. Return to the browser where you're logged in as the Workspace Admin.
 4. Select **Workspaces** on the left menu and select your workspace. Hover over the name of the lakehouse.  
