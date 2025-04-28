@@ -88,7 +88,7 @@ In this task, you will create a table in the lakehouse using the uploaded file.
 
 In this task, you will create a data warehouse where you will store the fact and dimension tables.
 
-1. On the menu bar on the left, select **Create**. In the *New* page, under the *Data Warehouse* section, select **Warehouse**. Give it a unique name of your choice.
+1. In the left-hand menu, select **Create**. On the New page, under the Data Warehouse section, choose **Warehouse**. Enter **Warehouse2** as the name, and then click **Create**.
 
    >**Note**: If the **Create** option is not pinned to the sidebar, you need to select the ellipsis (**...**) option first.
 
