@@ -84,6 +84,9 @@ A relational data warehouse typically consists of *fact* and *dimension* tables.
 In this task, you will establish relationships between tables to create a star schema data model, improving query efficiency and enabling meaningful insights.
 
 1. In the toolbar, select the **Model layouts** button.
+
+    ![Screenshot of the data warehouse model page.](./Images/mod512.png)
+
 2. In the model pane, rearrange the tables in your data warehouse so that the **FactSalesOrder** table is in the middle, like this:
 
     ![Screenshot of the data warehouse model page.](./Images/mod6-5.png)
@@ -185,7 +188,9 @@ Instead of writing SQL code, you can use the graphical query designer to query t
 
 In this task, you will use the visual query designer to build queries graphically, without writing SQL code.
 
-1. On the **Home** menu, expand the options under **New SQL query** and select **New visual query**.
+1. On the **Home** menu, expand the options under **New SQL query (1)** and select **New visual query (2)**.
+
+   ![Screenshot of the data warehouse model page.](./Images/mod513.png)
 
 1. Drag **FactSalesOrder** onto the **canvas**. Notice that a preview of the table is displayed in the **Preview** pane below.
 
@@ -193,7 +198,7 @@ In this task, you will use the visual query designer to build queries graphicall
 
 1. Use the **(+)** button on the **FactSalesOrder** table on the canvas to **Merge queries (2)**.
 
-   ![Screenshot of the canvas with the FactSalesOrder table selected.](./Images/mod6-6.png)
+   ![Screenshot of the canvas with the FactSalesOrder table selected.](./Images/mod514.png)
 
 1. In the **Merge queries** window, select **DimProduct** as the right table for merge. Select **ProductKey** in both queries, leave the default **Left outer** join type, and click **OK**.
 
@@ -228,7 +233,13 @@ In this task, you will build a Power BI report based on the data warehouse you c
       - **ProductKey**
       - **ProductAltKey** 
 
-1. Now you're ready to build a report and make this dataset available to others. On the Reporting menu, select **New report**. This will open a new window, where you can create a Power BI report.
+   ![Screenshot of the data warehouse model page.](./Images/mod515.png)
+
+1. Now you're ready to build a report and make this dataset available to others. On the **Reporting (1)** menu, select **New report (2)** and click on **Continue** and this will open a new window, where you can create a Power BI report.
+
+   ![Screenshot of the data warehouse model page.](./Images/mod516.png)
+
+   ![Screenshot of the data warehouse model page.](./Images/mod517.png)
 
 1. In the **Data** pane, expand **FactSalesOrder**. Note that the columns you hid are no longer visible. 
 
@@ -238,7 +249,9 @@ In this task, you will build a Power BI report based on the data warehouse you c
 
     ![Screenshot of the Visualizations pane with the bar chart selected.](./Images/mod6-8.png)
 
-1. In the **Visualizations** pane, select the **Format your visual** tab and in the **General** sub-tab, in the **Title** section, change the **Text** to **Total Sales by Category**.
+1. In the **Visualizations** pane, select the **Format your visual (1)** tab and in the **General (2)** sub-tab, in the **Title** section, change the **Text** to **Total Sales by Category (3)**.
+
+   ![Screenshot of the data warehouse model page.](./Images/mod518.png)
 
 1. In the **File** menu, select **Save**. Then save the report as **Sales Report** in the workspace you created previously.
 
