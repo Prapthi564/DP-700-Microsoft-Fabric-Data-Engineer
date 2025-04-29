@@ -28,6 +28,10 @@ By the end of this lab series, you will be able to create, manage, and secure a 
 - Familiarity with writing and executing T-SQL queries
 - General knowledge of data loading, transformation, and reporting workflows
 
+## Architecture Diagram
+
+ ![](../Images/dparc4.png)
+
 # Getting Started with lab
  
 Welcome to your DP-700: Microsoft Fabric Data Engineer Workshop! We've prepared a seamless environment for you to explore and learn about data engineering concepts and related Microsoft Fabric services. Let's begin by making the most of this experience:
