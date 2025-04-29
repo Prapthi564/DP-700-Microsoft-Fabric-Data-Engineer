@@ -24,6 +24,32 @@ By the end of this lab series, you will be able to monitor activity in Microsoft
 - Familiarity with workspace and item-level access controls in cloud-based data platforms
 - General knowledge of CI/CD concepts and deployment workflows
 
+## Architecture
+
+In this hands-on lab, the architecture flow includes several essential components.
+
+1. **Monitor Fabric Activity in the Monitoring Hub**:
+This involves using the Monitoring Hub in Microsoft Fabric to track and manage the execution of lakehouses, dataflows, notebooks, and other artifacts. The architecture focuses on centralized activity logging, enabling users to customize views and efficiently monitor large volumes of operational data.
+
+1. **Secure Data Access in Microsoft Fabric**:
+This focuses on applying multiple layers of security, including workspace access controls, item-level permissions, and OneLake data access roles to protect sensitive data. The architecture demonstrates how permissions are enforced across lakehouses, data warehouses, and other components to control access effectively.
+
+1. **Implement Deployment Pipelines in Microsoft Fabric**:
+This highlights automating content promotion across Development, Test, and Production environments using deployment pipelines. The architecture illustrates workspace separation for each environment, content flow through various stages, and version management to ensure streamlined validation and deployment processes.
+
+## Architecture Diagram
+
+ ![](../Images/dparc-5.png)
+
+## Explanation of Components
+
+1. **Monitoring Hub**: A centralized dashboard in Microsoft Fabric that provides detailed logs and activity insights for artifacts like notebooks, pipelines, and dataflows, helping users track executions and troubleshoot issues efficiently.
+
+1. **Workspace Access Controls**: Security settings that manage user permissions at the workspace level, allowing administrators to define roles and control access to shared resources.
+
+1. **Deployment Pipelines**: A structured mechanism to automate content promotion across Development, Test, and Production stages, ensuring governance, version control, and streamlined validation of updates in Microsoft Fabric.
+
+
 # Getting Started with lab
  
 Welcome to your DP-700: Microsoft Fabric Data Engineer Workshop! We've prepared a seamless environment for you to explore and learn about data engineering concepts and related Microsoft Fabric services. Let's begin by making the most of this experience:
