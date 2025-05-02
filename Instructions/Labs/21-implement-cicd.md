@@ -58,9 +58,9 @@ In this task, you will assign the previously created workspaces to their respect
 
 1. On the left menu bar, select the **pipeline** you created.
    
-3. In the window that appears, select the **dropdown** under the **Add content to this stage** for each deployment stage and select the name of the **workspace** that matches the name of the stage.
+3. In the window that appears, select the **dropdown** under the **Add content to this stage** for each deployment stage and select the name of the **workspace** that matches the name of the stage and click on **correct** symbol next to the dropdown to assign the workspace.
 
-   ![.](./Images/deployment-pipeline1.png)
+   ![.](./Images/deployment-pipeline12.png)
 
 ### Task 4: Create content
 
@@ -80,11 +80,11 @@ In this task, you will create a lakehouse named LabLakehouse in the Development 
 
     ![Screenshot of a new lakehouse in Fabric.](./Images/lab5u14.png)
 
-12. In the menu bar on the left, select the pipeline you created, then **toggle off (1)** New Deployment Pipelines to disable the feature.
+12. In the menu bar on the left, select the **pipeline<inject key="DeploymentID" enableCopy="false"/>** you created, then **toggle off (1)** **New Deployment Pipelines** to disable the feature.
     
 14. In the **Development** stage, select the **>** until you see **Lakehouses**. The lakehouse shows up as new content in the Development stage. Between the **Development** and **Test** stages, there's an orange **X** within a circle. The orange **X** indicates that the Development and Test stages aren't synchronized.
     
-16. Select the downward arrow below the orange **X** to compare the content in the Development and Test environments. Select **Compare (1)**.The LabLakehouse only exists in the Development stage.  
+16. Select the downward arrow below the orange **X** to compare the content in the Development and Test environments. Select **Compare (2)**.The LabLakehouse only exists in the Development stage.  
 
   ![Screenshot the deployment pipeline showing content mismatches between stages.](./Images/lab5u20.png)
 
@@ -93,15 +93,32 @@ In this task, you will create a lakehouse named LabLakehouse in the Development 
 In this task, you will use the deployment pipeline to move the lakehouse content from Development to Test, and then to Production, verifying the synchronization at each stage.
 
 Deploy the lakehouse from the **Development** stage to the **Test** and **Production** stages.
-1. Select the **Deploy (2)** button in the **Development** stage of the pipeline to copy the lakehouse in its current state to the text stage. 
-2. In the **Deploy to next stage** window, select **Deploy**.
-3. There is an orange X between the Test and Production stages. Select the downward facing arrow below the orange X. The lakehouse exists in the Development and Test stages but not yet in the Production stage.
-4. In the **Test** stage, select **Deploy**.
-5. In the **Deploy to next stage** window, select **Deploy**. The green check mark between the stages indicates that all stages in sync and contain the same content.
-6. Using deployment pipelines to deploy between stages also updates the content in the workspaces corresponding to the deployment stage. Let's confirm.
-7. In the menu bar on the left, select **Workspaces**.
-8. Select the **Test** workspace. The lakehouse was copied there.
-9. Open the **Production** workspace from the **Workspaces** icon on the left menu. The lakehouse was copied to the Production workspace too.
+
+1. Select the **Deploy (3)** button in the **Development** stage of the pipeline to copy the lakehouse in its current state to the text stage.
+
+3. If a pop-up appears stating **"Workspace includes unsupported items"**, click **Continue** to proceed. In the **Deploy to next stage** window, select **Deploy** to initiate the deployment.
+
+   ![](./Images/lab5u201.png)
+
+   ![](./Images/lab5u202.png)
+   
+5. There is an **orange X** between the Test and Production stages. Select the **downward facing arrow** below the orange X. The lakehouse exists in the Development and Test stages but not yet in the Production stage.
+   
+7. In the **Test** stage, select **Deploy**.
+   
+9. In the **Deploy to next stage** window, select **Deploy**. The green check mark between the stages indicates that all stages in sync and contain the same content.
+    
+11. Using deployment pipelines to deploy between stages also updates the content in the workspaces corresponding to the deployment stage. Let's confirm.
+    
+13. In the menu bar on the left, select **Workspaces**.
+    
+15. Select the **Test<inject key="DeploymentID" enableCopy="false"/>** workspace. The lakehouse was copied there.
+
+    ![](./Images/lab5u203.png)
+    
+17. Open the **Production<inject key="DeploymentID" enableCopy="false"/>** workspace from the **Workspaces** icon on the left menu. The lakehouse was copied to the Production workspace too.
+
+    ![](./Images/lab5u204.png)
 
 ## Review
 
