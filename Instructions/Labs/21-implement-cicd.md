@@ -10,26 +10,24 @@ In this hands-on lab, you will implement deployment pipelines in Microsoft Fabri
 
 In this lab, you will complete the following tasks:
 
-- Task 1: Create a data warehouse
+- **Task 1**: Create a data warehouse
 
-- Task 2: Create a lakehouse
+- **Task 2**: Create a lakehouse
 
-- Task 3: Apply workspace access controls
+- **Task 3**: Apply workspace access controls
 
-- Task 4: Apply item access control
+- **Task 4**: Apply item access control
 
-- Task 5: Apply OneLake data access roles in a Lakehouse
+- **Task 5**: Apply OneLake data access roles in a Lakehouse
 
 ### Task 1: Create workspaces
 
 In this task, you will create three workspaces in Microsoft Fabric — Development, Test, and Production — with Fabric capacity enabled.
 
 1. In the menu bar on the left, select **Workspaces** (the icon looks similar to &#128455;).
-1. Create a new workspace named Development, selecting a licensing mode that includes Fabric capacity (*Trial*, *Premium*, or *Fabric*).
-1. Repeat steps 1 & 2, creating two more workspaces named Test, and Production. Your workspaces are: Development, Test, and Production.
-1. Select the **Workspaces** icon on the menu bar on the left and confirm that there are three workspaces named:  Development, Test, and Production
-
-   > **Note**: If you are prompted to enter a unique name for the workspaces, append one or more random numbers to the words: Development, Test, or Production.
+1. Create a new workspace named **Development<inject key="DeploymentID" enableCopy="false"/>**, selecting a licensing mode that includes Fabric capacity (*Trial*, *Premium*, or *Fabric*).
+1. Repeat **steps 1 & 2**, for creating **two** more workspaces named **Test<inject key="DeploymentID" enableCopy="false"/>**, and **Production<inject key="DeploymentID" enableCopy="false"/>**. Your workspaces are: Development<inject key="DeploymentID" enableCopy="false"/>, Test<inject key="DeploymentID" enableCopy="false"/>, and Production<inject key="DeploymentID" enableCopy="false"/>.
+1. Select the **Workspaces** icon on the menu bar on the left and confirm that there are three workspaces named:  Development<inject key="DeploymentID" enableCopy="false"/>, Test<inject key="DeploymentID" enableCopy="false"/>, and Production<inject key="DeploymentID" enableCopy="false"/>.
 
 ### Task 2: Create a deployment pipeline
 
