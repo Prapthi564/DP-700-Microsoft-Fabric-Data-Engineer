@@ -195,7 +195,7 @@ In this task, you will modify your existing pipeline to include the notebook you
 
 9. In the **Explorer** pane, expand **Tables** and select the **new_sales** table to see a preview of the data it contains. This table was created by the notebook when it was run by the pipeline.
 
-    ![Screenshot of a pipeline with a Dataflow activity.](./Images/md43.png)
+    ![Screenshot of a pipeline with a Dataflow activity.](./Images/md43nn.png)
 
 ### Review    
 
