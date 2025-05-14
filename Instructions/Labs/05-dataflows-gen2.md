@@ -38,8 +38,6 @@ In this task, you will create a Dataflow (Gen2) in Microsoft Fabric to ingest da
 
    ![New dataflow.](./Images/md47.png)
 
-   ![Query in the Power Query editor.](./Images/power-query.png)
-
 4. On the toolbar ribbon, select the **Add column (1)** tab. Then select **Custom column (2)** and create a new column.
 
 5. Set the *New column name* to  `MonthNo` (3) , set the *Data type* to **Whole Number (4)** and then add the following formula: `Date.Month([OrderDate])` (5) - as shown here:
