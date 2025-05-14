@@ -1,4 +1,4 @@
-# Lab 6: Work with data in a Microsoft Fabric eventhouse
+# Lab 3: Work with data in a Microsoft Fabric eventhouse
 
 ## Estimated Duration: 30 minutes
 
