@@ -180,16 +180,11 @@ The DataFrame object provides additional functionality such as the ability to fi
 1. Add the following code which filters the data so that only two columns are returned. It also uses *count* and *distinct* to summarize the number of records:
 
     ```python
-    # Select only 'CustomerName' and 'Email' columns
-    customers = df.select('CustomerName', 'Email')
-    
-    # Display the total number of records
+    customers = df['CustomerName', 'Email']
+
     print(customers.count())
-    
-    # Display the number of distinct records
     print(customers.distinct().count())
-    
-    # Display the distinct records
+
     display(customers.distinct())
     ```
 1. Run the code, and examine the output:
