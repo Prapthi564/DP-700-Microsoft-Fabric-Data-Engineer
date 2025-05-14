@@ -22,18 +22,6 @@
       {
         "RawFilePath": "https://raw.githubusercontent.com/CloudLabs-MOC/DP-700-Microsoft-Fabric-Data-Engineer/refs/heads/Prod/Instructions/Labs/05-dataflows-gen2.md",
         "Order": 5
-      },
-      {
-        "RawFilePath": "https://raw.githubusercontent.com/CloudLabs-MOC/DP-700-Microsoft-Fabric-Data-Engineer/refs/heads/Prod/Instructions/Labs/07-real-time-Intelligence.md",
-        "Order": 6
-      },
-      {
-        "RawFilePath": "https://raw.githubusercontent.com/CloudLabs-MOC/DP-700-Microsoft-Fabric-Data-Engineer/refs/heads/Prod/Instructions/Labs/09-real-time-analytics-eventstream.md",
-        "Order": 7
-      },
-      {
-        "RawFilePath": "https://raw.githubusercontent.com/CloudLabs-MOC/DP-700-Microsoft-Fabric-Data-Engineer/refs/heads/Prod/Instructions/Labs/12-query-data-in-kql-database.md",
-        "Order": 8
       }
     ]
   }
