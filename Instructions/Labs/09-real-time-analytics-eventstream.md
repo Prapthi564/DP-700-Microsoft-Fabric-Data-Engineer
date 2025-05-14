@@ -1,6 +1,6 @@
 # Lab 2: Ingest real-time data with Eventstream in Microsoft Fabric
 
-## Estimated Duration: 60 Minutes 
+## Estimated Duration: 45 Minutes 
 
 In this lab, you will use Microsoft Fabric's Eventstream feature to ingest and process real-time data related to a city bike-share system. You'll connect to a sample streaming data source that emits events about bicycle collection points, apply transformations, and route the processed data to various destinations. This lab demonstrates how Eventstream enables real-time analytics by capturing and handling live event data efficiently within Microsoft Fabric.
 
