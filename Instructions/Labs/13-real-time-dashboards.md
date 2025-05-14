@@ -1,117 +1,25 @@
-# Lab 1: Get started with Real-Time Dashboards in Microsoft Fabric
+# Lab 4: Get started with Real-Time Dashboards in Microsoft Fabric
 
-## Estimated Duration: 75 minutes
+## Estimated Duration: 30 minutes
 
 Real-time dashboards in Microsoft Fabric enable you to visualize and explore streaming data using the Kusto Query Language (KQL).   
                          
-In this hands-on lab, you will build an end-to-end real-time data streaming solution. You will start by creating an eventhouse and an eventstream to manage and process incoming data. You will then add a data source and configure a destination to route the processed data appropriately. After setting up the streaming infrastructure, you will create a real-time dashboard to visualize the data, including building a base query, adding parameters for dynamic insights, and customizing the dashboard with additional pages. Finally, you will configure auto-refresh settings to keep the data current and learn how to save and share the dashboard for collaboration.
+In this hands-on lab, you will build an end-to-end real-time data streaming solution. Using the bicycle-eventhouse and bicycle-data event streams, you will create a dynamic real-time dashboard to visualize incoming data. The lab includes crafting a base query, incorporating parameters for interactive insights, and customizing the dashboard with additional pages. You will also configure auto-refresh settings to ensure up-to-date information and explore how to save and share the dashboard for effective collaboration.
 
 ## Lab Objectives
 
 In this lab, you will complete the following tasks:
 
-- Task 1: Create an eventhouse
-- Task 2: Create an eventstream
-- Task 3: Add a source
-- Task 4: Add a destination
-- Task 5: Create a real-time dashboard
-- Task 6: Create a base query
-- Task 7: Add a parameter
-- Task 8: Add a page
-- Task 9: Configure auto refresh
-- Task 10: Save and share the dashboard
+- Task 1: Create a real-time dashboard
+- Task 2: Create a base query
+- Task 3: Add a parameter
+- Task 4: Add a page
+- Task 5: Configure auto refresh
+- Task 6: Save and share the dashboard
 
-## Task 1: Create an eventhouse
+### Task 1: Create a real-time dashboard
 
-In this task, you will create an eventhouse, which serves as the foundation for organizing and storing your streaming data.
-
-1. In the workspace, select **+ New item (1)**. In the *New item* pane, select **Eventhouse (2)**.
-
-   ![Screenshot of alert settings.](./Images/md83.png)
-
-1. Enter **BicycleEventhouse (1)** in the name field and select **Create (2)**
-
-    ![Screenshot of alert settings.](./Images/md84.png)
-
-1. Close any tips or prompts that are displayed until you see your new empty eventhouse.
-
-1. In the pane on the left, note that your eventhouse contains a KQL database with the same name as the eventhouse.
-
-1. Select the KQL database to view it.
-
-    ![Screenshot of alert settings.](./Images/md85.png)
-
-    >**Note**: Currently there are no tables in the database. In the rest of this exercise you'll use an eventstream to load data from a real-time source into a table.
-
-## Task 2: Create an eventstream
-
-In this task, you will set up an eventstream within the eventhouse to define how incoming events are processed and managed.
-
-1. In the main page of your **KQL database (1)**, select **Get data (2)**.
-
-2. For the data source, select **Eventstream (3)** > **New eventstream (4)**. Name the Eventstream `Bicycle-data` (5) and click on **Create (6)**.
-
-   >**Note**: The creation of your new event stream in the workspace will be completed in just a few moments. Once established, you will be automatically redirected to the primary editor, ready to begin integrating sources into your event stream.
-
-    ![Screenshot of alert settings.](./Images/md86.png)
-
-    ![Screenshot of alert settings.](./Images/md87.png)
-
-    ![Screenshot of a new eventstream.](./Images/md88.png)
-
-### Task 3: Add a source
-
-In this task, you will configure a data source for your eventstream to ingest real-time data from an external system.
-
-1. In the Eventstream canvas, select **Use sample data**.
-
-2. Name the source `Bicycles` (1), and select the **Bicycles (2)** sample data and select **Add (3)**
-
-    ![Screenshot of a new eventstream.](./Images/md89.png)
-
-   >**Note**: Your stream will be mapped and you will be automatically displayed on the **eventstream canvas**.
-
-   ![Review the eventstream canvas](./Images/md90.png)
-
-### Task 4: Add a destination
-
-In this task, you will set up a destination that will receive the processed data from the eventstream for storage, analysis, or further processing.
-
-1. Select the **Transform events or add destination (1)** tile and search for **Eventhouse (2)**.
-
-   ![Review the eventstream canvas](./Images/md91.png)
-
-1. In the **Eventhouse** pane, configure the following setup options.
-
-   - **Data ingestion mode:**: Event processing before ingestion (1)
-   - **Destination name:** `bikes-table` (2)
-   - **Workspace:** fabric-<inject key="DeploymentID" enableCopy="false"/> (3)
-   - **Eventhouse**: BicycleEventhouse (4)
-   - **KQL database:** BicycleEventhouse (5)
-   - **Destination table:** Create a new table named `bikes` 
-   - **Input data format:** JSON (9)
-
-   ![Eventstream destination settings.](./Images/md93.png)
-
-   ![Eventstream destination settings.](./Images/md94.png)
-
-   ![Eventstream destination settings.](./Images/md92.png)
-
-1. In the **Eventhouse** pane, select **Save (10)**
-
-1. On the toolbar, select **Publish**.
-
-   ![Eventstream destination settings.](./Images/md95.png)
-
-1. Wait a minute or so for the data destination to become active. Then select the **bikes-table** node in the design canvas and view the **Data preview** pane underneath to see the latest data that has been ingested:
-
-   ![Eventstream destination settings.](./Images/md96.png)
-
-1. Wait a few minutes and then use the **Refresh** button to refresh the **Data preview** pane. The stream is running perpetually, so new data may have been added to the table.
-
-### Task 5: Create a real-time dashboard
-
-In this task, you will create a real-time dashboard to visualize and monitor the data flowing through your eventstream.
+In this task, you will create a real-time dashboard to visualize and monitor the data flowing through your eventstream
 
 1. In the menu bar on the left, select **+ create** to create a new **Real-Time Dashboard** named `bikes-dashboard`.
 
@@ -202,7 +110,7 @@ In this task, you will create a real-time dashboard to visualize and monitor the
 
    ![A screenshot of a dashboard with a chart and a map.](./Images/md2-49.png)
 
-### Task 6: Create a base query
+### Task 2: Create a base query
 
 Your dashboard contains two visuals that are based on similar queries. To avoid duplication and make your dashboard more maintainable, you can consolidate the common data into a single *base query*.
 
@@ -243,7 +151,7 @@ In this task, you will design a base query to retrieve and structure the data th
 
 1. Apply the changes and verify that the map still displays data for all neighborhoods.
 
-### Task 7: Add a parameter
+### Task 3: Add a parameter
 
 Your dashboard currently shows the latest bike, dock, and location data for all neighborhoods. Now lets add a parameter so you can select a specific neighborhood.
 
@@ -297,7 +205,7 @@ In this task, you will add a parameter to your base query to enable dynamic filt
 
 1. Select **Reset** to remove the selected parameter filters.
 
-### Task 8: Add a page
+### Task 4: Add a page
 
 Your dashboard currently consists of a single page. You can add more pages to provide more data.
 
@@ -318,7 +226,7 @@ In this task, you will add an additional page to your dashboard to organize diff
 
    ![img](./Images/md2-52.png)
 
-### Task 9: Configure auto refresh
+### Task 5: Configure auto refresh
 
 Users can manually refresh the dashboard, but it may be useful to have it automatically refresh the data at a set interval.
 
@@ -334,7 +242,7 @@ In this task, you will configure the dashboard’s auto-refresh settings to ensu
 
 1. Apply the auto refresh settings.
 
-### Task 10: Save and share the dashboard
+### Task 6: Save and share the dashboard
 
 Now you have a useful dashboard, you can save it and share it with other users.
 
@@ -354,10 +262,6 @@ In this task, you will save your dashboard and configure sharing settings to col
 
 In this lab, you learned how to:
 
-- Create and configure an eventhouse for managing real-time event data.
-- Set up an eventstream to process and organize incoming events.
-- Add a source to ingest real-time data into the eventstream.
-- Add a destination to route processed data for storage or further analysis.
 - Create a real-time dashboard to visualize streaming data.
 - Build a base query to retrieve and structure dashboard data.
 - Add parameters to make dashboard queries dynamic and interactive.
