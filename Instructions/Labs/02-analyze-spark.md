@@ -175,20 +175,20 @@ The DataFrame object provides additional functionality such as the ability to fi
 
 ### Filter a DataFrame
 
-1. Add a code cell by selecting **+ Code** which appears when you hover the mouse above or below the current cell or its output. Alternatively, from the ribbon menu select **Edit** and **+ Add code cell below**.
+1. Add a code cell by selecting **+ Code** which appears when you hover the mouse above or below the current cell or its output. Alternatively, from the ribbon menu select **Edit** and then **+ Add code cell below**.
 
-1.	Add the following code which filters the data so that only two columns are returned. It also uses *count* and *distinct* to summarize the number of records:
+2. Add the following code which filters the data so that only two columns are returned. It also uses *count* and *distinct* to summarize the number of records:
 
     ```python
     # Select only 'CustomerName' and 'Email' columns
     customers = df.select('CustomerName', 'Email')
-   
+    
     # Display the total number of records
     print(customers.count())
-   
+    
     # Display the number of distinct records
     print(customers.distinct().count())
-   
+    
     # Display the distinct records
     display(customers.distinct())
     ```
