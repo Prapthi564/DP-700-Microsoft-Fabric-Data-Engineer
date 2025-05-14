@@ -192,10 +192,9 @@ The DataFrame object provides additional functionality such as the ability to fi
     * The code creates a new DataFrame called **customers** which contains a subset of columns from the original **df** DataFrame. When performing a DataFrame transformation you do not modify the original DataFrame, but return a new one.
     * Another way of achieving the same result is to use the select method:
 
-    ```
-    customers = df.select("CustomerName", "Email")
-    ```
-
+      ```
+      customers = df.select("CustomerName", "Email")
+      ```
     * The DataFrame functions *count* and *distinct* are used to provide totals for the number of customers and unique customers.
 
 4. Modify the first line of the code (1) by using *select* with a *where* function as follows:
