@@ -127,7 +127,6 @@ In this lab, you have completed the following tasks:
 - Added data destination for Dataflow
 - Added a dataflow to a pipeline 
 
-## Now, click on Next from the lower right corner to move on to the next lab.
-
+## You have successfully completed the lab.
 
 
