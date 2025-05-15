@@ -1,7 +1,7 @@
 
 # Lab 2: Ingest data with a pipeline in Microsoft Fabric
 
-## Estimated duration: 75 minutes
+## Estimated duration: 45 minutes
 
 In this lab, you will learn how to ingest data into a Microsoft Fabric lakehouse using pipelines—an essential skill for building cloud-scale analytics solutions. A data lakehouse is a common analytical data store, and one of the core responsibilities of a data engineer is to manage the ingestion of data from multiple operational sources into this environment. You will implement *extract, transform, and load* (ETL) or *extract, load, and transform* (ELT) solutions by creating pipelines in Fabric.
 
