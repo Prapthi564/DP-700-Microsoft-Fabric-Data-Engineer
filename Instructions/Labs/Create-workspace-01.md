@@ -15,13 +15,13 @@ In this lab, you will be able to complete the following tasks:
 
 In this task, you will initiate your 60-day free trial of Microsoft Fabric by signing up through the Fabric app, providing access to its comprehensive suite of data integration, analytics, and visualization tools
 
-1. Open the **Microsoft Edge** browser in the LabVM, navigate to the following URL, and click on **Try for Free**:  
+1. Open the **Microsoft Edge** browser in the LabVM, navigate to the following URL  
 
    ```
-   https://www.microsoft.com/en-in/microsoft-fabric/getting-started
+   https://app.fabric.microsoft.com/home?experience=fabric-developer
    ```
 
-1. You'll see the **Sign into Microsoft Fabric** tab. Here, enter your credentials:
+1. Enter your credentials:
  
    - **Email/Username:** <inject key="AzureAdUserEmail"></inject>
  
