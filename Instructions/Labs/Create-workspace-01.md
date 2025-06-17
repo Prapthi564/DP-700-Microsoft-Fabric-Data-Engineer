@@ -61,7 +61,7 @@ In this task, you will create a Fabric workspace. The workspace contains all the
 
    - **Name:** Enter **fabric-<inject key="DeploymentID" enableCopy="false"/>** (1)
 
-    ![New Workspace](./Images/md7.png)
+    ![New Workspace](./Images/dpp1.png)
 
 1. Under **License mode**, select the **Trial (1)** and click on **Apply (2)**
 
