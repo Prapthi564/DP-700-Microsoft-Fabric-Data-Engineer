@@ -241,27 +241,27 @@ Using the SQL magic command you can use SQL syntax instead of Pyspark. Here you 
 1. Add a new code cell, and run the following code to create and display the temporary view:
 
     ```python
-    %%sql
-    -- Create a temporary view
-    CREATE OR REPLACE TEMPORARY VIEW products_view
-    AS
-        SELECT Category, COUNT(*) AS NumProducts, MIN(ListPrice) AS MinPrice, MAX(ListPrice) AS MaxPrice, AVG(ListPrice) AS AvgPrice
-        FROM products
-        GROUP BY Category;
+   %%sql
+   -- Create a temporary view
+   CREATE OR REPLACE TEMPORARY VIEW products_view
+   AS
+       SELECT Category, COUNT(*) AS NumProducts, MIN(ListPrice) AS MinPrice, MAX(ListPrice) AS MaxPrice, AVG(ListPrice) AS AvgPrice
+       FROM products
+       GROUP BY Category;
 
-    SELECT *
-    FROM products_view
-    ORDER BY Category;    
+   SELECT *
+   FROM products_view
+   ORDER BY Category;    
     ```
 
 2. Add a new code cell, and run the following code to return the top 10 categories by number of products:
 
     ```python
-    %%sql
-    SELECT Category, NumProducts
-    FROM products_view
-    ORDER BY NumProducts DESC
-    LIMIT 10;
+   %%sql
+   SELECT Category, NumProducts
+   FROM products_view
+   ORDER BY NumProducts DESC
+   LIMIT 10;
     ```
 
 3. When the data is returned, select the **Chart** view to display a bar chart.
@@ -273,10 +273,10 @@ Alternatively, you can run a SQL query using PySpark.
 4. Add a new code cell, and run the following code:
 
     ```python
-    from pyspark.sql.functions import col, desc
+   from pyspark.sql.functions import col, desc
 
-    df_products = spark.sql("SELECT Category, MinPrice, MaxPrice, AvgPrice FROM products_view").orderBy(col("AvgPrice").desc())
-    display(df_products.limit(6))
+   df_products = spark.sql("SELECT Category, MinPrice, MaxPrice, AvgPrice FROM products_view").orderBy(col("AvgPrice").desc())
+   display(df_products.limit(6))
     ```
 
 ### Task 10: Use Delta tables for streaming data

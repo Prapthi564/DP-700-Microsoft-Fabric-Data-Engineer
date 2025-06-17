@@ -23,23 +23,37 @@ In this task, you will create a lakehouse to organize and analyze your data file
 
 1. Return to your workspace and click the **+ New item (1)** icon.  
 
-2. On the **All items** page, scroll down to the **Store data** section and select **Lakehouse (2)**.  
+1. On the **All items** page, scroll down to the **Store data** section and select **Lakehouse (2)**.  
 
    ![Screenshot of uploaded files in a lakehouse.](./Images/md10.png)  
 
-3. Provide the following details to create a **Lakehouse**:  
+1. Provide the following details to create a **Lakehouse** and then click on **Create (2)** to proceed.
 
-   - **Name:** Enter **lakehouse<inject key="DeploymentID" enableCopy="false"/>**  
+   - **Name:** Enter **lakehouse<inject key="DeploymentID" enableCopy="false"/> (1)**  
 
-4. Click **Create** to proceed.  
+     ![Screenshot of uploaded files in a lakehouse.](./Images/dpp2.png)     
 
-5. Once inside the **Lakehouse**, navigate to the **Files** folder in the **Explorer** pane. Click the **ellipses (1)** menu, select **Upload (2)**, and then choose **Upload folder (3)**.  
+1. Once inside the **Lakehouse**, navigate to the **Files** folder in the **Explorer** pane. Click the **ellipses (1)** menu, select **Upload (2)**, and then choose **Upload folder (3)**.  
 
    ![Screenshot of uploaded files in a lakehouse.](./Images/md11.png)  
 
-6. Upload the **orders** folder from **C:\LabFiles\files\** to the **Lakehouse**.  
+1. Click on the **Folder (1)** icon, navigate to `C:\LabFiles\files` **(2)**, select **Orders (3)** folder and then select **Upload (4)**.  
 
-7. After the upload is complete, expand the **Files** section, select the **orders (1)** folder, and verify that the **CSV files (2)** have been successfully uploaded, as shown below:  
+   ![Screenshot of uploaded files in a lakehouse.](./Images/dpp3.png)
+
+1. Click on **Upload**.
+
+   ![Screenshot of uploaded files in a lakehouse.](./Images/dpp4.png)
+
+1. Click on **Upload** again.
+
+   ![Screenshot of uploaded files in a lakehouse.](./Images/dpp5.png)
+
+1. Close the Upload file page.
+
+   ![Screenshot of uploaded files in a lakehouse.](./Images/dpp6.png)
+
+1. After the upload is complete, expand the **Files** section, select the **orders (1)** folder, and verify that the **CSV files (2)** have been successfully uploaded, as shown below:  
 
    ![Screen picture of CSV files uploaded to a new Fabric workspace.](Images/md12.png)  
 
@@ -47,19 +61,33 @@ In this task, you will create a lakehouse to organize and analyze your data file
 
 In this task, you will create a notebook to work with data in Apache Spark. Notebooks provide an interactive environment where you can write and run code in multiple languages, while also allowing you to add notes for documentation.
 
-1. Select your workspace, then select **+ New item** and **Notebook**. After a few seconds, a new notebook containing a single cell will open. Notebooks are made up of one or more cells that can contain code or markdown (formatted text).
+1. Select your workspace **fabric-<inject key="DeploymentID" enableCopy="false"/>** from the left bar.
 
-   ![Enter Your Username](./Images/md13.png)
+   ![Enter Your Username](./Images/dpp7.png)
 
-1. Fabric assigns a name to each notebook you create, such as Notebook 1, Notebook 2, etc. Click the name panel above the **Home** tab on the menu to change the name to something more descriptive.
+1. Then select **+ New item (1)**, search for **Notebook (2)** and **Notebook (3)**.
+
+   ![Enter Your Username](./Images/dpp8.png)
+
+1. After a few seconds, a new notebook containing a single cell will open. Notebooks are made up of one or more cells that can contain code or markdown (formatted text).
+
+1. Fabric assigns a name to each notebook you create, such as Notebook 1, Notebook 2, etc. Click the name panel above the **Home** tab.
+
+   ![Enter Your Username](./Images/dpp9.png)
+
+1. On the menu to change the name to **Notebook<inject key="DeploymentID" enableCopy="false"/>**.
+
+   ![Enter Your Username](./Images/dpp10.png)
 
 1. Select the first cell (which is currently a code cell), and then in the top-right tool bar, use the **M↓** button to convert it to a markdown cell. The text contained in the cell will then be displayed as formatted text.
 
    ![Enter Your Username](./Images/md14.png)
 
+1. Use the 🖉 (Edit) button to switch the cell to editing mode.   
+
    ![Enter Your Username](./Images/md15.png)
 
-1. Use the 🖉 (Edit) button to switch the cell to editing mode, then modify the markdown as shown below.
+1. Then modify the markdown as shown below.
 
     ```markdown
    # Sales order data exploration
@@ -77,16 +105,27 @@ In this task, you will create a DataFrame using PySpark to begin working with yo
 >[!NOTE]
 > Fabric notebooks support multiple programming languages including Scala, R, and Spark SQL.
 
-1. Select your workspace from the left bar. You will see a list of items contained in the workspace including your lakehouse and notebook.
+1. Select your workspace **fabric-<inject key="DeploymentID" enableCopy="false"/>** from the left bar.
+
+   ![Enter Your Username](./Images/dpp7.png)
+
+1. You will see a list of items contained in the workspace including your lakehouse and notebook.
 
    ![Enter Your Username](./Images/md17.png)
 
-2. Select the lakehouse to display the Explorer pane, including the **orders (1)** folder.
-3. From the top menu, select **Open notebook (2)**, **Existing notebook (3)**, and then open the notebook you created earlier. The notebook should now be open next to the Explorer pane. Expand Lakehouses, expand the Files list, and select the orders folder. The CSV files that you uploaded are listed next to the notebook editor, like this:
+1. Select the lakehouse to display the Explorer pane.
+
+   ![Enter Your Username](./Images/dpp11.png)
+
+1. Including the **orders (1)** folder. From the top menu, select **Open notebook (2)**, **Existing notebook (3)**, and then open the notebook you created earlier. The notebook should now be open next to the Explorer pane. Expand Lakehouses, expand the Files list, and select the orders folder. The CSV files that you uploaded are listed next to the notebook editor, like this:
 
    ![Enter Your Username](./Images/md18.png)
 
-4. From the **… (1)** menu for 2019.csv, select **Load data (2)** > **Spark (3)**. The following code is automatically generated in a new code cell:
+1. Select **Notebook<inject key="DeploymentID" enableCopy="false"/> (1)** and then click on **Open (2)**.
+
+   ![Enter Your Username](./Images/dpp12.png)
+
+1. From the **… (1)** menu for 2019.csv, select **Load data (2)** > **Spark (3)**. The following code is automatically generated in a new code cell:
 
    ![Enter Your Username](./Images/md19.png)
 
@@ -96,26 +135,27 @@ In this task, you will create a DataFrame using PySpark to begin working with yo
     display(df)
     ```
 
->[!TIP]
-> You can hide the Lakehouse explorer panes on the left by using the « icons. This gives more space for the notebook.
+     >**Note**: You can hide the Lakehouse explorer panes on the left by using the « icons. This gives more space for the notebook.
 
-5. Select ▷ **Run cell (1)** to the left of the cell to run the code.
+1. Select ▷ **Run cell (1)** to the left of the cell to run the code.
 
    >**Note**: The first time you run Spark code, a Spark session is started. This can take a few seconds or longer. Subsequent runs within the same session will be quicker.
 
-6. When the cell code has completed, review the **output (2)** below the cell, which should look like this:
+1. When the cell code has completed, review the **output (2)** below the cell, which should look like this:
  
     ![Screen picture showing auto generated code and data.](Images/md20.png)
 
-7. The output shows data from the 2019.csv file displayed in columns and rows.  Notice that the column headers contain the first line of the data. To correct this, you need to modify the first line of the code as follows:
+1. The output shows data from the 2019.csv file displayed in columns and rows.  Notice that the column headers contain the first line of the data. To correct this, you need to modify the first line of the code as follows:
 
     ```python
     df = spark.read.format("csv").option("header","false").load("Files/orders/2019.csv")
     ```
 
-8. Run the code again, so that the DataFrame correctly identifies the first row as data. Notice that the column names have now changed to _c0, _c1, etc.
+1. Run the code again, so that the DataFrame correctly identifies the first row as data. Notice that the column names have now changed to `_c0, _c1`, etc.
 
-9. Descriptive column names help you make sense of data. To create meaningful column names, you need to define the schema and data types. You also need to import a standard set of Spark SQL types to define the data types. Replace the existing code with the following:
+    ![Screen picture showing auto generated code and data.](Images/dpp13.png)
+
+1. Descriptive column names help you make sense of data. To create meaningful column names, you need to define the schema and data types. You also need to import a standard set of Spark SQL types to define the data types. Replace the existing code with the following:
 
     ```python
     from pyspark.sql.types import *
@@ -137,11 +177,11 @@ In this task, you will create a DataFrame using PySpark to begin working with yo
     display(df)
     ```
     
-10. Run the cell and review the output:
+1. Run the cell and review the output:
 
     ![Screen picture of code with schema defined and data.](./Images/md21.png)
 
-11. This DataFrame includes only the data from the 2019.csv file. Modify the code so that the file path uses a * wildcard to read all the files in the orders folder:
+1. This DataFrame includes only the data from the 2019.csv file. Modify the code so that the file path uses a * wildcard to read all the files in the orders folder:
 
     ```python
     from pyspark.sql.types import *
@@ -163,7 +203,7 @@ In this task, you will create a DataFrame using PySpark to begin working with yo
     display(df)
     ```
 
-12. When you run the modified code, you should see sales for 2019, 2020, and 2021. Only a subset of the rows is displayed, so you may not see rows for every year.
+1. When you run the modified code, you should see sales for 2019, 2020, and 2021. Only a subset of the rows is displayed, so you may not see rows for every year.
 
     >**Note**: You can hide or show the output of a cell by selecting **…** next to the result. This makes it easier to work in a notebook.
 
@@ -175,7 +215,9 @@ The DataFrame object provides additional functionality such as the ability to fi
 
 ### Filter a DataFrame
 
-1. Add a code cell by selecting **+ Code** which appears when you hover the mouse above or below the current cell or its output. Alternatively, from the ribbon menu select **Edit** and then **+ Add code cell below**.
+1. Add a code cell by selecting **+ Code** which appears when you hover the mouse above or below the current cell or its output.
+
+    ![Screen picture of code with schema defined and data.](./Images/dpp14.png)
 
 1. Add the following code which filters the data so that only two columns are returned. It also uses *count* and *distinct* to summarize the number of records:
 
@@ -197,7 +239,7 @@ The DataFrame object provides additional functionality such as the ability to fi
       ```
     * The DataFrame functions *count* and *distinct* are used to provide totals for the number of customers and unique customers.
 
-4. Modify the first line of the code (1) by using *select* with a *where* function as follows:
+1. Modify the first line of the code (1) by using *select* with a *where* function as follows:
 
     ```python
     customers = df.select("CustomerName", "Email").where(df['Item']=='Road-250 Red, 52')
@@ -207,7 +249,7 @@ The DataFrame object provides additional functionality such as the ability to fi
     display(customers.distinct())
     ```
 
-5. **Run (2)** the modified code to select only the customers who have purchased the Road-250 Red, 52 product. Note that you can “chain” multiple functions together so that the **output (3)** of one function becomes the input for the next. In this case, the DataFrame created by the *select* method is the source DataFrame for the **where** method that is used to apply filtering criteria.
+1. **Run (2)** the modified code to select only the customers who have purchased the Road-250 Red, 52 product. Note that you can “chain” multiple functions together so that the **output (3)** of one function becomes the input for the next. In this case, the DataFrame created by the *select* method is the source DataFrame for the **where** method that is used to apply filtering criteria.
 
     ![Screen picture showing auto generated code and data.](Images/md22.png)
 
@@ -300,7 +342,9 @@ At this point you might want to save the transformed data so that it can be used
     print ("Transformed data saved!")
     ```
 
-2. Run the cell and wait for the message that the data has been saved. Then, in the Lakehouses pane on the left, in the … menu for the Files node, select **Refresh**. Select the transformed_data folder to verify that it contains a new folder named orders, which in turn contains one or more Parquet files.
+2. Run the cell and wait for the message that the data has been saved. Then, in the Lakehouses pane on the left, in the **…** menu for the **Files** node, select **Refresh**. Select the **transformed_data (1)** folder to verify that it contains a new folder named **orders (2)**, which in turn contains one or more Parquet files.
+
+    ![Screen picture showing auto generated code and data.](Images/dpp16.png)
 
 3. Add a cell with the following code:
 
@@ -325,7 +369,9 @@ When dealing with large volumes of data, partitioning can significantly improve 
     print ("Transformed data saved!")
     ```
 
-1.	Run the cell and wait for the message that the data has been saved. Then, in the Lakehouses pane on the left, in the … menu for the Files node, select **Refresh** and expand the partitioned_data folder to verify that it contains a hierarchy of folders named *Year=xxxx*, each containing folders named *Month=xxxx*. Each month folder contains a parquet file with the orders for that month.
+1. Run the cell and wait for the message that the data has been saved. Then, in the Lakehouses pane on the left, in the … menu for the Files node, select **Refresh** and expand the **partitioned_data (1)** folder to verify that it contains a hierarchy of folders named `Year=xxxx`, each containing folders named `Month=xxxx` **(2)**. Each month folder contains a parquet file with the orders for that month.
+
+    ![Screen picture showing auto generated code and data.](./Images/dpp17.png)
 
 1. Add a new cell with the following code to load a new DataFrame from the orders.parquet file:
 
@@ -359,13 +405,17 @@ Tables in a Spark metastore are relational abstractions over files in the data l
 
     > **Note**: In this example, no explicit path is provided, so the files for the table will be managed by the metastore. Also, the table is saved in Delta format, which adds relational database capabilities to tables. This includes support for transactions, row versioning, and other useful features. Creating tables in Delta format is preferred for data lakehouses in Fabric.
 
-2. Run the code cell and review the output, which describes the definition of the new table.
+1. Run the code cell and review the output, which describes the definition of the new table.
 
-3. In the **Lakehouses** pane, in the … menu for the Tables folder, select **Refresh**. Then expand the **Tables** node and verify that the **salesorders** table has been created.
+1. In the **Lakehouses** pane, in the … menu for the Tables folder, select **Refresh**. Then expand the **Tables** node and verify that the **salesorders** table has been created.
 
     ![Screen picture showing that the salesorders table has been created.](./Images/md27.png)
 
-4. In the … menu for the salesorders table, select **Load data** > **Spark**. A new code cell is added containing code similar to the following:
+1. In the **… (1)** menu for the **salesorders** table, select **Load data (2)** > **Spark (3)**.
+
+    ![Screen picture showing that the salesorders table has been created.](./Images/dpp19.png)
+
+1. A new code cell is added containing code similar to the following:
 
     ```pyspark
     df = spark.sql("SELECT * FROM [your_lakehouse].salesorders LIMIT 1000")
@@ -373,7 +423,7 @@ Tables in a Spark metastore are relational abstractions over files in the data l
     display(df)
     ```
 
-5. Run the new code, which uses the Spark SQL library to embed a SQL query against the *salesorder* table in PySpark code and load the results of the query into a DataFrame.
+1. Run the new code, which uses the Spark SQL library to embed a SQL query against the *salesorder* table in PySpark code and load the results of the query into a DataFrame.
 
 ### Run SQL code in a cell
 
@@ -390,7 +440,9 @@ While it’s useful to be able to embed SQL statements into a cell containing Py
     ORDER BY OrderYear;
     ```
 
-7. Run the cell and review the results. Observe that:
+1. Run the cell and review the results. Observe that:
+
+    ![Screen picture showing that the salesorders table has been created.](./Images/dpp20.png)
 
     * The **%%sql** command at the beginning of the cell (called a magic) changes the language to Spark SQL instead of PySpark.
     * The SQL code references the *salesorders* table that you created previously.
@@ -412,28 +464,26 @@ In this task, you will visualize data from a DataFrame to identify patterns and 
     SELECT * FROM salesorders
     ```
 
-2. Run the code to display data from the salesorders view you created previously. In the results section beneath the cell, change the **View** option from **Table** to **Chart**.
+1. Run the code to display data from the salesorders view you created previously. To change the view from **Table** to **Chart**, click on **+New chart**.
 
-   > **Note:** If the **Chart** option is not visible, click the **… (ellipsis) menu (1)** in the output section and **turn off (2)** the **New Visualization** toggle.
+    ![Screen picture showing that the salesorders table has been created.](./Images/dpp21.png)
 
-    ![Screen picture showing auto generated code and data.](./Images/md28.png)
+1. Click on the **Build my own** button at the bottom-right of the results section.
 
-3.	Use the **Customize chart (1)** button at the top right of the chart to set the following options:
+    ![Screen picture showing that the salesorders table has been created.](./Images/dpp22.png)
 
-    - Chart type: Bar chart (2)
-    - Key: Item (3)
-    - Values: Quantity (4)
+1. Set the chart settings as mentioned below:
+
+    - Chart type: **Bar chart (1)**
+    - X-axis: **Item (2)**
+    - Y-axis: **Quantity (3)**
     - Series Group: leave blank
-    - Aggregation: Sum (5)
-    - Stacked: Unselected (6)
+    - Aggregation: **Sum**
+    - Missing and NULL values: **Display as 0**
+    - Stacked: Unselected
+    - Your chart should look similar to this **(4)**:
 
-4. When you have finished, select **Apply (7)**.
-
-    ![Screen picture showing auto generated code and data.](./Images/md29.png)
-
-5. Your chart should look similar to this:
-
-    ![Screen picture showing auto generated code and data.](./Images/md30.png)
+      ![Screen picture showing auto generated code and data.](./Images/dpp24.png)
 
 ### Get started with matplotlib
 
@@ -452,6 +502,8 @@ In this task, you will visualize data from a DataFrame to identify patterns and 
 
 2. Run the code. It returns a Spark DataFrame containing the yearly revenue and number of orders. To visualize the data as a chart, we’ll first use the matplotlib Python library. This library is the core plotting library on which many others are based and provides a great deal of flexibility in creating charts.
 
+    ![Screen picture showing that the salesorders table has been created.](./Images/dpp25.png)
+
 3. Add a new code cell, and add the following code:
 
     ```python
@@ -468,6 +520,8 @@ In this task, you will visualize data from a DataFrame to identify patterns and 
     ```
 
 4. Run the cell and review the results, which consist of a column chart with the total gross revenue for each year. Review the code, and notice the following:
+
+    ![Screen picture showing that the salesorders table has been created.](./Images/dpp26.png)  
 
     * The matplotlib library requires a Pandas DataFrame, so you need to convert the Spark DataFrame returned by the Spark SQL query.
     * At the core of the matplotlib library is the *pyplot* object. This is the foundation for most plotting functionality.
@@ -496,6 +550,9 @@ In this task, you will visualize data from a DataFrame to identify patterns and 
     ```
 
 6. Re-run the code cell and view the results. The chart is now easier to understand.
+
+    ![Screen picture showing that the salesorders table has been created.](./Images/dpp27.png) 
+
 7. A plot is contained with a Figure. In the previous examples, the figure was created implicitly but it can be created explicitly. Modify the code to plot the chart as follows:
 
     ```python
@@ -551,7 +608,9 @@ In this task, you will visualize data from a DataFrame to identify patterns and 
 
 10. Re-run the code cell and view the results. 
 
-    >**Note**: To learn more about plotting with matplotlib, see the [matplotlib](https://matplotlib.org/) documentation.
+    ![Screen picture showing that the salesorders table has been created.](./Images/dpp28.png) 
+
+     >**Note**: To learn more about plotting with matplotlib, see the [matplotlib](https://matplotlib.org/) documentation.
 
 ### Use the seaborn library
 

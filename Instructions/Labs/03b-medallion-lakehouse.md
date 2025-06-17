@@ -254,8 +254,8 @@ In this task, you’ll take the cleaned and structured data from the silver laye
 1. In the existing code block, remove the commented text and **add the following code** to load data to your dataframe and start building your star schema, then run it:
 
    ```python
-    # Load data to the dataframe as a starting point to create the gold layer
-    df = spark.read.table("Sales.sales_silver")
+   # Load data to the dataframe as a starting point to create the gold layer
+   df = spark.read.table("Sales.sales_silver")
     ```
 
 1. **Add a new code block** and paste the following code to create your date dimension table and run it:
@@ -434,18 +434,18 @@ In this task, you’ll take the cleaned and structured data from the silver laye
 1. **Add another code block** to create the **product_silver** dataframe.
   
     ```python
-    from pyspark.sql.functions import col, split, lit, when
+   from pyspark.sql.functions import col, split, lit, when
     
-    # Create product_silver dataframe
+   # Create product_silver dataframe
     
-    dfdimProduct_silver = df.dropDuplicates(["Item"]).select(col("Item")) \
-        .withColumn("ItemName",split(col("Item"), ", ").getItem(0)) \
-        .withColumn("ItemInfo",when((split(col("Item"), ", ").getItem(1).isNull() | (split(col("Item"), ", ").getItem(1)=="")),lit("")).otherwise(split(col("Item"), ", ").getItem(1))) 
+   dfdimProduct_silver = df.dropDuplicates(["Item"]).select(col("Item")) \
+       .withColumn("ItemName",split(col("Item"), ", ").getItem(0)) \
+       .withColumn("ItemInfo",when((split(col("Item"), ", ").getItem(1).isNull() | (split(col("Item"), ", ").getItem(1)=="")),lit("")).otherwise(split(col("Item"), ", ").getItem(1))) 
     
-    # Display the first 10 rows of the dataframe to preview your data
+   # Display the first 10 rows of the dataframe to preview your data
 
-    display(dfdimProduct_silver.head(10))
-       ```
+   display(dfdimProduct_silver.head(10))
+    ```
 
 1. Now you'll create IDs for your **dimProduct_gold table**. Add the following syntax to a new code block and run it:
 

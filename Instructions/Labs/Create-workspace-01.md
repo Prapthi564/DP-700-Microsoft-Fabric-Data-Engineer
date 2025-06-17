@@ -4,7 +4,7 @@
 
 In this exercise, you will go through the process of signing up for the Microsoft Fabric Trial and setting up a workspace. This serves as the initial step in familiarizing yourself with the Microsoft Fabric platform. By creating a workspace, you will establish a dedicated environment where you can explore and interact with the wide range of tools and services Microsoft Fabric offers, including data integration, analytics, and visualization. This foundational setup is essential for understanding how to manage and organize resources within Fabric, as well as how to collaborate effectively across teams and projects within the platform.
 
-## Lab objectives
+## Lab Objectives
 
 In this lab, you will be able to complete the following tasks:
 
@@ -61,7 +61,7 @@ In this task, you will create a Fabric workspace. The workspace contains all the
 
    - **Name:** Enter **fabric-<inject key="DeploymentID" enableCopy="false"/>** (1)
 
-    ![New Workspace](./Images/md7.png)
+    ![New Workspace](./Images/dpp1.png)
 
 1. Under **License mode**, select the **Trial (1)** and click on **Apply (2)**
 
