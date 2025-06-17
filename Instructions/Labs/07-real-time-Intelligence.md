@@ -21,7 +21,7 @@ In this task, you will create an eventstream in Microsoft Fabric using the Real-
 
 > **Tip**: The first time you use the Real-Time Hub, some *getting started* tips may be displayed. You can close these.
 
-1. From the left menu bar or the **... (ellipsis)(1)** menu, select the **Real-Time (2)** hub.
+1. From the **left menu** bar or the **... (ellipsis)(1)** menu, select the **Real-Time (2)** hub.
 
    >**Info**: The real-time hub provides an easy way to find and manage sources of streaming data.
 
