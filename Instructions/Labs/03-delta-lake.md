@@ -36,8 +36,7 @@ In this task, you will create a new lakehouse within your Microsoft Fabric works
 
     ![Screen picture of products.csv uploaded to the lakehouse.](Images/dpp66.png)
 
-1. Click on folder icon **(1)**, navigate to `C:\LabFiles\Files` **(2)** then select 
-**products.csv (3)** and then **Open (4)**.
+1. Click on folder icon **(1)**, navigate to `C:\LabFiles\Files` **(2)** then select **products.csv (3)** and then **Open (4)**.
 
     ![Screen picture of products.csv uploaded to the lakehouse.](Images/dpp67.png)
 
