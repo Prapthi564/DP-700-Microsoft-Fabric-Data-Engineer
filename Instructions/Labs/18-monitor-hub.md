@@ -73,9 +73,9 @@ In this task, you will create a Dataflow Gen2 to ingest data from a CSV file int
 
     ![Screenshot of a new dataflow.](./Images/lab5u3.png)
 
-1. **Publish** the dataflow.
+1. Click on **Save & run** the dataflow.
 
-    ![Screenshot of a new dataflow.](./Images/lab5u4.png)
+    ![Screenshot of a new dataflow.](./Images/publish1.png)
 
 1. In the navigation bar on the left, select **Monitor** to view the monitoring hub and observe that your dataflow is in-progress (if not, refresh the view until you see it).
 
