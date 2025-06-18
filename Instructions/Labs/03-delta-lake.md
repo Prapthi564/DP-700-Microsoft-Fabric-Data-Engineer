@@ -28,11 +28,11 @@ In this task, you will create a new lakehouse within your Microsoft Fabric works
 
     ![Screenshot of uploaded files in a lakehouse.](./Images/md2-2.png)
 
-1. Create a new subfolder named **product (1)** and then click on **Create (2)**.    
+1. Create a new subfolder named **products (1)** and then click on **Create (2)**.    
 
     ![Screen picture of products.csv uploaded to the lakehouse.](Images/md2-26.png)
 
-1.	In the **(...)(1)** menu for the **products** folder, click on **Upload (2)** and then **Upload files (2)**.
+1. In the **(...)(1)** menu for the **products** folder, click on **Upload (2)** and then **Upload files (2)**.
 
     ![Screen picture of products.csv uploaded to the lakehouse.](Images/dpp66.png)
 
@@ -47,7 +47,7 @@ In this task, you will create a new lakehouse within your Microsoft Fabric works
 
     ![Screen picture of products.csv uploaded to the lakehouse.](Images/dpp68.png)
 
-1.	After the file has been uploaded, select the **products** folder to verify that the file has been uploaded.
+1. After the file has been uploaded, select the **products** folder to verify that the file has been uploaded.
 
     ![Screen picture of products.csv uploaded to the lakehouse.](Images/dpp69.png)
   
