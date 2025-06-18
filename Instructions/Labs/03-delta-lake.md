@@ -32,7 +32,7 @@ In this task, you will create a new lakehouse within your Microsoft Fabric works
 
     ![Screen picture of products.csv uploaded to the lakehouse.](Images/md2-26.png)
 
-1.	In the **(...)(1)** menu for the **products** folder, click on **Upload (2)** and then **Upload files (2)**.
+1. In the **(...)(1)** menu for the **products** folder, click on **Upload (2)** and then **Upload files (2)**.
 
     ![Screen picture of products.csv uploaded to the lakehouse.](Images/dpp66.png)
 
