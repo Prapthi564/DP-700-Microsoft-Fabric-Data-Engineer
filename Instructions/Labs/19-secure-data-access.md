@@ -210,15 +210,7 @@ In this task, you assign an item permission and create a OneLake data access rol
 1. Add the second user - <inject key="testuser" enableCopy="true"/> (6)in the **Add members to your role** section.
 
 1. Click on **Create role (7)**
-    
-1. Create a new role called **publicholidays** that can only access the publicholidays folder as shown in the screenshot below.
-
-    ![](./Images/lab5u1772.png)
-    
-1. Click on **Save** and then When the role finishes creating, select **Assign role** and assign the role to your second user - <inject key="testuser" enableCopy="true"/>, select **Add** and, select **Save**.
-
-    ![](./Images/lab5u1773.png)
-    
+        
 1. Return to the browser where you're logged in as the second user. Ensure you're still on the page where the lakehouse is open. Refresh the browser.
     
 1. Select the **publicholidays** table and wait for the data to load. Only the data in the publicholidays table is accessible to the user because the user was assigned to the custom OneLake data access role. The role permits them to see only the data in the publicholidays table, not data in any of the other tables, files, or folders.
