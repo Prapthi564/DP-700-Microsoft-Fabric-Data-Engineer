@@ -59,9 +59,11 @@ In this task, you'll begin working with a notebook in Microsoft Fabric to explor
 
     ![Screen picture of products.csv uploaded to the lakehouse.](Images/dpp70.png)
 
- After a few seconds, a new notebook containing a single cell will open. Notebooks are made up of one or more cells that can contain code or markdown (formatted text).
+    After a few seconds, a new notebook containing a single cell will open. Notebooks are made up of one or more cells that can contain code or markdown (formatted text).
 
 2. Select the first cell (which is currently a code cell), and then in the top-right tool bar, use the **M↓** button to convert it to a markdown cell. The text contained in the cell will then be displayed as formatted text. Use markdown cells to provide explanatory information about your code.
+
+    ![Screen picture of products.csv uploaded to the lakehouse.](Images/dpp71.png)
 
 3. Use the 🖉 (Edit) button to switch the cell to editing mode, then modify the markdown as follows:
 
@@ -72,7 +74,7 @@ In this task, you'll begin working with a notebook in Microsoft Fabric to explor
 
 4. Click anywhere in the notebook outside of the cell to stop editing it and see the rendered markdown.
 
-5. Add a new code cell, and add the following code to read the products data into a DataFrame using a defined schema:
+5. Add a new code cell, and add the following code to read the products data into a DataFrame using a defined schema **(1)**:
 
     ```python
     from pyspark.sql.types import StructType, IntegerType, StringType, DoubleType
@@ -91,11 +93,11 @@ In this task, you'll begin working with a notebook in Microsoft Fabric to explor
 
    >**Tip**: Hide or display the explorer panes by using the chevron « icon. This enables you to either focus on the notebook, or your files.
 
-6. Use the **Run cell** (▷) button on the left of the cell to run it.
+6. Use the **Run cell** (▷) button on the left of the cell to run it **(2)**.
 
    >**Note**: Since this is the first time you’ve run any code in this notebook, a Spark session must be started. This means that the first run can take a minute or so to complete. Subsequent runs will be quicker.
 
-7. When the cell code has completed, review the output below the cell, which should look similar to this:
+7. When the cell code has completed, review the output below the cell, which should look similar to this **(3)**:
 
     ![Screen picture of products.csv data.](Images/md2-28.png)
  
@@ -113,7 +115,7 @@ In this task, you'll create a managed Delta table by writing the DataFrame to yo
 
 The data files are created in the **Tables** folder.
 
-1. Under the results returned by the first code cell, use the + Code icon to add a new code cell.
+1. Under the results returned by the first code cell, use the **+ Code** icon to add a new code cell.
 
    >**Tip**: To see the + Code icon, move the mouse to just below and to the left of the output from the current cell. Alternatively, in the menu bar, on the Edit tab, select **+ Add code cell**.
 
@@ -125,15 +127,17 @@ The data files are created in the **Tables** folder.
 
 3. In the Lakehouse explorer pane, **Refresh** the Tables folder and expand the Tables node to verify that the **managed_products** table has been created.
 
-   >**Note**: The triangle icon next to the file name indicates a Delta table.
+    ![Screen picture of products.csv data.](Images/dpp72.png)
 
-The files for managed tables are stored in the **Tables** folder in the lakehouse. A folder named *managed_products* has been created which stores the Parquet files and delta_log folder for the table.
+     >**Note**: The triangle icon next to the file name indicates a Delta table.
+
+The files for managed tables are stored in the **Tables** folder in the lakehouse. A folder named **managed_products** has been created which stores the Parquet files and delta_log folder for the table.
 
 ### Task 5: Create an external table
 
 In this task, you'll create an external Delta table, where the data files are stored in a specified location (such as a folder in your lakehouse), while the table schema is maintained by Microsoft Fabric.
 
-1. In the Lakehouse explorer pane, in the … menu for the **Files** folder, select **Copy ABFS path**. The ABFS path is the fully qualified path to the lakehouse Files folder.
+1. In the Lakehouse explorer pane, in the **… (1)** menu for the **Files** folder, select **Copy ABFS path (2)**. The ABFS path is the fully qualified path to the lakehouse Files folder.
 
    ![Screenshot of uploaded files in a lakehouse.](./Images/md2-29.png)
 
@@ -151,11 +155,11 @@ In this task, you'll create an external Delta table, where the data files are st
 
 4. **Run (2)** the cell to save the DataFrame as an external table in the Files/external_products folder.
 
-   ![Screenshot of uploaded files in a lakehouse.](./Images/md2-30.png)
-
 5. In the Lakehouse explorer pane, **Refresh** the Tables folder and expand the Tables node and verify that the **external_products (3)** table has been created containing the schema metadata.
 
-6. In the Lakehouse explorer pane, in the … menu for the Files folder, select **Refresh**. Then expand the Files node and verify that the external_products folder has been created for the table’s data files.
+   ![Screenshot of uploaded files in a lakehouse.](./Images/md2-30.png)
+
+6. In the Lakehouse explorer pane, in the … menu for the Files folder, select **Refresh**. Then expand the Files node and verify that the **external_products** folder has been created for the table’s data files.
 
 ### Task 6: Compare managed and external tables
 
@@ -168,7 +172,9 @@ In this task, you will use the %%sql magic command to query both managed and ext
     DESCRIBE FORMATTED managed_products;
     ```
 
-2. In the results, view the Location property for the table. Click on the Location value in the Data type column to see the full path. Notice that the OneLake storage location ends with /Tables/managed_products.
+2. In the results, view the Location property for the table. Click on the **Location (1)** value in the Data type column to see the full path. Notice that the OneLake storage location ends with **/Tables/managed_products (2)**.
+
+   ![Screenshot of uploaded files in a lakehouse.](./Images/dpp73.png)
 
 3. Modify the DESCRIBE command to show the details of the external_products table as shown here:
 
@@ -177,7 +183,9 @@ In this task, you will use the %%sql magic command to query both managed and ext
     DESCRIBE FORMATTED external_products;
     ```
 
-4. Run the cell and in the results, view the Location property for the table. Widen the Data type column to see the full path and notice that the OneLake storage locations ends with /Files/external_products.
+4. Run the cell and in the results, view the **Location (1)** property for the table. Widen the Data type column to see the full path and notice that the OneLake storage locations ends with **/Files/external_products (2)**.
+
+   ![Screenshot of uploaded files in a lakehouse.](./Images/dpp74.png)
 
 5. In a new code cell and run the following code:
 
@@ -187,8 +195,13 @@ In this task, you will use the %%sql magic command to query both managed and ext
     DROP TABLE external_products;
     ```
 
-6. In the Lakehouse explorer pane, **Refresh** the Tables folder to verify that no tables are listed in the Tables node.
-7.	In the Lakehouse explorer pane, **Refresh** the Files folder and verify that the external_products file has *not* been deleted. Select this folder to view the Parquet data files and _delta_log folder. 
+6. In the Lakehouse explorer pane, **Refresh** the **Tables** folder to verify that no tables are listed in the Tables node.
+
+   ![Screenshot of uploaded files in a lakehouse.](./Images/dpp75.png)
+
+7. In the Lakehouse explorer pane, **Refresh** the **Files (1)** folder and verify that the **external_products (2)** file has *not* been deleted. Select this folder to view the Parquet data files and _delta_log folder. 
+
+   ![Screenshot of uploaded files in a lakehouse.](./Images/dpp76.png)
 
 The metadata for the external table was deleted, but not the data file.
 
@@ -205,7 +218,7 @@ In this task, you'll create a Delta table using SQL within a notebook cell by le
     LOCATION 'Files/external_products';
     ```
 
-2. In the Lakehouse explorer pane, in the … menu for the **Tables** folder, select **Refresh**. Then expand the Tables node and verify that a new table named *products* is listed. Then expand the table to view the schema.
+2. In the Lakehouse explorer pane, in the … menu for the **Tables** folder, select **Refresh**. Then expand the Tables node and verify that a new table named **products** is listed. Then expand the table to view the schema.
 
 3. Add another code cell and run the following code:
 
@@ -275,7 +288,7 @@ Using the SQL magic command you can use SQL syntax instead of Pyspark. Here you 
    ORDER BY Category;    
     ```
 
-2. Add a new code cell, and run the following code to return the top 10 categories by number of products:
+2. Add a new code cell, enter the following code to return the top 10 categories by number of products **(1)** and then click on **Run (2)**:
 
     ```python
    %%sql
@@ -285,7 +298,7 @@ Using the SQL magic command you can use SQL syntax instead of Pyspark. Here you 
    LIMIT 10;
     ```
 
-3. When the data is returned, select the **Chart** view to display a bar chart.
+3. When the data is returned, select the **Chart (3)** view to display a bar chart.
 
     ![Screen picture of SQL select statement and results.](./Images/md2-31.png)
 
