@@ -133,9 +133,7 @@ In this task, you will rerun the dataflow and view the historical run history in
 
 1. In the **...** menu for the **Get Product Data** dataflow, select **Historical runs** to view the run history for the dataflow:
 
-1. In the **...** menu for any of the historical runs select **View detail** to see details of the run.
-
-1. Close the **Details** pane and use the **Back to main view** button to return to the main monitoring hub page.
+1. Use the **Back to main view** button to return to the main monitoring hub page.
 
 ### Task 5: Customize monitoring hub views
 
