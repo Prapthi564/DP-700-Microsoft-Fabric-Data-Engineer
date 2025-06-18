@@ -24,21 +24,42 @@ In this lab, you will be able to complete the following tasks:
 
 In this task, you will create a new lakehouse within your Microsoft Fabric workspace and upload sample data files into it. 
 
-1. Return to the web browser tab containing your lakehouse, and in the Explorer pane, next to the **Files** folder, select the **… (1)** menu. Create a **New subfolder** called *products (3)*.
+1. Return to the web browser tab containing your lakehouse, and in the Explorer pane, next to the **Files** folder, select the **… (1)** menu, click on **New subfolder (2)**. 
 
     ![Screenshot of uploaded files in a lakehouse.](./Images/md2-2.png)
 
+1. Create a new subfolder named **product (1)** and then click on **Create (2)**.    
+
     ![Screen picture of products.csv uploaded to the lakehouse.](Images/md2-26.png)
 
-1.	In the … menu for the products folder, **upload** the *products.csv*(C:\LabFiles\Files\) file located in the Lab VM.
+1.	In the **(...)(1)** menu for the **products** folder, click on **Upload (2)** and then **Upload files (2)**.
+
+    ![Screen picture of products.csv uploaded to the lakehouse.](Images/dpp66.png)
+
+1. Click on folder icon **(1)**, navigate to `C:\LabFiles\Files` **(2)** then select 
+**products.csv (3)** and then **Open (4)**.
+
+    ![Screen picture of products.csv uploaded to the lakehouse.](Images/dpp67.png)
+
+1. If prompted, click on **Upload**.
+
+1. Click on **Upload**.
+
+    ![Screen picture of products.csv uploaded to the lakehouse.](Images/dpp68.png)
 
 1.	After the file has been uploaded, select the **products** folder to verify that the file has been uploaded.
+
+    ![Screen picture of products.csv uploaded to the lakehouse.](Images/dpp69.png)
   
 ### Task 2: Explore data in a DataFrame
 
 In this task, you'll begin working with a notebook in Microsoft Fabric to explore Delta Lake functionality using Apache Spark. You’ll first add explanatory markdown text to describe your notebook, then use PySpark to define a schema and read CSV data into a DataFrame. 
 
-1. Create a **New notebook**. After a few seconds, a new notebook containing a single cell will open. Notebooks are made up of one or more cells that can contain code or markdown (formatted text).
+1. Create a **New notebook**. Click on **Open notebook (1)** and then **New Notebook (2)**.
+
+    ![Screen picture of products.csv uploaded to the lakehouse.](Images/dpp70.png)
+
+ After a few seconds, a new notebook containing a single cell will open. Notebooks are made up of one or more cells that can contain code or markdown (formatted text).
 
 2. Select the first cell (which is currently a code cell), and then in the top-right tool bar, use the **M↓** button to convert it to a markdown cell. The text contained in the cell will then be displayed as formatted text. Use markdown cells to provide explanatory information about your code.
 
