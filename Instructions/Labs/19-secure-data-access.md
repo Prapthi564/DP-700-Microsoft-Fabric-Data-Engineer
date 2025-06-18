@@ -72,13 +72,11 @@ In this task, you add a user to a workspace role, apply permissions and, see wha
 
 1. Next, you'll see what a user without permissions on the workspace can view. In the Microsoft Edge browser, click the ellipsis (three dots) in the top-right corner and select **New InPrivate window**.
 
-1. Enter *https://www.microsoft.com/en-in/microsoft-fabric/getting-started* and sign-in as the second user with the below credentials, click on **try for free**:
+1. Enter *https://app.fabric.microsoft.com/home?experience=fabric-developer* and sign-in as the second user with the below credentials, click on **try for free**:
 
     - Email : <inject key="testuser" enableCopy="true"/>
 
-    - Password : <inject key="test user Password" enableCopy="true"/>
-
-    **> Note**: If you see the prompt **"You've selected Microsoft Fabric (free)"**, then proceed with creating your account.
+    - Password : <inject key="test user Password" enableCopy="true"/>  
   
 1. On the bottom left corner of your screen, select **Microsoft Fabric**. Next select **Workspaces** (the icon looks similar to &#128455;).
 
@@ -163,55 +161,67 @@ In this task, you assign an item permission and create a OneLake data access rol
 
 1. Stay in the browser where you're logged in as the second user - <inject key="testuser" enableCopy="true"/>.
 
-2. Select **OneLake** on the left navigation bar. The second user doesn't see the lakehouse.
+1. Select **OneLake** on the left navigation bar. The second user doesn't see the lakehouse.
    
-4. Return to the browser where you're logged in as the **Workspace Admin**.
+1. Return to the browser where you're logged in as the **Workspace Admin**.
    
-6. Select **Workspaces** on the left menu and select your workspace. Hover over the name of the lakehouse.
+1. Select **Workspaces** on the left menu and select your workspace. Hover over the name of the lakehouse.
    
-8. Select on the ellipse (**...**) to the right of the ellipse and select **Manage permissions**
+1. Select on the ellipse (**...**) to the right of the ellipse and select **Manage permissions**
 
    ![](./Images/lab5u179.png)
    
-10. On the screen that appears, select **Add user**.
+1. On the screen that appears, select **Add user**.
     
-12. Assign the second user - <inject key="testuser" enableCopy="true"/> to the lakehouse and ensure none of the checkboxes on the **Grant People Access** window are checked.
+1. Assign the second user - <inject key="testuser" enableCopy="true"/> to the lakehouse and ensure none of the checkboxes on the **Grant People Access** window are checked.
     
-14. Select **Grant**. The second user now has read permissions on the lakehouse. Read permission only allows the user to see metadata for the lakehouse but not the underlying data. Next we'll validate this.
+1. Select **Grant**. The second user now has read permissions on the lakehouse. Read permission only allows the user to see metadata for the lakehouse but not the underlying data. Next we'll validate this.
     
-16. Return to the browser where you're logged in as the second user. Refresh the browser.
+1. Return to the browser where you're logged in as the second user. Refresh the browser.
     
-18. Select **OneLake** in the left navigation pane.
+1. Select **OneLake** in the left navigation pane.
     
-20. Select the **lakehouse** and open it.
+1. Select the **lakehouse** and open it.
     
-22. Select **Open** on the top menu bar. You're unable to expand the tables or files even though read permission was granted. Next, you grant the second user access to a specific folder using OneLake data access permissions.
+1. Select **Open** on the top menu bar. You're unable to expand the tables or files even though read permission was granted. Next, you grant the second user access to a specific folder using OneLake data access permissions.
     
-24. Return to the browser where you're logged in as the workspace administrator.
+1. Return to the browser where you're logged in as the workspace administrator.
     
-26. Select **Workspaces** from the left navigation bar.
+1. Select **Workspaces** from the left navigation bar.
     
-28. Select your workspace name.
+1. Select your workspace name.
     
-30. Select the **lakehouse**.
+1. Select the **lakehouse**.
     
-32. When the lakehouse opens, select **Manage OneLake data access (preview)** on the top menu bar and enable the feature by clicking the **Continue** button.
+1. When the lakehouse opens, select **Manage OneLake data access (preview)** on the top menu bar and enable the feature by clicking the **Continue** button.
     
-34. Select **new role** on the **Manage OneLake data access (preview)** screen that appears.
+1. Select **+ New** on the **OneLake security** screen that appears.
 
-    ![](./Images/lab5u1711.png)
+    ![](./Images/onelake2.png)
+
+1. Enter **publicholidays (1)** for the Role name and click on **Selected data (2)** under **Add data to your role** section.
+
+    ![](./Images/onelake4.png)
+
+1. Select **Browse Lakehouse (3)** and select **publicholidays (4)** table and click on **Add data (5)**
+
+    ![](./Images/onelake3.png)
+
+1. Add the second user - <inject key="testuser" enableCopy="true"/> (6)in the **Add members to your role** section.
+
+1. Click on **Create role (7)**
     
-36. Create a new role called **publicholidays** that can only access the publicholidays folder as shown in the screenshot below.
+1. Create a new role called **publicholidays** that can only access the publicholidays folder as shown in the screenshot below.
 
     ![](./Images/lab5u1772.png)
     
-38. Click on **Save** and then When the role finishes creating, select **Assign role** and assign the role to your second user - <inject key="testuser" enableCopy="true"/>, select **Add** and, select **Save**.
+1. Click on **Save** and then When the role finishes creating, select **Assign role** and assign the role to your second user - <inject key="testuser" enableCopy="true"/>, select **Add** and, select **Save**.
 
     ![](./Images/lab5u1773.png)
     
-40. Return to the browser where you're logged in as the second user. Ensure you're still on the page where the lakehouse is open. Refresh the browser.
+1. Return to the browser where you're logged in as the second user. Ensure you're still on the page where the lakehouse is open. Refresh the browser.
     
-42. Select the **publicholidays** table and wait for the data to load. Only the data in the publicholidays table is accessible to the user because the user was assigned to the custom OneLake data access role. The role permits them to see only the data in the publicholidays table, not data in any of the other tables, files, or folders.
+1. Select the **publicholidays** table and wait for the data to load. Only the data in the publicholidays table is accessible to the user because the user was assigned to the custom OneLake data access role. The role permits them to see only the data in the publicholidays table, not data in any of the other tables, files, or folders.
 
 ## Review
 
