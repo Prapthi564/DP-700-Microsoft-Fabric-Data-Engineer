@@ -24,17 +24,17 @@ In this task, you will create a data lakehouse in Microsoft Fabric for storing a
 
 1. Return to your workspace and click the **+ New item (1)** icon.  
 
-2. On the **All items** page, scroll down to the **Store data** section and select **Lakehouse (2)**.  
+1. On the **All items** page, scroll down to the **Store data** section and select **Lakehouse (2)**.  
 
    ![Screenshot of uploaded files in a lakehouse.](./Images/md10.png)  
 
-3. Provide the following details to create a **Lakehouse**:  
+1. Provide the following details to create a **Lakehouse** and then click on **Create (2)** to proceed.
 
-   - **Name:** Enter **lakehouse<inject key="DeploymentID" enableCopy="false"/>**  
+   - **Name:** Enter **lakehouse<inject key="DeploymentID" enableCopy="false"/> (1)**  
 
-4. Click **Create** to proceed.  
+     ![Screenshot of uploaded files in a lakehouse.](./Images/dpp2.png)       
 
-5. View the new lakehouse, and note that the **Lakehouse explorer** pane on the left enables you to browse tables and files in the lakehouse:
+1. View the new lakehouse, and note that the **Lakehouse explorer** pane on the left enables you to browse tables and files in the lakehouse:
 
     - The **Tables** folder contains tables that you can query using SQL semantics. Tables in a Microsoft Fabric lakehouse are based on the open source *Delta Lake* file format, commonly used in Apache Spark.
 
@@ -50,21 +50,27 @@ Fabric provides multiple ways to load data into the lakehouse, including built-i
 
 In this task, you will upload a CSV file to the lakehouse for use in the warehouse.
 
-1. Return to the web browser tab containing your lakehouse, and in the **... (1)** menu for the **Files** folder in the **Lakehouse explorer** pane, select **New subfolder (2)**, and create a subfolder named **data (3)**.
+1. Return to the web browser tab containing your lakehouse, and in the **... (1)** menu for the **Files** folder in the **Lakehouse explorer** pane, select **New subfolder (2)**
 
-   ![Screenshot of uploaded files in a lakehouse.](./Images/md2-2.png)
+    ![Screenshot of uploaded files in a lakehouse.](./Images/md2-2.png)
 
-   ![Screenshot of uploaded files in a lakehouse.](./Images/md2-3.png)
+    - Create a subfolder named **data (3)** and then **Create (4)**.   
 
-3. In the **... (1)** menu for the new **data** folder, select **Upload (2)** and **Upload files (3)**, and then upload the **sales.csv** (C:\LabFiles\Files\) file located in the Lab VM.
+      ![Screenshot of uploaded files in a lakehouse.](./Images/md2-3.png)
+
+1. In the **... (1)** menu for the new **data** folder, select **Upload (2)** and **Upload files (3)**.
 
    ![Screenshot of uploaded files in a lakehouse.](./Images/md2-4.png) 
 
+1. Then upload the **sales.csv (3)** file from `C:\LabFiles\Files` and then click on **Upload (4)**
+
    ![Screenshot of uploaded files in a lakehouse.](./Images/md2-5.png) 
 
-4. After the file has been uploaded, select the **Files/data** folder and verify that the **sales.csv** file has been uploaded, as shown here:
+1. After the file has been uploaded, select the **Files/data** folder and verify that the **sales.csv** file has been uploaded, as shown here:
 
-5. Select the **sales.csv** file to see a preview of its contents.
+   ![Screenshot of uploaded files in a lakehouse.](./Images/dpp106.png) 
+
+1. Select the **sales.csv** file to see a preview of its contents.
 
     ![Screenshot of uploaded sales.csv file in a lakehouse.](./Images/md2-6.png)
 
@@ -73,24 +79,33 @@ In this task, you will upload a CSV file to the lakehouse for use in the warehou
 
 In this task, you will create a table in the lakehouse using the uploaded file.
 
-1. In the **...** menu for the **sales.csv** file in the **Explorer** pane, select **Load to tables**, and then **New table**.
+1. In the **...** menu for the **sales.csv** file in the **Explorer** pane, select **Load to tables (1)**, and then **New table (2)**.
+
+   ![Screenshot of uploaded files in a lakehouse.](./Images/dpp107.png) 
 
 1. Provide the following information in the **Load file to new table** dialog.
-    - **New table name:** staging_sales (1)
-    - **Use header for columns names:** Selected (2)
-    - **Separator:** , (3)
 
-1. Select **Load (4)**.
+    - **New table name:** staging_sales **(1)**
+    - **Use header for columns names:** Selected **(2)**
+    - **Separator:** , **(3)**
 
-    ![Screenshot of uploaded sales.csv file in a lakehouse.](./Images/mod613.png)
+    - Select **Load (4)**.
+
+      ![Screenshot of uploaded sales.csv file in a lakehouse.](./Images/mod613.png)
 
 ### Task 4: Create a warehouse
 
 In this task, you will create a data warehouse where you will store the fact and dimension tables.
 
-1. In the left-hand menu, select **Create**. On the New page, under the Data Warehouse section, choose **Warehouse**. Enter **Warehouse2** as the name, and then click **Create**.
+1. In the left-hand menu, select **Create**. On the New page, under the Data Warehouse section, choose **Warehouse**. 
 
-   >**Note**: If the **Create** option is not pinned to the sidebar, you need to select the ellipsis (**...**) option first.
+   ![Screenshot of uploaded files in a lakehouse.](./Images/dpp108.png)
+
+    >**Note**: If the **Create** option is not pinned to the sidebar, you need to select the ellipsis (**...**) option first.    
+
+1. Enter **Warehouse2 (1)** as the name, and then click **Create (2)**.
+
+   ![Screenshot of uploaded files in a lakehouse.](./Images/dpp109.png) 
 
 1. After a minute or so, a new warehouse will be created:
 
@@ -100,9 +115,11 @@ Let's create the fact tables and dimensions for the Sales data. You'll also crea
 
 In this task, you will define fact tables, dimension tables, and a view to streamline the data loading process.
 
-1. From your workspace, select the warehouse you created.
+1. In the warehouse toolbar, select **New SQL query**.
 
-1. In the warehouse toolbar, select **New SQL query**, then copy and run the following query.
+   ![Screenshot of uploaded files in a lakehouse.](./Images/dpp110.png) 
+
+1. Then copy and run the following query.
 
     ```sql
     CREATE SCHEMA [Sales]
@@ -142,9 +159,11 @@ In this task, you will define fact tables, dimension tables, and a view to strea
 
     > **Important:** In a data warehouse, foreign key constraints are not always necessary at the table level. While foreign key constraints can help ensure data integrity, they can also add overhead to the ETL (Extract, Transform, Load) process and slow down data loading. The decision to use foreign key constraints in a data warehouse should be based on a careful consideration of the trade-offs between data integrity and performance.
 
-1. In the **Explorer**, navigate to **Schemas >> Sales >> Tables**. Note the *Fact_Sales*, *Dim_Customer*, and *Dim_Item* tables you just created.
+1. In the **Explorer**, navigate to **Schemas >> Sales >> Tables**. Note the **Fact_Sales**, **Dim_Customer**, and **Dim_Item** tables you just created.
 
-1. Open a new **New SQL query** editor, then copy and run the following query after Updating **<your lakehouse name>** with the lakehouse you created.
+   ![Screenshot of uploaded files in a lakehouse.](./Images/dpp111.png) 
+
+1. Open a new **New SQL query** editor, then copy **(1)** and run the following query after Updating `<your lakehouse name>` with the lakehouse you created **lakehouse<inject key="DeploymentID" enableCopy="false"/>** **(2)**.
 
     ```sql
     CREATE VIEW Sales.Staging_Sales
@@ -154,7 +173,9 @@ In this task, you will define fact tables, dimension tables, and a view to strea
 
     ![Screenshot of uploaded sales.csv file in a lakehouse.](./Images/mod614n.png)
 
-1. In the **Explorer**, navigate to **Schemas >> Sales >> Views**. Note the *Staging_Sales* view you created.
+1. In the **Explorer**, navigate to **Schemas >> Sales >> Views**. Note the **Staging_Sales** view you created.
+
+   ![Screenshot of uploaded files in a lakehouse.](./Images/dpp112.png) 
 
 ### Task 6: Load data to the warehouse
 
