@@ -19,9 +19,15 @@ In this lab, you will complete the following tasks:
 
 In this task, you will create a new sample data warehouse named sample-dw within your Fabric workspace, which will be populated with sample taxi ride data.
 
-1. On the menu bar on the left, select **Create**. In the *New* page, under the *Data Warehouse* section, select **Sample warehouse** and create a new data warehouse named **sample-dw**.
+1. On the menu bar on the left, select **Create**. In the *New* page, under the **Data Warehouse** section. select **Sample warehouse**.
 
-    >**Note**: If the **Create** option is not pinned to the sidebar, you need to select the ellipsis (**...**) option first.
+   ![Screenshot of uploaded files in a lakehouse.](./Images/dpp114.png) 
+
+    >**Note**: If the **Create** option is not pinned to the sidebar, you need to select the ellipsis (**...**) option first.   
+
+1. Create a new data warehouse named **sample-dw (1)** and then click **Create (2)**.
+
+   ![Screenshot of uploaded files in a lakehouse.](./Images/dpp115.png) 
 
 1. After a minute or so, a new warehouse will be created and populated with sample data for a taxi ride analysis scenario.
 
@@ -50,6 +56,8 @@ In this task, you will write and run SQL queries to analyze trip trends based on
 
 1. Use the **&#9655; Run** button to run the SQL script and view the results, which show the total number of trips and total revenue by month.
 
+   ![Screenshot of uploaded files in a lakehouse.](./Images/dpp116.png) 
+
 1. Enter the following Transact-SQL code:
 
     ```sql
@@ -64,6 +72,8 @@ In this task, you will write and run SQL queries to analyze trip trends based on
     ```
 
 1. Run the modified query and view the results, which show the average trip duration and distance by day of the week.
+
+   ![Screenshot of uploaded files in a lakehouse.](./Images/dpp117.png) 
 
 1. Enter the following Transact-SQL code:
 
@@ -163,11 +173,17 @@ Let's create a view based on the query we used earlier, and add a filter to it.
     GROUP BY D.DayName
     ```
 
-1. Select the text of the SELECT statement in your query. Then next to the **&#9655; Run** button, select **Save as view**.
+1. Select the text of the SELECT statement in your query **(1)**. Then next to the **&#9655; Run** button, select **Save as view (2)**.
 
-1. Create a new view named **vw_JanTrip**.
+   ![Screenshot of uploaded files in a lakehouse.](./Images/dpp118.png) 
 
-1. In the **Explorer**, navigate to **Schemas >> dbo >> Views**. Note the *vw_JanTrip* view you just created.
+1. Create a new view named **vw_JanTrip (1)** and then click on **OK (2)**.
+
+   ![Screenshot of uploaded files in a lakehouse.](./Images/dpp119.png) 
+
+1. In the **Explorer**, navigate to **Schemas >> dbo >> Views**. Note the **vw_JanTrip** view you just created.
+
+   ![Screenshot of uploaded files in a lakehouse.](./Images/dpp121.png) 
 
 1. Close all query tabs.
 

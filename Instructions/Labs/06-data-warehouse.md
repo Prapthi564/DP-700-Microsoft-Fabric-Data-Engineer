@@ -22,23 +22,28 @@ In this lab, you will complete the following tasks:
 
 In this task, you will create a new data warehouse in your Microsoft Fabric workspace. This will serve as the foundation for your analytics solution.
 
-1. On the menu bar on the left, select **Create**. In the *New* page, under the *Data Warehouse* section, select **Warehouse**. Enter **Warehouse1** as the name, and then click **Create**.
+1. On the menu bar on the left, select **Create (1)**. In the *New* page, under the *Data Warehouse* section, select **Warehouse (2)**.
 
     ![Screenshot of a new warehouse.](./Images/mod6-1.png)
 
+     >**Note**: If the **Create** option is not pinned to the sidebar, you need to select the ellipsis (**...**) option first.    
+
+1. Enter **Warehouse1 (1)** as the name, and then click **Create (2)**.
+
     ![Screenshot of a new warehouse.](./Images/mod6-2.png)
 
-    >**Note**: If the **Create** option is not pinned to the sidebar, you need to select the ellipsis (**...**) option first.
+1. After a minute or so, a new warehouse will be created:
 
-    After a minute or so, a new warehouse will be created:
-
-    ![Screenshot of a new warehouse.](./Images/mod6-3.png)
 
 ### Task 2: Create tables and insert data
 
 In this task, you will create tables inside your data warehouse and populate them with sample data.
 
-1. In your new warehouse, select the **T-SQL** tile, and use the following CREATE TABLE statement:
+1. In your new warehouse, select the **T-SQL** tile.
+
+    ![Screenshot of a new warehouse.](./Images/mod6-3.png)
+
+1. Use the following CREATE TABLE statement:
 
     ```sql
    CREATE TABLE dbo.DimProduct
@@ -52,9 +57,19 @@ In this task, you will create tables inside your data warehouse and populate the
    GO
     ```
 
-2. Use the **&#9655; Run** button to run the SQL script, which creates a new table named **DimProduct** in the **dbo** schema of the data warehouse.
-3. Use the **Refresh** button on the toolbar to refresh the view. Then, in the **Explorer** pane, expand **Schemas** > **dbo** > **Tables** and verify that the **DimProduct** table has been created.
-4. On the **Home** menu tab, use the **New SQL Query** button to create a new query, and enter the following INSERT statement:
+1. Use the **&#9655; Run** button to run the SQL script, which creates a new table named **DimProduct** in the **dbo** schema of the data warehouse.
+
+    ![Screenshot of a new warehouse.](./Images/dpp91.png)
+
+1. Use the **Refresh** button on the toolbar to refresh the view. Then, in the **Explorer** pane, expand **Schemas** > **dbo** > **Tables** and verify that the **DimProduct** table has been created.
+
+    ![Screenshot of a new warehouse.](./Images/dpp92.png)
+
+1. On the **Home** menu tab, click on **New SQL Query (1)** drop down and then select **New SQL Query (2)** to create a new query.
+
+    ![Screenshot of a new warehouse.](./Images/dpp93.png)
+
+1. Enter the following INSERT statement:
 
     ```sql
    INSERT INTO dbo.DimProduct
@@ -65,15 +80,23 @@ In this task, you will create tables inside your data warehouse and populate the
    GO
     ```
 
-5. Run the new query to insert three rows into the **DimProduct** table.
-6. When the query has finished, in the **Explorer** pane, select the **DimProduct** table and verify that the three rows have been added to the table.
-7. On the **Home** menu tab, use the **New SQL Query** button to create a new query. Then copy and paste the Transact-SQL code from `https://raw.githubusercontent.com/MicrosoftLearning/dp-data/main/create-dw.txt` into the new query pane.
-8. Run the query, which creates a simple data warehouse schema and loads some data. The script should take around 30 seconds to run.
-9. Use the **Refresh** button on the toolbar to refresh the view. Then in the **Explorer** pane, verify that the **dbo** schema in the data warehouse now contains the following four tables:
+1. Run the new query to insert three rows into the **DimProduct** table.
+
+1. When the query has finished, in the **Explorer** pane, select the **DimProduct** table and verify that the three rows have been added to the table.
+
+    ![Screenshot of a new warehouse.](./Images/dpp94.png)
+
+1. On the **Home** menu tab, use the **New SQL Query** button to create a new query. Then copy and paste the Transact-SQL code from `https://raw.githubusercontent.com/MicrosoftLearning/dp-data/main/create-dw.txt` into the new query pane.
+
+1. Run the query, which creates a simple data warehouse schema and loads some data. The script should take around 30 seconds to run.
+
+1. Use the **Refresh** button on the toolbar to refresh the view. Then in the **Explorer** pane, verify that the **dbo** schema in the data warehouse now contains the following four tables:
     - **DimCustomer**
     - **DimDate**
     - **DimProduct**
     - **FactSalesOrder**
+
+    ![Screenshot of a new warehouse.](./Images/dpp95.png)    
 
     > **Tip**: If the schema takes a while to load, just refresh the browser page.
 
@@ -91,7 +114,7 @@ In this task, you will establish relationships between tables to create a star s
 
     ![Screenshot of the data warehouse model page.](./Images/mod6-5.png)
 
-> **Note**: The views **frequently_run_queries**, **long_running_queries**, **exec_sessions_history**, and **exec_requests_history** are part of the **queryinsights** schema automatically created by Fabric. It is a feature that provides a holistic view of historical query activity on the SQL analytics endpoint. Since this feature is out of the scope of this exercise, those views should be ignored for now.
+     > **Note**: The views **frequently_run_queries**, **long_running_queries**, **exec_sessions_history**, and **exec_requests_history** are part of the **queryinsights** schema automatically created by Fabric. It is a feature that provides a holistic view of historical query activity on the SQL analytics endpoint. Since this feature is out of the scope of this exercise, those views should be ignored for now.
 
 3. Drag the **ProductKey** field from the **FactSalesOrder** table and drop it on the **ProductKey** field in the **DimProduct** table. Then confirm the following relationship details:
     - **From table**: FactSalesOrder
@@ -119,7 +142,7 @@ In this task, you will write and execute SQL queries to retrieve and aggregate d
 
 Most queries in a relational data warehouse involve aggregating and grouping data (using aggregate functions and GROUP BY clauses) across related tables (using JOIN clauses).
 
-1. Create a new SQL Query, and run the following code:
+1. Create a **new SQL Query**, and run the following code:
 
     ```sql
    SELECT  d.[Year] AS CalendarYear,
@@ -149,7 +172,9 @@ Most queries in a relational data warehouse involve aggregating and grouping dat
    ORDER BY CalendarYear, MonthOfYear, SalesRegion;
     ```
 
-3. Run the modified query and review the results, which now include sales revenue aggregated by year, month, and sales region.
+3. Run the modified query and review the results, which now include **sales revenue** aggregated by year, month, and sales region.
+
+    ![Screenshot of a new warehouse.](./Images/dpp96.png)
 
 ### Task 5: Create a view
 
@@ -174,6 +199,7 @@ In this task, you will encapsulate your SQL logic into a view, simplifying futur
     ```
 
 2. Run the query to create the view. Then refresh the data warehouse schema and verify that the new view is listed in the **Explorer** pane.
+
 3. Create a new SQL query and run the following SELECT statement:
 
     ```SQL
@@ -181,6 +207,8 @@ In this task, you will encapsulate your SQL logic into a view, simplifying futur
    FROM vSalesByRegion
    ORDER BY CalendarYear, MonthOfYear, SalesRegion;
     ```
+
+    ![Screenshot of a new warehouse.](./Images/dpp97.png)    
 
 ### Task 6: Create a visual query
 
@@ -194,21 +222,27 @@ In this task, you will use the visual query designer to build queries graphicall
 
 1. Drag **FactSalesOrder** onto the **canvas**. Notice that a preview of the table is displayed in the **Preview** pane below.
 
+    ![Screenshot of a new warehouse.](./Images/dpp98.png)
+
 1. Drag **DimProduct** onto the **canvas**. We now have two tables in our query.
 
-1. Use the **(+)** button on the **FactSalesOrder** table on the canvas to **Merge queries (2)**.
+    ![Screenshot of a new warehouse.](./Images/dpp99.png)
+
+1. Use the **(+) (1)** button on the **FactSalesOrder** table on the canvas to **Merge queries (2)**.
 
    ![Screenshot of the canvas with the FactSalesOrder table selected.](./Images/mod514.png)
 
 1. In the **Merge queries** window, select **DimProduct** as the right table for merge. Select **ProductKey** in both queries, leave the default **Left outer** join type, and click **OK**.
 
-2. In the **Preview**, note that the new **DimProduct** column has been added to the FactSalesOrder table. Expand the column by clicking the arrow to the right of the column name. Select **ProductName (1)** and click **OK (2)**.
+2. In the **Preview**, note that the new **DimProduct** column has been added to the FactSalesOrder table. Expand the column by clicking the arrow to the right of the column name  **(1)**. Select **ProductName (2)** and click **OK (3)**.
 
-    ![Screenshot of the preview pane with the DimProduct column expanded, with ProductName selected.](./Images/mod6-7.png)
+    ![Screenshot of the preview pane with the DimProduct column expanded, with ProductName selected.](./Images/dpp100.png)
 
 1. If you're interested in looking at data for a single product, per a manager request, you can now use the **ProductName** column to filter the data in the query. Filter the **ProductName** column to look at **Cable Lock** data only.
 
 1. From here, you can analyze the results of this single query by selecting **Visualize results** or **Download Excel file**. You can now see exactly what the manager was asking for, so we don't need to analyze the results further.
+
+    ![Screenshot of a new warehouse.](./Images/dpp101.png)
 
 ### Task 7: Visualize your data
 
@@ -217,6 +251,8 @@ You can easily visualize the data in either a single query, or in your data ware
 In this task, you will build a Power BI report based on the data warehouse you created.
 
 1. Select the **Model layouts** button. 
+
+    ![Screenshot of a new warehouse.](./Images/dpp102.png)
 
 1. Hide the following columns in your Fact and Dimension tables that are not necessary to create a report. Note that this does not remove the columns from the model, it simply hides them from view on the report canvas.
    1. FactSalesOrder
@@ -235,25 +271,33 @@ In this task, you will build a Power BI report based on the data warehouse you c
 
    ![Screenshot of the data warehouse model page.](./Images/mod515.png)
 
-1. Now you're ready to build a report and make this dataset available to others. On the **Reporting (1)** menu, select **New report (2)** and click on **Continue** and this will open a new window, where you can create a Power BI report.
+1. Now you're ready to build a report and make this dataset available to others. On the **Reporting (1)** menu, select **New report (2)**.
 
    ![Screenshot of the data warehouse model page.](./Images/mod516.png)
+
+1. Click on **Continue** and this will open a new window, where you can create a Power BI report.   
 
    ![Screenshot of the data warehouse model page.](./Images/mod517.png)
 
 1. In the **Data** pane, expand **FactSalesOrder**. Note that the columns you hid are no longer visible. 
 
-1. Select **SalesTotal**. This will add the column to the **Report canvas**. Because the column is a numeric value, the default visual is a **column chart**.
-1. Ensure that the column chart on the canvas is active (with a gray border and handles), and then select **Category** from the **DimProduct** table to add a category to your column chart.
-1. In the **Visualizations** pane, change the chart type from a column chart to a **clustered bar chart**. Then resize the chart as necessary to ensure that the categories are readable.
+    - Select **SalesTotal (1)**. This will add the column to the **Report canvas**. Because the column is a numeric value, the default visual is a **column chart**.
+    - Ensure that the column chart on the canvas is active (with a gray border and handles), and then select **Category (2)** from the **DimProduct** table to add a category to your column chart.
+    - In the **Visualizations** pane, change the chart type from a column chart to a **clustered bar chart (3)**. Then resize the chart as necessary to ensure that the categories are readable.
 
-    ![Screenshot of the Visualizations pane with the bar chart selected.](./Images/mod6-8.png)
+      ![Screenshot of the Visualizations pane with the bar chart selected.](./Images/dpp103.png)
 
 1. In the **Visualizations** pane, select the **Format your visual (1)** tab and in the **General (2)** sub-tab, in the **Title** section, change the **Text** to **Total Sales by Category (3)**.
 
    ![Screenshot of the data warehouse model page.](./Images/mod518.png)
 
-1. In the **File** menu, select **Save**. Then save the report as **Sales Report** in the workspace you created previously.
+1. In the **File (1)** menu, select **Save (2)**.
+
+   ![Screenshot of the data warehouse model page.](./Images/dpp104.png)
+
+1. Then save the report as **Sales Report (1)** in the workspace you created previously and then click on **Save (2)**.
+
+   ![Screenshot of the data warehouse model page.](./Images/dpp105.png)
 
 1. In the menu hub on the left, navigate back to the workspace. Notice that you now have three items saved in your workspace: your data warehouse, its default semantic model, and the report you created.
 

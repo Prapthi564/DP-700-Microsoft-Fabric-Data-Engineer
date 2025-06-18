@@ -20,6 +20,7 @@ Microsoft Fabric data warehouses include dynamic management views (DMVs), which 
 In this task, you will query dynamic management views such as `sys.dm_exec_connections`, `sys.dm_exec_sessions`, and `sys.dm_exec_requests` to monitor active sessions, connections, and running queries. You will also simulate a long-running query and observe it through the DMVs.
 
 1. In the **sample-dw** data warehouse page, in the **New SQL query** drop-down list, select **New SQL query**.
+
 1. In the new blank query pane, enter the following Transact-SQL code to query the **sys.dm_exec_connections** DMV:
 
     ```sql
@@ -27,6 +28,7 @@ In this task, you will query dynamic management views such as `sys.dm_exec_conne
     ```
 
 1. Use the **&#9655; Run** button to run the SQL script and view the results, which include details of all connections to the data warehouse.
+
 1. Modify the SQL code to query the **sys.dm_exec_sessions** DMV, like this:
 
     ```sql
@@ -34,6 +36,7 @@ In this task, you will query dynamic management views such as `sys.dm_exec_conne
     ```
 
 1. Run the modified query and view the results, which show details of all authenticated sessions.
+
 1. Modify the SQL code to query the **sys.dm_exec_requests** DMV, like this:
 
     ```sql
@@ -41,6 +44,7 @@ In this task, you will query dynamic management views such as `sys.dm_exec_conne
     ```
 
 1. Run the modified query and view the results, which show details of all requests being executed in the data warehouse.
+
 1. Modify the SQL code to join the DMVs and return information about currently running requests in the same database, like this:
 
     ```sql
@@ -58,6 +62,9 @@ In this task, you will query dynamic management views such as `sys.dm_exec_conne
     ```
 
 1. Run the modified query and view the results, which show details of all running queries in the database (including this one).
+
+   ![Screenshot of uploaded files in a lakehouse.](./Images/dpp122.png) 
+
 1. In the **New SQL query** drop-down list, select **New SQL query** to add a second query tab. Then in the new empty query tab, run the following code:
 
     ```sql
@@ -65,7 +72,12 @@ In this task, you will query dynamic management views such as `sys.dm_exec_conne
        SELECT * FROM Trip;
     ```
 
-1. Leave the query running, and return to the tab containing the code to query the DMVs and re-run it. This time, the results should include the second query that is running in the other tab. Note the elapsed time for that query.
+    ![Screenshot of uploaded files in a lakehouse.](./Images/dpp123.png)     
+
+1. Leave the query running, and return to the tab containing the code to query the DMVs **(1)** and re-run it **(2)**. This time, the results should include the second query that is running in the other tab **(3)**. Note the elapsed time for that query.
+
+   ![Screenshot of uploaded files in a lakehouse.](./Images/dpp124.png) 
+
 1. Wait a few seconds and re-run the code to query the DMVs again. The elapsed time for the query in the other tab should have increased.
 1. Return to the second query tab where the query is still running and select **Cancel** to cancel it.
 1. Back on the tab with the code to query the DMVs, re-run the query to confirm that the second query is no longer running.
@@ -87,6 +99,7 @@ In this task, you will explore the `queryinsights` schema views such as `exec_re
     ```
 
 1. Use the **&#9655; Run** button to run the SQL script and view the results, which include details of previously executed queries.
+
 1. Modify the SQL code to query the **frequently_run_queries** view, like this:
 
     ```sql
