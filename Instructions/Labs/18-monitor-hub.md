@@ -55,13 +55,9 @@ In this task, you will create a Dataflow Gen2 to ingest data from a CSV file int
 
 1. On the **Home** page for your lakehouse, in the **Get data in your lakehouse** menu, select **New Dataflow Gen2**.
 
-1. A new dataflow named **Dataflow 1** is created and opened.
+1. Enter **Get Product Data** (1) in the **Name** field, and **uncheck** (2) the below checkbox then click **Create** (2).
 
-    ![Screenshot of a new dataflow.](./Images/lab5u1.png)
-
-1. At the top left of the dataflow page, select **Dataflow 1 (1)** to see its details and rename the dataflow to **Get Product Data (2)**.
-
-   ![Screenshot of a new dataflow.](./Images/lab5u02.png)
+    ![Screenshot of a new dataflow.](./Images/dataflow2.png)
 
 1. In the dataflow designer, select **Import from a Text/CSV file**. Then complete the Get Data wizard to create a data connection by linking to `https://raw.githubusercontent.com/MicrosoftLearning/dp-data/main/products.csv (1)` using anonymous authentication. 
 
@@ -75,7 +71,7 @@ In this task, you will create a Dataflow Gen2 to ingest data from a CSV file int
 
 1. **Publish** the dataflow.
 
-    ![Screenshot of a new dataflow.](./Images/lab5u4.png)
+    ![Screenshot of a new dataflow.](./Images/md72.png)
 
 1. In the navigation bar on the left, select **Monitor** to view the monitoring hub and observe that your dataflow is in-progress (if not, refresh the view until you see it).
 
@@ -131,11 +127,9 @@ In this task, you will rerun the dataflow and view the historical run history in
 
     ![Screenshot of the monitoring hub historical runs view.](./Images/lab5u12.png)
 
-1. In the **...** menu for the **Get Product Data** dataflow, select **Historical runs** to view the run history for the dataflow:
+1. In the ... menu for any of the historical runs select **View detail** to see details of the run.
 
-1. In the **...** menu for any of the historical runs select **View detail** to see details of the run.
-
-1. Close the **Details** pane and use the **Back to main view** button to return to the main monitoring hub page.
+1. Close the Details pane and use the **Back to main view** button to return to the main monitoring hub page.
 
 ### Task 5: Customize monitoring hub views
 
