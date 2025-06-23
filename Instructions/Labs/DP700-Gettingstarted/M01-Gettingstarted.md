@@ -20,8 +20,6 @@ By the end of this lab, you will be able to create a Microsoft Fabric workspace,
 
 - Basic familiarity with Apache Spark and notebooks (e.g., using PySpark)
 - Understanding of ETL/ELT processes and data transformation concepts
-- Familiarity with real-time data concepts and streaming sources
-- Basic knowledge of configuring Eventstreams with inputs, transformations, and outputs
 - Understanding of Kusto Query Language (KQL) and basic SQL for querying event data
 
 ## Architecture
