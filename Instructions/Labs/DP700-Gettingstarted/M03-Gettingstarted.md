@@ -43,6 +43,12 @@ By the end of this lab series, you will be able to create and manage a Microsoft
 
 In this hands-on lab, the architecture flow includes several essential components.
 
+1. **Get started with Real-Time Intelligence in Microsoft Fabric**: You will learn how to use Real-Time Intelligence features in Microsoft Fabric to ingest, analyze, and visualize streaming data. This task focuses on building a real-time analytics solution using a live stream of stock market data.
+
+1. **Ingest real-time data with Eventstream in Microsoft Fabric**: You will learn how to use Eventstream in Microsoft Fabric to capture, transform, and route real-time event data. This task involves ingesting live data from a bike-share system and configuring the stream to send processed events to various destinations.
+
+1. **Work with data in a Microsoft Fabric eventhouse**: You will learn how to create and use an eventhouse in Microsoft Fabric to store and query real-time event data. This task involves populating the eventhouse with sample taxi ride data and using KQL and SQL to analyze the information.
+
 1. **Create an Eventhouse in Microsoft Fabric**: Learning how to create an eventhouse in Microsoft Fabric to establish a centralized and scalable foundation for capturing and storing streaming data. This involves setting up a workspace, creating the eventhouse, and understanding how real-time events are persisted and organized for downstream analytics.
 
 1. **Create an Eventstream in Microsoft Fabric**: Setting up an eventstream in Microsoft Fabric to enable real-time data ingestion from external systems. This includes connecting sources such as Azure Event Hub, IoT Hub, or other streaming services to start capturing and processing live event data.
@@ -76,6 +82,12 @@ In this hands-on lab, the architecture flow includes several essential component
 1. **Real-Time Dashboard**: A dynamic visualization tool that displays live data from eventstreams, enabling instant monitoring and insights.
 
 1. **Base Query**: A reusable query that centralizes logic for dashboard visuals, improving consistency and simplifying maintenance.
+
+1. **Real-time Intelligence**: It is an end-to-end solution for event-driven scenarios, streaming data, and data logs.
+
+1. **Eventstreams**: The eventstreams feature in Microsoft Fabric gives you a centralized place in the Fabric platform to capture, transform, and route real-time events to various destinations with a no-code experience.
+
+1. **Eventhouse**: An eventhouse is a workspace of databases, which might be shared across a certain project.
 
 # Getting Started with lab
  
