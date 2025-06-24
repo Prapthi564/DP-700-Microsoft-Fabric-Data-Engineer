@@ -9,7 +9,7 @@ In this hands-on labs, you'll explore Real-Time Intelligence capabilities in Mic
 
 ## Objectives
 
-By the end of this lab series, you will be able to leverage Microsoft Fabric's Real-Time Intelligence features to ingest and process live streaming data using Eventstream, manage and query real-time event data within an eventhouse, and build interactive dashboards with Kusto Query Language (KQL). You will gain hands-on experience in configuring real-time data pipelines, applying transformations, and visualizing continuously updating data to support immediate, data-driven decision-making.
+By the end of this lab series, you will be able to leverage Microsoft Fabric's Real-Time Intelligence features to ingest and process live streaming data using Eventstream, manage and query real-time event data within an eventhouse, and build interactive dashboards with Kusto Query Language (KQL). 
 
 1. **Get started with Real-Time Intelligence in Microsoft Fabric**: You will explore the core components of Real-Time Intelligence in Microsoft Fabric by working with live stock market data. You’ll learn how to ingest streaming data, analyze it in real time, and visualize insights through dynamic dashboards and alerts.
 
