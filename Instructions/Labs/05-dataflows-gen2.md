@@ -24,6 +24,10 @@ In this task, you will create a Dataflow (Gen2) in Microsoft Fabric to ingest da
 
    ![New dataflow.](./Images/md44.png)
 
+1. Verify the **Data Flow Name (1)** and ensure to **uncheck the box (2)** before creating the Data Flow. Then click on **Create (3)**.
+
+   ![New dataflow.](./Images/M1L3T1S3.png)
+
 1. After a few seconds, the Power Query editor for your new dataflow opens as shown here. Select **Import from a Text/CSV file**.  
 
    ![New dataflow.](./Images/md45.png)
